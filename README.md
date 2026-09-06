@@ -1,13 +1,14 @@
 # OKX Trading Bots
 
-Three independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
+Four independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
 
 - [`okx_trend_bot.py`](#okx_trend_botpy) — SuperTrend + VWAP trend-following (with several optional/legacy
   signal modes: EMA stack, RSI/MACD cross, ADX regime filter, Stochastic).
 - [`okx_zeefreaks_bot.py`](#okx_zeefreaks_botpy) — VWAP-cross + relative-volume + EMA(9/20) intraday day-trading bot.
 - [`okx_ema_rsi_bot.py`](#okx_ema_rsi_botpy) — EMA(20/50/150/200) stack + RSI(14) 30/70 reversion bot.
+- [`okx_orb_trend_bot.py`](#okx_orb_trend_botpy) — Opening-range breakout + daily-trend filter, max 1 trade/day/symbol.
 
-All three run backtests locally against real OKX history and can run paper,
+All four run backtests locally against real OKX history and can run paper,
 OKX-demo, or live trading loops. They are fully independent — separate
 config, state file, and log file — and none import each other.
 
@@ -198,3 +199,56 @@ exactly when the bullish stack condition tends to break. Real-data results:
 0–2 trades even across full multi-year history is not a sample size any
 profit factor can be trusted from. Do not run `--paper`/`--demo`/`--live`
 on this — there isn't enough evidence yet to call it anything at all.
+
+---
+
+## okx_orb_trend_bot.py
+
+An original design (not a transcription of any named trader's style),
+built specifically to work around the fee-bleed pattern seen in the other
+bots here: **max one trade per day per symbol**.
+
+- **Opening range**: each UTC day's high/low from `--session-start` (default
+  12:00) for `--range-hours` (default 1h) — the Europe/US liquidity overlap.
+- **Breakout entry**: long above the range high, short below the range low,
+  later in the same session — gated by **daily EMA(50) trend** (no
+  lookahead: only a fully-closed daily candle counts) and **relative
+  volume** confirmation.
+- **Exit**: stop at the opposite side of the range (ATR floor as backup for
+  a degenerate tiny range), target = 2R, forced flatten at `--session-end`
+  (default 21:00 UTC) regardless — genuine day-trading discipline, no
+  overnight hold.
+
+### CLI flags
+
+| Flag | Description |
+|---|---|
+| `--backtest N` | Backtest the last N entry-timeframe candles (paginated). |
+| `--live` / `--demo` | Real orders vs. OKX sandbox. Requires the three `OKX_*` env vars. |
+| `--allow-shorts` | Enable short entries (spot can't short; swap markets only). |
+| `--timeframe TF` | Override entry/opening-range timeframe (default `15m`). |
+| `--symbol SYMBOL` | Override traded symbol (default `BTC/USDT`). |
+| `--range-hours` | Override opening-range duration in hours (default 1). |
+| `--session-start` / `--session-end` | Override the UTC session window (default 12/21). |
+| `--volume-mult` | Override the relative-volume confirmation multiplier. |
+
+Run `python okx_orb_trend_bot.py --help` for the authoritative, up-to-date list.
+
+### Status
+
+**Not validated — currently losing on all three symbols tested.**
+
+| Symbol | Trades (31d) | Win rate | Profit factor | Fees % of gross win |
+|---|---|---|---|---|
+| BTC/USDT | 15 | 26.7% | 0.47 | 92.7% |
+| ETH/USDT | 22 | 40.9% | 0.72 | 43.1% |
+| SOL/USDT | 15 | 33.3% | 0.74 | 37.6% |
+
+Consistent across symbols, but consistently unprofitable. Notably, most
+exits are `session_close` (forced flatten), not `stop` or `tp` — most
+breakouts here don't move decisively either way before end of session,
+which suggests the 2R target may be too far for typical intraday
+continuation on these symbols/timeframe. That's a real lead for further
+investigation, not something I've acted on — do not run
+`--paper`/`--demo`/`--live` on this until it clears the same bar as the
+others (PF > 1.2, 20+ trades, consistent across symbols).
