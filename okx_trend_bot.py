@@ -858,6 +858,51 @@ def fetch_ohlcv(ex, cfg) -> pd.DataFrame:
     return df
 
 
+def fetch_ohlcv_paginated(ex, symbol: str, timeframe: str, target_candles: int,
+                           limit_per_call: int = 300) -> pd.DataFrame:
+    """
+    OKX (like most exchanges) caps a single fetch_ohlcv call at ~300 candles
+    no matter what `limit` is passed. For backtesting we need real history,
+    so walk BACKWARD from "now": fetch the most recent page, then use the
+    oldest timestamp seen so far to request the page before it, and repeat
+    until we've collected target_candles or a page stops moving further back
+    (== reached the start of the symbol's listing history on OKX).
+
+    Backward walking (vs. picking a `since` up front and walking forward) is
+    deliberate: if `since` lands before the symbol was listed, OKX just
+    returns an empty page and a forward walk has nothing to anchor off of.
+    Walking backward from data we've actually observed avoids that.
+    """
+    tf_ms = timeframe_to_ms(timeframe)
+    all_rows = []
+    seen_ts = set()
+    cursor = None  # None = "give me the most recent page"
+    while len(all_rows) < target_candles:
+        since = None if cursor is None else cursor - limit_per_call * tf_ms
+        batch = ex.fetch_ohlcv(symbol, timeframe=timeframe, since=since, limit=limit_per_call)
+        if not batch:
+            break
+        new_rows = [r for r in batch if r[0] not in seen_ts]
+        if not new_rows:
+            break  # no new data; avoid looping forever
+        seen_ts.update(r[0] for r in new_rows)
+        all_rows.extend(new_rows)
+        oldest_ts = batch[0][0]
+        if cursor is not None and oldest_ts >= cursor:
+            break  # not moving further back == reached start of history
+        cursor = oldest_ts
+        if len(batch) < limit_per_call:
+            break  # short page == reached start of history
+        time.sleep(ex.rateLimit / 1000)
+
+    df = pd.DataFrame(all_rows, columns=["ts", "open", "high", "low", "close", "volume"])
+    df = df.drop_duplicates(subset="ts").sort_values("ts").reset_index(drop=True)
+    if len(df) > target_candles:
+        df = df.iloc[-target_candles:].reset_index(drop=True)
+    df["dt"] = pd.to_datetime(df["ts"], unit="ms", utc=True)
+    return df
+
+
 # ----------------------------- STATE -----------------------------
 def load_state(path):
     try:
@@ -1082,8 +1127,12 @@ def main():
                   f"[{cfg['mtf_regime_tf']} regime -> {cfg['mtf_entry_tf']} entry] "
                   f"({len(d)} entry-candles, {d['dt'].iloc[0].date()} -> {d['dt'].iloc[-1].date()}) ===")
         else:
-            cfg["candle_limit"] = min(args.backtest, 1000)
-            df = fetch_ohlcv(ex, cfg)
+            cfg["candle_limit"] = args.backtest
+            df = fetch_ohlcv_paginated(ex, cfg["symbol"], cfg["timeframe"], args.backtest)
+            if len(df) < args.backtest:
+                print(f"NOTE: requested {args.backtest} candles but only {len(df)} are "
+                      f"available from OKX for {cfg['symbol']} {cfg['timeframe']} "
+                      f"(reached start of exchange history).")
             d = compute_signals(df, cfg)
             res = backtest(d, cfg)
             print(f"\n=== BACKTEST: {cfg['symbol']} {cfg['timeframe']} "
