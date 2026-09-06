@@ -1,6 +1,6 @@
 # OKX Trading Bots
 
-Five independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
+Six independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
 
 - [`okx_trend_bot.py`](#okx_trend_botpy) — SuperTrend + VWAP trend-following (with several optional/legacy
   signal modes: EMA stack, RSI/MACD cross, ADX regime filter, Stochastic).
@@ -8,8 +8,9 @@ Five independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/
 - [`okx_ema_rsi_bot.py`](#okx_ema_rsi_botpy) — EMA(20/50/150/200) stack + RSI(14) 30/70 reversion bot.
 - [`okx_orb_trend_bot.py`](#okx_orb_trend_botpy) — Opening-range breakout + daily-trend filter, max 1 trade/day/symbol.
 - [`okx_scalper_bot.py`](#okx_scalper_botpy) — 1m momentum scalper with a pre-trade cost-vs-edge filter.
+- [`okx_vwap_pivot_bot.py`](#okx_vwap_pivot_botpy) — VWAP bias + daily pivot support/resistance, touch-and-reclaim/reject entries.
 
-All five run backtests locally against real OKX history and can run paper,
+All six run backtests locally against real OKX history and can run paper,
 OKX-demo, or live trading loops. They are fully independent — separate
 config, state file, and log file — and none import each other.
 
@@ -301,3 +302,51 @@ much more volatile symbol, or a longer holding timeframe (at which point
 it's not really scalping). I have not built any of those — flag which
 direction you want if you'd like to pursue it. Do not run
 `--paper`/`--demo`/`--live` on this as-is.
+
+---
+
+## okx_vwap_pivot_bot.py
+
+An original design (my own): classic daily pivot points (PP/R1/S1/R2/S2,
+computed from the previous complete UTC day's H/L/C — no lookahead) as
+support/resistance, VWAP (daily session) as directional bias.
+
+- **Long**: prior bar touched/broke S1, current close has reclaimed back
+  above it ("touch and reclaim"), price is above VWAP, volume confirms.
+- **Short**: mirrored at R1 ("touch and reject"), price below VWAP.
+- **Exit**: stop at the next pivot level out (S2/R2, ATR floor as backup),
+  target at PP (the level back toward the middle); forced flatten if the
+  position is still open when the UTC day rolls over.
+
+### CLI flags
+
+| Flag | Description |
+|---|---|
+| `--backtest N` | Backtest the last N candles (paginated). |
+| `--live` / `--demo` | Real orders vs. OKX sandbox. Requires the three `OKX_*` env vars. |
+| `--allow-shorts` | Enable short entries (spot can't short; swap markets only). |
+| `--timeframe TF` | Override timeframe (default `15m`). |
+| `--symbol SYMBOL` | Override traded symbol (default `BTC/USDT`). |
+| `--volume-mult` | Override the relative-volume confirmation multiplier. |
+
+Run `python okx_vwap_pivot_bot.py --help` for the authoritative, up-to-date list.
+
+### Status
+
+**Not validated — rare signal, and losing where it does fire.**
+
+| Symbol | Timeframe | Trades | Win rate | Profit factor | Avg win / avg loss |
+|---|---|---|---|---|---|
+| BTC/USDT | 15m (~31d) | 5 | 60.0% | 0.62 | 1.30 / -3.13 |
+| ETH/USDT | 15m (~31d) | 5 | 40.0% | 0.26 | 1.34 / -3.44 |
+| SOL/USDT | 15m (~31d) | 3 | 33.3% | 0.40 | 1.79 / -2.23 |
+| BTC/USDT | 1h (~125d) | 4 | 50.0% | 0.58 | 2.09 / -3.63 |
+
+3-5 trades per config is too few to trust the profit factor itself, but
+one pattern repeats in every single run: **average loss is roughly
+2-2.5x average win.** That's not noise, it's the R:R this design bakes in
+— the S1-to-S2 stop distance is consistently wider than the S1-to-PP
+target distance in real pivot geometry, so even a >50% win rate (BTC 15m:
+60%) still nets a loss. That's a concrete, actionable lead (e.g., target
+R1 instead of PP, or size the stop independent of S2) — I haven't acted on
+it. Do not run `--paper`/`--demo`/`--live` on this as-is.
