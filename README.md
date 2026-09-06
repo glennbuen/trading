@@ -1,14 +1,15 @@
 # OKX Trading Bots
 
-Two independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
+Three independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
 
 - [`okx_trend_bot.py`](#okx_trend_botpy) — SuperTrend + VWAP trend-following (with several optional/legacy
   signal modes: EMA stack, RSI/MACD cross, ADX regime filter, Stochastic).
 - [`okx_zeefreaks_bot.py`](#okx_zeefreaks_botpy) — VWAP-cross + relative-volume + EMA(9/20) intraday day-trading bot.
+- [`okx_ema_rsi_bot.py`](#okx_ema_rsi_botpy) — EMA(20/50/150/200) stack + RSI(14) 30/70 reversion bot.
 
-Both run backtests locally against real OKX history and can run paper,
+All three run backtests locally against real OKX history and can run paper,
 OKX-demo, or live trading loops. They are fully independent — separate
-config, state file, and log file — and neither imports the other.
+config, state file, and log file — and none import each other.
 
 **The trading logic in both is deliberately conservative and should not be
 tuned to chase backtest results.** See [Validation pipeline](#validation-pipeline) below.
@@ -145,3 +146,55 @@ available ~31-day window): 95 trades, profit factor 0.33, fees consumed
 104% of gross wins. This does not clear the same bar the trend bot is held
 to (PF > 1.2, 20+ trades, consistent across symbols) — do not run
 `--paper`/`--demo`/`--live` on this until it does.
+
+---
+
+## okx_ema_rsi_bot.py
+
+A separate day-trading bot: pure EMA-stack trend filter + RSI(14) reversion
+trigger, no other indicators.
+
+- **EMA stack** (`--ema1`..`--ema4`, default 20/50/150/200): bullish when
+  20>50>150>200, bearish when reversed. No ADX/strength filter — just the
+  ordering, as specified.
+- **RSI entry trigger**: long when RSI crosses below 30 (`--rsi-oversold`)
+  *while the stack is bullish* (buying a dip within an established
+  uptrend); short when RSI crosses above 70 (`--rsi-overbought`) while the
+  stack is bearish (mirrored — shorting a rally within a downtrend). Spot
+  can't short; requires `--allow-shorts` + OKX swap markets.
+- **Exits are ATR stop/target only** (same 1.5x/2.5x framework as the other
+  bots) — RSI crossing back the other way is not wired as a second exit
+  signal. Flag it if you actually wanted an RSI-based exit instead.
+
+### CLI flags
+
+| Flag | Description |
+|---|---|
+| `--backtest N` | Backtest the last N candles (paginated, same behavior as the other two bots). |
+| `--live` / `--demo` | Real orders vs. OKX sandbox. Requires the three `OKX_*` env vars. |
+| `--allow-shorts` | Enable short entries (spot can't short; swap markets only). |
+| `--timeframe TF` | Override candle timeframe (default `1h`). |
+| `--symbol SYMBOL` | Override traded symbol (default `BTC/USDT`). |
+| `--rsi-oversold` / `--rsi-overbought` | Override the RSI entry thresholds (default 30/70). |
+
+Run `python okx_ema_rsi_bot.py --help` for the authoritative, up-to-date list.
+
+### Status
+
+**Not validated — and structurally rare.** Requiring a full 4-EMA bullish
+stack *and* RSI<30 to occur on the same bar is a narrow intersection: deep
+RSI oversold readings mostly happen during corrections/downtrends, which is
+exactly when the bullish stack condition tends to break. Real-data results:
+
+| Symbol | Timeframe | Window | Trades |
+|---|---|---|---|
+| BTC/USDT | 1h | ~125 days | 1 |
+| BTC/USDT | 1d | 2018–2026 (full history) | 0 |
+| ETH/USDT | 1h | ~125 days | 1 |
+| ETH/USDT | 1d | 2018–2026 (full history) | 2 |
+| SOL/USDT | 1h | ~125 days | 1 |
+| SOL/USDT | 1d | 2020–2026 (full history) | 0 |
+
+0–2 trades even across full multi-year history is not a sample size any
+profit factor can be trusted from. Do not run `--paper`/`--demo`/`--live`
+on this — there isn't enough evidence yet to call it anything at all.
