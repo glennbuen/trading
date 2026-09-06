@@ -1,12 +1,19 @@
-# OKX Trend Bot
+# OKX Trading Bots
 
-A Python trading bot for BTC/USDT (and other pairs) on OKX via [ccxt](https://github.com/ccxt/ccxt).
-Signal engine is SuperTrend + VWAP (with several optional/legacy modes: EMA stack,
-RSI/MACD cross, ADX regime filter, Stochastic). Runs backtests locally and can
-run paper, OKX-demo, or live trading loops.
+Two independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
 
-**The trading logic is deliberately conservative and should not be tuned to
-chase backtest results.** See [Validation pipeline](#validation-pipeline) below.
+- [`okx_trend_bot.py`](#okx_trend_botpy) — SuperTrend + VWAP trend-following (with several optional/legacy
+  signal modes: EMA stack, RSI/MACD cross, ADX regime filter, Stochastic).
+- [`okx_zeefreaks_bot.py`](#okx_zeefreaks_botpy) — VWAP-cross + relative-volume + EMA(9/20) intraday day-trading bot.
+
+Both run backtests locally against real OKX history and can run paper,
+OKX-demo, or live trading loops. They are fully independent — separate
+config, state file, and log file — and neither imports the other.
+
+**The trading logic in both is deliberately conservative and should not be
+tuned to chase backtest results.** See [Validation pipeline](#validation-pipeline) below.
+
+## okx_trend_bot.py
 
 ## Setup
 
@@ -25,7 +32,7 @@ Required env vars (only needed for `--live` / `--demo`):
 
 | Flag | Description |
 |---|---|
-| `--backtest N` | Backtest the last N candles instead of running the live loop. Note: candle count is capped at 1000 regardless of N (see [Known limits](#known-limits)). |
+| `--backtest N` | Backtest the last N candles instead of running the live loop. Fetches history in paginated pages (OKX caps a single call at ~300 candles) so N is honored up to the symbol's actual listing history — the printed header shows the real candle count and date range used. |
 | `--live` | Place real orders on OKX. Requires typing `CONFIRM` at a prompt and the three `OKX_*` env vars. |
 | `--demo` | Route orders to the OKX demo/sandbox environment (virtual funds). Requires the three `OKX_*` env vars. |
 | `--day` | Day-trading preset: 1h timeframe, tighter ATR stop/TP multiples, looser ADX threshold, shorter cooldown. |
@@ -82,10 +89,59 @@ reasonable observation period.
 
 ## Known limits
 
-- `--backtest N` caps the requested candle count at 1000 in code
-  (`min(args.backtest, 1000)`), separately from whatever OKX's API itself
-  returns/paginates. Requesting `--backtest 3000` will only ever backtest
-  1000 candles — check the printed candle count and date range in the
-  backtest header rather than assuming N candles were used.
+- `--backtest N` walks backward through OKX's history page by page (~300
+  candles per call) to assemble N candles. If the symbol's listing history
+  is shorter than N, you get however much real history exists instead — the
+  script prints a `NOTE:` line telling you the actual count, so check that
+  rather than assuming N candles were used.
 - Spot markets cannot short; `--allow-shorts` only takes effect on OKX swap
   markets.
+
+---
+
+## okx_zeefreaks_bot.py
+
+A separate, intraday day-trading bot. Signal core is a systematic
+approximation of the VWAP/volume-driven day-trading style associated with
+the "Zeefreaks" trading approach — not a literal transcription of any
+specific rule set:
+
+- **VWAP cross** (session VWAP, resets every `--vwap-reset-hours`, default
+  24h) is the entry trigger — the bot times the reclaim/rejection moment,
+  not "currently above/below."
+- **Relative volume** ("effort vs result"): the signal candle's volume must
+  exceed `--volume-mult` (default 1.5x) its own rolling average, or the
+  cross is ignored as unconfirmed.
+- **EMA(fast)/EMA(slow)** (default 9/20) supplies trend bias; entries only
+  fire in the direction the EMAs agree with.
+- **`--max-hold-bars`** (default 24 bars = 6h on the default 15m timeframe)
+  force-flattens a trade that overstays — day-trading discipline against a
+  position quietly turning into a multi-day hold.
+
+Shares the same cost model (taker fee, slippage) and circuit breakers
+(consecutive-loss halt, daily loss limit, volatility-spike guard) as
+`okx_trend_bot.py`, and the same paginated `--backtest` history fetch.
+
+### CLI flags
+
+| Flag | Description |
+|---|---|
+| `--backtest N` | Backtest the last N candles (paginated, same behavior as the trend bot). |
+| `--live` / `--demo` | Same semantics as the trend bot — real orders vs. OKX sandbox. Requires the three `OKX_*` env vars. |
+| `--allow-shorts` | Enable short entries (spot can't short; swap markets only). |
+| `--timeframe TF` | Override candle timeframe (default `15m`). |
+| `--symbol SYMBOL` | Override traded symbol (default `BTC/USDT`). |
+| `--ema-fast` / `--ema-slow` | Override the EMA trend-bias lengths (default 9/20). |
+| `--volume-mult` | Override the relative-volume confirmation multiplier (default 1.5). |
+| `--vwap-reset-hours` | Override the VWAP session reset interval (default 24h). |
+| `--max-hold-bars` | Override the forced-flatten bar count (0 disables). |
+
+Run `python okx_zeefreaks_bot.py --help` for the authoritative, up-to-date list.
+
+### Status
+
+**Not validated yet.** First backtest (default config, BTC/USDT 15m, full
+available ~31-day window): 95 trades, profit factor 0.33, fees consumed
+104% of gross wins. This does not clear the same bar the trend bot is held
+to (PF > 1.2, 20+ trades, consistent across symbols) — do not run
+`--paper`/`--demo`/`--live` on this until it does.
