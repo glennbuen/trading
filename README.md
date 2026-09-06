@@ -1,6 +1,6 @@
 # OKX Trading Bots
 
-Six independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
+Seven independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/ccxt):
 
 - [`okx_trend_bot.py`](#okx_trend_botpy) — SuperTrend + VWAP trend-following (with several optional/legacy
   signal modes: EMA stack, RSI/MACD cross, ADX regime filter, Stochastic).
@@ -9,8 +9,9 @@ Six independent Python trading bots for OKX via [ccxt](https://github.com/ccxt/c
 - [`okx_orb_trend_bot.py`](#okx_orb_trend_botpy) — Opening-range breakout + daily-trend filter, max 1 trade/day/symbol.
 - [`okx_scalper_bot.py`](#okx_scalper_botpy) — 1m momentum scalper with a pre-trade cost-vs-edge filter.
 - [`okx_vwap_pivot_bot.py`](#okx_vwap_pivot_botpy) — VWAP bias + daily pivot support/resistance, touch-and-reclaim/reject entries.
+- [`okx_bollinger_bot.py`](#okx_bollinger_botpy) — Bollinger Bands only (no other indicators), touch-and-reclaim/reject mean reversion.
 
-All six run backtests locally against real OKX history and can run paper,
+All seven run backtests locally against real OKX history and can run paper,
 OKX-demo, or live trading loops. They are fully independent — separate
 config, state file, and log file — and none import each other.
 
@@ -350,3 +351,51 @@ target distance in real pivot geometry, so even a >50% win rate (BTC 15m:
 60%) still nets a loss. That's a concrete, actionable lead (e.g., target
 R1 instead of PP, or size the stop independent of S2) — I haven't acted on
 it. Do not run `--paper`/`--demo`/`--live` on this as-is.
+
+---
+
+## okx_bollinger_bot.py
+
+Deliberately minimal, per request: **Bollinger Bands are the only
+indicator** — no volume filter, no trend filter, no ATR. Bands = SMA(20)
++/- 2 x rolling std(20). Long = touch-and-reclaim at the lower band; short
+= touch-and-reject at the upper band (mirrored, requires `--allow-shorts`).
+Exit target = the middle band (SMA); stop = entry extended by
+`--stop-band-frac` (default 0.5) x the *current* band width — purely
+band-derived, no ATR. Forced flatten at day rollover, same discipline as
+the other day-scoped bots.
+
+### CLI flags
+
+| Flag | Description |
+|---|---|
+| `--backtest N` | Backtest the last N candles (paginated). |
+| `--live` / `--demo` | Real orders vs. OKX sandbox. Requires the three `OKX_*` env vars. |
+| `--allow-shorts` | Enable short entries (spot can't short; swap markets only). |
+| `--timeframe TF` | Override timeframe (default `15m`). |
+| `--symbol SYMBOL` | Override traded symbol (default `BTC/USDT`). |
+| `--bb-len` / `--bb-std` | Override the Bollinger period/std-dev multiple (default 20 / 2.0). |
+| `--stop-band-frac` | Override stop distance as a fraction of band width (default 0.5). |
+
+Run `python okx_bollinger_bot.py --help` for the authoritative, up-to-date list.
+
+### Status — worst performer of the six, and a genuinely useful reason why
+
+| Symbol | Trades (31d) | Win rate | Profit factor | Exit breakdown (tp/stop/day_close) |
+|---|---|---|---|---|
+| BTC/USDT | 64 | 17.2% | 0.06 | 36 / 22 / 6 |
+| ETH/USDT | 69 | 23.2% | 0.20 | 40 / 21 / 8 |
+| SOL/USDT | 70 | 24.3% | 0.16 | 35 / 30 / 5 |
+
+Removing every filter (as asked) makes this by far the highest-frequency
+bot here — 64-70 trades in 31 days vs. single digits for the pivot bot.
+The revealing detail: **`tp` (target-reached) exits outnumber actual wins
+in every single run** — e.g. BTC hit its target 36 times but only won
+~11 trades (17.2% of 64). That means most "successful" mean-reversion
+trades — price genuinely did return to the middle band as predicted —
+still net a LOSS once fees are subtracted, because the SMA target is often
+too small a move to clear the ~0.20-0.25% round-trip cost. This is the
+same fee-vs-target-size problem as `okx_scalper_bot.py`, arrived at from a
+completely different angle (no cost filter here, just an unfiltered
+BB touch-and-reclaim) — reinforcing that it's a real, recurring constraint
+on OKX spot, not a one-off. Do not run `--paper`/`--demo`/`--live` on this.
