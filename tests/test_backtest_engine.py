@@ -157,6 +157,77 @@ class TestEndOfDataHandling:
         assert result.final_equity == pytest.approx(1000.0 + t.pnl)
 
 
+class TestTrailingIndicatorExit:
+    def _setup(self, cross_below_at: int, reclaim: bool = False):
+        """A long entry signal, then an indicator line (a flat 'support'
+        column at 97) that price eventually closes below. Margins kept
+        tight — low ~96, indicator 97 — so only the CLOSE crosses the
+        trailing-indicator level without the bar's low also breaching the
+        much-wider ATR-based hard-stop safety net (tested separately
+        below); since low <= close always, a bar whose close is far below
+        the indicator would also breach a tight hard stop, which isn't
+        what this specific test is isolating."""
+        rows = baseline_bars(20)
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10, "long": True})
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10, "long": False})
+        for i in range(15):
+            if i == cross_below_at:
+                rows.append({"open": 99, "high": 99.5, "low": 96, "close": 96.5, "volume": 10, "long": False})
+            elif reclaim and i == cross_below_at + 2:
+                rows.append({"open": 96.5, "high": 101, "low": 96, "close": 99, "volume": 10, "long": False})
+            else:
+                rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10, "long": False})
+        df = make_df(rows)
+        df["long"] = df.get("long", False).fillna(False)
+        df["support_line"] = 97.0  # flat trailing-indicator reference
+        return compute_volatility(df)
+
+    def test_exit_fires_one_bar_after_the_close_crosses_the_indicator(self):
+        df = self._setup(cross_below_at=3)
+        stop_target = StopTargetConfig(method="trailing_indicator", trailing_indicator_col="support_line",
+                                        atr_mult_stop=1.5)
+        result = run_backtest(df, "long", None, RiskLimits(cooldown_bars=0), stop_target)
+        assert len(result.trades) == 1
+        t = result.trades[0]
+        assert t.exit_reason == "trailing_indicator"
+
+    def test_does_not_exit_while_price_stays_above_the_indicator(self):
+        df = self._setup(cross_below_at=999)  # never actually crosses
+        stop_target = StopTargetConfig(method="trailing_indicator", trailing_indicator_col="support_line",
+                                        atr_mult_stop=1.5)
+        result = run_backtest(df, "long", None, RiskLimits(cooldown_bars=0), stop_target)
+        # with no trailing-indicator exit and no hard-stop hit, it rides to end_of_data
+        assert len(result.trades) == 1
+        assert result.trades[0].exit_reason == "end_of_data"
+
+    def test_hard_atr_stop_still_applies_as_a_safety_net(self):
+        rows = baseline_bars(20)
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10, "long": True})
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10, "long": False})
+        # crashes hard on the very next bar, well past any reasonable ATR stop,
+        # WITHOUT the close itself crossing the (much lower) indicator line
+        rows.append({"open": 100, "high": 100, "low": 50, "close": 96, "volume": 10, "long": False})
+        rows.extend({"open": 96, "high": 97, "low": 95, "close": 96, "volume": 10, "long": False}
+                     for _ in range(10))
+        df = make_df(rows)
+        df["long"] = df.get("long", False).fillna(False)
+        df["support_line"] = 10.0  # far below - would never trigger a trailing-indicator exit
+        df = compute_volatility(df)
+        stop_target = StopTargetConfig(method="trailing_indicator", trailing_indicator_col="support_line",
+                                        atr_mult_stop=1.5)
+        result = run_backtest(df, "long", None, RiskLimits(cooldown_bars=0), stop_target)
+        assert len(result.trades) == 1
+        assert result.trades[0].exit_reason == "stop"
+
+    def test_requires_trailing_indicator_col(self):
+        rows = baseline_bars(5)
+        df = make_df(rows)
+        df["long"] = False
+        df = compute_volatility(df)
+        with pytest.raises(ValueError):
+            run_backtest(df, "long", None, RiskLimits(), StopTargetConfig(method="trailing_indicator"))
+
+
 class TestMetricsSanity:
     def test_no_trades_returns_zeroed_result(self):
         rows = baseline_bars(20)

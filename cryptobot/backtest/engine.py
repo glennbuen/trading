@@ -17,10 +17,27 @@ safety minimum (same "wider of structural distance vs ATR floor" pattern
 used throughout this project's earlier bots); "atr" method is a plain ATR
 multiple.
 
-Take-profit (spec §19): fixed R-multiple only, for now. The spec lists
-five TP approaches and says to backtest each — building all five before
-any of them has been evaluated even once would repeat the over-building
-this project has deliberately avoided elsewhere. Deferred, not forgotten.
+"trailing_indicator" method (added for "The Forbidden Book" strategy
+set): exit is a SIGNAL, not a fixed price — close crossing to the wrong
+side of a per-bar indicator column (e.g. ALMA), re-evaluated every bar,
+the level itself moving over time rather than being fixed at entry. Most
+of that book's strategies use exactly this ("exit kapag nabreak ng candle
+ang ALMA... at nagstay sya dun"), which the fixed-distance atr/structure
+methods can't faithfully express. Fires with the SAME next-bar-open
+discipline as entries: the cross is detected on bar i's close, the
+position closes at bar i+1's open, via a `pending_exit` flag on the
+position dict, not an immediate same-bar fill (which would assume a fill
+at a price you can't yet know is a signal). A hard ATR-floor stop is
+still carried underneath, checked every bar, as a safety net the book's
+own rules don't specify but this project's risk-management standard
+(spec §16) doesn't skip regardless of which strategy is running.
+
+Take-profit (spec §19): fixed R-multiple only for the atr/structure
+methods; trailing_indicator has no separate take-profit — its exit rule
+IS the whole strategy's exit rule, per the book. The spec lists five TP
+approaches and says to backtest each — building all five before any of
+them has been evaluated even once would repeat the over-building this
+project has deliberately avoided elsewhere. Deferred, not forgotten.
 
 A position still open when the data runs out is force-closed at the last
 available bar's close, labeled exit_reason="end_of_data" — NOT silently
@@ -61,11 +78,12 @@ class BacktestCosts:
 
 @dataclass
 class StopTargetConfig:
-    method: str = "atr"          # "atr" | "structure"
+    method: str = "atr"          # "atr" | "structure" | "trailing_indicator"
     atr_col: str = "vlt_atr"
     atr_mult_stop: float = 1.5
     target_r_multiple: float = 2.0
     structure_stop_col: str | None = None  # required if method == "structure"
+    trailing_indicator_col: str | None = None  # required if method == "trailing_indicator"
 
 
 def _compute_stop(signal_row: pd.Series, entry_price: float, side: str,
@@ -87,6 +105,8 @@ def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | N
                   costs: BacktestCosts = None, starting_equity: float = 1000.0) -> BacktestResult:
     if stop_target.method == "structure" and not stop_target.structure_stop_col:
         raise ValueError("structure_stop_col is required when stop_target.method == 'structure'")
+    if stop_target.method == "trailing_indicator" and not stop_target.trailing_indicator_col:
+        raise ValueError("trailing_indicator_col is required when stop_target.method == 'trailing_indicator'")
     costs = costs or BacktestCosts()
 
     d = df.reset_index(drop=True)
@@ -104,20 +124,44 @@ def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | N
         rm.mark_time(dt)
 
         if position is not None:
-            hit_stop = (row["low"] <= position["stop"] if position["side"] == "long"
-                        else row["high"] >= position["stop"])
-            hit_tp = (row["high"] >= position["tp"] if position["side"] == "long"
-                      else row["low"] <= position["tp"])
             exit_price, reason = None, None
-            if hit_stop:
-                exit_price, reason = position["stop"], "stop"
-            elif hit_tp:
-                exit_price, reason = position["tp"], "tp"
+
+            if stop_target.method == "trailing_indicator":
+                if position.get("pending_exit"):
+                    # The cross was detected on the PRIOR bar's close;
+                    # fill now, at THIS bar's open — same next-bar-open
+                    # discipline as entries, not an immediate same-bar fill.
+                    exit_price = row["open"]
+                    reason = "trailing_indicator"
+                else:
+                    hit_stop = (row["low"] <= position["stop"] if position["side"] == "long"
+                                else row["high"] >= position["stop"])
+                    if hit_stop:
+                        exit_price, reason = position["stop"], "stop"
+                    else:
+                        indicator_val = row.get(stop_target.trailing_indicator_col)
+                        if indicator_val is not None and pd.notna(indicator_val):
+                            crossed = (row["close"] < indicator_val if position["side"] == "long"
+                                       else row["close"] > indicator_val)
+                            if crossed:
+                                position["pending_exit"] = True
+            else:
+                hit_stop = (row["low"] <= position["stop"] if position["side"] == "long"
+                            else row["high"] >= position["stop"])
+                hit_tp = (row["high"] >= position["tp"] if position["side"] == "long"
+                          else row["low"] <= position["tp"])
+                if hit_stop:
+                    exit_price, reason = position["stop"], "stop"
+                elif hit_tp:
+                    exit_price, reason = position["tp"], "tp"
 
             if exit_price is not None:
                 if reason == "stop":
                     slip_dir = -1 if position["side"] == "long" else 1
                     exit_price = exit_price * (1 + slip_dir * costs.stop_slippage_pct / 100)
+                elif reason == "trailing_indicator":
+                    slip_dir = -1 if position["side"] == "long" else 1
+                    exit_price = exit_price * (1 + slip_dir * costs.entry_slippage_pct / 100)
                 direction = 1 if position["side"] == "long" else -1
                 gross = (exit_price - position["entry"]) * direction * position["size"]
                 fees = (position["entry"] + exit_price) * position["size"] * (costs.taker_fee_pct / 100)
@@ -163,7 +207,7 @@ def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | N
                             rm.register_position_opened(notional_pct)
                             position = {
                                 "side": side, "entry": entry_price, "size": size,
-                                "stop": stop_price, "tp": tp_price,
+                                "stop": stop_price, "tp": tp_price, "pending_exit": False,
                                 "risk_amount": rm.equity * (risk_limits.risk_per_trade_pct / 100),
                                 "entry_dt": next_row["dt"], "entry_bar": i + 1,
                                 "notional_pct": notional_pct,
