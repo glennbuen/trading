@@ -45,6 +45,22 @@ This is the single most load-bearing property of the whole system, so it's docum
 
 `pytest tests/` — 33 tests as of Phase 2, covering: candle-shape correctness on hand-built synthetic candles, swing/trend classification on a hand-built zigzag series with known anchor points, the OHLCV backward-pagination logic against a fake exchange (including a regression test for the forward-pagination bug found and fixed earlier in this project — see `okx_*.py` commit history), and the truncation-invariance no-lookahead checks above. No test hits the network; the exchange tests use `FakeCcxtExchange`, a controllable in-memory stand-in.
 
-## What Phase 2 does NOT include yet
+## Phase 3 — volume + liquidity engines
 
-Volume engine, liquidity engine (equal highs/lows, sweeps — builds on `market_structure.resistance/support`), any of the 4 strategies, signal scoring, risk manager, backtest engine, regime detection, BTC-context monitoring, journal, dashboard. See the repo README's roadmap table for the phase order.
+`engines/volume.py` and `engines/liquidity.py` followed the same rules above. One finding worth recording: the first version of `liquidity.swept_and_reclaimed_above/below` checked only "was price below the level within the last N bars" — but since a bar's low is always ≤ its close, a price sitting below a level for several consecutive bars re-satisfies that check every bar, making the recency window meaningless. Fixed by requiring the dip to be **fresh** (the prior bar's close was still at/above the level) — caught by `tests/test_liquidity.py`, not by inspection.
+
+`bars_since()` was extracted to `cryptobot/utils.py` when `liquidity.py` needed the exact logic already private to `price_action.py` — fixed before the duplication recurred, per the Phase 1 audit's finding about the original 7 bots.
+
+## Phase 4 — first strategy: `strategies/breakout_retest.py`
+
+Unlike the engines (one row → one deterministic value), Breakout+Retest spans a variable number of bars between the breakout and its confirmation. It's implemented as a single vectorized pass using `groupby(episode_id).cummax()/.cumsum()` rather than a bar-by-bar Python loop:
+
+- `episode_id = breakout_event.cumsum()` — increments every time a new qualifying breakout occurs, partitioning the timeline into episodes.
+- `retested_in_episode = retest_touch.groupby(episode_id).cummax()` — True from the first valid retest onward, resets to False at the next episode. `cummax` on a boolean is "any so far," and like every other technique here it only ever looks backward within the group.
+- `is_first_in_episode = confirmation_raw.groupby(episode_id).cumsum() == 1` — ensures entry fires exactly once per setup, not on every subsequent new high.
+
+A rejection candle at the retest (`price_action.is_bullish_rejection`/`is_bearish_rejection`) is recorded as extra context but deliberately **not required** to fire entry — the lesson from the 7 standalone bots earlier in this project (`okx_ema_rsi_bot.py` especially) is that stacking too many simultaneous required conditions onto an already multi-stage pattern makes it vanishingly rare. Smoke-tested against real OKX data: 19-20 long signals over ~2.5 months of 1h BTC/ETH, 11 over 5+ years of daily BTC — a sane frequency, not the 0-2-signals-in-years problem or the 60+-trades-a-month fee-bleed problem seen previously.
+
+## What's not built yet
+
+Signal scoring, risk manager, backtest engine (with walk-forward), regime detection, BTC-context monitoring, journal, dashboard, and the remaining 3 strategies (plain breakout, trend pullback, liquidity sweep reversal). See the repo README's roadmap table for the phase order. Breakout+Retest has NOT been backtested yet — the signal counts above are frequency sanity checks only, not a performance claim.
