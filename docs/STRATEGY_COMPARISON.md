@@ -19,7 +19,7 @@ highest number on the list.
 A strategy is ranked by how far up this ladder it actually got, not by
 how good its headline number looks before that scrutiny is applied.
 
-## Master ranking — all 19 strategies tested
+## Master ranking — all 20 strategies tested
 
 ### Tier 1 — Genuine lead (cleared every rung)
 
@@ -110,14 +110,21 @@ any strategy (0.39, 0/7 windows profitable). Full reports:
 |---|---|---|
 | PAPA | 0.65 | 0.14 |
 | SWAG (1h) | 0.52 | 0.53 |
+| 4-Hour Range Scalp | 0.43 | 0.40 |
 | FISHBALL | 0.03 | 0.33 |
 | Day Trading (ALMA) | 0.18 | 0.08 |
 
 FISHBALL and Day Trading show the fee-bleed-from-overtrading signature
 (30m/15m timeframes). PAPA's own stated design goal (filtering out
 explosive moves) may simply not translate to crypto's baseline
-volatility. Full reports: `docs/EVALUATION_FORBIDDEN_BOOK.md`,
-`EVALUATION_SWAG.md`.
+volatility. **4-Hour Range Scalp is worth singling out as the cleanest,
+best-sampled rejection in this entire tier** — 138/129 trades spread
+evenly across 12 walk-forward windows per symbol (5-19 trades every
+window, never a thin/artifact window), so this isn't "not enough data
+to tell" the way several other results in this project are — it's a
+confident, well-evidenced negative result. Full reports:
+`docs/EVALUATION_FORBIDDEN_BOOK.md`, `EVALUATION_SWAG.md`,
+`EVALUATION_FOUR_HOUR_RANGE_SCALP.md`.
 
 ### Tier 8 — Near-zero or zero real-data signal count, nothing meaningful to evaluate
 
@@ -132,7 +139,7 @@ Full reports: `docs/EVALUATION_THREE_STEP_FORMULA.md`,
 
 ## Overall verdict
 
-**19 strategies tested, exactly one — TITA — has cleared every rung of
+**20 strategies tested, exactly one — TITA — has cleared every rung of
 this project's own credibility ladder.** SPYFRAT Core System is the only
 other strategy to reach the second rung, and it stops there. Every other
 result this project has produced, no matter how high its raw PF looked
