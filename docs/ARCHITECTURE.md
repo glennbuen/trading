@@ -108,6 +108,14 @@ This does **not** change how Breakout+Retest decides to enter a trade — that l
 
 A natural follow-up question this raises — does filtering to score≥70 actually improve the strategy's profit factor? — was **not tested**; that would require re-running the full walk-forward evaluation with the score as an additional gate, which is a new analysis, not part of building the scoring infrastructure itself. Flagged, not answered.
 
+## Strategy 2 of 4 — Breakout (Strategy A), built as a control comparison
+
+`cryptobot/strategies/breakout.py`: same structural-break + volume-confirmation core as Breakout+Retest, but enters ON the breakout with no wait for a retest, plus an explicit consolidation-before-breakout filter (spec §10's "reject weak breakouts", made concrete via a rolling ATR percentile-rank check rather than left vague). Built specifically to answer: does Breakout+Retest's retest requirement actually help, or was it just filtering trades either way?
+
+One real bug found and fixed via testing before real-data evaluation: the initial percentile-rank formula used `<=` when checking where the current bar's ATR ranks in its trailing window, which on a perfectly flat/tied window counts every value as "at or below" the current one — ranking a completely quiet market at the *top* of its own range instead of the bottom, backwards from what "consolidating" should mean. Fixed with strict `<`, matching the convention already used in this project's earlier standalone bots' adaptive-ATR logic.
+
+**Evaluated the same way as Breakout+Retest** (full report: `docs/EVALUATION_BREAKOUT.md`): worse on 3 of 4 configs (PF 0.51-0.61 vs Breakout+Retest's 0.68-0.88), confirming the retest requirement does real work, not just arbitrary filtering. One config (BTC/USDT 1d) crossed PF 1.2 for the first time in this entire project — but on inspection, driven partly by 100%-win-rate windows with only 1-3 trades each, and the same strategy/parameters on ETH/USDT 1d scored a poor 0.61, the exact "works on one symbol only" pattern this project has flagged as a red flag every time it's appeared. Treated as a lead worth a larger sample and a sensitivity sweep, not a result. **No parameter tuned in response.**
+
 ## What's not built yet
 
-Regime detection, BTC-context monitoring, the full trade journal (beyond the backtest engine's own `rejected_signals` list — already a real instance of spec §31's "record rejected signals too"), dashboard, and the remaining 3 strategies (plain breakout, trend pullback, liquidity sweep reversal). See the repo README's roadmap table for phase order.
+Regime detection, BTC-context monitoring, the full trade journal (beyond the backtest engine's own `rejected_signals` list — already a real instance of spec §31's "record rejected signals too"), dashboard, and 2 of the remaining 3 strategies (trend pullback, liquidity sweep reversal). See the repo README's roadmap table for phase order.
