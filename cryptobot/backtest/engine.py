@@ -97,6 +97,19 @@ class StopTargetConfig:
     structure_stop_col: str | None = None  # required if method == "structure"
     trailing_indicator_col: str | None = None  # required if method == "trailing_indicator"
     exit_signal_col: str | None = None  # required if method == "signal_exit"
+    # Optional, only meaningful with method=="structure": a per-bar column
+    # giving the STRUCTURAL take-profit price (e.g. "recent swing high" for
+    # a long) instead of the usual fixed target_r_multiple. Added for the
+    # "3-step formula" price-action strategy (structure_target.py), whose
+    # own stated exit is "recent highs/lows", not an arbitrary R-multiple —
+    # see backtest/engine.py's module docstring for why fixed R-multiple
+    # was the only TP approach built until a strategy actually needed a
+    # different one. When set, min_rr (if also set) REJECTS the signal
+    # (recorded in rejected_signals, not silently skipped) whenever the
+    # resulting reward:risk ratio falls below it — the strategy's own
+    # explicit selectivity rule, not a backtest-engine embellishment.
+    structure_target_col: str | None = None
+    min_rr: float | None = None
 
 
 def _compute_stop(signal_row: pd.Series, entry_price: float, side: str,
@@ -218,19 +231,35 @@ def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | N
                     stop_price = _compute_stop(row, entry_price, side, stop_target)
                     risk_dist = abs(entry_price - stop_price)
                     if risk_dist > 0:
-                        tp_price = (entry_price + risk_dist * stop_target.target_r_multiple if side == "long"
-                                    else entry_price - risk_dist * stop_target.target_r_multiple)
-                        size = rm.position_size(entry_price, stop_price)
-                        if size > 0:
-                            notional_pct = (size * entry_price / rm.equity) * 100
-                            rm.register_position_opened(notional_pct)
-                            position = {
-                                "side": side, "entry": entry_price, "size": size,
-                                "stop": stop_price, "tp": tp_price, "pending_exit": False,
-                                "risk_amount": rm.equity * (risk_limits.risk_per_trade_pct / 100),
-                                "entry_dt": next_row["dt"], "entry_bar": i + 1,
-                                "notional_pct": notional_pct,
-                            }
+                        structural_target = (row.get(stop_target.structure_target_col)
+                                              if stop_target.structure_target_col else None)
+                        has_valid_structural_target = (
+                            structural_target is not None and pd.notna(structural_target)
+                            and ((side == "long" and structural_target > entry_price)
+                                 or (side == "short" and structural_target < entry_price))
+                        )
+                        if has_valid_structural_target:
+                            tp_price = structural_target
+                        else:
+                            tp_price = (entry_price + risk_dist * stop_target.target_r_multiple if side == "long"
+                                        else entry_price - risk_dist * stop_target.target_r_multiple)
+
+                        rr = abs(tp_price - entry_price) / risk_dist
+                        if stop_target.min_rr is not None and rr < stop_target.min_rr:
+                            rejected_signals.append({"dt": dt, "side": side, "reason": "rr_below_min",
+                                                      "rr": rr, "min_rr": stop_target.min_rr})
+                        else:
+                            size = rm.position_size(entry_price, stop_price)
+                            if size > 0:
+                                notional_pct = (size * entry_price / rm.equity) * 100
+                                rm.register_position_opened(notional_pct)
+                                position = {
+                                    "side": side, "entry": entry_price, "size": size,
+                                    "stop": stop_price, "tp": tp_price, "pending_exit": False,
+                                    "risk_amount": rm.equity * (risk_limits.risk_per_trade_pct / 100),
+                                    "entry_dt": next_row["dt"], "entry_bar": i + 1,
+                                    "notional_pct": notional_pct,
+                                }
 
     # A position still open when the data runs out must not be silently
     # dropped — that would understate fees/risk and leave the equity

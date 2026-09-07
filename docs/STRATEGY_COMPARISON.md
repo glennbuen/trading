@@ -19,7 +19,7 @@ highest number on the list.
 A strategy is ranked by how far up this ladder it actually got, not by
 how good its headline number looks before that scrutiny is applied.
 
-## Master ranking — all 18 strategies tested
+## Master ranking — all 19 strategies tested
 
 ### Tier 1 — Genuine lead (cleared every rung)
 
@@ -109,26 +109,30 @@ any strategy (0.39, 0/7 windows profitable). Full reports:
 | Strategy | BTC PF | ETH PF |
 |---|---|---|
 | PAPA | 0.65 | 0.14 |
+| SWAG (1h) | 0.52 | 0.53 |
 | FISHBALL | 0.03 | 0.33 |
 | Day Trading (ALMA) | 0.18 | 0.08 |
 
 FISHBALL and Day Trading show the fee-bleed-from-overtrading signature
 (30m/15m timeframes). PAPA's own stated design goal (filtering out
 explosive moves) may simply not translate to crypto's baseline
-volatility. Full report: `docs/EVALUATION_FORBIDDEN_BOOK.md`.
+volatility. Full reports: `docs/EVALUATION_FORBIDDEN_BOOK.md`,
+`EVALUATION_SWAG.md`.
 
-### Tier 8 — Zero real-data signals, nothing to evaluate
+### Tier 8 — Near-zero or zero real-data signal count, nothing meaningful to evaluate
 
 | Strategy | Result |
 |---|---|
+| 3-Step Formula | 0-8 trades per config (BTC/ETH, 1h/1d) — a strict, faithful reading of its own RR≥2.5 rule prunes nearly all candidates; a diagnostic run with that filter removed shows the underlying setup is negative-expectancy anyway (PF 0.89/0.72) |
 | Bebemon | 0 signals, both symbols — expected, given the module's own caveat that the deck gives no numeric definition |
 | Ceiling/Follow-Through | 0 signals, both symbols — expected, given crypto has no PSE-style price-ceiling mechanic |
 
-Full report: `docs/EVALUATION_SPYFRAT.md`.
+Full reports: `docs/EVALUATION_THREE_STEP_FORMULA.md`,
+`EVALUATION_SPYFRAT.md`.
 
 ## Overall verdict
 
-**18 strategies tested, exactly one — TITA — has cleared every rung of
+**19 strategies tested, exactly one — TITA — has cleared every rung of
 this project's own credibility ladder.** SPYFRAT Core System is the only
 other strategy to reach the second rung, and it stops there. Every other
 result this project has produced, no matter how high its raw PF looked

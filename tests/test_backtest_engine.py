@@ -276,3 +276,50 @@ class TestMetricsSanity:
         df = compute_volatility(df)
         with pytest.raises(ValueError):
             run_backtest(df, "long", None, RiskLimits(), StopTargetConfig(method="structure"))
+
+
+class TestStructureTargetAndMinRR:
+    def _setup(self, target_price: float):
+        rows = baseline_bars(20)
+        # entry ~100, structural stop ~95 (risk_dist ~5), structural target given
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10,
+                     "long": True, "stop_lvl": 95.0, "target_lvl": target_price})
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10,
+                     "long": False, "stop_lvl": np.nan, "target_lvl": np.nan})
+        # price runs straight to whatever target was set, without hitting the stop
+        rows.extend({"open": 100, "high": 300, "low": 99, "close": 250, "volume": 10,
+                     "long": False, "stop_lvl": np.nan, "target_lvl": np.nan} for _ in range(5))
+        df = make_df(rows)
+        df["long"] = df["long"].fillna(False)
+        return compute_volatility(df)
+
+    def test_uses_structural_target_price_when_rr_is_sufficient(self):
+        df = self._setup(target_price=115.0)  # reward ~15 vs risk ~5 => RR ~3
+        result = run_backtest(df, "long", None, RiskLimits(cooldown_bars=0),
+                               StopTargetConfig(method="structure", structure_stop_col="stop_lvl",
+                                                 structure_target_col="target_lvl", min_rr=2.5))
+        assert len(result.trades) == 1
+        assert result.trades[0].exit_price == pytest.approx(115.0)
+        assert result.trades[0].exit_reason == "tp"
+
+    def test_rejects_signal_when_rr_is_below_min(self):
+        df = self._setup(target_price=105.0)  # reward ~5 vs risk ~5 => RR ~1, below 2.5
+        result = run_backtest(df, "long", None, RiskLimits(cooldown_bars=0),
+                               StopTargetConfig(method="structure", structure_stop_col="stop_lvl",
+                                                 structure_target_col="target_lvl", min_rr=2.5))
+        assert len(result.trades) == 0
+        assert any(r["reason"] == "rr_below_min" for r in result.rejected_signals)
+
+    def test_falls_back_to_fixed_r_multiple_when_no_valid_structural_target(self):
+        df = self._setup(target_price=np.nan)
+        result = run_backtest(df, "long", None, RiskLimits(cooldown_bars=0),
+                               StopTargetConfig(method="structure", structure_stop_col="stop_lvl",
+                                                 structure_target_col="target_lvl",
+                                                 target_r_multiple=3.0, min_rr=2.5))
+        # target_r_multiple (3.0) clears min_rr (2.5) on its own, so the
+        # fallback fixed-R target is used (not the missing structural
+        # target column) and the trade is taken.
+        assert len(result.trades) == 1
+        trade = result.trades[0]
+        risk_dist = abs(trade.entry_price - trade.stop_price)
+        assert trade.exit_price == pytest.approx(trade.entry_price + 3.0 * risk_dist, rel=1e-3)
