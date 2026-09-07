@@ -79,6 +79,41 @@ class TestRiskManagerLimits:
         allowed, _ = rm.can_open_position(later, bar_index=11)
         assert allowed
 
+    def test_persistent_losing_streak_keeps_halt_continuously_rearmed(self):
+        # Regression test for the bug found via Phase 6's evaluation of
+        # Breakout+Retest (docs/EVALUATION_BREAKOUT_RETEST.md): a losing
+        # streak that continues past the halt's own expiry must stay
+        # halted, not "look safe" again just because the counter happened
+        # to reset on the earlier trigger.
+        rm = RiskManager(RiskLimits(max_consecutive_losses=3, halt_cooldown_hours=1,
+                                     max_daily_loss_pct=100), starting_equity=1000)
+        t0 = pd.Timestamp("2026-01-01T00:00:00Z")
+        for i in range(3):
+            rm.register_position_closed(pnl=-1, dt=t0, bar_index=i, notional_pct_of_equity=5)
+        assert rm.halted_until == t0 + pd.Timedelta(hours=1)
+
+        # A 4th consecutive loss arrives AFTER the first halt has already
+        # expired — simulating a sparse-signal timeframe where the next
+        # signal doesn't land inside the original halt window.
+        t1 = t0 + pd.Timedelta(hours=2)
+        rm.register_position_closed(pnl=-1, dt=t1, bar_index=10, notional_pct_of_equity=5)
+        allowed, reason = rm.can_open_position(t1, bar_index=11)
+        assert not allowed
+        assert reason == "circuit_breaker_halt"
+        assert rm.halted_until == t1 + pd.Timedelta(hours=1)  # re-armed by the 4th loss
+
+    def test_win_ends_a_persistent_losing_streak(self):
+        rm = RiskManager(RiskLimits(max_consecutive_losses=3, halt_cooldown_hours=1,
+                                     max_daily_loss_pct=100, cooldown_bars=0), starting_equity=1000)
+        t0 = pd.Timestamp("2026-01-01T00:00:00Z")
+        for i in range(3):
+            rm.register_position_closed(pnl=-1, dt=t0, bar_index=i, notional_pct_of_equity=5)
+        t1 = t0 + pd.Timedelta(hours=2)  # past the halt's expiry
+        rm.register_position_closed(pnl=+5, dt=t1, bar_index=10, notional_pct_of_equity=5)
+        assert rm.consecutive_losses == 0
+        allowed, reason = rm.can_open_position(t1, bar_index=11)
+        assert allowed, reason
+
     def test_a_win_resets_consecutive_loss_counter(self):
         rm = RiskManager(RiskLimits(max_consecutive_losses=3, max_daily_loss_pct=100), starting_equity=1000)
         dt = pd.Timestamp("2026-01-01T00:00:00Z")

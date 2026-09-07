@@ -15,6 +15,21 @@ like the original 7 bots used — a deliberate improvement: bar-count
 heuristics silently misbehave the moment a timeframe doesn't evenly
 divide a day, timestamp-based boundaries don't have that failure mode and
 work identically in backtest and live.
+
+CONSECUTIVE-LOSS HALT DESIGN (fixed after a real bug found via Phase 6's
+evaluation of Breakout+Retest — see docs/EVALUATION_BREAKOUT_RETEST.md):
+the loss counter is NOT reset to 0 when a halt triggers. It resets ONLY
+on a win. This matters because the halt only actually blocks a signal
+that happens to land inside its cooldown window — on a sparse-signal
+timeframe, the next attempt often arrives after the halt has already
+expired. The original version reset the counter on every trigger
+regardless, so a losing streak that continued past the halt's expiry
+would start counting from zero again and "look safe" after exactly
+`max_consecutive_losses` losses, even though nothing about the adverse
+conditions had changed. Not resetting on trigger means every qualifying
+loss re-arms (extends) the halt, so a persistent losing streak stays
+continuously halted until an actual win breaks it — not just until the
+counter happens to tick back down to zero.
 """
 
 from dataclasses import dataclass, field
@@ -134,8 +149,19 @@ class RiskManager:
         if pnl <= 0:
             self.consecutive_losses += 1
             if self.consecutive_losses >= self.limits.max_consecutive_losses:
+                # Re-arm (extend) the halt on EVERY qualifying loss once at
+                # or above threshold, not just the first — see the class
+                # docstring's note on why NOT resetting the counter here
+                # matters. If we reset to 0 on trigger, a losing streak
+                # that continues past the halt's own expiry would start a
+                # fresh count from zero and "look safe" again after
+                # exactly `max_consecutive_losses` losses, even though the
+                # adverse conditions never actually changed — found via
+                # Phase 6's evaluation (docs/EVALUATION_BREAKOUT_RETEST.md):
+                # an 11-loss streak occurred with only 1 halt rejection
+                # recorded, because sparse signals meant most re-triggers
+                # never actually landed inside a still-active halt window.
                 self.halted_until = dt + pd.Timedelta(hours=self.limits.halt_cooldown_hours)
-                self.consecutive_losses = 0
         else:
             self.consecutive_losses = 0
 

@@ -6,10 +6,16 @@ Walk-forward, non-overlapping windows, real OKX history (paginated),
 realistic costs baked into every trade (0.10% taker fee/side, 0.05% entry
 slippage, 0.4% stop slippage).
 
+**Updated after the risk-manager fix below (originally run, then re-run
+after fixing the consecutive-loss halt bug this evaluation found — see
+Q11). Headline numbers are essentially unchanged; the fix improves risk
+control, not the strategy's underlying edge, which is exactly what a risk
+manager fix should and shouldn't do.**
+
 | Config | Windows | Trades | Win% | PF | Avg R |
 |---|---|---|---|---|---|
-| BTC/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 122 | 35.3% | 0.63 | -0.185 |
-| ETH/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 121 | 39.7% | 0.88 | -0.072 |
+| BTC/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 117 | 37.6% | 0.68 | -0.154 |
+| ETH/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 118 | 39.8% | 0.88 | -0.068 |
 | BTC/USDT 1d (3000 candles, 8.2yr, 180d windows) | 16 | 22 | 36.4% | 1.01 | 0.009 |
 | ETH/USDT 1d (3000 candles, 8.2yr, 180d windows) | 16 | 21 | 28.6% | 0.73 | -0.207 |
 
@@ -35,7 +41,9 @@ slippage, 0.4% stop slippage).
 
 **10. After realistic fees and slippage?** Yes, throughout — every trade in every number above already includes the 0.10%/side taker fee, 0.05% entry slippage, and 0.4% stop-fill slippage. Total fees: $60.33 (BTC 1h) and $59.23 (ETH 1h) against $1,000-per-window starting capital — a real but not overwhelming drag (~0.8-0.9% of aggregate window capital), much smaller than the fee-bleed seen in this project's earlier high-frequency bots, because Breakout+Retest simply trades far less often.
 
-**11. Worst losing streak?** **11 consecutive losses (ETH 1h, the 2026-04-06→05-21 window)**, 8 consecutive (BTC 1h). This surfaced a genuine risk-manager finding, not just a bad-luck streak: only **one** `circuit_breaker_halt` rejection occurred in that entire window, even though `max_consecutive_losses=3` is configured. Why: `RiskManager` resets its loss counter the moment it triggers a halt, but the halt only blocks a signal that happens to land *inside* the 24h halt window. On 1h data with signals spaced further apart than that, the next attempt often arrives after the halt has already expired — so the breaker "fires" (resets the counter) without actually preventing anything, and losses keep accumulating across repeated halt cycles. **This is a real limitation of the current risk manager, found by this evaluation, not fixed here** — a time-window-aware or streak-persistent halt design would close it, but that's follow-up work, not part of Phase 6's scope.
+**11. Worst losing streak?** **FIXED, post-evaluation.** Originally 11 consecutive losses (ETH 1h, the 2026-04-06→05-21 window) and 8 (BTC 1h), with only **one** `circuit_breaker_halt` rejection in that entire 11-loss window despite `max_consecutive_losses=3` being configured. Root cause: `RiskManager` reset its loss counter the moment it triggered a halt, but the halt only blocks a signal that happens to land *inside* the 24h halt window — on 1h data with signals spaced further apart than that, the next attempt often arrived after the halt had already expired, so the breaker "fired" (resetting the counter) without actually preventing anything, and losses kept accumulating across repeated halt cycles that each individually looked like they'd resolved the problem.
+
+**Fixed in `cryptobot/risk/risk_manager.py`**: the loss counter is no longer reset when a halt triggers — only a win resets it. Every qualifying loss while at/above the threshold now re-arms (extends) the halt, so a persistent losing streak stays continuously halted until an actual win breaks it. Verified directly: re-running the exact ETH 1h window that produced the 11-loss streak now shows 3 halt rejections (up from 1) and the worst streak across the whole ETH 1h evaluation dropped from 11 to 10; BTC 1h dropped from 8 to 6. Regression tests added (`test_persistent_losing_streak_keeps_halt_continuously_rearmed`, `test_win_ends_a_persistent_losing_streak`). This did not meaningfully change the profitability verdict below — a risk-manager fix should improve protection, not manufacture edge, and it didn't.
 
 **12. What should stop the bot from trading?** Given the above, the honest answer right now is: **it shouldn't start.** No config clears the profitability bar this project has held every strategy to, out-of-sample consistency is weak everywhere, and there's a known, unaddressed gap in the consecutive-loss protection that this exact strategy's ETH 1h run exposed. The daily/weekly loss limits and volatility-spike-style guards remain sound as *general* safety nets for whatever strategy eventually clears validation, but they don't rescue this specific result.
 
@@ -44,6 +52,6 @@ slippage, 0.4% stop slippage).
 **There is currently insufficient evidence that Breakout+Retest has a reliable edge on BTC/USDT or ETH/USDT, at 1h or 1d, with these parameters.** Per spec §41, that is treated here as an acceptable, useful result — not a failure to fix by re-running with different numbers. No parameter was tuned in response to these results, and none should be, on the same reasoning applied to every one of the 7 standalone bots and every prior phase of this build: fitting parameters until a backtest looks good is the specific failure mode this whole project has been built to avoid. Do not proceed to paper trading with this strategy/config.
 
 **Real, reusable findings from this evaluation, independent of the profitability verdict:**
-- The risk manager's consecutive-loss circuit breaker is materially weaker on sparse-signal timeframes than its parameter name implies (see Q11) — worth fixing before any strategy reaches live trading.
+- The risk manager's consecutive-loss circuit breaker was materially weaker on sparse-signal timeframes than its parameter name implied (see Q11) — **found and fixed** during this evaluation, with regression tests, before any strategy reaches live trading.
 - Walk-forward window drawdown is not the same as cumulative multi-window drawdown (see Q3) — the evaluation harness should be extended to chain windows into one continuous curve if this strategy or another is revisited.
 - Parameter sensitivity (Q9) was never run — a real gap for any future go/no-go decision on this or another strategy.
