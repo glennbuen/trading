@@ -143,6 +143,13 @@ class ExchangeProvider:
             all_rows = all_rows[-target_candles:]
         return all_rows
 
+    def fetch_ticker(self, symbol: str) -> dict:
+        """Live quote — used by the paper/live trading loop to get a
+        current fillable price, distinct from `fetch_ohlcv`'s historical
+        candles (whose last row is the most recently CLOSED bar, not a
+        fillable "right now" price)."""
+        return self.exchange.fetch_ticker(symbol)
+
     def fetch_balance(self) -> dict:
         return self.exchange.fetch_balance()
 

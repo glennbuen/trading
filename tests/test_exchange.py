@@ -117,6 +117,18 @@ class TestCredentials:
             ExchangeProvider(exchange_id="okx", live=True, demo=True)
 
 
+class TestFetchTicker:
+    def test_returns_the_underlying_ccxt_tickers_dict(self):
+        class FakeTickerExchange:
+            def fetch_ticker(self, symbol):
+                return {"symbol": symbol, "last": 12345.6}
+
+        provider = ExchangeProvider(exchange_id="okx", live=False, demo=False)
+        provider.exchange = FakeTickerExchange()
+        ticker = provider.fetch_ticker("BTC/USDT")
+        assert ticker["last"] == 12345.6
+
+
 class TestTimeframeConversion:
     def test_known_timeframes(self):
         assert timeframe_to_ms("1m") == 60_000

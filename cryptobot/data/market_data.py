@@ -44,3 +44,11 @@ class MarketDataProvider:
         would be wasteful."""
         raw = self.exchange.fetch_ohlcv(symbol, timeframe, limit=limit)
         return _to_dataframe(raw)
+
+    def get_last_price(self, symbol: str) -> float:
+        """Current live quote — the actual fillable price for the
+        paper/live trading loop, distinct from any OHLCV candle's own
+        close (always historical, at best the most recently CLOSED
+        candle's close)."""
+        ticker = self.exchange.fetch_ticker(symbol)
+        return float(ticker["last"])

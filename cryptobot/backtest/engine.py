@@ -126,6 +126,53 @@ def _compute_stop(signal_row: pd.Series, entry_price: float, side: str,
     return entry_price - dist if side == "long" else entry_price + dist
 
 
+@dataclass
+class EntryDecision:
+    stop_price: float
+    tp_price: float
+    rr: float
+    rejected: bool
+    reject_reason: str | None = None
+
+
+def compute_entry_decision(signal_row: pd.Series, entry_price: float, side: str,
+                            cfg: StopTargetConfig) -> EntryDecision | None:
+    """
+    The stop/target/RR decision for a candidate entry — factored out of
+    run_backtest so this exact logic (not a reimplementation of it) is
+    also what the live/paper trading engine uses
+    (cryptobot/paper_trading/engine.py). A single source of truth for
+    "what does this stop_target config decide", used by both the
+    historical batch simulator and the live incremental one, so paper
+    trading can never silently drift from what was actually backtested.
+
+    Returns None if risk_dist is degenerate (stop == entry) — the caller
+    should skip the signal entirely in that case, same as run_backtest
+    always has.
+    """
+    stop_price = _compute_stop(signal_row, entry_price, side, cfg)
+    risk_dist = abs(entry_price - stop_price)
+    if risk_dist <= 0:
+        return None
+
+    structural_target = signal_row.get(cfg.structure_target_col) if cfg.structure_target_col else None
+    has_valid_structural_target = (
+        structural_target is not None and pd.notna(structural_target)
+        and ((side == "long" and structural_target > entry_price)
+             or (side == "short" and structural_target < entry_price))
+    )
+    if has_valid_structural_target:
+        tp_price = structural_target
+    else:
+        tp_price = (entry_price + risk_dist * cfg.target_r_multiple if side == "long"
+                    else entry_price - risk_dist * cfg.target_r_multiple)
+
+    rr = abs(tp_price - entry_price) / risk_dist
+    rejected = cfg.min_rr is not None and rr < cfg.min_rr
+    return EntryDecision(stop_price=stop_price, tp_price=tp_price, rr=rr,
+                          rejected=rejected, reject_reason="rr_below_min" if rejected else None)
+
+
 def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | None,
                   risk_limits: RiskLimits, stop_target: StopTargetConfig,
                   costs: BacktestCosts = None, starting_equity: float = 1000.0) -> BacktestResult:
@@ -228,26 +275,12 @@ def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | N
                     slip = 1 + (costs.entry_slippage_pct / 100) * (1 if side == "long" else -1)
                     entry_price = next_row["open"] * slip
 
-                    stop_price = _compute_stop(row, entry_price, side, stop_target)
-                    risk_dist = abs(entry_price - stop_price)
-                    if risk_dist > 0:
-                        structural_target = (row.get(stop_target.structure_target_col)
-                                              if stop_target.structure_target_col else None)
-                        has_valid_structural_target = (
-                            structural_target is not None and pd.notna(structural_target)
-                            and ((side == "long" and structural_target > entry_price)
-                                 or (side == "short" and structural_target < entry_price))
-                        )
-                        if has_valid_structural_target:
-                            tp_price = structural_target
-                        else:
-                            tp_price = (entry_price + risk_dist * stop_target.target_r_multiple if side == "long"
-                                        else entry_price - risk_dist * stop_target.target_r_multiple)
-
-                        rr = abs(tp_price - entry_price) / risk_dist
-                        if stop_target.min_rr is not None and rr < stop_target.min_rr:
-                            rejected_signals.append({"dt": dt, "side": side, "reason": "rr_below_min",
-                                                      "rr": rr, "min_rr": stop_target.min_rr})
+                    decision = compute_entry_decision(row, entry_price, side, stop_target)
+                    if decision is not None:
+                        stop_price, tp_price = decision.stop_price, decision.tp_price
+                        if decision.rejected:
+                            rejected_signals.append({"dt": dt, "side": side, "reason": decision.reject_reason,
+                                                      "rr": decision.rr, "min_rr": stop_target.min_rr})
                         else:
                             size = rm.position_size(entry_price, stop_price)
                             if size > 0:
