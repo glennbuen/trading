@@ -43,6 +43,19 @@ Reasons it's still not validated:
 - BTC/USDT 1d still sits below 1.0 (0.84) — the strategy has not actually confirmed on both major assets simultaneously, the same bar every prior exception has failed.
 - No parameter sensitivity has been run on this strategy — unknown whether 1.49 is stable to small changes in Tenkan/Kijun/Senkou-B periods or a lucky landing spot, the same open question every strategy except Breakout+Retest still carries.
 
+## Parameter sensitivity (spec §26) — run, and it found a real problem
+
+Run via `scripts/parameter_sensitivity_ichimoku.py` on ETH/USDT 1d (the config that produced PF 1.49), perturbing each of the four defining parameters ±10%/±20% one at a time:
+
+| Parameter (baseline) | PF range across ±20% | Verdict |
+|---|---|---|
+| `tenkan_period` (9) | 1.06 – 1.49 | Moderate peak at baseline, never collapses below 1.0 |
+| `kijun_period` (26) | **0.65 – 1.49** | **Cliff** — see below |
+| `senkou_b_period` (52) | 1.30 – 1.72 | Stable, actually *improves* off-default |
+| `target_r_multiple` (2.0) | 1.19 – 1.49 | Smooth, no cliff |
+
+**`kijun_period` fails spec §26's own explicit test**: *"If changing a parameter from 1.5 to 1.53 dramatically changes results, flag it as potentially overfit."* Moving Kijun from 26 to 29 bars (+10%, a completely ordinary parameter choice) collapses PF from 1.49 to **0.65** — well below breakeven. Three of the four parameters look reasonably robust in isolation, but Kijun-sen isn't a minor knob here: it also serves as this strategy's stop-loss reference, so this cliff sits at the center of the strategy's actual mechanics, not a peripheral setting.
+
 ## Verdict
 
-**Ichimoku Cross does not have a validated edge either — same conclusion as every strategy tested this session, for the same reason (insufficient evidence, not proof of absence).** It is directionally worse than Breakout+Retest on 1h (PF 0.60/0.54 vs. 0.68/0.88) but its 1d results are the strongest seen in this project, and the BTC/ETH gap is meaningfully narrower than any prior exception. If any single result from this whole session is worth a deeper follow-up (a parameter-sensitivity sweep, a longer/second-symbol check), this is the one — but "worth a closer look" and "validated" remain two different things, and this is still the former. No parameter tuned in response to these results. Do not proceed to paper trading with this strategy as-is.
+**Ichimoku Cross does not have a validated edge — and the parameter-sensitivity sweep specifically undermines the one number (ETH/USDT 1d, PF 1.49) that looked most promising in this entire project.** The `kijun_period` cliff is the clearest overfitting signature found in any strategy tested this session — more diagnostic than the small-sample-window artifacts flagged in every prior strategy's exception, because it shows the result is fragile to an *ordinary* parameter choice, not just thin on trade count. Combined with BTC/USDT 1d never clearing 1.0, three multi-trade PF-0.0 windows, and the 6-month H2-2021 dead zone already noted above, this result should now be read as **less credible than it looked before this test, not more** — exactly why spec §26 asks for this check before trusting any promising number. No parameter tuned in response. Do not proceed to paper trading with this strategy.
