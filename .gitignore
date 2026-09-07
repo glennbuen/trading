@@ -1,10 +1,10 @@
 .env
-bot_state.json
-bot.log
 fng_cache.json
-zeefreaks_state.json
-zeefreaks.log
+*_state.json
+*.log
 __pycache__/
 *.pyc
 venv/
 .venv/
+.pytest_cache/
+*.egg-info/
