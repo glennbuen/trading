@@ -81,14 +81,14 @@ def swing_low_confirmed_value(df: pd.DataFrame, left: int = DEFAULT_LEFT,
     return df["low"].shift(right).where(confirmed)
 
 
-def _last_confirmed(value_at_confirmation: pd.Series) -> pd.Series:
+def last_confirmed_value(value_at_confirmation: pd.Series) -> pd.Series:
     """Forward-fill a sparse 'value at the bar it's confirmed' series so
     every bar sees the latest confirmed value. Backward-only by
     construction (ffill never uses a future row)."""
     return value_at_confirmation.ffill()
 
 
-def _prior_confirmed(value_at_confirmation: pd.Series) -> pd.Series:
+def prior_confirmed_value(value_at_confirmation: pd.Series) -> pd.Series:
     """The confirmed value from ONE confirmation before the latest, i.e.
     what the level was before its most recent update. Used to classify
     higher-high/lower-low style comparisons."""
@@ -103,11 +103,11 @@ def resistance(df: pd.DataFrame, left: int = DEFAULT_LEFT, right: int = DEFAULT_
     """Most recent confirmed swing high, as of each bar — a simple
     support/resistance baseline. The liquidity engine (Phase 3) builds
     equal-highs/sweeps detection on top of this."""
-    return _last_confirmed(swing_high_confirmed_value(df, left, right))
+    return last_confirmed_value(swing_high_confirmed_value(df, left, right))
 
 
 def support(df: pd.DataFrame, left: int = DEFAULT_LEFT, right: int = DEFAULT_RIGHT) -> pd.Series:
-    return _last_confirmed(swing_low_confirmed_value(df, left, right))
+    return last_confirmed_value(swing_low_confirmed_value(df, left, right))
 
 
 def higher_high(df: pd.DataFrame, left: int = DEFAULT_LEFT, right: int = DEFAULT_RIGHT) -> pd.Series:
@@ -115,25 +115,25 @@ def higher_high(df: pd.DataFrame, left: int = DEFAULT_LEFT, right: int = DEFAULT
     than the previous confirmed swing high (an event, not a standing
     state)."""
     conf_val = swing_high_confirmed_value(df, left, right)
-    prior = _prior_confirmed(conf_val)
+    prior = prior_confirmed_value(conf_val)
     return (conf_val.notna() & prior.notna() & (conf_val > prior))
 
 
 def lower_high(df: pd.DataFrame, left: int = DEFAULT_LEFT, right: int = DEFAULT_RIGHT) -> pd.Series:
     conf_val = swing_high_confirmed_value(df, left, right)
-    prior = _prior_confirmed(conf_val)
+    prior = prior_confirmed_value(conf_val)
     return (conf_val.notna() & prior.notna() & (conf_val < prior))
 
 
 def higher_low(df: pd.DataFrame, left: int = DEFAULT_LEFT, right: int = DEFAULT_RIGHT) -> pd.Series:
     conf_val = swing_low_confirmed_value(df, left, right)
-    prior = _prior_confirmed(conf_val)
+    prior = prior_confirmed_value(conf_val)
     return (conf_val.notna() & prior.notna() & (conf_val > prior))
 
 
 def lower_low(df: pd.DataFrame, left: int = DEFAULT_LEFT, right: int = DEFAULT_RIGHT) -> pd.Series:
     conf_val = swing_low_confirmed_value(df, left, right)
-    prior = _prior_confirmed(conf_val)
+    prior = prior_confirmed_value(conf_val)
     return (conf_val.notna() & prior.notna() & (conf_val < prior))
 
 

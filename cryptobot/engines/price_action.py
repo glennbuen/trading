@@ -21,6 +21,8 @@ bug — it's not a style preference.
 import numpy as np
 import pandas as pd
 
+from cryptobot.utils import bars_since
+
 DEFAULT_LOOKBACK = 20
 DEFAULT_BODY_FRAC = 0.6
 DEFAULT_WICK_FRAC = 0.6
@@ -114,16 +116,6 @@ def is_breakout_down(df: pd.DataFrame, lookback: int = DEFAULT_LOOKBACK) -> pd.S
     return (df["close"] < breakout_level_down(df, lookback)).fillna(False)
 
 
-def _bars_since(cond: pd.Series) -> pd.Series:
-    """Bars since `cond` was last True (0 on the bar it's True itself);
-    a large number if never. Backward-only by construction (ffill of the
-    row index where True, then subtract)."""
-    idx = np.arange(len(cond))
-    last_true_idx = np.where(cond.values, idx, np.nan)
-    last_true_idx = pd.Series(last_true_idx, index=cond.index).ffill()
-    return pd.Series(idx, index=cond.index) - last_true_idx
-
-
 def is_failed_breakout_up(df: pd.DataFrame, lookback: int = DEFAULT_LOOKBACK,
                            within_bars: int = DEFAULT_FAILED_BREAKOUT_WINDOW) -> pd.Series:
     """
@@ -139,8 +131,8 @@ def is_failed_breakout_up(df: pd.DataFrame, lookback: int = DEFAULT_LOOKBACK,
     # Forward-fill the level from the most recent breakout bar — this only
     # ever propagates a PAST value into the present, never a future one.
     level_of_last_breakout = level.where(broke).ffill()
-    bars_since = _bars_since(broke)
-    return ((bars_since > 0) & (bars_since <= within_bars) &
+    since_breakout = bars_since(broke)
+    return ((since_breakout > 0) & (since_breakout <= within_bars) &
             (df["close"] < level_of_last_breakout)).fillna(False)
 
 
@@ -149,8 +141,8 @@ def is_failed_breakout_down(df: pd.DataFrame, lookback: int = DEFAULT_LOOKBACK,
     level = breakout_level_down(df, lookback)
     broke = is_breakout_down(df, lookback)
     level_of_last_breakdown = level.where(broke).ffill()
-    bars_since = _bars_since(broke)
-    return ((bars_since > 0) & (bars_since <= within_bars) &
+    since_breakdown = bars_since(broke)
+    return ((since_breakdown > 0) & (since_breakdown <= within_bars) &
             (df["close"] > level_of_last_breakdown)).fillna(False)
 
 
