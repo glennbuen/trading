@@ -51,6 +51,21 @@ def alma(series: pd.Series, window: int = DEFAULT_ALMA_WINDOW,
     return series.rolling(window).apply(_weighted, raw=True)
 
 
+def bollinger_bands(series: pd.Series, length: int = 20, num_std: float = 2.0) -> tuple:
+    """Returns (basis, upper, lower). Standard Bollinger Bands: an SMA
+    basis with bands at +/- `num_std` rolling standard deviations. The
+    "SPYFRAT" system (Investagrams Traders' Summit 2018 deck) uses an
+    unusually tight custom setting, BBand(50, 0.20) — a 50-period basis
+    with only 0.20 standard deviations of width, deliberately narrow so
+    the bands "contract" close around the basis and highlight where a
+    breakout is brewing, rather than the conventional BB(20, 2)."""
+    basis = sma(series, length)
+    std = series.rolling(length).std()
+    upper = basis + num_std * std
+    lower = basis - num_std * std
+    return basis, upper, lower
+
+
 def envelope(series: pd.Series, length: int = DEFAULT_ENVELOPE_LENGTH,
              percent: float = DEFAULT_ENVELOPE_PERCENT, basis: str = "ema") -> tuple:
     """Returns (basis_line, upper, lower). `basis="ema"` matches PAPA's

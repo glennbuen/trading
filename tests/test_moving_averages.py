@@ -41,6 +41,23 @@ class TestALMA:
         assert ma.DEFAULT_ALMA_SIGMA == pytest.approx(6.0)
 
 
+class TestBollingerBands:
+    def test_matches_hand_calculation(self):
+        s = pd.Series([1.0, 2.0, 3.0, 4.0, 5.0])
+        basis, upper, lower = ma.bollinger_bands(s, length=5, num_std=2.0)
+        assert basis.iloc[4] == pytest.approx(3.0)  # mean(1..5)
+        std = s.rolling(5).std().iloc[4]
+        assert upper.iloc[4] == pytest.approx(3.0 + 2 * std)
+        assert lower.iloc[4] == pytest.approx(3.0 - 2 * std)
+
+    def test_tight_multiplier_gives_a_narrower_band_than_wide_multiplier(self):
+        rng = np.random.default_rng(221)
+        s = pd.Series(100 + np.cumsum(rng.normal(0, 1, 60)))
+        _, tight_upper, tight_lower = ma.bollinger_bands(s, length=50, num_std=0.20)
+        _, wide_upper, wide_lower = ma.bollinger_bands(s, length=50, num_std=2.0)
+        assert (tight_upper - tight_lower).iloc[-1] < (wide_upper - wide_lower).iloc[-1]
+
+
 class TestEnvelope:
     def test_upper_and_lower_bracket_the_basis_by_percent(self):
         s = pd.Series(np.linspace(100, 140, 50))
