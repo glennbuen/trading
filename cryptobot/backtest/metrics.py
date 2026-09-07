@@ -65,7 +65,7 @@ def _max_consecutive_losses(trades: list) -> int:
     return worst
 
 
-def _max_drawdown_pct(equity_curve: pd.Series) -> float:
+def max_drawdown_pct_from_curve(equity_curve: pd.Series) -> float:
     if equity_curve.empty:
         return 0.0
     peak = equity_curve.cummax()
@@ -122,7 +122,7 @@ def compute_metrics(trades: list, equity_curve: pd.Series, starting_equity: floa
     result.exposure_pct = round(sum(t.holding_bars for t in trades) / total_bars * 100, 2) if total_bars else 0.0
 
     result.net_return_pct = round((result.final_equity - starting_equity) / starting_equity * 100, 2)
-    result.max_drawdown_pct = round(_max_drawdown_pct(equity_curve), 2)
+    result.max_drawdown_pct = round(max_drawdown_pct_from_curve(equity_curve), 2)
     sharpe, sortino = _sharpe_sortino(equity_curve)
     result.sharpe = round(sharpe, 3) if not np.isnan(sharpe) else float("nan")
     result.sortino = round(sortino, 3) if not np.isnan(sortino) else float("nan")

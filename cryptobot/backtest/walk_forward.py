@@ -17,7 +17,7 @@ from typing import Callable, Optional
 import pandas as pd
 
 from cryptobot.backtest.engine import run_backtest, BacktestCosts, StopTargetConfig
-from cryptobot.backtest.metrics import BacktestResult
+from cryptobot.backtest.metrics import BacktestResult, max_drawdown_pct_from_curve
 from cryptobot.risk.risk_manager import RiskLimits
 
 MIN_WINDOW_BARS = 10
@@ -83,3 +83,52 @@ def run_walk_forward(df: pd.DataFrame, signal_fn: Callable[[pd.DataFrame], pd.Da
             num_bars=len(window_df), result=result,
         ))
     return results
+
+
+def chain_equity_curves(windows: list[WalkForwardWindow]) -> pd.Series:
+    """
+    Concatenates each window's equity curve into ONE continuous curve, so
+    a genuine cumulative (not per-window) drawdown can be reported.
+
+    Each window's `run_backtest` call correctly resets to the same
+    `starting_equity` independently — that's the whole point of §25's
+    walk-forward design: every window is an unbiased forward test against
+    fixed parameters, not distorted by whatever happened to the equity in
+    a prior, unrelated window. But that same independence means
+    `w.result.max_drawdown_pct` only ever reports the worst drawdown
+    *within* one window, understating what a trader who ran this strategy
+    continuously through the whole period would actually have
+    experienced — documented as a known limitation after Phase 6's
+    evaluation of Breakout+Retest (docs/EVALUATION_BREAKOUT_RETEST.md).
+
+    This function reconciles the two: each window's equity curve is
+    converted to per-bar RETURNS relative to its own reset starting
+    point, then those returns are compounded sequentially onto a single
+    running total starting at 1.0. Position sizing during the actual
+    walk-forward run is unaffected (it already used each window's own
+    reset equity, as intended) — this only changes how the RESULTS are
+    stitched together for reporting.
+    """
+    chained_values = [1.0]
+    chained_index = []
+    for w in windows:
+        ec = w.result.equity_curve
+        if ec.empty:
+            continue
+        returns = ec.pct_change()
+        returns.iloc[0] = (ec.iloc[0] - w.result.starting_equity) / w.result.starting_equity
+        for dt, r in returns.items():
+            r = 0.0 if pd.isna(r) else r
+            chained_values.append(chained_values[-1] * (1 + r))
+            chained_index.append(dt)
+    if not chained_index:
+        return pd.Series(dtype=float)
+    return pd.Series(chained_values[1:], index=pd.DatetimeIndex(chained_index))
+
+
+def chained_max_drawdown_pct(windows: list[WalkForwardWindow]) -> float:
+    """Cumulative max drawdown across all windows chained together —
+    the honest answer to "what was the worst peak-to-trough a continuous
+    trader would have seen", vs. any single window's own smaller number."""
+    curve = chain_equity_curves(windows)
+    return max_drawdown_pct_from_curve(curve)

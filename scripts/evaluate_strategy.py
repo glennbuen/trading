@@ -27,7 +27,7 @@ from cryptobot.data.market_data import MarketDataProvider
 from cryptobot.engines.volatility import compute_volatility
 from cryptobot.risk.risk_manager import RiskLimits
 from cryptobot.backtest.engine import StopTargetConfig
-from cryptobot.backtest.walk_forward import run_walk_forward, WalkForwardWindow
+from cryptobot.backtest.walk_forward import run_walk_forward, WalkForwardWindow, chained_max_drawdown_pct
 
 
 @dataclass
@@ -52,7 +52,8 @@ def aggregate(windows: list[WalkForwardWindow]) -> dict:
     traded_windows = sum(1 for w in windows if w.result.num_trades > 0)
 
     worst_losing_streak = max((w.result.max_consecutive_losses for w in windows), default=0)
-    worst_drawdown = max((w.result.max_drawdown_pct for w in windows), default=0.0)
+    worst_window_drawdown = max((w.result.max_drawdown_pct for w in windows), default=0.0)
+    chained_drawdown = chained_max_drawdown_pct(windows)
 
     return {
         "total_trades": len(all_trades),
@@ -64,7 +65,8 @@ def aggregate(windows: list[WalkForwardWindow]) -> dict:
         "windows_traded": traded_windows,
         "windows_profitable": profitable_windows,
         "worst_losing_streak": worst_losing_streak,
-        "worst_window_drawdown_pct": round(worst_drawdown, 2),
+        "worst_window_drawdown_pct": round(worst_window_drawdown, 2),
+        "chained_max_drawdown_pct": round(chained_drawdown, 2),
     }
 
 
@@ -112,7 +114,10 @@ def print_report(results: list[tuple[dict, list]]):
         print(f"  avg_r_multiple:      {agg['avg_r_multiple']}")
         print(f"  total_fees:          {agg['total_fees']}")
         print(f"  worst_losing_streak: {agg['worst_losing_streak']}")
-        print(f"  worst_window_dd_pct: {agg['worst_window_drawdown_pct']}")
+        print(f"  worst_window_dd_pct: {agg['worst_window_drawdown_pct']} "
+              f"(single worst window only)")
+        print(f"  chained_max_dd_pct:  {agg['chained_max_drawdown_pct']} "
+              f"(true cumulative, windows chained)")
         print("  per-window breakdown:")
         for w in windows:
             r = w.result

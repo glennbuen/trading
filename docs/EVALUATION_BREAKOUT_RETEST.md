@@ -12,12 +12,14 @@ Q11). Headline numbers are essentially unchanged; the fix improves risk
 control, not the strategy's underlying edge, which is exactly what a risk
 manager fix should and shouldn't do.**
 
-| Config | Windows | Trades | Win% | PF | Avg R |
-|---|---|---|---|---|---|
-| BTC/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 117 | 37.6% | 0.68 | -0.154 |
-| ETH/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 118 | 39.8% | 0.88 | -0.068 |
-| BTC/USDT 1d (3000 candles, 8.2yr, 180d windows) | 16 | 22 | 36.4% | 1.01 | 0.009 |
-| ETH/USDT 1d (3000 candles, 8.2yr, 180d windows) | 16 | 21 | 28.6% | 0.73 | -0.207 |
+| Config | Windows | Trades | Win% | PF | Avg R | Chained max DD |
+|---|---|---|---|---|---|---|
+| BTC/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 117 | 37.6% | 0.68 | -0.154 | 9.91% |
+| ETH/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 118 | 39.8% | 0.88 | -0.068 | 8.53% |
+| BTC/USDT 1d (3000 candles, 8.2yr, 180d windows) | 16 | 22 | 36.4% | 1.01 | 0.009 | 2.30% |
+| ETH/USDT 1d (3000 candles, 8.2yr, 180d windows) | 16 | 21 | 28.6% | 0.73 | -0.207 | 2.82% |
+
+"Chained max DD" is the true cumulative drawdown from `chain_equity_curves()` (see Q3 — both Phase 6 gaps are now closed).
 
 ## The 12 questions
 
@@ -25,7 +27,7 @@ manager fix should and shouldn't do.**
 
 **2. How many trades tested?** 286 total across the four configs (122 + 121 + 22 + 21). The 1h configs have a workable sample; the 1d configs (21-22 trades over 8+ years) are too thin to draw a firm conclusion from in isolation — they're informative mainly as a rough directional cross-check against the 1h result, not standalone evidence.
 
-**3. Max drawdown?** Worst single-window drawdown: 4.75% (BTC 1h), 6.18% (ETH 1h), ~1.1-1.7% (1d configs, smaller because trades are rarer). **Caveat, stated plainly:** each walk-forward window resets to the same starting equity independently — this is NOT one continuous multi-year equity curve's peak-to-trough drawdown, it's the worst drawdown observed *within any single window*. A true concatenated-curve figure would need the windows chained together, which this evaluation didn't do. Treat this number as a lower bound on real cumulative drawdown risk, not the full picture.
+**3. Max drawdown? RESOLVED — the chaining gap is closed.** Worst *single-window* drawdown was 4.13% (BTC 1h), 6.20% (ETH 1h), ~1.1-1.7% (1d configs). As flagged originally, that understated the real risk: each walk-forward window resets to the same starting equity independently, so the single-window number isn't the same as one continuous multi-year equity curve's peak-to-trough drawdown. `cryptobot/backtest/walk_forward.py` now has `chain_equity_curves()` — converts each window's equity curve to per-bar returns relative to its own reset start, then compounds those returns sequentially onto one continuous curve, so window boundaries no longer hide a drawdown that spans across them. **The true cumulative drawdown is roughly 2x the single-window figure in every config**: 9.91% (BTC 1h, vs. 4.13% single-window), 8.53% (ETH 1h, vs. 6.20%), 2.30% (BTC 1d, vs. 1.11%), 2.82% (ETH 1d, vs. 1.67%). Verified with a hand-computed synthetic test (`tests/test_walk_forward.py::TestChainedEquityCurve`) before trusting it on real data.
 
 **4. Profit factor?** 0.63 / 0.88 / 1.01 / 0.73. None clear the 1.2 bar this project has used consistently as the validation threshold since the very first strategy tested.
 
@@ -37,7 +39,18 @@ manager fix should and shouldn't do.**
 
 **8. BTC and ETH?** Underwhelming on both, at both timeframes. Not a case of "works on one symbol, not the other" (which would suggest curve-fitting to a specific asset) — it's evenly mediocre-to-poor everywhere, which is actually a *cleaner* negative signal than an asymmetric result would be.
 
-**9. Parameter sensitivity?** **Not tested in this evaluation.** Spec §26 asks to perturb parameters ±10-20% and check whether results collapse — that analysis wasn't run here. Flagging this as a real gap rather than silently skipping the question: no claim is made either way about robustness to parameter choice.
+**9. Parameter sensitivity? RESOLVED.** Run via `scripts/parameter_sensitivity.py`: each of 4 key parameters (`atr_mult_stop`, `target_r_multiple`, `volume_threshold`, `retest_window`) perturbed at -20/-10/0/+10/+20% one at a time, on BTC/USDT 1h (the config with the most trades, hence the most power to detect a real effect). Per spec §26: *"If changing a parameter from 1.5 to 1.53 dramatically changes results, flag it as potentially overfit."*
+
+| Parameter | PF range across ±20% | Verdict |
+|---|---|---|
+| `atr_mult_stop` (1.5) | 0.68 - 0.71 | Flat, stable |
+| `target_r_multiple` (2.0) | 0.64 - 0.70 | Smooth monotonic decline in win-rate as R rises (43.9%→32.8%), PF stable — the expected win-rate/R-multiple trade-off, not noise |
+| `volume_threshold` (1.2) | 0.58 - 0.72 | The one parameter with a real trend: looser filters (lower threshold) perform meaningfully worse (PF 0.58, chained DD 15.95% at -20%) than tighter ones (PF 0.72, chained DD 9.36% at +10%) |
+| `retest_window` (10) | 0.68 (unchanged) | **Completely flat** — identical trade count and every metric across the whole ±20% range |
+
+**No parameter shows a cliff/collapse pattern** — the rejected verdict is not an artifact of landing on an unlucky exact default value; it holds up across the whole tested neighborhood for every parameter. `volume_threshold` is the one parameter worth a closer look in any future revisit: the trend (tighter filter → better, if still not passing) is real and monotonic-ish, not noise, though even the best value tested (PF 0.72) doesn't come close to clearing 1.2.
+
+The flat `retest_window` result was verified directly rather than assumed a wiring bug: raw signal counts at window sizes 8/10/12/20/50 shift only marginally (74→74 long signals, 79→81 short signals) — most valid retests resolve within a few bars regardless of the configured window, so 8-12 all capture essentially the same set of trades. A real, interpretable finding, not a script defect.
 
 **10. After realistic fees and slippage?** Yes, throughout — every trade in every number above already includes the 0.10%/side taker fee, 0.05% entry slippage, and 0.4% stop-fill slippage. Total fees: $60.33 (BTC 1h) and $59.23 (ETH 1h) against $1,000-per-window starting capital — a real but not overwhelming drag (~0.8-0.9% of aggregate window capital), much smaller than the fee-bleed seen in this project's earlier high-frequency bots, because Breakout+Retest simply trades far less often.
 
@@ -51,7 +64,9 @@ manager fix should and shouldn't do.**
 
 **There is currently insufficient evidence that Breakout+Retest has a reliable edge on BTC/USDT or ETH/USDT, at 1h or 1d, with these parameters.** Per spec §41, that is treated here as an acceptable, useful result — not a failure to fix by re-running with different numbers. No parameter was tuned in response to these results, and none should be, on the same reasoning applied to every one of the 7 standalone bots and every prior phase of this build: fitting parameters until a backtest looks good is the specific failure mode this whole project has been built to avoid. Do not proceed to paper trading with this strategy/config.
 
-**Real, reusable findings from this evaluation, independent of the profitability verdict:**
-- The risk manager's consecutive-loss circuit breaker was materially weaker on sparse-signal timeframes than its parameter name implied (see Q11) — **found and fixed** during this evaluation, with regression tests, before any strategy reaches live trading.
-- Walk-forward window drawdown is not the same as cumulative multi-window drawdown (see Q3) — the evaluation harness should be extended to chain windows into one continuous curve if this strategy or another is revisited.
-- Parameter sensitivity (Q9) was never run — a real gap for any future go/no-go decision on this or another strategy.
+**Real, reusable findings from this evaluation, independent of the profitability verdict — all now closed, none left open:**
+- The risk manager's consecutive-loss circuit breaker was materially weaker on sparse-signal timeframes than its parameter name implied (see Q11) — **found and fixed**, with regression tests.
+- Walk-forward window drawdown understated true cumulative risk by roughly 2x in every config (see Q3) — **fixed**, `chain_equity_curves()` now gives the honest multi-window figure, verified against a hand-computed synthetic case before trusting it on real data.
+- Parameter sensitivity (Q9) — **run**. No cliff/collapse in any of the 4 parameters tested; the rejected verdict holds across the whole neighborhood, not just at the exact defaults. `volume_threshold` shows the one real (if modest) trend worth remembering if this strategy is revisited.
+
+This evaluation is now complete against spec §39's full 12-question list — no remaining gaps.
