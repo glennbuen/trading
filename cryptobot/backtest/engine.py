@@ -32,12 +32,24 @@ still carried underneath, checked every bar, as a safety net the book's
 own rules don't specify but this project's risk-management standard
 (spec §16) doesn't skip regardless of which strategy is running.
 
+"signal_exit" method: the same next-bar-open-fill, hard-ATR-stop-
+underneath mechanics as trailing_indicator, but for exit conditions that
+aren't a simple close-vs-line comparison — e.g. FISHBALL's "Fisher curves
+down OR crosses below its trigger", a condition about an indicator's own
+behavior, not price vs. a level. The caller precomputes an arbitrary
+boolean `exit_signal_col` on the strategy dataframe; the engine just
+checks it each bar. trailing_indicator is kept as its own method (rather
+than replaced by this more general one) because it was already built,
+tested, and used before signal_exit's need became clear — both share
+the same underlying discipline, just different trigger sources.
+
 Take-profit (spec §19): fixed R-multiple only for the atr/structure
-methods; trailing_indicator has no separate take-profit — its exit rule
-IS the whole strategy's exit rule, per the book. The spec lists five TP
-approaches and says to backtest each — building all five before any of
-them has been evaluated even once would repeat the over-building this
-project has deliberately avoided elsewhere. Deferred, not forgotten.
+methods; trailing_indicator/signal_exit have no separate take-profit —
+their exit rule IS the whole strategy's exit rule, per the book. The spec
+lists five TP approaches and says to backtest each — building all five
+before any of them has been evaluated even once would repeat the
+over-building this project has deliberately avoided elsewhere. Deferred,
+not forgotten.
 
 A position still open when the data runs out is force-closed at the last
 available bar's close, labeled exit_reason="end_of_data" — NOT silently
@@ -78,12 +90,13 @@ class BacktestCosts:
 
 @dataclass
 class StopTargetConfig:
-    method: str = "atr"          # "atr" | "structure" | "trailing_indicator"
+    method: str = "atr"          # "atr" | "structure" | "trailing_indicator" | "signal_exit"
     atr_col: str = "vlt_atr"
     atr_mult_stop: float = 1.5
     target_r_multiple: float = 2.0
     structure_stop_col: str | None = None  # required if method == "structure"
     trailing_indicator_col: str | None = None  # required if method == "trailing_indicator"
+    exit_signal_col: str | None = None  # required if method == "signal_exit"
 
 
 def _compute_stop(signal_row: pd.Series, entry_price: float, side: str,
@@ -107,6 +120,8 @@ def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | N
         raise ValueError("structure_stop_col is required when stop_target.method == 'structure'")
     if stop_target.method == "trailing_indicator" and not stop_target.trailing_indicator_col:
         raise ValueError("trailing_indicator_col is required when stop_target.method == 'trailing_indicator'")
+    if stop_target.method == "signal_exit" and not stop_target.exit_signal_col:
+        raise ValueError("exit_signal_col is required when stop_target.method == 'signal_exit'")
     costs = costs or BacktestCosts()
 
     d = df.reset_index(drop=True)
@@ -126,25 +141,29 @@ def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | N
         if position is not None:
             exit_price, reason = None, None
 
-            if stop_target.method == "trailing_indicator":
+            if stop_target.method in ("trailing_indicator", "signal_exit"):
                 if position.get("pending_exit"):
-                    # The cross was detected on the PRIOR bar's close;
-                    # fill now, at THIS bar's open — same next-bar-open
-                    # discipline as entries, not an immediate same-bar fill.
+                    # The exit condition was detected on the PRIOR bar's
+                    # close; fill now, at THIS bar's open — same next-
+                    # bar-open discipline as entries, not an immediate
+                    # same-bar fill.
                     exit_price = row["open"]
-                    reason = "trailing_indicator"
+                    reason = stop_target.method
                 else:
                     hit_stop = (row["low"] <= position["stop"] if position["side"] == "long"
                                 else row["high"] >= position["stop"])
                     if hit_stop:
                         exit_price, reason = position["stop"], "stop"
-                    else:
+                    elif stop_target.method == "trailing_indicator":
                         indicator_val = row.get(stop_target.trailing_indicator_col)
                         if indicator_val is not None and pd.notna(indicator_val):
                             crossed = (row["close"] < indicator_val if position["side"] == "long"
                                        else row["close"] > indicator_val)
                             if crossed:
                                 position["pending_exit"] = True
+                    else:  # signal_exit
+                        if bool(row.get(stop_target.exit_signal_col, False)):
+                            position["pending_exit"] = True
             else:
                 hit_stop = (row["low"] <= position["stop"] if position["side"] == "long"
                             else row["high"] >= position["stop"])
@@ -159,7 +178,7 @@ def run_backtest(df: pd.DataFrame, long_entry_col: str, short_entry_col: str | N
                 if reason == "stop":
                     slip_dir = -1 if position["side"] == "long" else 1
                     exit_price = exit_price * (1 + slip_dir * costs.stop_slippage_pct / 100)
-                elif reason == "trailing_indicator":
+                elif reason in ("trailing_indicator", "signal_exit"):
                     slip_dir = -1 if position["side"] == "long" else 1
                     exit_price = exit_price * (1 + slip_dir * costs.entry_slippage_pct / 100)
                 direction = 1 if position["side"] == "long" else -1

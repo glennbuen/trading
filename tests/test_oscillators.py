@@ -78,6 +78,15 @@ class TestTrix:
         assert result.iloc[-1] < 0
 
 
+class TestTrixZeroCross:
+    def test_cross_up_zero_fires_on_reversal_from_negative_to_positive(self):
+        s = pd.Series(list(np.linspace(200, 150, 60)) + list(np.linspace(150, 220, 60)))
+        cross_up = osc.trix_cross_up_zero(s, length=18)
+        cross_down = osc.trix_cross_down_zero(s, length=18)
+        assert cross_up.sum() >= 1
+        assert not (cross_up & cross_down).any()
+
+
 class TestNoLookahead:
     def _synthetic_series(self, n: int = 120) -> pd.DataFrame:
         rng = np.random.default_rng(161)

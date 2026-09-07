@@ -95,6 +95,20 @@ def trix(series: pd.Series, length: int = DEFAULT_TRIX_LENGTH) -> pd.Series:
     return (ema3 - ema3.shift(1)) / ema3.shift(1).replace(0, np.nan) * 100
 
 
+def trix_cross_up_zero(series: pd.Series, length: int = DEFAULT_TRIX_LENGTH) -> pd.Series:
+    t = trix(series, length)
+    above = t > 0
+    was_above = above.shift(1).fillna(False).astype(bool)  # see ichimoku.py's docstring on why this cast matters
+    return above & ~was_above
+
+
+def trix_cross_down_zero(series: pd.Series, length: int = DEFAULT_TRIX_LENGTH) -> pd.Series:
+    t = trix(series, length)
+    below = t < 0
+    was_below = below.shift(1).fillna(False).astype(bool)
+    return below & ~was_below
+
+
 def compute_oscillators(df: pd.DataFrame, rsi_length: int = DEFAULT_RSI_LENGTH,
                          cci_length: int = DEFAULT_CCI_LENGTH, fisher_length: int = DEFAULT_FISHER_LENGTH,
                          trix_length: int = DEFAULT_TRIX_LENGTH) -> pd.DataFrame:

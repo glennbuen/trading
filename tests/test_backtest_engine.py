@@ -228,6 +228,35 @@ class TestTrailingIndicatorExit:
             run_backtest(df, "long", None, RiskLimits(), StopTargetConfig(method="trailing_indicator"))
 
 
+class TestSignalExit:
+    def test_exit_fires_one_bar_after_an_arbitrary_boolean_signal(self):
+        rows = baseline_bars(20)
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10,
+                     "long": True, "exit_now": False})
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10,
+                     "long": False, "exit_now": False})
+        rows.append({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10,
+                     "long": False, "exit_now": True})  # arbitrary signal, unrelated to price levels
+        rows.extend({"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10,
+                     "long": False, "exit_now": False} for _ in range(10))
+        df = make_df(rows)
+        df["long"] = df.get("long", False).fillna(False)
+        df["exit_now"] = df.get("exit_now", False).fillna(False)
+        df = compute_volatility(df)
+        stop_target = StopTargetConfig(method="signal_exit", exit_signal_col="exit_now", atr_mult_stop=1.5)
+        result = run_backtest(df, "long", None, RiskLimits(cooldown_bars=0), stop_target)
+        assert len(result.trades) == 1
+        assert result.trades[0].exit_reason == "signal_exit"
+
+    def test_requires_exit_signal_col(self):
+        rows = baseline_bars(5)
+        df = make_df(rows)
+        df["long"] = False
+        df = compute_volatility(df)
+        with pytest.raises(ValueError):
+            run_backtest(df, "long", None, RiskLimits(), StopTargetConfig(method="signal_exit"))
+
+
 class TestMetricsSanity:
     def test_no_trades_returns_zeroed_result(self):
         rows = baseline_bars(20)
