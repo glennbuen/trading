@@ -1,0 +1,49 @@
+# Final Strategy Evaluation — Breakout + Retest (architecture spec §39)
+
+Run via `scripts/evaluate_strategy.py`. Every parameter below is the
+strategy/engine/risk default — nothing was tuned based on what came out.
+Walk-forward, non-overlapping windows, real OKX history (paginated),
+realistic costs baked into every trade (0.10% taker fee/side, 0.05% entry
+slippage, 0.4% stop slippage).
+
+| Config | Windows | Trades | Win% | PF | Avg R |
+|---|---|---|---|---|---|
+| BTC/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 122 | 35.3% | 0.63 | -0.185 |
+| ETH/USDT 1h (8000 candles, ~11mo, 45d windows) | 7 | 121 | 39.7% | 0.88 | -0.072 |
+| BTC/USDT 1d (3000 candles, 8.2yr, 180d windows) | 16 | 22 | 36.4% | 1.01 | 0.009 |
+| ETH/USDT 1d (3000 candles, 8.2yr, 180d windows) | 16 | 21 | 28.6% | 0.73 | -0.207 |
+
+## The 12 questions
+
+**1. Positive expectancy?** No. Profit factor is below 1.0 in three of four configs; the fourth (BTC 1d, PF 1.01) is statistically indistinguishable from breakeven at 22 trades. Average R is at or below zero everywhere.
+
+**2. How many trades tested?** 286 total across the four configs (122 + 121 + 22 + 21). The 1h configs have a workable sample; the 1d configs (21-22 trades over 8+ years) are too thin to draw a firm conclusion from in isolation — they're informative mainly as a rough directional cross-check against the 1h result, not standalone evidence.
+
+**3. Max drawdown?** Worst single-window drawdown: 4.75% (BTC 1h), 6.18% (ETH 1h), ~1.1-1.7% (1d configs, smaller because trades are rarer). **Caveat, stated plainly:** each walk-forward window resets to the same starting equity independently — this is NOT one continuous multi-year equity curve's peak-to-trough drawdown, it's the worst drawdown observed *within any single window*. A true concatenated-curve figure would need the windows chained together, which this evaluation didn't do. Treat this number as a lower bound on real cumulative drawdown risk, not the full picture.
+
+**4. Profit factor?** 0.63 / 0.88 / 1.01 / 0.73. None clear the 1.2 bar this project has used consistently as the validation threshold since the very first strategy tested.
+
+**5. Average R?** -0.185 / -0.072 / +0.009 / -0.207. No config shows a meaningfully positive average R.
+
+**6. Out-of-sample?** This is what walk-forward is *for* — every window is effectively an independent forward test against fixed, untuned parameters. Result: **profitable in the minority of windows everywhere** — 3/7 (BTC 1h), 2/7 (ETH 1h), 6/16 (BTC 1d), 5/16 (ETH 1d). No config shows the strategy holding up consistently out-of-sample.
+
+**7. Across market regimes?** The 1d data spans 2018→2026: the 2018 bear, 2020 crash, 2021 bull, 2022 bear, and the 2023-2025 recovery. Performance is scattered across all of them with no visible regime where it's reliably strong — and per-window sample sizes on daily data (0-3 trades/window) are too small to responsibly attribute any single window's result to "this regime works for it" rather than noise.
+
+**8. BTC and ETH?** Underwhelming on both, at both timeframes. Not a case of "works on one symbol, not the other" (which would suggest curve-fitting to a specific asset) — it's evenly mediocre-to-poor everywhere, which is actually a *cleaner* negative signal than an asymmetric result would be.
+
+**9. Parameter sensitivity?** **Not tested in this evaluation.** Spec §26 asks to perturb parameters ±10-20% and check whether results collapse — that analysis wasn't run here. Flagging this as a real gap rather than silently skipping the question: no claim is made either way about robustness to parameter choice.
+
+**10. After realistic fees and slippage?** Yes, throughout — every trade in every number above already includes the 0.10%/side taker fee, 0.05% entry slippage, and 0.4% stop-fill slippage. Total fees: $60.33 (BTC 1h) and $59.23 (ETH 1h) against $1,000-per-window starting capital — a real but not overwhelming drag (~0.8-0.9% of aggregate window capital), much smaller than the fee-bleed seen in this project's earlier high-frequency bots, because Breakout+Retest simply trades far less often.
+
+**11. Worst losing streak?** **11 consecutive losses (ETH 1h, the 2026-04-06→05-21 window)**, 8 consecutive (BTC 1h). This surfaced a genuine risk-manager finding, not just a bad-luck streak: only **one** `circuit_breaker_halt` rejection occurred in that entire window, even though `max_consecutive_losses=3` is configured. Why: `RiskManager` resets its loss counter the moment it triggers a halt, but the halt only blocks a signal that happens to land *inside* the 24h halt window. On 1h data with signals spaced further apart than that, the next attempt often arrives after the halt has already expired — so the breaker "fires" (resets the counter) without actually preventing anything, and losses keep accumulating across repeated halt cycles. **This is a real limitation of the current risk manager, found by this evaluation, not fixed here** — a time-window-aware or streak-persistent halt design would close it, but that's follow-up work, not part of Phase 6's scope.
+
+**12. What should stop the bot from trading?** Given the above, the honest answer right now is: **it shouldn't start.** No config clears the profitability bar this project has held every strategy to, out-of-sample consistency is weak everywhere, and there's a known, unaddressed gap in the consecutive-loss protection that this exact strategy's ETH 1h run exposed. The daily/weekly loss limits and volatility-spike-style guards remain sound as *general* safety nets for whatever strategy eventually clears validation, but they don't rescue this specific result.
+
+## Verdict
+
+**There is currently insufficient evidence that Breakout+Retest has a reliable edge on BTC/USDT or ETH/USDT, at 1h or 1d, with these parameters.** Per spec §41, that is treated here as an acceptable, useful result — not a failure to fix by re-running with different numbers. No parameter was tuned in response to these results, and none should be, on the same reasoning applied to every one of the 7 standalone bots and every prior phase of this build: fitting parameters until a backtest looks good is the specific failure mode this whole project has been built to avoid. Do not proceed to paper trading with this strategy/config.
+
+**Real, reusable findings from this evaluation, independent of the profitability verdict:**
+- The risk manager's consecutive-loss circuit breaker is materially weaker on sparse-signal timeframes than its parameter name implies (see Q11) — worth fixing before any strategy reaches live trading.
+- Walk-forward window drawdown is not the same as cumulative multi-window drawdown (see Q3) — the evaluation harness should be extended to chain windows into one continuous curve if this strategy or another is revisited.
+- Parameter sensitivity (Q9) was never run — a real gap for any future go/no-go decision on this or another strategy.

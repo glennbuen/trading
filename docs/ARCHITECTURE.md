@@ -81,6 +81,19 @@ Stop-loss supports `"atr"` and `"structure"` methods (a caller-supplied per-bar 
 
 **Mechanical smoke test only (not Phase 6's evaluation):** ran Breakout+Retest through `run_walk_forward` on 3000 real 1h BTC/USDT candles, 4 rolling 30-day windows. The pipeline ran end-to-end with no errors and produced non-degenerate metrics — including a real split (1 profitable window, 3 unprofitable) that previews exactly the kind of walk-forward inconsistency check Phase 6 exists to formalize properly (across symbols, with a real verdict). No conclusion about the strategy is drawn here.
 
+## Phase 6 — first real verdict: Breakout+Retest evaluated, and rejected
+
+`scripts/evaluate_strategy.py` — a reusable walk-forward evaluation harness (generic over any strategy's `signal_fn` + column names, so it's ready for Phase 11's strategy comparison too) — ran Breakout+Retest across BTC/USDT and ETH/USDT, at 1h (8000 real candles, ~11 months) and 1d (3000 real candles, 8.2 years spanning multiple bull/bear/chop regimes), with every parameter left at its default. Full report: `docs/EVALUATION_BREAKOUT_RETEST.md`.
+
+**Verdict: insufficient evidence of a reliable edge.** Profit factor 0.63-1.01 across all four configs (none clearing the 1.2 bar this project has held every strategy to), profitable in a minority of walk-forward windows everywhere, no parameter tuned in response. Per spec §41 this is treated as a legitimate, useful result — not a failure needing a re-run with different numbers.
+
+The evaluation itself surfaced two real findings, independent of the profitability verdict:
+
+1. **A genuine risk-manager gap.** One run hit an 11-consecutive-loss streak despite `max_consecutive_losses=3` being configured. Root cause: `RiskManager` resets its loss counter the instant it triggers a halt, but the halt only blocks a signal that lands *inside* the 24h halt window — on sparse 1h signals, the next attempt often arrives after the halt has already expired, so the breaker "fires" without actually preventing anything, cycle after cycle. Documented, not fixed — a time-window-aware or streak-persistent design would close it.
+2. **A metric-methodology limitation in the evaluation harness itself.** Walk-forward windows reset to the same starting equity independently, so "worst window drawdown" is not the same as one continuous multi-year equity curve's peak-to-trough drawdown. The report states this caveat explicitly rather than presenting the smaller per-window number as the full risk picture.
+
+Also explicitly not done: parameter sensitivity testing (spec §26 — perturbing values ±10-20% to check for curve-fitting). Flagged as a real gap in the report, not silently skipped.
+
 ## What's not built yet
 
-Signal scoring, regime detection, BTC-context monitoring, journal (beyond the backtest engine's own `rejected_signals` list — a real instance of spec §31's "record rejected signals too", just not the full trade journal), dashboard, and the remaining 3 strategies (plain breakout, trend pullback, liquidity sweep reversal). See the repo README's roadmap table for phase order. Breakout+Retest has NOT been properly evaluated yet — Phase 6.
+Signal scoring, regime detection, BTC-context monitoring, journal (beyond the backtest engine's own `rejected_signals` list — a real instance of spec §31's "record rejected signals too", just not the full trade journal), dashboard, and the remaining 3 strategies (plain breakout, trend pullback, liquidity sweep reversal). See the repo README's roadmap table for phase order.
