@@ -1,6 +1,7 @@
 .env
 fng_cache.json
 *_state.json
+paper_trading_state/
 *.log
 __pycache__/
 *.pyc

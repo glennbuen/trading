@@ -6,7 +6,17 @@ daily/weekly-swing strategy suite (TITA and everything tested alongside
 it — entries and exits both driven off daily candles, positions
 routinely held for days to weeks).
 
-Not yet populated — no strategies, engines, or tests live here yet.
+## Status
+
+First build complete and evaluated: `engines/trend_filter.py` (1h+15m
+both-must-agree trend filter, merged onto a 5m entry timeframe) +
+`strategies/wrapper.py` (adapts each of `cryptobot/strategies/`'s
+14 real-signal strategies onto this structure, reusing their entry
+logic unchanged). All 14 were retested this way and **all 14
+failed** — see `docs/EVALUATION_DAYTRADING_ALL.md` for the full report,
+including a real cost-model bug caught and fixed along the way before
+the result was trusted. Nothing in this package is ready for paper
+trading.
 
 ## Relationship to `cryptobot/`
 
