@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from cryptobot.engines.entry_filters import near_ema_pullback, compute_entry_filters
+from cryptobot.engines.entry_filters import near_ema_pullback, compute_entry_filters, pullback_entry_after_breakout
 from cryptobot.engines.moving_averages import ema
 
 
@@ -79,4 +79,70 @@ class TestNoLookahead:
         pd.testing.assert_series_equal(
             full_short.iloc[:truncate_at].reset_index(drop=True),
             trunc_short.reset_index(drop=True), check_names=False,
+        )
+
+
+def bools(pattern: str) -> pd.Series:
+    """'X' = True, '.' = False, one char per bar — a compact way to
+    hand-build boolean fixtures for the sequential arm-then-trigger
+    composition below."""
+    return pd.Series([c == "X" for c in pattern])
+
+
+class TestPullbackEntryAfterBreakout:
+    def test_no_entry_without_any_breakout(self):
+        breakout = bools(".........."
+                          )
+        near = bools("..X..X..X.")
+        entry = pullback_entry_after_breakout(breakout, near, arming_window=10)
+        assert not entry.any()
+
+    def test_fires_on_the_first_pullback_touch_within_the_window(self):
+        breakout = bools("X.........")
+        near =     bools("...X......")
+        entry = pullback_entry_after_breakout(breakout, near, arming_window=10)
+        assert entry.tolist() == [False, False, False, True, False, False, False, False, False, False]
+
+    def test_does_not_fire_on_the_breakout_bar_itself_unless_also_near(self):
+        breakout = bools("X.........")
+        near =     bools("X.........")  # coincides with the breakout bar itself
+        entry = pullback_entry_after_breakout(breakout, near, arming_window=10)
+        assert entry.iloc[0]  # allowed - bars_since(breakout)==0 is within any window>=0
+
+    def test_only_fires_once_per_breakout_even_with_multiple_touches(self):
+        breakout = bools("X.........")
+        near =     bools("...X..X...")
+        entry = pullback_entry_after_breakout(breakout, near, arming_window=10)
+        assert entry.sum() == 1
+        assert entry.iloc[3]
+        assert not entry.iloc[6]
+
+    def test_no_entry_if_the_touch_happens_after_the_window_closes(self):
+        breakout = bools("X.........")
+        near =     bools(".......X..")  # touch at bar 7, window is only 3 bars
+        entry = pullback_entry_after_breakout(breakout, near, arming_window=3)
+        assert not entry.any()
+
+    def test_a_second_breakout_rearms_a_fresh_watch(self):
+        breakout = bools("X.....X...")
+        near =     bools("...X.....X")
+        entry = pullback_entry_after_breakout(breakout, near, arming_window=10)
+        assert entry.sum() == 2
+        assert entry.iloc[3]
+        assert entry.iloc[9]
+
+
+class TestPullbackAfterBreakoutNoLookahead:
+    @pytest.mark.parametrize("truncate_at", [15, 40])
+    def test_truncation_invariance(self, truncate_at):
+        rng = np.random.default_rng(13)
+        n = 60
+        breakout = pd.Series(rng.random(n) < 0.1)
+        near = pd.Series(rng.random(n) < 0.3)
+        full = pullback_entry_after_breakout(breakout, near, arming_window=5)
+        trunc = pullback_entry_after_breakout(breakout.iloc[:truncate_at].reset_index(drop=True),
+                                               near.iloc[:truncate_at].reset_index(drop=True), arming_window=5)
+        pd.testing.assert_series_equal(
+            full.iloc[:truncate_at].reset_index(drop=True),
+            trunc.reset_index(drop=True), check_names=False,
         )
