@@ -164,6 +164,20 @@ directly answers a design question raised along the way: a flat +6%
 profit lock beats an ATR-trailing alternative in 21 of 28 tested
 configs, so the simpler rule is the better default here.
 
+**A follow-up check went the other direction — does gating entries to
+require price "near or within striking distance of EMA(10)" (a 2%
+pullback-into-value filter) improve on any of this?**
+`docs/EVALUATION_EMA10_FILTER_RETEST.md` answers no, decisively. Five of
+the 14 strategies (every breakout-style one) produce zero trades with
+this filter at all — structurally incompatible with entries that, by
+definition, tend to fire when price is extended away from a short EMA,
+not pulled back near one. The rest see trade counts collapse into
+thin-sample territory and PF results that don't survive scrutiny. Most
+consequentially, TITA's BTC/USDT result — this project's single most
+credible finding — collapses from PF 1.31 to 0.34 under this filter,
+evidence its actual edge doesn't depend on EMA(10) proximity at all.
+TITA remains in paper trading on its original, unfiltered entries.
+
 ## Overall verdict
 
 **21 strategies tested, exactly one — TITA — has cleared every rung of
