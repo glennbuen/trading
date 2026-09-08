@@ -137,6 +137,28 @@ confident, well-evidenced negative result. Full reports:
 Full reports: `docs/EVALUATION_THREE_STEP_FORMULA.md`,
 `EVALUATION_SPYFRAT.md`.
 
+## A cross-cutting check: does the exit mechanism itself change any of this?
+
+`docs/EVALUATION_EXIT_RULES_RETEST.md` retested 14 of these strategies'
+1d configurations against a completely different, more elaborate exit
+system (`exit_rules_spec.md`'s ratcheted stop + time stop + partial
+exits + EMA de-risk), replacing each strategy's own original exit
+entirely. This is a sensitivity check on the EXIT mechanism, the same
+spirit as a parameter-sensitivity sweep on entry logic — and it confirms
+the tiers above rather than overturning them: TITA is the only strategy
+whose result stays genuinely credible (large, consistent per-window
+samples on both symbols) under a totally different exit, albeit at a
+lower PF than its own bespoke exit; SPYFRAT Core System becomes more
+credible (less thin-sample-driven) but still one tier behind TITA;
+Breakout (A), Ichimoku Cross, and MAMA newly/still clear PF>1.2 on both
+symbols under the new exit but show the identical thin-sample artifact
+pattern that disqualified them (or their book-mates) under their
+original exits — a different exit mechanism triggering the same
+underlying entry-signal fragility, not a new finding. The retest also
+directly answers a design question raised along the way: a flat +6%
+profit lock beats an ATR-trailing alternative in 21 of 28 tested
+configs, so the simpler rule is the better default here.
+
 ## Overall verdict
 
 **20 strategies tested, exactly one — TITA — has cleared every rung of
