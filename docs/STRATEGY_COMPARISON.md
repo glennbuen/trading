@@ -178,6 +178,18 @@ credible finding — collapses from PF 1.31 to 0.34 under this filter,
 evidence its actual edge doesn't depend on EMA(10) proximity at all.
 TITA remains in paper trading on its original, unfiltered entries.
 
+**A corrected version of the same idea was tested next, after the user
+clarified the intended composition**: "entry is after breakout, buy at
+the pullback around EMA(10)" — a sequential arm-then-trigger
+composition (`docs/EVALUATION_EMA10_PULLBACK_AFTER_BREAKOUT.md`), not
+the same-bar AND above. This more charitable version restores normal
+trade counts (20-200+ per config, no zero-trade collapses) but confirms
+the same underlying finding: zero of the 14 strategies clear PF>1.2 on
+both symbols, and TITA's BTC/USDT result still falls below breakeven
+(0.93). Two different, reasonable readings of "buy the pullback to
+EMA(10)" now agree — this isn't an artifact of one specific
+implementation choice.
+
 ## Overall verdict
 
 **21 strategies tested, exactly one — TITA — has cleared every rung of
