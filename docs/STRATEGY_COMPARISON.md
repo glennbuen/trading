@@ -19,7 +19,7 @@ highest number on the list.
 A strategy is ranked by how far up this ladder it actually got, not by
 how good its headline number looks before that scrutiny is applied.
 
-## Master ranking — all 20 strategies tested
+## Master ranking — all 21 strategies tested
 
 ### Tier 1 — Genuine lead (cleared every rung)
 
@@ -94,6 +94,7 @@ BTC; it's also the worst strategy on 1h of any tested (chained drawdown
 
 | Strategy | Avg PF across configs | Range |
 |---|---|---|
+| Triple Screen (Elder) | 1.085 | 1.02-1.15 |
 | Breakout+Retest (Strategy B) | 0.825 | 0.68-1.01 |
 | MFI Reversal | 0.6375 | 0.39-1.08 |
 
@@ -101,8 +102,12 @@ Breakout+Retest never crosses 1.2 anywhere, but it's also the tightest,
 most stable strategy tested (no config below 0.68) — the least fragile
 foundation of the four original spec strategies, not because it works.
 MFI Reversal is weaker on every axis, including the worst 1h result of
-any strategy (0.39, 0/7 windows profitable). Full reports:
-`docs/EVALUATION_BREAKOUT_RETEST.md`, `EVALUATION_MFI_REVERSAL.md`.
+any strategy (0.39, 0/7 windows profitable). Triple Screen sits closest
+to the 1.2 bar of any strategy in this tier (BTC 1.02, ETH 1.15) with a
+genuinely well-distributed sample (every window 4-11 trades, no thin
+artifacts) — a clean near-breakeven result, not evidence for or against
+a real edge either way. Full reports: `docs/EVALUATION_BREAKOUT_RETEST.md`,
+`EVALUATION_MFI_REVERSAL.md`, `EVALUATION_TRIPLE_SCREEN.md`.
 
 ### Tier 7 — Fails outright on every config tested
 
@@ -161,7 +166,7 @@ configs, so the simpler rule is the better default here.
 
 ## Overall verdict
 
-**20 strategies tested, exactly one — TITA — has cleared every rung of
+**21 strategies tested, exactly one — TITA — has cleared every rung of
 this project's own credibility ladder.** SPYFRAT Core System is the only
 other strategy to reach the second rung, and it stops there. Every other
 result this project has produced, no matter how high its raw PF looked
