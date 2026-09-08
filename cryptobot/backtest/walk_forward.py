@@ -52,9 +52,10 @@ def make_rolling_windows(df: pd.DataFrame, window_days: int,
 
 def run_walk_forward(df: pd.DataFrame, signal_fn: Callable[[pd.DataFrame], pd.DataFrame],
                       long_entry_col: str, short_entry_col: Optional[str],
-                      risk_limits: RiskLimits, stop_target: StopTargetConfig,
+                      risk_limits: RiskLimits, stop_target,
                       window_days: int, step_days: int, costs: BacktestCosts = None,
-                      starting_equity: float = 1000.0) -> list[WalkForwardWindow]:
+                      starting_equity: float = 1000.0,
+                      backtest_fn: Callable = run_backtest) -> list[WalkForwardWindow]:
     """
     Runs signal_fn on the FULL df exactly once, then backtests each
     window as an independent slice of the resulting signal dataframe —
@@ -66,6 +67,16 @@ def run_walk_forward(df: pd.DataFrame, signal_fn: Callable[[pd.DataFrame], pd.Da
     introduce lookahead: each engine's own no-lookahead guarantee already
     ensures a value at bar i only depends on bars <= i, regardless of
     where a later window boundary happens to fall.
+
+    `backtest_fn` defaults to `run_backtest` but accepts any callable
+    with the same signature (df, long_entry_col, short_entry_col,
+    risk_limits, <config>, costs, starting_equity) -> BacktestResult —
+    added for `backtest.exit_rules_engine.run_backtest_with_exit_rules`,
+    so both engines share this one windowing/chaining implementation
+    rather than a second copy of it. `stop_target` is passed straight
+    through as whichever config type `backtest_fn` actually expects
+    (StopTargetConfig for the default, ExitRulesConfig for the exit-rules
+    engine) — untyped here deliberately, for that reason.
     """
     windows = make_rolling_windows(df, window_days, step_days)
     signals_df = signal_fn(df)
@@ -76,8 +87,8 @@ def run_walk_forward(df: pd.DataFrame, signal_fn: Callable[[pd.DataFrame], pd.Da
         window_df = signals_df.loc[mask].reset_index(drop=True)
         if len(window_df) < MIN_WINDOW_BARS:
             continue
-        result = run_backtest(window_df, long_entry_col, short_entry_col,
-                               risk_limits, stop_target, costs, starting_equity)
+        result = backtest_fn(window_df, long_entry_col, short_entry_col,
+                              risk_limits, stop_target, costs, starting_equity)
         results.append(WalkForwardWindow(
             label=f"{start.date()} -> {end.date()}", start=start, end=end,
             num_bars=len(window_df), result=result,
