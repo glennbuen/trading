@@ -17,9 +17,23 @@ confirm it, and what invalidates it. When a name's status changes on a
 later chart (confirms, fails, or gets extended), update its entry here
 rather than duplicating a new one — keep one entry per symbol.
 
+**Risk tier** (added once BLOOM's weekly context showed these aren't
+all equivalent): every entry is tagged one of —
+- **Trend pullback/continuation** — an established trend (weekly-
+  confirmed) offering a pullback or breakout entry. The lower-risk
+  category.
+- **Early-stage / speculative bottom-fish** — a name recovering off a
+  major decline, weekly chart still shows large overhead resistance,
+  no fundamental context on why it fell. Same discretionary-entry
+  logic, meaningfully higher risk — don't read as equivalent
+  confidence to the pullback/continuation tier just because it's in
+  the same file.
+
 ---
 
 ## BPI — Bank of the Philippine Islands
+- **Risk tier: Trend pullback/continuation** (weekly shows a real but
+  modest overhang — MA200 ~10% above price, not the 80%+-decline kind)
 - **Reviewed:** 2026-09-08, updated 2026-09-09 (daily+weekly, +VWAP/MACD/ATR) · **Price at review:** ₱103.90
 - **Setup:** Rallying off a June low (~₱92) on the daily chart — but the
   weekly chart (added 09-09) shows this is a bounce inside a much bigger
@@ -40,6 +54,8 @@ rather than duplicating a new one — keep one entry per symbol.
   a rejection back below ~₱109 after a breakout attempt voids that read.
 
 ## Philweb Corp. (WEB)
+- **Risk tier: Trend pullback/continuation** (weekly-confirmed —
+  the cleanest of the three)
 - **Reviewed:** 2026-09-08, updated 2026-09-09 (daily+weekly, +VWAP/MACD/ATR) · **Price at review:** ₱15.00
 - **Setup:** Fresh breakout leg out of a multi-month base (Mar-Jul
   consolidation), full bullish MA stack, RSI 66.29 (not extreme).
@@ -61,6 +77,9 @@ rather than duplicating a new one — keep one entry per symbol.
   "healthy retest" into "setup failing" — not a buy at that point.
 
 ## Bloomberry Resorts Corp. (BLOOM)
+- **Risk tier: Early-stage / speculative bottom-fish** (down ~80% from
+  2024 highs, weekly MA200 ~180% above price, no fundamental context on
+  the decline — do not read as equivalent confidence to BPI/Philweb)
 - **Reviewed:** 2026-09-09, corrected same day (daily+weekly, +VWAP/MACD/ATR) · **Price at review:** ₱2.34
 - **Setup:** Daily chart shows a real MA-compression-then-reclaim (MA150
   2.17, MA50 2.17, MA200 2.30, MA20 2.32, EMA10 2.34 all converged at/
