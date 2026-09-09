@@ -36,6 +36,7 @@ clear trend/setup), not something they filtered out beforehand.
 | **Philweb (WEB)** | Trend pullback | Short-term only | ₱14.20–14.45 | ₱13.50–13.70 | ₱16.00–16.50 (R-multiple based — no overhead resistance, making new highs) | ~2.7:1 |
 | **BLOOM** | Speculative bottom-fish | Short-term, smallest size | ₱2.17–2.32 | ₱2.05–2.10 | T1 ₱2.45 · T2 ₱2.60 | ~1.2:1 to T1, ~2.1:1 to T2 |
 | **NIKL** | Trend pullback | Short-term + long-term candidate | ₱4.25–4.45 | ₱3.90–3.95 | T1 ₱5.20–5.40 · T2 (52w high) ₱5.65–5.73 | ~2.2:1 to T1, ~3.2:1 to T2 |
+| **APX** | Trend pullback | Short-term + long-term candidate | ₱15.50–15.80 (deeper, preferred) · ₱16.30–16.50 (shallow) | ₱14.20–14.40 | T1 ₱17.50–17.66 · T2 (52w high) ₱18.46 | ~1.5:1 to T1 |
 
 Full reasoning, invalidation conditions, and the fundamental context
 behind each horizon call are in the detailed entries below — this table
@@ -227,6 +228,37 @@ regardless of how good the chart looks.
   the right price," not risk-free — but of the four, this is the one
   where a long-term add is best supported by both the chart and the
   fundamentals.
+
+## Apex Mining Company, Inc. (APX)
+- **Risk tier: Trend pullback/continuation**
+- **Reviewed:** 2026-09-09 (daily+weekly, full indicator set) · **Price at review:** ₱16.80
+- **Setup:** Genuine, moderate uptrend since a June low (~₱10.50) — not
+  a parabolic spike like Atlas (AT) or IMI. RSI 61.64 daily / 58.89
+  weekly, well off overbought. **Caution: today's candle is a real
+  warning sign** — opened 17.50, made a marginal new high (17.66), then
+  sold off hard to close at the day's low (16.80, -2.78%) on BOTH the
+  daily and weekly chart (same candle) — a distribution/rejection
+  pattern. Weekly MACD histogram visibly rolling from green to red in
+  the last several bars. Not yet a confirmed reversal, but not
+  something to treat as "just noise" either — wait for the next 1-2
+  sessions to see where it actually stabilizes before trusting a
+  support level. 52w range 8.05-18.46 — high in range (~83%) but not
+  pinned at the top like AT was.
+- **Entry ranges:**
+  - Shallow pullback: **₱16.30–16.50** (EMA10) — less preferred, less
+    confirmed given today's close is already right at this zone.
+  - Deeper pullback (preferred): **₱15.50–15.80** (MA20) — more room,
+    higher-probability if the selling continues a bit further.
+  - ATR(14)=0.75 → stop **~₱14.20–14.40** (~1.5x ATR below MA20, just
+    above MA50 at 14.25).
+- **Take-profit:** T1 **₱17.50–17.66** (retest of today's high) · T2
+  (stretch) **₱18.46** (52-week high).
+- **Invalidation:** a close below ~₱14.20 undoes the pullback thesis
+  entirely, not just a "deeper dip."
+- **Horizon: Short-term entry, reasonable long-term candidate.**
+  Profitable (P/E 11.00), dividend payer (3.52% yield) — similar
+  profile to NIKL. Same mining-sector cyclicality caveat as NIKL/AT
+  apply to "long-term" here.
 
 ---
 
