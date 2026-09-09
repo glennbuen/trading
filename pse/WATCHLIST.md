@@ -61,19 +61,29 @@ rather than duplicating a new one — keep one entry per symbol.
   "healthy retest" into "setup failing" — not a buy at that point.
 
 ## Bloomberry Resorts Corp. (BLOOM)
-- **Reviewed:** 2026-09-09 · **Price at review:** ₱2.34
-- **Setup:** Long 5-month downtrend (Feb-Jun) bottomed ~₱1.70-1.80,
-  since recovered; all moving averages (MA150 2.17, MA50 2.17, MA200
-  2.30, MA20 2.32, EMA10 2.34) have converged into a tight band at/below
-  price — an MA-compression-then-reclaim pattern, more advanced than
-  BPI's still-descending ceiling. RSI 53.95, neutral, room to run.
+- **Reviewed:** 2026-09-09, corrected same day (daily+weekly, +VWAP/MACD/ATR) · **Price at review:** ₱2.34
+- **Setup:** Daily chart shows a real MA-compression-then-reclaim (MA150
+  2.17, MA50 2.17, MA200 2.30, MA20 2.32, EMA10 2.34 all converged at/
+  below price) — but the **weekly chart corrects the read materially**:
+  weekly MA200 = **6.59**, roughly 180% above current price. BLOOM fell
+  from ~₱11-12 (2024) to a 52w low of ₱1.60 — an 80%+ decline — and
+  today's bounce is early-stage relative to that, weekly RSI (53.29)/
+  MACD (near zero) confirm just-stabilizing, not a confirmed weekly
+  uptrend. Closer to BPI's "bounce inside a bigger decline" pattern than
+  to Philweb's weekly-confirmed strength — and more extreme than BPI's
+  version of that same gap.
 - **Entry ranges:**
-  - Breakout entry: **₱2.60–2.70** — a clean push through the early-
-    August high (~₱2.60) that already rejected once this cycle.
-  - Pullback entry: **₱2.17–2.32** — a hold within the now-converged MA
-    cluster.
-- **Invalidation:** a close back below ₱2.17 (MA150/MA50) would undo
-  the reclaim and put this back in "unresolved" territory.
+  - Pullback entry: **₱2.17–2.32** — a hold within the converged daily
+    MA cluster. ATR(14)=0.13 puts a stop at **~₱2.05–2.10** (~1.5x ATR
+    below the zone, under MA50/MA150).
+  - Breakout entry, now two steps not one: first weekly MA50 (**~₱2.45**,
+    only ~4.5% above current price — the nearer, more relevant hurdle),
+    then confirmation through the **₱2.60** August high. Clearing 2.60
+    without holding 2.45 first is a weaker signal than previously stated.
+- **Invalidation:** a close back below ₱2.05 undoes the pullback read.
+  Weekly MA200 (6.59) is real overhead resistance but not a near-term
+  factor — treat this as an early-stage speculative recovery, not a
+  name that's proven itself the way Philweb has.
 
 ---
 
