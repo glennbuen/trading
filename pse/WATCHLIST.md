@@ -29,6 +29,23 @@ all equivalent): every entry is tagged one of —
   confidence to the pullback/continuation tier just because it's in
   the same file.
 
+**Horizon** (added given the user's read that PSE is currently in a
+bear market — not independently verified against the PSEi index
+itself, only individual stock charts, so applied as a conservative
+default rather than a confirmed premise): each entry also gets a
+short-term vs. long-term call, based on two separate questions that
+don't always agree —
+1. Is the *technical setup* itself a defined, short-term trade, or an
+   already-confirmed trend worth holding through?
+2. Does the *company* even support a long-term hold — profitable with
+   real earnings (a sane P/E) and a dividend, vs. speculative/
+   unprofitable (negative P/E, no dividend)?
+
+In a bear-market backdrop specifically: prefer short-term, defined-risk
+trades over new long-term commitments generally, and be extra cautious
+holding unprofitable/non-dividend names through a broader downturn
+regardless of how good the chart looks.
+
 ---
 
 ## BPI — Bank of the Philippine Islands
@@ -52,6 +69,13 @@ all equivalent): every entry is tagged one of —
     (114.49) as the real longer-term hurdle above that.
 - **Invalidation:** a daily close below ~₱101 voids the pullback read;
   a rejection back below ~₱109 after a breakout attempt voids that read.
+- **Horizon: Short-term (swing) preferred.** Blue-chip, profitable
+  (P/E 8.25), dividend payer (4.68% yield) — a defensible long-term
+  accumulation candidate on its own fundamentals, but the current setup
+  is only a daily-level pullback with the weekly trend still
+  unconfirmed (~10% below weekly MA200). Treat as a defined-risk trade
+  first; only reconsider for a long-term add if the weekly chart
+  actually reclaims MA50/MA200.
 
 ## Philweb Corp. (WEB)
 - **Risk tier: Trend pullback/continuation** (weekly-confirmed —
@@ -75,6 +99,13 @@ all equivalent): every entry is tagged one of —
     breakout candle itself.
 - **Invalidation:** a close below ~₱13.50 turns the pullback from
   "healthy retest" into "setup failing" — not a buy at that point.
+- **Horizon: Short-term only.** Momentum/speculative profile — negative
+  P/E (-198.62, currently unprofitable), no dividend. The move is real
+  and weekly-confirmed, but with no earnings or income support
+  underneath it, this is a trade to manage with a stop, not a name to
+  hold through a broader market downturn. Take gains into strength;
+  don't treat as a core long-term position regardless of how strong the
+  chart looks.
 
 ## Bloomberry Resorts Corp. (BLOOM)
 - **Risk tier: Early-stage / speculative bottom-fish** (down ~80% from
@@ -103,6 +134,12 @@ all equivalent): every entry is tagged one of —
   Weekly MA200 (6.59) is real overhead resistance but not a near-term
   factor — treat this as an early-stage speculative recovery, not a
   name that's proven itself the way Philweb has.
+- **Horizon: Short-term only, smallest size.** Negative P/E (-5.35), no
+  dividend, still ~80% below 2024 highs with a large unconfirmed weekly
+  overhang. In a bear-market backdrop this is the last name on the list
+  to hold with long-term conviction — treat any position as a defined-
+  risk trade, exit per the plan, don't average down if it goes against
+  you.
 
 ## Nickel Asia Corp. (NIKL)
 - **Risk tier: Trend pullback/continuation** (cleanest of the three so
@@ -123,6 +160,14 @@ all equivalent): every entry is tagged one of —
   - Shallow pullback (tighter, less room): **₱4.60–4.70** — VWAP zone.
   - Chase/starter (smaller size): current levels, **₱4.70–4.80**.
 - **Invalidation:** a close below ~₱3.90 undoes the pullback read.
+- **Horizon: Both — short-term entry now, most defensible long-term
+  candidate of the four.** Profitable (P/E 8.09), dividend payer (4.39%
+  yield), cleanest technical structure with weekly confirmation already
+  in place. Still a cyclical, commodity-price-driven business (nickel),
+  so "long-term" here means "reasonable to hold through the cycle at
+  the right price," not risk-free — but of the four, this is the one
+  where a long-term add is best supported by both the chart and the
+  fundamentals.
 
 ---
 
