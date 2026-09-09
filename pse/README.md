@@ -1,4 +1,4 @@
-# pse_stocks/
+# pse/
 
 Philippine Stock Exchange (PSE) equities work — kept separate from
 `cryptobot/` and `daytrading/`, which are both OKX crypto, built on a
@@ -6,6 +6,13 @@ data pipeline (`cryptobot.data`) that only talks to OKX via ccxt. There
 is no PSE equivalent wired into this project — no live feed, no
 screener, no historical OHLCV fetcher. Nothing in `cryptobot/` or
 `daytrading/` can be pointed at a PSE ticker as-is.
+
+## Watchlist
+
+`WATCHLIST.md` is the running log — only charts read as nearing a
+potential entry get added there, each with entry price range(s) and an
+invalidation level. Updated as new charts are posted; clear rejections
+are discussed in conversation but not logged.
 
 ## Status
 
@@ -72,7 +79,7 @@ read from — a sheet, a database, a webhook.
 ## Once real PSE data exists
 
 The honest next step, matching how `cryptobot/` itself was built: a
-`pse_stocks/data/` provider mirroring `cryptobot/data/`'s own shape (a
+`pse/data/` provider mirroring `cryptobot/data/`'s own shape (a
 thin data-source wrapper + the same canonical OHLCV schema —
 `ts, dt, open, high, low, close, volume`), then real engines and
 strategies on top of it, tested with the same no-lookahead discipline
