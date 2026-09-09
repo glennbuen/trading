@@ -1,5 +1,28 @@
 # PSE Chart Watchlist — Near-Entry Setups Only
 
+## Market context: PSEi (updated 2026-09-09)
+
+Corrects an earlier "PSE is a bear market" framing that hadn't been
+checked against the index itself. **Not a deep bear market** — PSEi
+fell from a 2024-25 peak (~7400+) to a 52w low of 5584.35 and has been
+recovering since. **But it is in a genuine near-term corrective phase**:
+a sharp daily-chart decline from the August high (~6400+) down to
+current **6105.99**, RSI soft on both timeframes (48.83 weekly, 44.88
+daily — below midline, not oversold), and — this is the load-bearing
+fact — **price is sitting almost exactly on weekly MA50 (6105.89) right
+now**, a live index-level support test. Weekly MA200 (6422.68) is the
+bigger level above, ~5% away.
+
+**Why this matters for every entry below:** several individual names on
+this list (BPI, BLOOM) are testing their own MA50/weekly-support levels
+at the same time the index itself is testing its. If the index holds
+6105-6106 and bounces, that's a tailwind for the pullback entries on
+this list. If it breaks down toward weekly MA200's ~5% gap instead,
+that's a headwind that would pressure even the cleanest individual
+setups (NIKL, Philweb) regardless of their own chart quality. Re-check
+this section against a fresh PSEi chart periodically — it's not a
+one-time read.
+
 A running log of charts posted in conversation that were read as **nearing
 a potential entry** — not a record of every chart reviewed. Names read as
 already extended (chasing risk), directionless, or actively breaking down
