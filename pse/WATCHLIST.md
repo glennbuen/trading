@@ -28,7 +28,36 @@ looking like they have upside potential — "reviewed but not added"
 below reflects charts they posted that *my* read disagreed with (no
 clear trend/setup), not something they filtered out beforehand.
 
+## Entry methodology: staged, not all-or-nothing
+
+Added after a real problem got flagged: "wait for confirmation" and
+"enter at the stated zone" can genuinely conflict — if confirmation
+turns out to be a sharp reversal candle, it can close *above* the whole
+entry zone, and by the time it's visible the good price is already
+gone. Full confirmation and the best price are often mutually
+exclusive; picking one extreme (chase confirmation, or buy blind) isn't
+the answer. Every entry below now uses two tranches instead of one:
+
+- **Starter** — a smaller position (~1/3–1/2 of intended size), taken
+  on the first touch into the stated entry zone, stop active
+  immediately at the listed level. No confirmation required — this
+  piece exists so a sharp bounce doesn't leave you with zero exposure.
+- **Confirmation add** — the remainder, triggered by the first real
+  stabilization signal (the next candle doesn't make a fresh low vs.
+  the prior one, or a close back above the nearest short-term
+  reference — EMA10/VWAP, specified per name below) — added even if
+  that's at a somewhat worse price than the starter.
+
+If price never dips into the zone and just runs, the starter is what
+you have; if it dips and confirms cleanly, both tranches fill close
+together. Either way there's no scenario where waiting for proof means
+walking away with nothing.
+
 ## Summary table
+
+All entries staged (starter on touch + confirmation add on
+stabilization) — see per-name detail below for the exact confirmation
+trigger. "Entry range" is the zone both tranches fill within.
 
 | Symbol | Tier | Horizon | Entry range | Stop-loss | Take-profit | Approx R:R |
 |---|---|---|---|---|---|---|
@@ -103,10 +132,14 @@ regardless of how good the chart looks.
   daily "reversal" hasn't been confirmed on the higher timeframe yet.
   Today (09-09) pulled back right onto daily MA50 (103.46), the
   pullback entry zone, now live.
-- **Entry ranges:**
-  - Pullback entry (live now): **₱102.50–104.00** — holding daily MA50
-    (103.46). ATR(14)=2.76 puts a defensible stop around
-    **₱101.00–101.50** (~1x ATR below support), not just "below MA50."
+- **Entry ranges (staged — see Entry methodology above):**
+  - **Starter**: on any touch/close within **₱102.50–104.00** (holding
+    daily MA50, 103.46), stop active immediately at ₱101.00–101.50
+    (ATR(14)=2.76, ~1x ATR below support).
+  - **Confirmation add**: the first daily candle that doesn't make a
+    fresh low vs. the prior day, or a close back above EMA10 (104.63)/
+    VWAP (104.33) — add here even if price has moved off the starter
+    fill.
   - Breakout entry: **₱108.50–110.00** on the daily chart — but treat
     as partial confirmation only. Full confirmation needs the WEEKLY
     chart to reclaim weekly MA50 (105.51) and hold, with weekly MA200
@@ -136,14 +169,15 @@ regardless of how good the chart looks.
   solidly positive on a sustained multi-quarter arc, price massively
   above weekly MA50 (9.94)/MA200 (4.04) — this is a real, weekly-level
   uptrend, not a daily-only illusion.
-- **Entry ranges:**
-  - Pullback entry (preferred): **₱14.20–14.45** — a hold in the
-    EMA10 (14.42)/MA20 (14.26)/VWAP (14.90) zone. ATR(14)=0.48 puts a
-    defensible stop at **~₱13.50–13.70** (~1.5x ATR below the zone,
-    just under MA50) — a precise level, not just "below MA50."
-  - Chase/starter entry (smaller size only): current levels,
-    **₱14.70–15.20**, specifically sized down since it's the unconfirmed
-    breakout candle itself.
+- **Entry ranges (staged — see Entry methodology above):**
+  - **Starter**: already-live chase/starter (smaller size), current
+    levels **₱14.70–15.20** — sized down since it's the unconfirmed
+    breakout candle itself, OR on any touch into the pullback zone below.
+  - **Confirmation add**: a hold in the **₱14.20–14.45** EMA10
+    (14.42)/MA20 (14.26)/VWAP (14.90) zone, confirmed by the next
+    candle not making a fresh low. ATR(14)=0.48 puts the stop at
+    **~₱13.50–13.70** (~1.5x ATR below the zone, just under MA50) —
+    active as soon as any tranche fills, not just on confirmation.
 - **Take-profit:** **₱16.00–16.50** — no clear overhead resistance to
   target since price is making new highs, so this is an R-multiple-
   based target (~2.5:1 off the pullback entry/stop) rather than a
@@ -174,10 +208,13 @@ regardless of how good the chart looks.
   uptrend. Closer to BPI's "bounce inside a bigger decline" pattern than
   to Philweb's weekly-confirmed strength — and more extreme than BPI's
   version of that same gap.
-- **Entry ranges:**
-  - Pullback entry: **₱2.17–2.32** — a hold within the converged daily
-    MA cluster. ATR(14)=0.13 puts a stop at **~₱2.05–2.10** (~1.5x ATR
-    below the zone, under MA50/MA150).
+- **Entry ranges (staged — see Entry methodology above):**
+  - **Starter**: on any touch/close within **₱2.17–2.32** (the
+    converged daily MA cluster), stop active immediately at
+    **~₱2.05–2.10** (ATR(14)=0.13, ~1.5x ATR below, under MA50/MA150).
+  - **Confirmation add**: the next candle not making a fresh low, or a
+    close back above ₱2.34 (EMA10) — add here even at a slightly
+    higher price than the starter.
   - Breakout entry, now two steps not one: first weekly MA50 (**~₱2.45**,
     only ~4.5% above current price — the nearer, more relevant hurdle),
     then confirmation through the **₱2.60** August high. Clearing 2.60
@@ -209,12 +246,14 @@ regardless of how good the chart looks.
   RSI = 70.39, right at the overbought line after a strong +2.83% day —
   the one caution, matches Philweb's "hot candle, wait for the pullback"
   situation.
-- **Entry ranges:**
-  - Pullback entry (preferred): **₱4.25–4.45** — EMA10/MA20 zone.
-    ATR(14)=0.19 puts a stop at **~₱3.90–3.95** (~1.5x ATR below,
-    just under MA50).
-  - Shallow pullback (tighter, less room): **₱4.60–4.70** — VWAP zone.
-  - Chase/starter (smaller size): current levels, **₱4.70–4.80**.
+- **Entry ranges (staged — see Entry methodology above):**
+  - **Starter**: on any touch within the shallow zone **₱4.60–4.70**
+    (VWAP) or current levels **₱4.70–4.80**, smaller size given daily
+    RSI was at 70 (overbought line) at last review.
+  - **Confirmation add**: a hold in the deeper zone **₱4.25–4.45**
+    (EMA10/MA20), confirmed by the next candle not making a fresh low.
+    ATR(14)=0.19 puts the stop at **~₱3.90–3.95** (~1.5x ATR below,
+    just under MA50) — active as soon as any tranche fills.
 - **Take-profit:** T1 **₱5.20–5.40** (rough intermediate area, ~2.2:1
   R:R off the pullback entry — not a precise structural level, worth
   refining against a swing-high once visible) · T2 (stretch)
@@ -244,13 +283,16 @@ regardless of how good the chart looks.
   sessions to see where it actually stabilizes before trusting a
   support level. 52w range 8.05-18.46 — high in range (~83%) but not
   pinned at the top like AT was.
-- **Entry ranges:**
-  - Shallow pullback: **₱16.30–16.50** (EMA10) — less preferred, less
-    confirmed given today's close is already right at this zone.
-  - Deeper pullback (preferred): **₱15.50–15.80** (MA20) — more room,
-    higher-probability if the selling continues a bit further.
-  - ATR(14)=0.75 → stop **~₱14.20–14.40** (~1.5x ATR below MA20, just
-    above MA50 at 14.25).
+- **Entry ranges (staged — see Entry methodology above, extra caution
+  here given the fresh distribution candle):**
+  - **Starter (keep extra small)**: on touch into either **₱16.30–16.50**
+    (EMA10, shallow) or **₱15.50–15.80** (MA20, deeper, preferred) — but
+    since today's candle was an active rejection, not just a routine
+    pullback, size this piece smaller than the other names' starters.
+  - **Confirmation add (carries more weight than usual)**: the next
+    candle not making a fresh low vs. today's 16.80 close. ATR(14)=0.75
+    → stop **~₱14.20–14.40** (~1.5x ATR below MA20, just above MA50 at
+    14.25), active as soon as the starter fills.
 - **Take-profit:** T1 **₱17.50–17.66** (retest of today's high) · T2
   (stretch) **₱18.46** (52-week high).
 - **Invalidation:** a close below ~₱14.20 undoes the pullback thesis
