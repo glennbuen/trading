@@ -238,3 +238,11 @@ regardless of how good the chart looks.
   no clear setup either direction.
 - **RCR** (2026-09-08, ₱6.75) — active breakdown, rejected off a
   resistance test, below every MA, fresh bearish momentum.
+- **AT (Atlas Consolidated Mining)** (2026-09-09, ₱23.05) — the most
+  extreme chase-risk chart reviewed so far, worse than IMI: RSI 82.30
+  daily / 84.84 weekly (both deeply overbought simultaneously), price
+  ~154% above daily MA200 and ~340% above weekly MA200, +10.82% today
+  alone closing at the day's high, just ₱0.95 below its 52w high
+  (24.00). Possible mining-sector-wide move (Philex/Apex/Atlas all
+  showing up in most-active lists this week) — not confirmed, a
+  hypothesis only.
