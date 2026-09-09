@@ -40,18 +40,24 @@ rather than duplicating a new one — keep one entry per symbol.
   a rejection back below ~₱109 after a breakout attempt voids that read.
 
 ## Philweb Corp. (WEB)
-- **Reviewed:** 2026-09-08 · **Price at review:** ₱15.00
+- **Reviewed:** 2026-09-08, updated 2026-09-09 (daily+weekly, +VWAP/MACD/ATR) · **Price at review:** ₱15.00
 - **Setup:** Fresh breakout leg out of a multi-month base (Mar-Jul
   consolidation), full bullish MA stack, RSI 66.29 (not extreme).
   Today's candle itself is the extended one — closed at the day's high
-  after a +4.17% move, no retest yet.
+  after a +4.17% move, no retest yet. **Weekly chart (09-09) confirms,
+  doesn't just add caution** (unlike BPI): weekly RSI 67.25, MACD
+  solidly positive on a sustained multi-quarter arc, price massively
+  above weekly MA50 (9.94)/MA200 (4.04) — this is a real, weekly-level
+  uptrend, not a daily-only illusion.
 - **Entry ranges:**
   - Pullback entry (preferred): **₱14.20–14.45** — a hold in the
-    EMA10 (14.42)/MA20 (14.26) zone.
+    EMA10 (14.42)/MA20 (14.26)/VWAP (14.90) zone. ATR(14)=0.48 puts a
+    defensible stop at **~₱13.50–13.70** (~1.5x ATR below the zone,
+    just under MA50) — a precise level, not just "below MA50."
   - Chase/starter entry (smaller size only): current levels,
     **₱14.70–15.20**, specifically sized down since it's the unconfirmed
     breakout candle itself.
-- **Invalidation:** a close below MA50 (₱13.86) turns the pullback from
+- **Invalidation:** a close below ~₱13.50 turns the pullback from
   "healthy retest" into "setup failing" — not a buy at that point.
 
 ## Bloomberry Resorts Corp. (BLOOM)
