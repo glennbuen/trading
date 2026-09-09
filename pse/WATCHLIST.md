@@ -20,18 +20,24 @@ rather than duplicating a new one — keep one entry per symbol.
 ---
 
 ## BPI — Bank of the Philippine Islands
-- **Reviewed:** 2026-09-08 · **Price at review:** ₱105.20
-- **Setup:** Rallying off a June low (~₱92), testing the 150/200MA
-  cluster (~₱105.4) from below — unresolved, still under still-
-  declining longer MAs.
+- **Reviewed:** 2026-09-08, updated 2026-09-09 (daily+weekly, +VWAP/MACD/ATR) · **Price at review:** ₱103.90
+- **Setup:** Rallying off a June low (~₱92) on the daily chart — but the
+  weekly chart (added 09-09) shows this is a bounce inside a much bigger
+  decline: BPI peaked ~₱148 in 2024 and fell to a 52w low of ₱87. Weekly
+  MA50 (105.51) and MA200 (114.49) are both still above price — the
+  daily "reversal" hasn't been confirmed on the higher timeframe yet.
+  Today (09-09) pulled back right onto daily MA50 (103.46), the
+  pullback entry zone, now live.
 - **Entry ranges:**
-  - Breakout entry: **₱108.50–110.00** — a clean daily close clearing
-    the recent Aug high (~₱108-109) with real margin, not just a touch.
-  - Pullback entry: **₱103.00–104.00** — a bounce off the MA50
-    (₱103.34) / MA20 zone, holding.
-- **Invalidation:** a daily close back below MA50 (~₱103) without
-  holding voids the pullback read; failure to clear ~₱109 on a breakout
-  attempt (a rejection back below it) voids the breakout read.
+  - Pullback entry (live now): **₱102.50–104.00** — holding daily MA50
+    (103.46). ATR(14)=2.76 puts a defensible stop around
+    **₱101.00–101.50** (~1x ATR below support), not just "below MA50."
+  - Breakout entry: **₱108.50–110.00** on the daily chart — but treat
+    as partial confirmation only. Full confirmation needs the WEEKLY
+    chart to reclaim weekly MA50 (105.51) and hold, with weekly MA200
+    (114.49) as the real longer-term hurdle above that.
+- **Invalidation:** a daily close below ~₱101 voids the pullback read;
+  a rejection back below ~₱109 after a breakout attempt voids that read.
 
 ## Philweb Corp. (WEB)
 - **Reviewed:** 2026-09-08 · **Price at review:** ₱15.00
