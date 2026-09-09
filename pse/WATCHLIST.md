@@ -104,6 +104,26 @@ all equivalent): every entry is tagged one of —
   factor — treat this as an early-stage speculative recovery, not a
   name that's proven itself the way Philweb has.
 
+## Nickel Asia Corp. (NIKL)
+- **Risk tier: Trend pullback/continuation** (cleanest of the three so
+  far — no meaningful weekly overhang)
+- **Reviewed:** 2026-09-09 (daily+weekly, full indicator set) · **Price at review:** ₱4.72
+- **Setup:** Recovery leg since a June low, full bullish MA alignment on
+  BOTH daily (price above MA200 4.40/EMA10 4.40/MA20 4.25/MA50 3.93) AND
+  weekly (weekly MA200 = 4.35, already below price — no BPI/BLOOM-style
+  overhang). Weekly RSI calm (58.31), MACD near-neutral. 52w range
+  3.14-5.73 — well below its own 52w high, real room left. Daily
+  RSI = 70.39, right at the overbought line after a strong +2.83% day —
+  the one caution, matches Philweb's "hot candle, wait for the pullback"
+  situation.
+- **Entry ranges:**
+  - Pullback entry (preferred): **₱4.25–4.45** — EMA10/MA20 zone.
+    ATR(14)=0.19 puts a stop at **~₱3.90–3.95** (~1.5x ATR below,
+    just under MA50).
+  - Shallow pullback (tighter, less room): **₱4.60–4.70** — VWAP zone.
+  - Chase/starter (smaller size): current levels, **₱4.70–4.80**.
+- **Invalidation:** a close below ~₱3.90 undoes the pullback read.
+
 ---
 
 ## Reviewed but NOT added (for reference — not maintained further)
