@@ -278,3 +278,14 @@ regardless of how good the chart looks.
   (24.00). Possible mining-sector-wide move (Philex/Apex/Atlas all
   showing up in most-active lists this week) — not confirmed, a
   hypothesis only.
+- **PGOLD (Puregold Price Club)** (2026-09-09, ₱40.75) — different from
+  the others above: not extended, not actively breaking down, but
+  genuinely directionless — a real coiling/consolidation, not a clean
+  rejection. All daily MAs (MA200 40.88, MA20 40.50, EMA10 40.41, VWAP
+  40.58, MA50 40.33) clustered within ~₱0.50 of price with no clear
+  stack order; weekly RSI 48.45, neutral. Been chopping in a ~38-42
+  range for many months after a 2025 decline. **Worth watching for a
+  resolution, not a clean pass**: a break above weekly MA20 (~42.31)
+  with volume, or a breakdown below ~38, would turn this into a real
+  setup either direction. Fundamentals solid if it resolves up (P/E
+  9.78, div yield 4.87%).
