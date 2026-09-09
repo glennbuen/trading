@@ -23,6 +23,26 @@ setups (NIKL, Philweb) regardless of their own chart quality. Re-check
 this section against a fresh PSEi chart periodically — it's not a
 one-time read.
 
+**Note on sourcing:** the user only posts charts already screened as
+looking like they have upside potential — "reviewed but not added"
+below reflects charts they posted that *my* read disagreed with (no
+clear trend/setup), not something they filtered out beforehand.
+
+## Summary table
+
+| Symbol | Tier | Horizon | Entry range | Stop-loss | Take-profit | Approx R:R |
+|---|---|---|---|---|---|---|
+| **BPI** | Trend pullback | Short-term | ₱102.50–104.00 | ₱101.00–101.50 | T1 ₱108–109 · T2 (stretch) ₱114–115 | ~2.6:1 to T1 |
+| **Philweb (WEB)** | Trend pullback | Short-term only | ₱14.20–14.45 | ₱13.50–13.70 | ₱16.00–16.50 (R-multiple based — no overhead resistance, making new highs) | ~2.7:1 |
+| **BLOOM** | Speculative bottom-fish | Short-term, smallest size | ₱2.17–2.32 | ₱2.05–2.10 | T1 ₱2.45 · T2 ₱2.60 | ~1.2:1 to T1, ~2.1:1 to T2 |
+| **NIKL** | Trend pullback | Short-term + long-term candidate | ₱4.25–4.45 | ₱3.90–3.95 | T1 ₱5.20–5.40 · T2 (52w high) ₱5.65–5.73 | ~2.2:1 to T1, ~3.2:1 to T2 |
+
+Full reasoning, invalidation conditions, and the fundamental context
+behind each horizon call are in the detailed entries below — this table
+is a quick reference, not a replacement for reading the "why."
+BLOOM's T1 R:R is weak on its own (~1.2:1) — that target mainly matters
+as a checkpoint toward T2, not a target worth exiting fully at.
+
 A running log of charts posted in conversation that were read as **nearing
 a potential entry** — not a record of every chart reviewed. Names read as
 already extended (chasing risk), directionless, or actively breaking down
@@ -90,6 +110,9 @@ regardless of how good the chart looks.
     as partial confirmation only. Full confirmation needs the WEEKLY
     chart to reclaim weekly MA50 (105.51) and hold, with weekly MA200
     (114.49) as the real longer-term hurdle above that.
+- **Take-profit:** T1 **₱108–109** (prior local high, ~2.6:1 R:R from
+  the pullback entry) · T2 (stretch, if trend continues) **₱114–115**
+  (weekly MA200 confluence).
 - **Invalidation:** a daily close below ~₱101 voids the pullback read;
   a rejection back below ~₱109 after a breakout attempt voids that read.
 - **Horizon: Short-term (swing) preferred.** Blue-chip, profitable
@@ -120,6 +143,11 @@ regardless of how good the chart looks.
   - Chase/starter entry (smaller size only): current levels,
     **₱14.70–15.20**, specifically sized down since it's the unconfirmed
     breakout candle itself.
+- **Take-profit:** **₱16.00–16.50** — no clear overhead resistance to
+  target since price is making new highs, so this is an R-multiple-
+  based target (~2.5:1 off the pullback entry/stop) rather than a
+  structural level. Trail the stop up as it runs rather than treating
+  this as a hard ceiling.
 - **Invalidation:** a close below ~₱13.50 turns the pullback from
   "healthy retest" into "setup failing" — not a buy at that point.
 - **Horizon: Short-term only.** Momentum/speculative profile — negative
@@ -153,6 +181,10 @@ regardless of how good the chart looks.
     only ~4.5% above current price — the nearer, more relevant hurdle),
     then confirmation through the **₱2.60** August high. Clearing 2.60
     without holding 2.45 first is a weaker signal than previously stated.
+- **Take-profit:** T1 **₱2.45** (weekly MA50 — weak R:R alone, ~1.2:1,
+  treat as a checkpoint not an exit) · T2 **₱2.60** (August high,
+  ~2.1:1 R:R — the more meaningful target). Weekly MA200 (6.59) is far
+  too distant to be a realistic near-term target.
 - **Invalidation:** a close back below ₱2.05 undoes the pullback read.
   Weekly MA200 (6.59) is real overhead resistance but not a near-term
   factor — treat this as an early-stage speculative recovery, not a
@@ -182,6 +214,10 @@ regardless of how good the chart looks.
     just under MA50).
   - Shallow pullback (tighter, less room): **₱4.60–4.70** — VWAP zone.
   - Chase/starter (smaller size): current levels, **₱4.70–4.80**.
+- **Take-profit:** T1 **₱5.20–5.40** (rough intermediate area, ~2.2:1
+  R:R off the pullback entry — not a precise structural level, worth
+  refining against a swing-high once visible) · T2 (stretch)
+  **₱5.65–5.73** (52-week high, ~3.2:1 R:R).
 - **Invalidation:** a close below ~₱3.90 undoes the pullback read.
 - **Horizon: Both — short-term entry now, most defensible long-term
   candidate of the four.** Profitable (P/E 8.09), dividend payer (4.39%
