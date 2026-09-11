@@ -205,12 +205,13 @@ of total current portfolio value.** Check this whenever "positions" is
 run, or whenever a new fill is logged — if a position (existing or
 newly filled) pushes past this threshold, say so explicitly in that
 response, don't wait for a dedicated portfolio review to notice.
-**Currently at the line**: SCC, post-trim (executed 2026-09-11, 800 of
-1,600 sh sold @ ₱17.90) — now ~28.1% of portfolio value, down from
-61.4% pre-trim and just inside the 25-30% flag range rather than well
-over it. Not fully resolved — still the largest single position, and
-the trim addressed sizing, not the still-open auction-risk thesis on
-the remaining 800 shares.
+**Currently at the line**: two names, as of the 2026-09-11 NIKL buy —
+**SCC** (~28.1% of portfolio value, post-trim, down from 61.4%; still
+the largest position, still no technical stop on the remaining 800
+shares, still an open auction-risk thesis) and **LTG** (~26.8% — newly
+in the flag band simply from price appreciation, not new buying,
+worth noting but not an action item on its own). NIKL's new Starter
+(~9.2%) and BPI/BLOOM (~4-5% each) are not a concentration concern.
 
 **Rule 2 — Every new position gets a stop or explicit decision
 framework in the same update it's confirmed filled, no exceptions.**
@@ -245,7 +246,7 @@ it's not a fixed order.
 | Rank | Symbol | Tier | **Play type** | Horizon | **Recommended** | **Catalyst** | Entry range | Stop-loss | Take-profit | Current price | Status | What confirms the add |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **ICT** | Trend pullback (cleanest yet) | Uptrend continuation | Short-term + long-term candidate | Both | First PSE co. past ₱2T mkt cap; Mexico terminal expansion; "Strong Buy," 13 analysts, target ₱1,099 | ₱947–962 (pullback zone) | ₱900–915 (ATR-confirmed, corrected 2026-09-10 from ₱938–942) | T1 ₱1,000 · T2 (52w high) ₱1,049 | ₱981.00 (intraday, -0.61% today, range 980–986) | ⏳ Running further, hasn't pulled back into the zone yet | Hold in ₱947–962 zone confirmed by next candle not making a fresh low, OR reclaim of EMA10 (944.94) |
-| 2 | **NIKL** | Trend pullback | Swing / Uptrend continuation | Short-term + long-term candidate | Both | H1 2026 NI +93% YoY to ₱4.06B (Aug 7 report), EBITDA +67%; tight nickel supply/demand tailwind, analyst target ₱5.53 | ₱4.25–4.45 | ₱3.90–3.95 | T1 ₱5.20–5.40 · T2 ₱5.65–5.73 | ₱4.69 (intraday, -1.88% today, range 4.60–4.75) | 🟡 **Now IN the shallow starter zone (₱4.60–4.70)** — first real pullback since this was added | Next candle not making a fresh low vs. today confirms the starter; deeper zone ₱4.25–4.45 still the confirmation-add trigger if it keeps falling |
+| 2 | **NIKL** | Trend pullback | Swing / Uptrend continuation | Short-term (T1 full-exit rule applies — see below) | Short-term | H1 2026 NI +93% YoY to ₱4.06B (Aug 7 report), EBITDA +67%; tight nickel supply/demand tailwind, analyst target ₱5.53 | ₱4.25–4.45 | ₱3.90–3.95 | T1 ₱5.20–5.40 (full exit here, not partial) | ₱4.69 (intraday, -1.88% today, range 4.60–4.75) | ✅ **Starter FILLED** (1,000 sh @ ₱4.6738 avg, 2026-09-11) — in the shallow starter zone, matches the plan | Next candle not making a fresh low vs. today confirms full conviction; deeper zone ₱4.25–4.45 was the confirmation-add trigger, moot now that the starter already filled in the shallow zone |
 | 3 | **OGP** | Trend pullback | Uptrend continuation | Short-term + long-term candidate | Both | Didipio mine life extended to 2037; $1.958B long-term investment confirmed; solid 2026 production guidance | ₱34.20–36.65 | ₱32.60–33.15 (ATR-confirmed, close to original ₱33.50 guess) | T1 ₱40.00 · T2 (52w high) ₱40.50 | ₱37.85 (intraday, -2.95% today, range 37.80–38.50) | ⏳ Pulling back off yesterday's highs, still above the entry zone and below T1 | Next candle no fresh low, OR close above EMA10 (36.90), if it keeps dropping into the ₱34.20–36.65 zone |
 | 4 | **APX** | Trend pullback | Quick (was Uptrend — broke to new highs then pulling back) | Short-term + long-term candidate | Both | H1 2026 NI +68% YoY, Q1 EPS +92%; analyst target ₱22.00, above the new 52w high | ₱15.50–15.80 (deep) · ₱16.30–16.50 (shallow) | Trail (see detail below — old fixed stop ₱14.20–14.40 stale, trail level itself is a rough estimate pending a fresh ATR chart) | T1 ✅ hit · T2 ✅ hit · **T3 (new) ₱19.70–20.00**, trail don't hold | ₱17.70 (intraday, -2.75% today, range 17.70–18.08) | ⚠️ Second straight down day off the 19.18 high (~-7.7% off the peak) — still well above the old fixed stop, but the loose trailing reference needs a fresh chart to tighten before this goes much further | N/A — already well past entry, managing the existing run; worth re-pasting a current chart given the pullback |
 | 5 | **Philweb (WEB)** | Trend pullback | Quick (momentum chase — never gave a pullback) | Short-term only | Short-term | Q2 swung to profit, rev +96%; ₱2.02B + ₱4.23B capital injections (Gokongwei, JKS stake) | ₱14.20–14.45 | ₱13.50–13.70 | ₱16.00–16.50 | ₱15.36 (intraday, -2.78% today, range 15.22–15.48) | ❌ Pulling back from the highs but still above the ₱14.20–14.45 zone | Would need to keep falling into ₱14.20–14.45, then a no-fresh-low candle |
@@ -369,6 +370,7 @@ above rather than the entry-side staging used for the watchlist proper.
 | **SCC** | ₱37.7423 (800 sh remaining, real avg — was 1,600) | ₱17.90 (real sale price, 2026-09-11) | -52.58% | Coal-block auction risk dominates (contract expiry Jul 2027, DOE re-bid, terms being worsened) — see dedicated section. No 2026 dividend declared (expected ~May, skipped) | ✅ **50% trimmed 2026-09-11** — sold 800 sh @ ₱17.90, realized loss ≈ -₱15,873.84 gross (see Trade Journal) | Not set — no technical reversal signal to base one on | Long-term weekly downtrend, still unresolved: weekly MA200 (31.07) sits 75% above price, price down >50% from its 2022 peak (~₱38-40). Weekly RSI deeply oversold (28.00) — raises near-term bounce odds but is NOT a confirmed reversal. **The real driver, researched 2026-09-10: Semirara's core coal mining contract (COC No. 5, 10 blocks) expires July 2027, and the DOE has opened a competitive auction for those blocks — Semirara is NOT guaranteed to keep them.** New contract terms being drafted are worse for whoever wins (more mandatory domestic supply, larger government royalty). Auction repeatedly delayed (Feb→Aug→now Q4 2026). Semirara has already filed redundancy notices for 462 mine-site staff and cut 2026 production targets — the company's own actions signal real concern, not just market sentiment. **This undercuts the "cheap P/E, sound business" framing** — the low valuation (P/E 5.72, 7.01% yield) may be the market correctly pricing real contract-loss/worse-terms risk, not an overreaction. Full detail in the SCC section below. |
 | **BLOOM** | ₱2.2567 (real fill, incl. fees — 1,000 sh, raw ₱2.24) | ₱2.25 (intraday, +0.45% today, range 2.22–2.26) | -0.30% | Q2 loss narrowed sharply (₱1.41B→₱345M YoY), EBITDA +35%, GGR +15% — genuinely supports the bottom-fish thesis | N/A — not yet in profit, partial-take rule doesn't apply yet | Not a trailing stop yet — **initial stop ₱2.05–2.10 active** (this is still the Starter tranche; see watchlist detail for the Confirmation-add trigger, still pending) | Early-stage/speculative bottom-fish, unconfirmed on both timeframes — see full [BLOOM entry](#bloomberry-resorts-corp-bloom) below for the setup. This is the Starter-only fill; sizing and risk still match that tranche, not a full position yet. |
 | **BPI** | ₱103.6050 (real fill, incl. fees — 20 sh, 2 board lots) | ₱103.50 (intraday, -0.58% today, range 103.50–104.00) | -0.10% | Q1 miss vs forecast but +1.7% YoY NI; 2026 outlook targets high-single-digit growth | N/A — not yet in profit | Not a trailing stop yet — **initial stop ₱101.00–101.50 active** (Starter tranche; Confirmation-add still pending) | Trend pullback/continuation tier, testing daily MA50 (103.46) — see full [BPI entry](#bpi--bank-of-the-philippine-islands) below. Starter-only fill so far. |
+| **NIKL** | ₱4.6738 (real fill, 1,000 sh, 2026-09-11) | ₱4.69 (intraday, -1.88% today, range 4.60–4.75) | +0.35% | H1 2026 NI +93% YoY to ₱4.06B, EBITDA +67%; tight nickel supply/demand tailwind | N/A — **T1-full-exit rule applies** (trader-not-investor, no partial take — see Exit methodology) | **Initial stop ₱3.90–3.95 active** (ATR-based, ~1.5x ATR14 below MA50) | Trend pullback/continuation tier, cleanest weekly structure of the four reviewed — see full [NIKL entry](#nickel-asia-corp-nikl) below. This is the Starter fill, in the shallow zone; T1 ₱5.20–5.40 is a full exit under the current rule, not a partial. |
 
 **Capital tracking (real, as of this fill):** BLOOM ₱2,256.70 + BPI
 ₱2,072.10 = **₱4,328.80 deployed**. User-reported cash on hand (before
@@ -378,21 +380,25 @@ reported numbers as authoritative going forward, not the earlier
 planning estimate.
 
 **Updated 2026-09-11 — SCC trim executed:** sold 800 sh @ ₱17.90,
-gross proceeds ₱14,320.00 (fees not yet netted out — ask the user for
-the real net credit if precision matters). Estimated cash on hand now
-**≈₱18,673.23** (₱4,353.23 + ₱14,320.00 gross), pending the user's
-real post-fee figure.
+gross proceeds ₱14,320.00. **Updated again same day — NIKL Starter
+bought**: 1,000 sh @ ₱4.6738 = ₱4,673.80. **Real cash on hand,
+user-reported after both: ₱13,942.** (Cross-check: ₱4,353.23 +
+₱14,320.00 gross SCC proceeds − ₱4,673.80 NIKL cost = ₱13,999.43 —
+the user's real ₱13,942 is ₱57.43 lower, consistent with real selling
+fees on the SCC trim not being in the gross-proceeds estimate. Using
+the user's real reported ₱13,942 as authoritative going forward, not
+the derived estimate.)
 
-**Portfolio concentration, recomputed post-trim:** total portfolio
-value (positions + estimated cash) ≈ LTG ₱13,644 (900×15.16) + SCC
-₱14,320 (800×17.90) + BLOOM ₱2,280 (1,000×2.28) + BPI ₱2,068
-(20×103.40) + cash ₱18,673.23 ≈ **₱50,985.23**. **SCC is now ~28.1% of
-total portfolio value** — down hard from 61.4% pre-trim, and back
-under the Portfolio Risk Rules' 25-30% flag line (right at the edge,
-not comfortably clear of it). A meaningful, real de-risking, not a
-token gesture — but SCC is still the largest single position and
-still carries no technical stop, so it's not "resolved," just
-smaller.
+**Portfolio concentration, recomputed with NIKL added:** total
+portfolio value (positions + real cash) ≈ LTG ₱13,644 (900×15.16) +
+SCC ₱14,320 (800×17.90) + BLOOM ₱2,280 (1,000×2.28) + BPI ₱2,068
+(20×103.40) + NIKL ₱4,690 (1,000×4.69) + cash ₱13,942 ≈ **₱50,944**.
+**Two names now sit inside the 25-30% flag band, not just one**:
+**SCC ~28.1%** (down hard from 61.4% pre-trim, but still at the edge,
+not comfortably clear) and **LTG ~26.8%** (hadn't been flagged before
+— it's simply grown into this range as the stock has run, not from
+any new buying). NIKL itself is a modest ~9.2% of portfolio, BPI
+~4.1%, BLOOM ~4.5% — no sizing concern on either of those two.
 
 A/N: LTG and SCC cost basis updated 2026-09-10 to the user's real
 average fill prices (900 sh @ ₱11.333, 1,600 sh @ ₱37.7423) — these
@@ -743,19 +749,27 @@ regardless of how good the chart looks.
     (EMA10/MA20), confirmed by the next candle not making a fresh low.
     ATR(14)=0.19 puts the stop at **~₱3.90–3.95** (~1.5x ATR below,
     just under MA50) — active as soon as any tranche fills.
-- **Take-profit:** T1 **₱5.20–5.40** (rough intermediate area, ~2.2:1
-  R:R off the pullback entry — not a precise structural level, worth
-  refining against a swing-high once visible) · T2 (stretch)
-  **₱5.65–5.73** (52-week high, ~3.2:1 R:R).
+- **Take-profit: T1 ₱5.20–5.40 — under the current T1-full-exit rule
+  (trader not investor, see Exit methodology), this is a full exit,
+  not a partial take.** T2 (stretch) ₱5.65–5.73 (52-week high, ~3.2:1
+  R:R) is now moot for this position specifically — kept for reference
+  only in case the exit rule changes again, not the active plan.
 - **Invalidation:** a close below ~₱3.90 undoes the pullback read.
-- **Horizon: Both — short-term entry now, most defensible long-term
-  candidate of the four.** Profitable (P/E 8.09), dividend payer (4.39%
-  yield), cleanest technical structure with weekly confirmation already
-  in place. Still a cyclical, commodity-price-driven business (nickel),
-  so "long-term" here means "reasonable to hold through the cycle at
-  the right price," not risk-free — but of the four, this is the one
-  where a long-term add is best supported by both the chart and the
-  fundamentals.
+- **Horizon: Short-term (T1 full-exit) — superseded 2026-09-11.**
+  Originally tagged "Both," reflecting NIKL's genuinely strong
+  long-term case (profitable, P/E 8.09, dividend payer 4.39% yield,
+  cleanest technical structure of the four reviewed). That fundamental
+  quality is still real and still the reason this ranked #1-3 on
+  conviction — but per the unified trader-not-investor exit rule now
+  active for both projects, this position is managed as a short-term
+  trade to a full exit at T1, not a long-term hold, regardless of how
+  good the underlying business is. Long-term quality stays useful
+  context, not the operative plan.
+- **✅ FILLED 2026-09-11 — Starter, 1,000 sh @ ₱4.6738 avg.** Landed in
+  the shallow starter zone (₱4.60–4.70) exactly as planned, on the
+  first real pullback since this name was added. Stop ₱3.90–3.95
+  active immediately per the Entry methodology. Logged in
+  `TRADE_JOURNAL.md`.
 - **Catalyst refresh, 2026-09-11** (today's -1.88% pullback put price
   right into the shallow starter zone — see summary table): H1 2026
   net income +93% YoY to ₱4.06B, EBITDA +67% YoY to ₱8.68B (published

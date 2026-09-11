@@ -191,3 +191,12 @@ Log above once it actually resolves, don't pre-judge here.)*
   trigger likely already satisfied on the daily timeframe (see the
   data-quality correction entry above) — awaiting the weekly close for
   full confirmation.
+- **NIKL — Starter FILLED, 2026-09-11.** 1,000 shares @ ₱4.6738 avg,
+  real cost ₱4,673.80 — landed in the shallow starter zone
+  (₱4.60–4.70) on the first real pullback since this name was added.
+  Stop ₱3.90–3.95 active immediately. **First position opened under
+  the T1-full-exit rule** — no partial take planned at T1 (₱5.20–5.40),
+  a full exit instead; move to the Log once that resolves one way or
+  the other. Real cash on hand after this fill and the same-day SCC
+  trim: ₱13,942 (user-reported) — see Capital tracking in
+  `WATCHLIST.md` for the reconciliation against the estimated figure.
