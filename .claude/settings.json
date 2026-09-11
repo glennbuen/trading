@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 180 python3 okx_ema_rsi_bot.py --backtest 3000 --symbol ETH/USDT)",
+      "Bash(timeout 180 python3 okx_ema_rsi_bot.py --backtest 3000 --symbol SOL/USDT)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Add okx_ema_rsi_bot.py: EMA\\(20/50/150/200\\) stack + RSI\\(14\\) 30/70 reversion bot *)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('okx_orb_trend_bot.py'\\).read\\(\\)\\)\")",
+      "Bash(python3 okx_orb_trend_bot.py --help)",
+      "Bash(timeout 180 python3 okx_orb_trend_bot.py --backtest 3000)",
+      "Bash(timeout 180 python3 okx_orb_trend_bot.py --backtest 3000 --symbol ETH/USDT)",
+      "Bash(timeout 180 python3 okx_orb_trend_bot.py --backtest 3000 --symbol SOL/USDT)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('okx_scalper_bot.py'\\).read\\(\\)\\)\")",
+      "Bash(python3 okx_scalper_bot.py --help)"
+    ]
+  }
+}
