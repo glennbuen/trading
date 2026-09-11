@@ -241,7 +241,7 @@ it's not a fixed order.
 | Rank | Symbol | Tier | **Play type** | Horizon | **Recommended** | **Catalyst** | Entry range | Stop-loss | Take-profit | Current price | Status | What confirms the add |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **ICT** | Trend pullback (cleanest yet) | Uptrend continuation | Short-term + long-term candidate | Both | First PSE co. past ₱2T mkt cap; Mexico terminal expansion; "Strong Buy," 13 analysts, target ₱1,099 | ₱947–962 (pullback zone) | ₱900–915 (ATR-confirmed, corrected 2026-09-10 from ₱938–942) | T1 ₱1,000 · T2 (52w high) ₱1,049 | ₱981.00 (intraday, -0.61% today, range 980–986) | ⏳ Running further, hasn't pulled back into the zone yet | Hold in ₱947–962 zone confirmed by next candle not making a fresh low, OR reclaim of EMA10 (944.94) |
-| 2 | **NIKL** | Trend pullback | Swing / Uptrend continuation | Short-term + long-term candidate | Both | 2025 earnings +312% YoY, tight nickel supply/demand tailwind, analyst target ₱5.53 | ₱4.25–4.45 | ₱3.90–3.95 | T1 ₱5.20–5.40 · T2 ₱5.65–5.73 | ₱4.69 (intraday, -1.88% today, range 4.60–4.75) | 🟡 **Now IN the shallow starter zone (₱4.60–4.70)** — first real pullback since this was added | Next candle not making a fresh low vs. today confirms the starter; deeper zone ₱4.25–4.45 still the confirmation-add trigger if it keeps falling |
+| 2 | **NIKL** | Trend pullback | Swing / Uptrend continuation | Short-term + long-term candidate | Both | H1 2026 NI +93% YoY to ₱4.06B (Aug 7 report), EBITDA +67%; tight nickel supply/demand tailwind, analyst target ₱5.53 | ₱4.25–4.45 | ₱3.90–3.95 | T1 ₱5.20–5.40 · T2 ₱5.65–5.73 | ₱4.69 (intraday, -1.88% today, range 4.60–4.75) | 🟡 **Now IN the shallow starter zone (₱4.60–4.70)** — first real pullback since this was added | Next candle not making a fresh low vs. today confirms the starter; deeper zone ₱4.25–4.45 still the confirmation-add trigger if it keeps falling |
 | 3 | **OGP** | Trend pullback | Uptrend continuation | Short-term + long-term candidate | Both | Didipio mine life extended to 2037; $1.958B long-term investment confirmed; solid 2026 production guidance | ₱34.20–36.65 | ₱32.60–33.15 (ATR-confirmed, close to original ₱33.50 guess) | T1 ₱40.00 · T2 (52w high) ₱40.50 | ₱37.85 (intraday, -2.95% today, range 37.80–38.50) | ⏳ Pulling back off yesterday's highs, still above the entry zone and below T1 | Next candle no fresh low, OR close above EMA10 (36.90), if it keeps dropping into the ₱34.20–36.65 zone |
 | 4 | **APX** | Trend pullback | Quick (was Uptrend — broke to new highs then pulling back) | Short-term + long-term candidate | Both | H1 2026 NI +68% YoY, Q1 EPS +92%; analyst target ₱22.00, above the new 52w high | ₱15.50–15.80 (deep) · ₱16.30–16.50 (shallow) | Trail (see detail below — old fixed stop ₱14.20–14.40 stale, trail level itself is a rough estimate pending a fresh ATR chart) | T1 ✅ hit · T2 ✅ hit · **T3 (new) ₱19.70–20.00**, trail don't hold | ₱17.70 (intraday, -2.75% today, range 17.70–18.08) | ⚠️ Second straight down day off the 19.18 high (~-7.7% off the peak) — still well above the old fixed stop, but the loose trailing reference needs a fresh chart to tighten before this goes much further | N/A — already well past entry, managing the existing run; worth re-pasting a current chart given the pullback |
 | 5 | **Philweb (WEB)** | Trend pullback | Quick (momentum chase — never gave a pullback) | Short-term only | Short-term | Q2 swung to profit, rev +96%; ₱2.02B + ₱4.23B capital injections (Gokongwei, JKS stake) | ₱14.20–14.45 | ₱13.50–13.70 | ₱16.00–16.50 | ₱15.36 (intraday, -2.78% today, range 15.22–15.48) | ❌ Pulling back from the highs but still above the ₱14.20–14.45 zone | Would need to keep falling into ₱14.20–14.45, then a no-fresh-low candle |
@@ -307,9 +307,24 @@ or after the news explaining it (Philweb is the clearest example here).
   current pullback to MA50, not a breakdown.
 
 **Watchlist candidates:**
-- **NIKL**: 2025 revenue +32%, earnings **+312%** YoY. Tight
-  nickel supply/demand cited as an ongoing tailwind. Analyst target
-  ₱5.53. Strongly validates the trend-pullback thesis.
+- **NIKL** (refreshed 2026-09-11): the earlier "+312% YoY" figure was
+  full-year 2025 — the more current print is **H1 2026 (Jan-Jun,
+  published Aug 7, 2026): attributable net income +93% YoY to ₱4.06B,
+  EBITDA +67% YoY to ₱8.68B**, driven by higher ore prices, +10% YoY
+  shipment volumes, and a favorable peso-dollar rate ([Inquirer](https://business.inquirer.net/604365/nickel-asia-books-93-higher-h1-profit)).
+  **Worth the nuance**: Q1 2026 standalone was actually weak (net
+  income -26% YoY to ₱372M, [Manila Times](https://www.manilatimes.net/2026/05/13/business/nickel-asia-q1-income-slips-26-to-p372m/))
+  despite higher ore prices at the time — meaning Q2 2026 alone carried
+  the H1 strength, not a smooth trend across both quarters. Macro
+  backdrop: nickel prices have stabilized in the $16,500-18,000/t range
+  (Indonesian supply concerns, El Niño-related water constraints at
+  Morowali Industrial Park providing a tailwind), but ING flags demand
+  as still soft with no confirmed supply squeeze yet — a real but not
+  runaway tailwind. Tight nickel supply/demand still the broad thesis;
+  analyst target ₱5.53. **Not a new catalyst, for the record**: a
+  Coral Bay Nickel/Sumitomo stake-sale story surfaces in searches but
+  that deal was signed February 2025 — old news, not something
+  explaining today's price action.
 - **APX**: H1 2026 net income **+68%** YoY, Q1 EPS +92%. Analyst
   target ₱22.00 (above the already-new 52w high). Real earnings
   growth underneath the move, not just momentum.
@@ -714,6 +729,15 @@ regardless of how good the chart looks.
   the right price," not risk-free — but of the four, this is the one
   where a long-term add is best supported by both the chart and the
   fundamentals.
+- **Catalyst refresh, 2026-09-11** (today's -1.88% pullback put price
+  right into the shallow starter zone — see summary table): H1 2026
+  net income +93% YoY to ₱4.06B, EBITDA +67% YoY to ₱8.68B (published
+  Aug 7, 2026) — genuinely fresh and strong, though Q1 2026 standalone
+  was weak (-26% YoY), so Q2 alone carried H1's strength. Full detail
+  and sourcing in the Fundamental Catalysts section above. Nothing
+  found that explains today's specific dip as company-driven — reads
+  as a normal pullback into the stated zone, not a reaction to bad
+  news.
 
 ## International Container Terminal Services, Inc. (ICT)
 - **Risk tier: Trend pullback/continuation — cleanest weekly structure
