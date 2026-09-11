@@ -83,10 +83,49 @@ or "does it hold up on data the original discovery never touched" (the
 holdout question). Both of those layers are unrun for every symbol in
 this table except BTC/ETH.
 
-## Suggested next step
+## Follow-up: sensitivity sweep + holdout on XLM/DOGE/SOL (2026-09-11)
 
-Run the same parameter sensitivity sweep (`scripts/
-parameter_sensitivity_tita.py`'s pattern) and a holdout validation
-(`scripts/holdout_validation_tita.py`'s pattern) on the three strongest —
-**XLM, DOGE, SOL** — before considering paper trading any of them
-alongside BTC/ETH. Not yet run as of this doc.
+Run via `scripts/validate_tita_new_symbols.py`, same method as
+`parameter_sensitivity_tita.py` and `holdout_validation_tita.py`.
+
+**Sensitivity sweep**: all three passed cleanly — no real cliffs across
+the 5×4 perturbation grid. XLM's `rsi_lower` knob dipped to PF 0.84 on
+the two downward perturbations (worth noting, not a collapse).
+
+**Holdout (most recent 365 days, isolated)** — the headline PF conceals
+more than it reveals here:
+
+| Symbol | Holdout PF | Trades | Q1 (Sep-Dec) | Q2 (Dec-Mar) | Q3 (Mar-Jun) | Q4 (Jun-Sep) |
+|---|---|---|---|---|---|---|
+| XLM | 5.09 | 15 | 0.00 | 0.05 | 10.43 | 5.77 |
+| DOGE | 1.12 | 13 | 0.07 | 0.23 | 0.04 | 4.50 |
+| SOL | 2.81 | 17 | 0.39 | 0.49 | 1.58 | 6.68 |
+
+All three show the same shape: flat-to-losing across the first half of
+the holdout year, with the entire aggregate result riding on the last
+one or two quarters. This differs from BTC/ETH's own holdout pattern
+(BTC: 5.96 → 0.28 → 1.18 → 4.60 — strongest quarter was the *first*
+one), so it isn't simply "the whole crypto market ran in Q3/Q4" — it
+looks more like something alt-specific happened in that window that
+BTC didn't fully share. Worth treating as an open question, not a
+settled explanation.
+
+**Verdict per symbol:**
+- **DOGE — set aside.** PF=1.12 is barely breakeven; 3 of 4 quarters
+  were clear losers. The full-history screen's PF=2.75 has not been
+  holding up recently — exactly what the holdout check exists to catch.
+- **XLM — impressive number, fragile shape.** PF=5.09 on 15 trades where
+  2 quarters were near-total losses and 2 were extraordinarily hot
+  (10.43, 5.77) is a small sample carried by two lucky quarters, not a
+  demonstrated steady edge. Clean sensitivity sweep is a real point in
+  its favor; the holdout number itself isn't trustworthy yet.
+- **SOL — the most credible of the three, still not paper-trading-ready.**
+  Front-loaded to the second half, but as a gradient (0.39 → 0.49 → 1.58
+  → 6.68) rather than a cliff, positive net return even in the weaker
+  early quarters, and a clean sensitivity sweep.
+
+**Decision as of this doc: none of the three proceed to paper trading.**
+The quarterly lumpiness is a real yellow flag on all three, to varying
+degrees. If revisited, SOL is the one worth another look after more
+data accumulates outside its one hot stretch; DOGE is not worth
+pursuing further on this evidence.
