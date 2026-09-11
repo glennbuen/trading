@@ -247,6 +247,11 @@ they don't move just because price does. Flag a name if any of:
 Say this plainly in the summary response ("worth a fresh chart on X, Y"
 or "nothing needs a refresh right now") — don't wait to be asked, and
 don't bury it if the answer is "nothing," say that explicitly too.
+**Specify which timeframe(s) — daily, weekly, or both — not just "a
+fresh chart."** Reason it out per name: a stale ATR/trailing-stop or a
+fast-moving daily structure calls for daily; a confirmation trigger
+defined on the weekly (like a weekly MA close) calls for weekly;
+flag both only when both are genuinely stale, not by default.
 
 **Last price update: 2026-09-11, 3:00 PM PH close — live quotes from
 filgit.com (see Note on sourcing).** All entries staged (starter on touch +
