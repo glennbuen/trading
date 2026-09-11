@@ -283,8 +283,8 @@ exactly: $78.77 − $30.53 = $48.24).
 
 | Symbol | Cost basis (real) | Current price | Unrealized | Stop-loss (initial, per Portfolio Risk Rule 2) | Exit plan | Technical read |
 |---|---|---|---|---|---|---|
-| **NVDA** | $218.41 (0.07 fractional sh, $15.29) | $223.42 | +2.29% | ~$210–213 (set this now if not already active) | Full exit at T1 ~$236–240 per this account's T1-exit rule | Filled *below* the stated zone ($220.80–223.67) — a better entry than planned. Real structure, weekly MA200 +95%, no extension concern. |
-| **INTC** | $101.6173 (0.15 fractional sh, $15.24) | $106.24 | +4.55% | ~$91–94 (set this now if not already active) | Full exit at T1 ~$115–120 per this account's T1-exit rule | Filled inside the stated zone ($100–106). Live test of weekly MA20 after a genuine multi-year reversal — strongest catalyst reviewed (govt stake, Apple/Google foundry interest). |
+| **NVDA** | $218.41 (0.07 fractional sh, $15.29) | $218.36 (-0.91% today) | -0.02% | ~$210–213 (no automated stop — Webull SG doesn't support one on fractional shares, see Broker & capital) | Full exit at T1 ~$236–240 per this account's T1-exit rule | Filled *below* the stated zone ($220.80–223.67) — a better entry than planned. Essentially flat now after today's pullback — stop is well clear. |
+| **INTC** | $101.6173 (0.15 fractional sh, $15.24) | $100.32 (-5.57% today) | -1.28% | ~$91–94 (no automated stop — same fractional-share gap) | Full exit at T1 ~$115–120 per this account's T1-exit rule | Filled inside the stated zone ($100–106). **-5.57% single-day move** — still above the stop zone, not close to breaching, but a real move worth understanding (a foundry-spinoff/IPO-exploration headline surfaced earlier and was never fully dug into — worth revisiting if you want the detail). |
 
 ## Fundamental Catalysts
 
