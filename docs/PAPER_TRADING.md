@@ -45,8 +45,38 @@ Same defaults (`alma_window=9, rsi_length=14, rsi_lower=50,
 rsi_upper=55`), same exit mechanism (`trailing_indicator` on `tita_alma`
 with an ATR(1.5x) hard-floor stop underneath), same cost assumptions
 (`BacktestCosts` defaults — 0.10% taker fee, 0.05% entry slippage, 0.4%
-stop slippage), same `RiskLimits` defaults as every backtest/walk-forward
-run. Nothing tuned for paper trading specifically.
+stop slippage). **These are the parameters that produced the validated
+holdout result** (`docs/TITA_HOLDOUT_VALIDATION.md` — PF 2.60 BTC / 1.79
+ETH) and are deliberately never touched here without a full re-run.
+
+## Risk limits — tightened 2026-09-11, account-level only
+
+`RiskLimits` (position sizing, daily/weekly loss circuit breakers,
+consecutive-loss halt, exposure caps) is **no longer the shared
+`RiskLimits()` default** every other strategy's backtest script uses —
+`scripts/run_tita_paper_trading.py` now passes a stricter override,
+prompted by comparing this project's discretionary PSE/US-stocks risk
+rules (`pse/WATCHLIST.md`, `us-stocks/WATCHLIST.md`) against crypto's
+higher volatility:
+
+| Limit | Shared default | TITA paper-trading override |
+|---|---|---|
+| Risk per trade | 0.5% of equity | **0.3%** |
+| Max daily loss | 2.0% | **1.5%** |
+| Max weekly loss | 5.0% | **3.5%** |
+| Consecutive-loss halt trigger | 3 losses | **2 losses** |
+| Halt cooldown | 24h | **48h** |
+| Max exposure / position size | 25% | **20%** |
+
+This layer sits *outside* the backtested signal/exit logic — it only
+scales dollar position size and gates when new trades are allowed, so
+tightening it doesn't touch the trade-by-trade R-multiple distribution
+the holdout PF was computed from. It's safe to change without
+re-validating, unlike `STOP_TARGET`'s `atr_mult_stop`/`target_r_multiple`
+above. Applied while both symbols were still at zero paper trades (see
+`paper_trading_state/*.json`), so nothing already-recorded was
+retroactively affected. The shared `RiskLimits()` default used by every
+other strategy's evaluation script under `scripts/` is untouched.
 
 ## How to check on it
 
