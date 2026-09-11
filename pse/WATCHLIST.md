@@ -422,6 +422,29 @@ not comfortably clear) and **LTG ~26.8%** (hadn't been flagged before
 any new buying). NIKL itself is a modest ~9.2% of portfolio, BPI
 ~4.1%, BLOOM ~4.5% — no sizing concern on either of those two.
 
+**Redeployment plan, stated 2026-09-11**: the ₱13,942 cash on hand
+(from the SCC trim) is earmarked for Confirmation-add tranches on
+existing Starters, or new staged entries from the Summary table, once
+their stated triggers actually fire — not sitting idle by default, but
+also not deployed ahead of confirmation. As of the last price check,
+**none of the pending triggers have fired yet**:
+- BPI Confirmation-add: needs a close above EMA10 (104.63)/VWAP
+  (104.33) or no-fresh-low candle — last close ₱103.10, below both.
+- BLOOM Confirmation-add: needs a close above ₱2.34 (EMA10) or
+  no-fresh-low candle — last close ₱2.23, below it.
+- NIKL Confirmation-add: needs a pullback into ₱4.25–4.45 — last
+  price ₱4.54, hasn't reached that zone.
+- DMC: needs a weekly close back above ₱8.19 (MA20) — last price
+  ₱8.14, just below, closest of the group to firing.
+- CNPF Confirmation-add: needs a pullback into ₱32.37–32.48 — last
+  price ₱33.70, today's own extended candle, hasn't pulled back.
+- ICT/OGP/Philweb: none have pulled back into their stated entry
+  zones yet either.
+
+Re-check this list whenever "positions"/"summary" is run — flag
+explicitly the moment any of these actually trigger, since that's the
+point where this cash would actually move.
+
 A/N: LTG and SCC cost basis updated 2026-09-10 to the user's real
 average fill prices (900 sh @ ₱11.333, 1,600 sh @ ₱37.7423) — these
 cross-check well against the earlier back-calculated estimates (+33.60%
