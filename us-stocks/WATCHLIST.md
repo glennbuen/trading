@@ -56,11 +56,17 @@ a source on anything less liquid.
 
 ## Daily workflow (standing process)
 
-1. **Trigger: typing "us_volume"** means the user is about to paste
-   the day's most-active list. Treat it as the input to step 2
+1. **Trigger: typing "us_volume"** means fetch the day's most-active
+   list directly via WebFetch from
+   `https://stockmarketwatch.com/screen/most-active` (confirmed working
+   2026-09-11 — no need to wait for the user to paste a screenshot or
+   the URL). Treat the fetched list as the input to step 2
    automatically. (Prefixed `us_` deliberately, to stay distinct from
    the PSE project's bare "volume"/"positions"/"summary"/"catalyst"
-   triggers in the same conversation context.)
+   triggers in the same conversation context — PSE's "volume" still
+   requires a pasted list/screenshot, since no working autonomous
+   source was found for that market; this asymmetry is intentional,
+   not an inconsistency to fix.)
 2. **Screen new names** (not already reviewed) via MarketScreener
    MA5/20/50/100 + RSI9/14 — flag names above their MAs with RSI not
    yet extended as "worth a closer look."
