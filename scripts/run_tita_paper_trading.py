@@ -43,7 +43,19 @@ from cryptobot.data.exchange import timeframe_to_ms
 from cryptobot.paper_trading.state import load_state, save_state
 from cryptobot.paper_trading.engine import check_and_update
 
-SYMBOLS = ["BTC/USDT", "ETH/USDT"]
+SYMBOLS = ["BTC/USDT", "ETH/USDT", "SOL/USDT"]
+# SOL/USDT added 2026-09-11 after docs/TITA_TOP20_SCREEN.md's follow-up
+# sensitivity sweep + holdout validation — the most credible of three
+# top-20-market-cap candidates screened (XLM, DOGE, SOL), though its own
+# holdout was still front-loaded to the second half of the test year
+# (quarterly PF 0.39/0.49/1.58/6.68, a gradient not a cliff) rather than a
+# clean, evenly-distributed edge like BTC/ETH's. Paper trading is the
+# right tool to resolve that open question — zero capital at risk, and
+# it generates exactly the further out-of-sample data the holdout
+# couldn't provide on its own. DOGE (holdout PF=1.12, 3 of 4 losing
+# quarters) and XLM (holdout PF=5.09 but on 2 near-total-loss quarters
+# propped up by 2 extraordinary ones) were deliberately NOT added — see
+# the doc for the full reasoning.
 TIMEFRAME = "1d"
 STATE_DIR = Path("paper_trading_state")
 STARTING_EQUITY = 1000.0

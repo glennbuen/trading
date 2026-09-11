@@ -3,13 +3,25 @@
 ## What this is
 
 A daily check script (`scripts/run_tita_paper_trading.py`) that simulates
-TITA trading BTC/USDT and ETH/USDT in real time, using real live OKX
-market data, without placing any real orders or touching an exchange
-account at all. It reads only public data (recent candles + a live
-ticker price) and keeps its own equity/trade ledger in local JSON files.
-No API keys, no credentials, no way for it to accidentally place a real
-order — a deliberately safer first step than OKX's own demo-trading
-sandbox (stage 3).
+TITA trading BTC/USDT, ETH/USDT, and (added 2026-09-11) SOL/USDT in real
+time, using real live OKX market data, without placing any real orders or
+touching an exchange account at all. It reads only public data (recent
+candles + a live ticker price) and keeps its own equity/trade ledger in
+local JSON files, one per symbol, each with its own independent starting
+equity — not a shared portfolio. No API keys, no credentials, no way for
+it to accidentally place a real order — a deliberately safer first step
+than OKX's own demo-trading sandbox (stage 3).
+
+**SOL/USDT's inclusion is on weaker evidence than BTC/ETH's** — see
+`docs/TITA_TOP20_SCREEN.md` for the full reasoning. It cleared a
+top-20-market-cap screen and a parameter sensitivity sweep, but its
+holdout validation was front-loaded to the second half of the test year
+rather than evenly distributed like BTC/ETH's. Paper trading is the
+tool being used to resolve that open question, not a sign the question
+is already settled. Two other screened candidates (XLM, DOGE) were
+deliberately NOT added — DOGE on a failed holdout, XLM on a holdout
+that was too lumpy/small-sample to trust despite a clean sensitivity
+sweep.
 
 ## How to run it
 
@@ -30,8 +42,9 @@ Example cron entry (adjust the path):
 
 ## Where the state lives
 
-`paper_trading_state/tita_BTC_USDT.json` and `tita_ETH_USDT.json`
-(gitignored — this is live operational state, not something to commit).
+`paper_trading_state/tita_BTC_USDT.json`, `tita_ETH_USDT.json`, and
+`tita_SOL_USDT.json` (gitignored — this is live operational state, not
+something to commit).
 Each file holds: the current open position (if any), the full trade
 history so far, the simulated equity, and a snapshot of the
 `RiskManager`'s internal state (day/week loss tracking, consecutive-loss
