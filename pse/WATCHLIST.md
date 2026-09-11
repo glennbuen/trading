@@ -230,8 +230,9 @@ distinct from "positions," which is for the Current Holdings table
 
 **Last price update: 2026-09-11, later intraday PH time — live quotes
 from filgit.com (see Note on sourcing). ICT/NIKL/OGP/APX/WEB/DMC
-unchanged from the prior check this session; BPI and BLOOM moved.**
-All entries staged (starter on touch +
+unchanged from the prior check this session; BPI and BLOOM moved.
+CNPF added same day off a real chart paste (see full detail below),
+now rank #6.** All entries staged (starter on touch +
 confirmation add on stabilization) — see per-name detail below for the
 exact confirmation trigger. "Entry range" is the zone both tranches
 fill within. Stop-loss and take-profit are structural/ATR-based levels
@@ -250,19 +251,28 @@ it's not a fixed order.
 | 3 | **OGP** | Trend pullback | Uptrend continuation | Short-term + long-term candidate | Both | Didipio mine life extended to 2037; $1.958B long-term investment confirmed; solid 2026 production guidance | ₱34.20–36.65 | ₱32.60–33.15 (ATR-confirmed, close to original ₱33.50 guess) | T1 ₱40.00 · T2 (52w high) ₱40.50 | ₱37.85 (intraday, -2.95% today, range 37.80–38.50) | ⏳ Pulling back off yesterday's highs, still above the entry zone and below T1 | Next candle no fresh low, OR close above EMA10 (36.90), if it keeps dropping into the ₱34.20–36.65 zone |
 | 4 | **APX** | Trend pullback | Quick (was Uptrend — broke to new highs then pulling back) | Short-term + long-term candidate | Both | H1 2026 NI +68% YoY, Q1 EPS +92%; analyst target ₱22.00, above the new 52w high | ₱15.50–15.80 (deep) · ₱16.30–16.50 (shallow) | Trail (see detail below — old fixed stop ₱14.20–14.40 stale, trail level itself is a rough estimate pending a fresh ATR chart) | T1 ✅ hit · T2 ✅ hit · **T3 (new) ₱19.70–20.00**, trail don't hold | ₱17.70 (intraday, -2.75% today, range 17.70–18.08) | ⚠️ Second straight down day off the 19.18 high (~-7.7% off the peak) — still well above the old fixed stop, but the loose trailing reference needs a fresh chart to tighten before this goes much further | N/A — already well past entry, managing the existing run; worth re-pasting a current chart given the pullback |
 | 5 | **Philweb (WEB)** | Trend pullback | Quick (momentum chase — never gave a pullback) | Short-term only | Short-term | Q2 swung to profit, rev +96%; ₱2.02B + ₱4.23B capital injections (Gokongwei, JKS stake) | ₱14.20–14.45 | ₱13.50–13.70 | ₱16.00–16.50 | ₱15.36 (intraday, -2.78% today, range 15.22–15.48) | ❌ Pulling back from the highs but still above the ₱14.20–14.45 zone | Would need to keep falling into ₱14.20–14.45, then a no-fresh-low candle |
-| 6 | **BPI** | Trend pullback | Swing | Short-term | Short-term | Q1 miss vs forecast but +1.7% YoY NI; 2026 outlook targets high-single-digit growth | ₱102.50–104.00 | ₱101.00–101.50 | T1 ₱108–109 · T2 ₱114–115 | ₱103.40 (intraday, -0.67% today, range 103.30–104.00) | ✅ **Starter FILLED** (20 sh @ ₱103.6050 avg) — still inside the stated zone | Next daily candle makes no fresh low vs. prior day, OR close back above EMA10 (104.63)/VWAP (104.33) |
-| 7 | **BLOOM** | Speculative bottom-fish | Bottomfishing | Short-term, smallest size | Short-term | Q2 loss narrowed sharply (₱1.41B→₱345M YoY), EBITDA +35%, GGR +15% | ₱2.17–2.32 | ₱2.05–2.10 | T1 ₱2.45 · T2 ₱2.60 | ₱2.28 (intraday, +1.79% today, range 2.22–2.28) | ✅ **Starter FILLED** (1,000 sh @ ₱2.2567 avg) — still in zone, best performer today | Next candle makes no fresh low, OR close back above ₱2.34 (EMA10) |
-| 8 | **DMC** | Speculative bottom-fish | Bottomfishing | Short-term entry, long-term candidate on fundamentals | Short-term (long-term on fundamentals) | Softer: Q1 NI -2% YoY, FY25 NI -21%; fair value cut ₱10.04→9.42 — tempers the thesis | ₱7.86–8.02 | ₱7.57–7.67 (ATR-confirmed) | T1 ₱9.50–9.71 · T2 ₱10.65–11.00 | ₱8.15 (intraday, -0.85% today, range 8.10–8.20) | ✅ Still above weekly MA20 (8.19 is essentially right at today's price) — daily confirmation holding, weekly still the one to watch | Weekly close back above ₱8.19 (MA20) — daily EMA10 (7.87) already reclaimed, weekly now testing too |
+| 6 | **CNPF** | Trend pullback (weekly still unconfirmed) | Swing | Short-term (T1 full-exit rule applies) | Short-term | H1 2026 NI +6% YoY (₱4.14B), rev +15%; analyst "Strong Buy" (9), target ₱41.58 — but a month-old print, not fresh news behind today's move | ₱32.37–32.48 (EMA10/MA20 daily) | ₱31.00–31.20 (ATR-confirmed) | T1 ₱34.60–34.70 (weekly MA50/daily MA200 confluence, full exit) | ₱33.70 (today's close, +5.31%) | 🆕 Added 2026-09-11 — today's candle IS the extended one, closed at the day's high | Next candle not making a fresh low vs. today, if it dips into the ₱32.37–32.48 zone; weekly close above 33.62 (weekly MA200) would strengthen the read further |
+| 7 | **BPI** | Trend pullback | Swing | Short-term | Short-term | Q1 miss vs forecast but +1.7% YoY NI; 2026 outlook targets high-single-digit growth | ₱102.50–104.00 | ₱101.00–101.50 | T1 ₱108–109 · T2 ₱114–115 | ₱103.40 (intraday, -0.67% today, range 103.30–104.00) | ✅ **Starter FILLED** (20 sh @ ₱103.6050 avg) — still inside the stated zone | Next daily candle makes no fresh low vs. prior day, OR close back above EMA10 (104.63)/VWAP (104.33) |
+| 8 | **BLOOM** | Speculative bottom-fish | Bottomfishing | Short-term, smallest size | Short-term | Q2 loss narrowed sharply (₱1.41B→₱345M YoY), EBITDA +35%, GGR +15% | ₱2.17–2.32 | ₱2.05–2.10 | T1 ₱2.45 · T2 ₱2.60 | ₱2.28 (intraday, +1.79% today, range 2.22–2.28) | ✅ **Starter FILLED** (1,000 sh @ ₱2.2567 avg) — still in zone, best performer today | Next candle makes no fresh low, OR close back above ₱2.34 (EMA10) |
+| 9 | **DMC** | Speculative bottom-fish | Bottomfishing | Short-term entry, long-term candidate on fundamentals | Short-term (long-term on fundamentals) | Softer: Q1 NI -2% YoY, FY25 NI -21%; fair value cut ₱10.04→9.42 — tempers the thesis | ₱7.86–8.02 | ₱7.57–7.67 (ATR-confirmed) | T1 ₱9.50–9.71 · T2 ₱10.65–11.00 | ₱8.15 (intraday, -0.85% today, range 8.10–8.20) | ✅ Still above weekly MA20 (8.19 is essentially right at today's price) — daily confirmation holding, weekly still the one to watch | Weekly close back above ₱8.19 (MA20) — daily EMA10 (7.87) already reclaimed, weekly now testing too |
 
 **Conviction rank reasoning**: #1-3 (ICT, NIKL, OGP) — clean weekly-
 confirmed trends with strong fundamental confirmation and, for
 NIKL/OGP, an actual entry zone still available. #4-5 (APX, Philweb) —
 excellent underlying theses, but both are fully extended right now
 with no real entry margin left, so conviction in the company doesn't
-translate to conviction in a fresh trade today. #6 (BPI) — solid but
-technically and fundamentally the most "average" of the trend-pullback
-names. #7-8 (BLOOM, DMC) — speculative tier by design; BLOOM's
-fundamentals now support the bounce thesis, DMC's argue against it.
+translate to conviction in a fresh trade today. **#6 (CNPF, new
+2026-09-11)** — strong fundamentals (real H1 earnings growth, "Strong
+Buy" analyst consensus) rival the top tier, but the chart itself is
+only now testing weekly MA200 with weekly MA50 still overhead — a
+genuine reversal attempt, not yet the confirmed trend ICT/NIKL/OGP
+have. Ranked below the fully-extended-but-proven APX/Philweb because
+CNPF's own weekly structure isn't proven yet either, but above BPI
+because the fundamental backing is meaningfully stronger. #7 (BPI) —
+solid but technically and fundamentally the most "average" of the
+trend-pullback names. #8-9 (BLOOM, DMC) — speculative tier by design;
+BLOOM's fundamentals now support the bounce thesis, DMC's argue
+against it.
 
 **Play type key**: *Uptrend continuation* — clean, weekly-confirmed established trend, buy the pullback, can be held longer if it keeps working. *Swing* — a defined-range trade off a specific technical level, expect days-to-weeks not months. *Bottomfishing* — early-stage, unconfirmed reversal off a real low, smallest size, highest risk. *Quick* — the move is already extended/chasing, no clean pullback offered — treat as a fast in-and-out with tight risk management, not a multi-week hold expectation, regardless of how good the underlying trend looks.
 
@@ -333,6 +343,21 @@ or after the news explaining it (Philweb is the clearest example here).
 - **APX**: H1 2026 net income **+68%** YoY, Q1 EPS +92%. Analyst
   target ₱22.00 (above the already-new 52w high). Real earnings
   growth underneath the move, not just momentum.
+- **CNPF** (new 2026-09-11): H1 2026 net income +6% YoY (₱4.14B vs
+  ₱3.90B), revenue +15% YoY (₱45.8B), driven by double-digit growth in
+  both branded and OEM-export businesses — published early August
+  2026, a real and solid print. Analyst consensus "Strong Buy" (9
+  analysts), 12-month target ₱41.58 (~23% above today's ₱33.70 —
+  Simply Wall St's own page framed this as "58% upside," which is
+  clearly calculated off a stale, much lower price, not today's; the
+  ₱41.58 target itself looks like a genuine current figure, just not
+  their upside-% framing of it). **Scoped catalyst check for today's
+  specific +5.31% move**: found nothing dated closer than the
+  month-old H1 earnings — no fresh news explains today's pop
+  specifically. Reads as a technical bounce off the weekly MA200 test
+  (see chart detail below), not a news-driven move — worth knowing
+  since a technical-only bounce is less confirmed than, say, NIKL's
+  fresh-earnings-driven dip-buy case.
 - **ICT**: First PSE company past ₱2 trillion market cap. Mexico
   terminal expansion. 2025 revenue +18%, earnings +24.5%. "Strong Buy"
   from 13 analysts, target ₱1,099.
@@ -884,6 +909,68 @@ regardless of how good the chart looks.
   28.33) with a much larger dividend (8.74% vs 1.81%) — a better
   value/income combination than ICT, though as a gold miner it carries
   the same commodity-price cyclicality caveat as NIKL/APX.
+
+## Century Pacific Food, Inc. (CNPF)
+- **Risk tier: Trend pullback/continuation, weekly still unconfirmed**
+  — closer to BPI's "bounce inside a bigger decline" pattern than to
+  ICT/OGP/NIKL's clean weekly-confirmed trends.
+- **Reviewed:** 2026-09-11 (daily+weekly, MA200/MA20/MA50/EMA10/VWAP/
+  RSI14/MACD/ATR14) · **Price at review:** ₱33.70 (+5.31% today, closed
+  at the day's high)
+- **Note on sourcing accuracy:** the initial MarketScreener MA/RSI
+  screen (used to flag this name "worth a closer look") gave RSI14 =
+  48.95 — the real chart shows **63.19**, a meaningful miss (though it
+  didn't change the screening verdict here, since both readings are
+  non-overbought). Also: the "day range" MarketScreener returned
+  (₱31.70–32.35) didn't bracket even MarketScreener's own quoted price
+  (₱33.70) — a stale-range artifact matching the pattern already seen
+  on DMC. Worth the reminder: trust the real chart over the computed
+  screen whenever they disagree, which is exactly why step 2's screen
+  is provisional and step 4/5's chart is what actually decides.
+- **Setup:** A hard decline from the 52w high (₱41.30) down toward the
+  ₱28 area (Aug 2026, visible on the daily chart) has been reversing
+  sharply the last several sessions, culminating in today's +5.31% bar.
+  Daily: price (33.70) now above MA20 (32.48), MA50 (31.90), EMA10
+  (32.37), and VWAP (33.05) — but still *below* daily MA200 (34.19),
+  which is itself declining (a real overhang, not yet reclaimed).
+  Weekly: price is landing almost exactly **on weekly MA200 (33.62)** —
+  a genuine live inflection test — while weekly MA50 (34.64) sits just
+  ~2.8% above as the next real hurdle. Weekly RSI 55.06 (neutral, room
+  to run), weekly MACD histogram still negative (-0.93) but the MACD
+  line (0.61) is above its signal (-0.32) — an early bullish
+  crossover, not yet a confirmed weekly uptrend the way ICT/OGP/NIKL
+  have. Today's own candle is the extended one — closed at the day's
+  high after a +5.31% move, no retest yet, same "hot candle" caution as
+  Philweb/NIKL/ICT's chase-day setups.
+- **Entry ranges (staged — see Entry methodology above, extra caution
+  given the unconfirmed-weekly tier and today's hot candle):**
+  - **Starter (keep small, chase caution)**: current levels
+    **₱33.50–33.70** if adding right away — sized down since this is
+    the unconfirmed breakout candle itself, same treatment Philweb got.
+  - **Confirmation add (preferred entry)**: a pullback into
+    **₱32.37–32.48** (EMA10/MA20 daily cluster), confirmed by the next
+    candle not making a fresh low. ATR(14)=0.86 puts the stop at
+    **~₱31.00–31.20** (~1.5x ATR below the cluster, also just under
+    daily MA50 at 31.90 — good confluence).
+- **Take-profit: T1 ₱34.60–34.70** — real structural confluence
+  (weekly MA50 at 34.64 and daily MA200 at 34.19 cluster together here,
+  not an invented R-multiple level). **Full exit at T1 under the
+  current T1-full-exit rule** — no partial take, no T2 beyond this;
+  the 52-week high (₱41.30) is too far above to be a realistic T1-style
+  target and isn't the plan here.
+- **Invalidation:** a daily close below ~₱31.00–31.20 undoes the
+  pullback read. **More decision-relevant than the stop itself**: a
+  **weekly close back below weekly MA200 (33.62)** would undo the
+  reversal thesis even before the daily stop is threatened — worth
+  watching that level specifically, not just the stop price.
+- **Horizon: Short-term (T1 full-exit rule).** Fundamentals are
+  genuinely strong — real H1 2026 earnings growth, "Strong Buy"
+  analyst consensus, a defensible staples business — but per the
+  account's current trader-not-investor approach, this is managed as a
+  short-term trade to a full exit at T1, not a long-term hold, same as
+  every other position on this list now. See the Fundamental Catalysts
+  section above for the full earnings detail and the honest note that
+  nothing fresh explains today's specific move.
 
 ## Apex Mining Company, Inc. (APX)
 - **Risk tier: Trend pullback/continuation**
