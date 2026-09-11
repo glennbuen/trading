@@ -226,7 +226,27 @@ without one the way SCC evidently did originally.
 **Trigger: typing "summary"** means pull fresh live current prices for
 every symbol below (the stocks-to-buy list) and re-render this table —
 distinct from "positions," which is for the Current Holdings table
-(already-owned) above, not this one.
+(already-owned) above, not this one. **Added 2026-09-11: also flag,
+explicitly and every time, which names would benefit from a fresh
+daily/weekly chart paste** — the MA/EMA/stop/target levels in this
+table are static snapshots from whenever each name was last
+chart-reviewed (per its "Reviewed:" date in the detail entry below),
+they don't move just because price does. Flag a name if any of:
+- **Price has drifted >~5-7% from the level the last chart read was
+  based on** (e.g., APX's stop/trail was explicitly called "a rough
+  estimate pending a fresh ATR chart" after its pullback off the highs)
+- **A stated stop/trail is already marked stale or approximate** in the
+  file's own language, not just computed from current price
+- **Price is testing or has crossed a key level** from the last chart
+  (an MA, the stated entry/stop/target zone) where a fresh read would
+  sharpen or change the call — DMC sitting right at weekly MA20 is the
+  live example
+- **Several sessions have passed since the "Reviewed:" date** with no
+  fresh chart, regardless of whether price moved much
+
+Say this plainly in the summary response ("worth a fresh chart on X, Y"
+or "nothing needs a refresh right now") — don't wait to be asked, and
+don't bury it if the answer is "nothing," say that explicitly too.
 
 **Last price update: 2026-09-11, 3:00 PM PH close — live quotes from
 filgit.com (see Note on sourcing).** All entries staged (starter on touch +
