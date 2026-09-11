@@ -312,6 +312,27 @@ stays the same.)*
 
 ## Reviewed but NOT added (for reference — not maintained further)
 
+- **BE (Bloom Energy)** (2026-09-11, $258.49 MarketScreener close /
+  $267.90 stockmarketwatch intraday) — **RSI-overbought + stacked
+  near-term event risk, not an extension-magnitude reject like MU/LITE.**
+  Above every meaningful MA (MA20 $224.77, MA50 $226.87, MA100 $251.44)
+  but RSI9 = **72.94**, RSI14 = 65.43 — fails the screen's own
+  not-yet-extended bar, same reason ION got excluded on the PSE side
+  the same day. Ran from $206 (Aug 31) to $252.87 (Sep 4) — ~23% in
+  days — then further to today's price, on real news: **S&P 500
+  inclusion effective Monday, September 21** (UBS raised target to
+  $325, Clear Street to $330), the actual driver of the move. This is
+  exactly the "near-term dated event that could land before T1" risk
+  this project flags for a T1-only trade — index-inclusion runs often
+  see a sell-the-news effect once funds finish front-running the
+  actual date. Stacked on top: a **securities class-action lawsuit
+  deadline September 28** — already caused a real -3.5% single-day
+  drop when investors first weighed the legal notice. Underlying
+  fundamentals are genuinely strong (Q2 revenue +166% YoY to $1.065B,
+  $20B backlog, AI data-center demand) — not a hollow move, but that
+  doesn't change the entry-timing math. Worth revisiting only if it
+  gives back a meaningful chunk of the move and RSI resets.
+
 - **MU (Micron Technology)** (2026-09-10, $1,027.77) — **extreme
   extension risk, a different category from a standard reject.** Daily
   chart alone looks like a normal pullback-and-reclaim (above every
