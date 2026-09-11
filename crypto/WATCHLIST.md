@@ -126,11 +126,17 @@ Same two standing rules as PSE/US stocks:
    the same conversation). Treat gainers with real caution per the note
    above — CoinMarketCap's trending list skews toward low-liquidity
    pump risk more than PSE/US's most-active lists do.
-2. **Screen new names** — no confirmed MA/RSI numeric-screen source yet
-   (MarketScreener doesn't cover crypto, unlike PSE/US). Until one is
-   tested and confirmed, skip straight to a caveated qualitative read
-   off the price/volume data itself, and treat any chart paste as the
-   real screening step.
+2. **Screen new names** via **investing.com's crypto technical-analysis
+   pages** — confirmed working 2026-09-11 (tested BTC/ETH/SOL):
+   `investing.com/crypto/{coin-name}/{ticker}-usd-technical` (e.g.
+   `investing.com/crypto/bitcoin/btc-usd-technical`) gives Simple +
+   Exponential MA5/10/20/50/100/200 (each tagged Buy/Sell) and RSI14
+   with an overall Buy/Sell/Neutral summary — MarketScreener's
+   PSE-only role, filled by a different source here. **One real gap**:
+   only RSI14 is shown, not RSI9 like the PSE screen used — work with
+   RSI14 alone unless a second source turns up. Same screening bar as
+   PSE/US: flag names above their MAs with RSI not yet extended as
+   "worth a closer look," still fully provisional until chart-confirmed.
 3. **User pastes daily + weekly TradingView charts** (MACD + ATR added)
    for names worth a closer look — TradingView covers crypto pairs the
    same way it covers PSE/NASDAQ tickers, so this step ports directly,
