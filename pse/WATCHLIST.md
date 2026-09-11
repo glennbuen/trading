@@ -392,7 +392,7 @@ above rather than the entry-side staging used for the watchlist proper.
 | **SCC** | ₱37.7423 (800 sh remaining, real avg — was 1,600) | ₱17.50 (3:00 PM close, -1.80% today, range 17.38–17.96) | -53.63% | Coal-block auction risk dominates (contract expiry Jul 2027, DOE re-bid, terms being worsened) — see dedicated section. No 2026 dividend declared (expected ~May, skipped) | ✅ **50% trimmed 2026-09-11** — sold 800 sh @ ₱17.90, realized loss ≈ -₱15,873.84 gross (see Trade Journal) | Not set — no technical reversal signal to base one on | Long-term weekly downtrend, still unresolved: weekly MA200 (31.07) sits 75% above price, price down >50% from its 2022 peak (~₱38-40). Weekly RSI deeply oversold (28.00) — raises near-term bounce odds but is NOT a confirmed reversal. **The real driver, researched 2026-09-10: Semirara's core coal mining contract (COC No. 5, 10 blocks) expires July 2027, and the DOE has opened a competitive auction for those blocks — Semirara is NOT guaranteed to keep them.** New contract terms being drafted are worse for whoever wins (more mandatory domestic supply, larger government royalty). Auction repeatedly delayed (Feb→Aug→now Q4 2026). Semirara has already filed redundancy notices for 462 mine-site staff and cut 2026 production targets — the company's own actions signal real concern, not just market sentiment. **This undercuts the "cheap P/E, sound business" framing** — the low valuation (P/E 5.72, 7.01% yield) may be the market correctly pricing real contract-loss/worse-terms risk, not an overreaction. Full detail in the SCC section below. |
 | **BLOOM** | ₱2.2567 (real fill, incl. fees — 1,000 sh, raw ₱2.24) | ₱2.23 (3:00 PM close, -0.45% today, range 2.20–2.30) | -1.18% | Q2 loss narrowed sharply (₱1.41B→₱345M YoY), EBITDA +35%, GGR +15% — genuinely supports the bottom-fish thesis | N/A — gave back today's earlier gain, now underwater again; partial-take rule doesn't apply until above cost | Not a trailing stop yet — **initial stop ₱2.05–2.10 active** (this is still the Starter tranche; see watchlist detail for the Confirmation-add trigger, still pending) | Early-stage/speculative bottom-fish, unconfirmed on both timeframes — see full [BLOOM entry](#bloomberry-resorts-corp-bloom) below for the setup. This is the Starter-only fill; sizing and risk still match that tranche, not a full position yet. |
 | **BPI** | ₱103.6050 (real fill, incl. fees — 20 sh, 2 board lots) | ₱103.10 (3:00 PM close, -0.96% today, range 102.60–104.00) | -0.49% | Q1 miss vs forecast but +1.7% YoY NI; 2026 outlook targets high-single-digit growth | N/A — not yet in profit | Not a trailing stop yet — **initial stop ₱101.00–101.50 active** (Starter tranche; Confirmation-add still pending) — price is now within ~1.5% of the stop's top end, worth a closer watch | Trend pullback/continuation tier, testing daily MA50 (103.46) — see full [BPI entry](#bpi--bank-of-the-philippine-islands) below. Starter-only fill so far. |
-| **NIKL** | ₱4.6738 (real fill, 1,000 sh, 2026-09-11) | ₱4.54 (3:00 PM close, -5.02% today, range 4.52–4.75) | -2.86% | H1 2026 NI +93% YoY to ₱4.06B, EBITDA +67%; tight nickel supply/demand tailwind | N/A — **T1-full-exit rule applies** (trader-not-investor, no partial take — see Exit methodology) | **Initial stop ₱3.90–3.95 active** (ATR-based, ~1.5x ATR14 below MA50) — still well clear | Trend pullback/continuation tier, cleanest weekly structure of the four reviewed — see full [NIKL entry](#nickel-asia-corp-nikl) below. Second straight red session since the Starter fill, -2.86% off cost now — worth a fresh chart if the slide continues, but no stop concern yet. |
+| **NIKL** | ₱4.6738 (real fill, 1,000 sh, 2026-09-11) | ₱4.54 (3:00 PM close, -5.02% today, range 4.52–4.75) | -2.86% | H1 2026 NI +93% YoY to ₱4.06B, EBITDA +67%; tight nickel supply/demand tailwind | N/A — **T1-full-exit rule applies** (trader-not-investor, no partial take — see Exit methodology) | **Initial stop ₱3.90–3.95 active** (ATR-based, ~1.5x ATR14 below MA50) — still well clear, ~14-19% below current price | **Fresh chart confirms 2026-09-11**: a pullback off a local top (~4.9-5.0), not a trend break — still above MA20/50/200, RSI cooled from overbought (70.39→59.20), which is healthy, not alarming. See full [NIKL entry](#nickel-asia-corp-nikl) below. Still just the Starter — price hasn't reached the ₱4.25–4.45 confirmation-add zone yet. |
 
 **Capital tracking (real, as of this fill):** BLOOM ₱2,256.70 + BPI
 ₱2,072.10 = **₱4,328.80 deployed**. User-reported cash on hand (before
@@ -801,6 +801,24 @@ regardless of how good the chart looks.
   found that explains today's specific dip as company-driven — reads
   as a normal pullback into the stated zone, not a reaction to bad
   news.
+- **Fresh daily chart, 2026-09-11 close** (real numbers, not the
+  provisional filgit price-only read): O 4.75, H 4.75, L 4.52, **C
+  4.54 (-5.02%)** — a sharp single-day drop off what the chart shows
+  was a run toward ~4.9-5.0 over the prior sessions. **Reads as a
+  pullback off a local top, not a trend break**: price still above MA20
+  (4.31), MA50 (4.00), and MA200 (4.41) — the full bullish MA stack
+  from the original review is intact. **RSI14 = 59.20**, down from the
+  70.39 flagged as overbought at the original review — this is the
+  overbought condition resolving via a healthy pullback, not a
+  breakdown signal. One short-term caution: today's close sits just
+  below both EMA10 (4.53, essentially a tie) and session VWAP (4.60) —
+  worth watching whether the next session makes a fresh low below
+  today's 4.52 or holds. NFB/s -684.92K (net foreign selling today),
+  a real data point, not independently alarming. **Position status**:
+  still just the Starter — price hasn't reached the ₱4.25–4.45
+  Confirmation-add zone yet; if it gets there, that's the pre-planned
+  second tranche, not a stop concern. Stop (~₱3.90–3.95, just under
+  MA50) unchanged and still ~14-19% below current price.
 
 ## International Container Terminal Services, Inc. (ICT)
 - **Risk tier: Trend pullback/continuation — cleanest weekly structure
