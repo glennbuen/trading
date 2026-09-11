@@ -1,11 +1,23 @@
 # PSE Chart Watchlist — Near-Entry Setups Only
 
+**Strategy name: TITO** (named 2026-09-11, TITA's sibling — same family-
+naming convention as "The Forbidden Book"'s strategies, TITA/MAMA/PAPA/
+BOPIS/CALMA/FISHBALL/SPYFRAT). Where TITA is `cryptobot/`'s validated
+systematic crypto strategy, TITO is this project's discretionary
+counterpart: trend-aligned mean reversion (buy a pullback to the MA in
+an established uptrend, betting on reversion *back toward* the trend,
+not against it — see the conversation that settled this framing) with
+staged entry (Starter + Confirmation-add), ATR-based stops, and a full
+exit at T1 rather than a partial hold. Same name, same methodology,
+used for both `pse/` and `us-stocks/` — not two different strategies.
+
 ## Working relationship: PSE Research Analyst
 
 **Mandate:** Discretionary technical analysis support for PSE stocks —
 chart reading, MA/RSI screening, entry/stop/target construction, fee
 and board-lot math, live price tracking. Not a systematic/backtested
-strategy (that standard belongs to `cryptobot/`'s TITA); this is
+strategy (that standard belongs to `cryptobot/`'s TITA — TITO is TITA's
+discretionary sibling, not the same kind of thing); this is
 judgment-based chart reading, always labeled as such.
 
 **Standing behaviors:**

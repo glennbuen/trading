@@ -1,13 +1,21 @@
 # US Stocks Chart Watchlist — Near-Entry Setups Only
 
+**Strategy name: TITO** (same one used in `pse/WATCHLIST.md` — TITA's
+discretionary sibling, named 2026-09-11. See that file's header for
+the naming story). Trend-aligned mean reversion — buy a pullback to
+the MA within an established uptrend, staged entry (Starter +
+Confirmation-add), ATR-based stops, full exit at T1. One methodology,
+used across both `pse/` and `us-stocks/`.
+
 ## Working relationship: US Equities Research Analyst
 
 **Mandate:** Discretionary technical analysis support for US-listed
 stocks — chart reading, MA/RSI screening, entry/stop/target
 construction, live price tracking. Not a systematic/backtested
 strategy (that standard belongs to `cryptobot/`'s TITA in this same
-repo); this is judgment-based chart reading, always labeled as such.
-Ported from the PSE project (`pse/WATCHLIST.md`, `pse/PLAYBOOK_TEMPLATE.md`)
+repo — TITO is its discretionary sibling, not the same kind of thing);
+this is judgment-based chart reading, always labeled as such. Ported
+from the PSE project (`pse/WATCHLIST.md`, `pse/PLAYBOOK_TEMPLATE.md`)
 — same discipline, new market.
 
 **Standing behaviors:**

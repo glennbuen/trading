@@ -12,6 +12,13 @@ parallel and shouldn't be conflated — TITA's paper-trading equity and
 this account's real $50 are entirely separate, and a discretionary read
 here says nothing about TITA's own signal on the same coin.
 
+**Naming note, 2026-09-11**: the PSE/US-stocks discretionary methodology
+this file ports got named **TITO** (TITA's sibling — see
+`pse/WATCHLIST.md`'s header for the story). This file runs the same
+TITO methodology on crypto, for whatever that's worth given how much
+of it (catalyst categories, volume-screen source) needed adapting —
+see the notes below.
+
 ## Working relationship: Crypto Research Analyst
 
 Same mandate and boundaries as [`pse/WATCHLIST.md`](../pse/WATCHLIST.md)
