@@ -161,29 +161,37 @@ you have; if it dips and confirms cleanly, both tranches fill close
 together. Either way there's no scenario where waiting for proof means
 walking away with nothing.
 
-## Exit methodology: partial profit-take, then trail the remainder
+## Exit methodology — SUPERSEDED 2026-09-10: full profit-take, trader not investor
 
-The user's own established rule (confirmed live on an LTG position,
-2026-09-10): **once a position's unrealized profit exceeds +20%, sell
-30% of it** — locks in a real chunk of the gain without fully exiting a
-working trade. The remaining 70% is then managed with a trailing stop,
-which can reasonably be a bit looser than it would be on a full,
-un-trimmed position, since part of the win is already banked and the
-"protect it vs. let it run" tradeoff is no longer all-or-nothing.
+**The user has revised the strategy for this account too**: adopt the
+same approach built for `us-stocks/` (see that file's Exit methodology
+and `us-stocks-exit-rule` memory) — **take full profit at T1, exit
+completely, look for the next entry.** No partial-hold, no long-term
+"Both"/investor framing. Explicit shift from "trader + occasional
+long-term hold" to **trader only**.
 
-**Trailing stop for the remainder, when no ATR is shown on the chart**
-(the common case for names reviewed via computed screens rather than a
-full ATR-equipped chart): use a structural MA as the trail, not a fixed
-percentage —
-- **Tight trail (EMA10/VWAP)** — appropriate if the chart is still
-  range-bound/hasn't confirmed a fresh breakout (RSI still neutral,
-  price still inside a longer consolidation) — protects most of the
-  remaining gain now rather than risking the range reasserting itself.
-- **Looser trail (MA50)** — appropriate once there's real evidence of a
-  fresh leg (a close above the prior range high with RSI pushing
-  through the 60s), or simply because part of the profit is already
-  locked in via the 30%-at-+20% rule above, making the wider trail's
-  downside less costly.
+**What this changes for names already tagged "long-term candidate"**
+(NIKL, ICT, OGP, APX, DMC currently carry "Both" or long-term language
+in the Recommended column and their detailed entries) — that framing
+is now deprioritized. Treat every entry as a short-term trade exiting
+at T1 by default; the long-term-fundamentals notes stay in the file as
+useful context (still real information) but no longer drive how a
+position is actually managed.
+
+**Resolved 2026-09-10 — LTG is grandfathered under the old rule.** The
+user's explicit call: keep LTG's remaining 70% on its existing trail
+(₱14.29–14.52, weekly ATR-based), not forced into a full exit under
+the new rule. The new T1-full-exit approach applies going forward to
+new decisions — and once it's proven out in practice, the plan is to
+use it to trim other positions too (SCC being the obvious next
+candidate given the still-open concentration/trim decision there).
+LTG itself isn't being retroactively unwound.
+
+**Old rule, kept for reference / historical context only** (what
+governed the BPI/BLOOM Starters and LTG's partial take up to this
+point): once unrealized profit exceeded +20%, sell 30%, trail the
+remainder with a structural or ATR-based stop. Not the active rule
+going forward — superseded by the above.
 
 ## Portfolio Risk Rules (standing policy, added 2026-09-10)
 
