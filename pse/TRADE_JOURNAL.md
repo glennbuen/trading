@@ -35,15 +35,15 @@ just accumulating as isolated notes. Added 2026-09-10 per the user's
 own framing of this journal as "a learning process," which needs
 numbers, not just narrative, to actually measure.
 
-**Current tally (2026-09-10) — honest about what's known vs. estimated:**
+**Current tally (2026-09-11) — honest about what's known vs. estimated:**
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 1 (LTG partial take) | BPI/BLOOM Starters still open/unrealized; SCC trim not yet executed |
+| Real closed-position events | 2 (LTG partial take, SCC partial take) | BPI/BLOOM Starters still open/unrealized |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
-| Realized P&L (real capital) | **~₱612 est.** (LTG, 270 sh × ~₱2.27 gain) | **Estimated, not exact** — the 30%-at-+20% sale's real execution price/date wasn't captured at the time. Ask the user for the real fill if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (1 real closed event) is too small — will become meaningful as BPI/BLOOM confirmations, the SCC trim, and future entries actually resolve |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC) ≈ -₱15,262 net** | **Both estimated, not exact** — neither sale's real fees are captured (LTG's execution price/date wasn't recorded at the time; SCC's is gross, before selling fees). Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (2 real closed events, 1 win/1 loss) is too small — will become meaningful as BPI/BLOOM confirmations and future entries resolve |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -103,6 +103,40 @@ properly — not worth computing on this small a sample yet.
   future T2 set at "the current 52-week high" should note upfront that
   it's a moving target that will need redefining if broken, rather
   than treating a fresh 52w high as an unlikely edge case each time.
+
+### 2026-09-11 — SCC — Partial take (portfolio-concentration trim, 50%)
+- **Price:** ₱17.90 (user-reported real fill)
+- **Setup at the time:** Not a chart-driven exit — a portfolio-risk
+  trim decided 2026-09-10 after SCC was found at 61.4% of current
+  portfolio value with no stop or decision framework on file (see
+  Portfolio Risk Rules, Rule 1). SCC's own technical/fundamental case
+  was mixed-to-bad throughout (weekly downtrend, COC No. 5 coal-block
+  auction risk, no 2026 dividend) — this trim wasn't a "the setup
+  worked" exit, it was a position-sizing correction independent of
+  the chart.
+- **What actually happened:** Sold 800 of 1,600 shares @ ₱17.90.
+  Against the real average cost basis (₱37.7423/share): gross proceeds
+  ₱14,320.00, cost basis of the sold shares ₱30,193.84, **realized
+  loss ≈ -₱15,873.84 (-52.57%)** — figures are gross, before selling
+  fees (broker commission + PSE/SCCP/SEC charges), since the exact net
+  fill wasn't provided; ask for the real net proceeds if precision
+  matters here, same caveat as the LTG partial-take estimate above.
+  Remaining 800 shares keep the same ₱37.7423 cost basis, still
+  showing roughly the same -52.6% unrealized loss — this trim reduced
+  *exposure*, it didn't change the *per-share* loss, which is still
+  fully live on the remaining half.
+- **Lesson:** (1) This confirms the trader-not-investor / trim
+  discipline can actually be executed on a real, large, deeply
+  underwater position — not just a plan on paper. (2) A concentration
+  trim and a "the thesis is wrong, exit fully" decision are different
+  actions — this was explicitly the former; SCC's underlying
+  auction-risk thesis is unresolved and remains a real reason to
+  revisit the *remaining* 800 shares, not something this trim settled.
+  (3) Realized loss booked here is real capital, not paper — worth
+  weighing against what redeploying that ₱14,320 (gross) into a
+  higher-conviction name from the Summary table could earn back, since
+  the point of trading (not investing) this account is compounding
+  the capital that's freed up, not just reducing the loss's visibility.
 
 ### 2026-09-10 — DMC — Data-quality correction (daily indicators)
 - **Price:** ₱7.97 (both chart pastes, same day)

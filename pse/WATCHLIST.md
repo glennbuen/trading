@@ -205,10 +205,12 @@ of total current portfolio value.** Check this whenever "positions" is
 run, or whenever a new fill is logged — if a position (existing or
 newly filled) pushes past this threshold, say so explicitly in that
 response, don't wait for a dedicated portfolio review to notice.
-**Currently over the line**: SCC, even after the planned 50% trim
-(~31-44% depending on cash treatment) — still worth a further look
-once that trim executes, not treated as fully resolved by the trim
-alone.
+**Currently at the line**: SCC, post-trim (executed 2026-09-11, 800 of
+1,600 sh sold @ ₱17.90) — now ~28.1% of portfolio value, down from
+61.4% pre-trim and just inside the 25-30% flag range rather than well
+over it. Not fully resolved — still the largest single position, and
+the trim addressed sizing, not the still-open auction-risk thesis on
+the remaining 800 shares.
 
 **Rule 2 — Every new position gets a stop or explicit decision
 framework in the same update it's confirmed filled, no exceptions.**
@@ -364,15 +366,33 @@ above rather than the entry-side staging used for the watchlist proper.
 | Symbol | Cost basis (real) | Current price | Unrealized | **Catalyst** | Partial take done? | Trailing stop (remainder) | Technical read |
 |---|---|---|---|---|---|---|---|
 | **LTG** | ₱11.333 (900 sh, real avg) | ₱15.16 (intraday, -0.26% today, range 15.12–15.18) | +33.78% | Q2 NI +24% YoY, rev +6.3%; dividend just paid (ex-date Sep 7), 8.2% yield | ✅ 30% sold at +20% | ₱14.29–14.52 (weekly ATR-based, 1–1.5x ATR14=0.46) — price still well above, stop not threatened | Genuine multi-year weekly uptrend (recovered from ~₱8-9 in 2022-23), now testing its own 2021 high — a confirmed weekly close above that old high would be a real breakout signal. Daily RSI neutral (50.3), weekly RSI neutral (52.2) — room to continue, not extended. |
-| **SCC** | ₱37.7423 (1,600 sh, real avg) | ₱17.86 (intraday, +0.22% today, range 17.78–17.96) | -52.68% | Coal-block auction risk dominates (contract expiry Jul 2027, DOE re-bid, terms being worsened) — see dedicated section. No 2026 dividend declared (expected ~May, skipped) | N/A — trim still pending, not yet confirmed executed | Not set — no technical reversal signal to base one on | Long-term weekly downtrend, still unresolved: weekly MA200 (31.07) sits 75% above price, price down >50% from its 2022 peak (~₱38-40). Weekly RSI deeply oversold (28.00) — raises near-term bounce odds but is NOT a confirmed reversal. **The real driver, researched 2026-09-10: Semirara's core coal mining contract (COC No. 5, 10 blocks) expires July 2027, and the DOE has opened a competitive auction for those blocks — Semirara is NOT guaranteed to keep them.** New contract terms being drafted are worse for whoever wins (more mandatory domestic supply, larger government royalty). Auction repeatedly delayed (Feb→Aug→now Q4 2026). Semirara has already filed redundancy notices for 462 mine-site staff and cut 2026 production targets — the company's own actions signal real concern, not just market sentiment. **This undercuts the "cheap P/E, sound business" framing** — the low valuation (P/E 5.72, 7.01% yield) may be the market correctly pricing real contract-loss/worse-terms risk, not an overreaction. Full detail in the SCC section below. |
+| **SCC** | ₱37.7423 (800 sh remaining, real avg — was 1,600) | ₱17.90 (real sale price, 2026-09-11) | -52.58% | Coal-block auction risk dominates (contract expiry Jul 2027, DOE re-bid, terms being worsened) — see dedicated section. No 2026 dividend declared (expected ~May, skipped) | ✅ **50% trimmed 2026-09-11** — sold 800 sh @ ₱17.90, realized loss ≈ -₱15,873.84 gross (see Trade Journal) | Not set — no technical reversal signal to base one on | Long-term weekly downtrend, still unresolved: weekly MA200 (31.07) sits 75% above price, price down >50% from its 2022 peak (~₱38-40). Weekly RSI deeply oversold (28.00) — raises near-term bounce odds but is NOT a confirmed reversal. **The real driver, researched 2026-09-10: Semirara's core coal mining contract (COC No. 5, 10 blocks) expires July 2027, and the DOE has opened a competitive auction for those blocks — Semirara is NOT guaranteed to keep them.** New contract terms being drafted are worse for whoever wins (more mandatory domestic supply, larger government royalty). Auction repeatedly delayed (Feb→Aug→now Q4 2026). Semirara has already filed redundancy notices for 462 mine-site staff and cut 2026 production targets — the company's own actions signal real concern, not just market sentiment. **This undercuts the "cheap P/E, sound business" framing** — the low valuation (P/E 5.72, 7.01% yield) may be the market correctly pricing real contract-loss/worse-terms risk, not an overreaction. Full detail in the SCC section below. |
 | **BLOOM** | ₱2.2567 (real fill, incl. fees — 1,000 sh, raw ₱2.24) | ₱2.25 (intraday, +0.45% today, range 2.22–2.26) | -0.30% | Q2 loss narrowed sharply (₱1.41B→₱345M YoY), EBITDA +35%, GGR +15% — genuinely supports the bottom-fish thesis | N/A — not yet in profit, partial-take rule doesn't apply yet | Not a trailing stop yet — **initial stop ₱2.05–2.10 active** (this is still the Starter tranche; see watchlist detail for the Confirmation-add trigger, still pending) | Early-stage/speculative bottom-fish, unconfirmed on both timeframes — see full [BLOOM entry](#bloomberry-resorts-corp-bloom) below for the setup. This is the Starter-only fill; sizing and risk still match that tranche, not a full position yet. |
 | **BPI** | ₱103.6050 (real fill, incl. fees — 20 sh, 2 board lots) | ₱103.50 (intraday, -0.58% today, range 103.50–104.00) | -0.10% | Q1 miss vs forecast but +1.7% YoY NI; 2026 outlook targets high-single-digit growth | N/A — not yet in profit | Not a trailing stop yet — **initial stop ₱101.00–101.50 active** (Starter tranche; Confirmation-add still pending) | Trend pullback/continuation tier, testing daily MA50 (103.46) — see full [BPI entry](#bpi--bank-of-the-philippine-islands) below. Starter-only fill so far. |
 
 **Capital tracking (real, as of this fill):** BLOOM ₱2,256.70 + BPI
-₱2,072.10 = **₱4,328.80 deployed**. User-reported cash on hand:
-**₱4,353.23** — implies starting capital was ~₱8,682, not exactly
-₱8,000 as earlier estimated; using the user's real reported numbers as
-authoritative going forward, not the earlier planning estimate.
+₱2,072.10 = **₱4,328.80 deployed**. User-reported cash on hand (before
+the SCC trim): **₱4,353.23** — implies starting capital was ~₱8,682,
+not exactly ₱8,000 as earlier estimated; using the user's real
+reported numbers as authoritative going forward, not the earlier
+planning estimate.
+
+**Updated 2026-09-11 — SCC trim executed:** sold 800 sh @ ₱17.90,
+gross proceeds ₱14,320.00 (fees not yet netted out — ask the user for
+the real net credit if precision matters). Estimated cash on hand now
+**≈₱18,673.23** (₱4,353.23 + ₱14,320.00 gross), pending the user's
+real post-fee figure.
+
+**Portfolio concentration, recomputed post-trim:** total portfolio
+value (positions + estimated cash) ≈ LTG ₱13,644 (900×15.16) + SCC
+₱14,320 (800×17.90) + BLOOM ₱2,280 (1,000×2.28) + BPI ₱2,068
+(20×103.40) + cash ₱18,673.23 ≈ **₱50,985.23**. **SCC is now ~28.1% of
+total portfolio value** — down hard from 61.4% pre-trim, and back
+under the Portfolio Risk Rules' 25-30% flag line (right at the edge,
+not comfortably clear of it). A meaningful, real de-risking, not a
+token gesture — but SCC is still the largest single position and
+still carries no technical stop, so it's not "resolved," just
+smaller.
 
 A/N: LTG and SCC cost basis updated 2026-09-10 to the user's real
 average fill prices (900 sh @ ₱11.333, 1,600 sh @ ₱37.7423) — these
@@ -383,18 +403,23 @@ reported and now), so the earlier estimates were reliable, but real
 numbers are now on file and authoritative going forward.
 
 **Position sizes, now known:** LTG 900 sh (~₱10,200 cost basis), SCC
-1,600 sh (~₱60,388 cost basis) — both far larger than the ~₱8,682
-trading budget being used for BPI/BLOOM, confirming these are separate,
+**800 sh remaining post-trim** (~₱30,194 cost basis, was 1,600 sh/
+~₱60,388 pre-trim) — both far larger than the ~₱8,682 trading budget
+being used for BPI/BLOOM, confirming these are separate,
 pre-existing holdings, not part of the same capital pool.
 
 ### Semirara Mining and Power Corp. (SCC) — full detail
 
-**Portfolio context:** ~81% of the user's entire invested capital
-(~₱74,917 total across all four positions) is in this one stock, down
--52.73%. This is a portfolio-construction issue independent of
-whether SCC's own thesis is right — no single name should be able to
-determine a whole portfolio's outcome. Discussed at length 2026-09-10;
-no action taken yet, still an open decision for the user.
+**Portfolio context (superseded 2026-09-11 — trim executed):** this
+originally read ~81% of invested capital (cost-basis measure) / 61.4%
+of current portfolio value, down -52.73%, an unresolved
+portfolio-construction issue. **Resolved in part**: the user sold 800
+of 1,600 shares @ ₱17.90 on 2026-09-11, cutting SCC to ~28.1% of
+portfolio value (see Capital tracking above and the Trade Journal log
+entry). Still the largest single position and still carries no
+technical stop — the trim addressed concentration, not the underlying
+auction-risk thesis, which remains unresolved on the remaining 800
+shares.
 
 **The real catalyst/driver (researched 2026-09-10, prompted by user
 tip "scc has bidding on going"):** Semirara's coal mining business
@@ -454,16 +479,16 @@ found (cut 2026 production targets, 462 redundancy notices). **The
 weaker than the raw number implies, since this year's expected payment
 hasn't shown up.
 
-**Decision update (2026-09-10): user is trimming 50%** — selling 800 of
-1,600 shares. Corrected concentration figures: SCC was 61.4% of
-*current portfolio value* (not 81% — that earlier figure used cost
-basis, a different and less decision-relevant measure). Post-trim:
-~31-44% depending on whether freed-up cash is counted in the
-denominator. Still the largest single position after the trim, but a
-real reduction, not a token one. Awaiting the actual fill to log real
-numbers (planned: ~800 sh @ ~₱17.84, net proceeds ~₱14,216, realized
-loss ~₱15,978) — update this section and the Current Holdings table
-once confirmed.
+**Decision update — ✅ EXECUTED 2026-09-11.** Planned 2026-09-10 as a
+50% trim (800 of 1,600 shares), confirmed filled the next day: 800 sh
+@ ₱17.90 (vs. the ~₱17.84 planning estimate — essentially matched).
+Gross proceeds ₱14,320.00, realized loss ≈ -₱15,873.84 gross (vs. the
+~₱15,978 estimate — also close), fees not yet netted out. Post-trim
+concentration: **~28.1% of portfolio value** (see Capital tracking
+above), landing inside the earlier 31-44% estimated range's low end.
+Logged in full in `TRADE_JOURNAL.md`. Still the largest single
+position, still no technical stop on the remaining 800 shares — the
+auction-risk thesis itself is unresolved and unaffected by this trim.
 
 A running log of charts posted in conversation that were read as **nearing
 a potential entry** — not a record of every chart reviewed. Names read as
