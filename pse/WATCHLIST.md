@@ -259,6 +259,15 @@ they don't move just because price does. Flag a name if any of:
 Say this plainly in the summary response ("worth a fresh chart on X, Y"
 or "nothing needs a refresh right now") — don't wait to be asked, and
 don't bury it if the answer is "nothing," say that explicitly too.
+
+**Added 2026-09-12, per explicit user request: every "summary" response
+must display, per symbol, not just a compressed status line** — the
+chat reply itself (not only the file update) needs entry range,
+stop-loss range, current price, and catalyst shown for each name, in
+addition to status. A trimmed table with just current price/status is
+not sufficient even if the full detail is sitting in the file — the
+user shouldn't have to ask a follow-up ("where's entry price?") to get
+it.
 **Specify which timeframe(s) — daily, weekly, or both — not just "a
 fresh chart."** Reason it out per name: a stale ATR/trailing-stop or a
 fast-moving daily structure calls for daily; a confirmation trigger

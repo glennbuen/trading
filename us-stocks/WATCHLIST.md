@@ -272,6 +272,15 @@ redeploy are both being considered.
 **Trigger: typing "us_summary"** means pull fresh live current prices
 for every symbol below and re-render this table.
 
+**Added 2026-09-12, per explicit user request (same standing behavior
+now in `pse/WATCHLIST.md`): every "us_summary" response must display,
+per symbol, not just a compressed status line** — the chat reply
+itself (not only the file update) needs entry range, stop-loss range,
+current price, and catalyst shown for each name, in addition to
+status. A trimmed table with just current price/status is not
+sufficient even if the full detail is sitting in the file — the user
+shouldn't have to ask a follow-up ("where's entry price?") to get it.
+
 | Rank | Symbol | Tier | Play type | Recommended | Catalyst | Entry range | Stop-loss | Take-profit (T1) | Current price | Status | What confirms the add |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **INTC** | Trend reversal/continuation | Swing | Short-term (T1 exit) | Strongest catalyst reviewed so far — multiple concrete confirmed events, not sentiment: **US government holds a 10% stake**; Nvidia investing $5B to co-develop custom x86 CPUs + $8.9B government investment; **Apple reportedly designing/building chips with Intel in the US** (stock +8-11% on this news); 18A-P process entering risk production on time; $20B+ raise saw $100B in institutional demand. Next earnings Oct 22 — ~6 weeks out, outside T1 horizon. | $100–106 (this week's low to current — a live test of weekly MA20 at 107.36) | ~$91–94 (1–1.5x daily ATR 5.38 below MA50 99.62) | ~$115–120 (~9-15% off entry) | $102.94 (+2.61% today) | ✅ **Starter FILLED overnight 2026-09-10/11** — 0.15 fractional sh @ $101.6173 ($15.24). Bouncing back after yesterday's -5.57% reversal, now modestly above cost basis again. Now also in Current Holdings above; stop (~$91-94) still clear. | Weekly close above 107.36 (MA20), or daily close above EMA10 |
