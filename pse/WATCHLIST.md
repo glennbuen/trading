@@ -299,6 +299,7 @@ it's not a fixed order.
 | 8 | **BLOOM** | Speculative bottom-fish | Bottomfishing | Short-term, smallest size | Short-term | Q2 loss narrowed sharply (₱1.41B→₱345M YoY), EBITDA +35%, GGR +15% | ₱2.17–2.32 | ₱2.05–2.10 | T1 ₱2.45 · T2 ₱2.60 | ₱2.20 (intraday, -1.35% today, range 2.18–2.24) | ✅ **Starter FILLED** (1,000 sh @ ₱2.2567 avg) — underwater vs. cost, stop gap down to ~4.8% | Next candle makes no fresh low, OR close back above ₱2.34 (EMA10) |
 | 9 | **DMC** | Speculative bottom-fish | Bottomfishing | Short-term entry, long-term candidate on fundamentals | Short-term (long-term on fundamentals) | Softer: Q1 NI -2% YoY, FY25 NI -21%; fair value cut ₱10.04→9.42 — tempers the thesis | ₱7.86–8.02 | ₱7.57–7.67 (ATR-confirmed) | T1 ₱9.50–9.71 · T2 ₱10.65–11.00 | ₱8.18 (intraday, +0.49% today, range 8.13–8.23) | ⚠️ Still fractionally below weekly MA20 (8.20) — trigger has NOT fired yet, closest it's been | Weekly close back above ₱8.20 (MA20) — the one thing still pending; daily EMA10 (7.87) already reclaimed |
 | 10 | **AEV** | Trend reversal (weekly MA200 overhang, ~5.5% above price — corrects the "clean uptrend" read from the initial MA-only screen) | Swing | Short-term entry now; long-term contingent on clearing weekly resistance | Short-term (contingent long-term) | H1 2026 net income **+63% YoY to ₱13.6B** (Q2 alone +40% YoY); AboitizPower expanded its renewable portfolio (797MW Caliraya-Botocan-Kalayaan hydro + new solar), UnionBank contributed ₱3.4B; active share buyback program; strong balance sheet (₱86.6B cash, net debt/equity 0.9x); P/E 8.89, div yield 4.06% | ₱36.95–37.70 (daily MA20/EMA10/VWAP cluster) | ₱35.55–36.15 (1–1.5x daily ATR14=1.11 below the cluster, confluence with daily MA50 35.58) | T1 ₱38.95–39.79 (52w high / weekly MA200 confluence — **weak R:R, ~1.1:1, flagged not hidden**); T2 undefined until a clean weekly break above 39.79 gives something to target | ₱37.70 (intraday, +3.29% today) | 🟢 **Live now** — sitting right on the daily confluence zone, but this is a reversal-off-a-real-decline setup (52w range ₱23.90–38.95), not a clean established-uptrend pullback | Next daily candle no fresh low vs. today, but the more meaningful confirmation is a weekly close above ₱39.79 (MA200) |
+| 11 | **AP** | Trend pullback/continuation — clean, no overhang on either timeframe (confirms the initial screen, unlike AEV) | Uptrend continuation | Short-term + long-term candidate | Both | AboitizPower H1 2026 net income **+45% YoY to ₱18.4B**, driven by improved market prices, additional hydro/gas contributions, and fresh solar output (221MWp Olongapo, 47MWp Armenia, 93MWp San Manuel) more than offsetting lower coal availability; ₱62B 2026 capex allocated to renewables/battery storage. **Note: this is the same underlying growth story as AEV** (AboitizPower is AEV's subsidiary and contributed ₱10B of AEV's H1 profit) — the two aren't fully independent bets if holding both. | ₱44.55–45.35 (daily MA20/EMA10/VWAP cluster) | ₱42.30–42.80 (1–1.5x daily ATR14=0.91 below daily MA50/MA200 cluster ~43.7) | T1 ₱48.00 (52w-high retest, ~1.2:1 R:R — weak, same honest caveat as AEV) | ₱45.00 (intraday, +0.11% today) | 🟢 **Live now** — sitting right on the daily confluence zone, weekly chart confirms no overhang (fully above weekly MA20/50/200) | Next daily candle no fresh low vs. today, or hold in the ₱44.55–45.35 zone |
 
 **Conviction rank reasoning**: #1-3 (ICT, NIKL, OGP) — clean weekly-
 confirmed trends with strong fundamental confirmation and, for
@@ -400,6 +401,16 @@ or after the news explaining it (Philweb is the clearest example here).
   yet**: the fresh chart found a weekly MA200 overhang (~5.5% above
   current price) the initial MA-only screen missed — see the Summary
   table detail.
+- **AP** (new 2026-09-14): H1 2026 net income **+45% YoY to ₱18.4B**
+  ([Manila Bulletin](https://mb.com.ph/2026/07/29/aboitizpower-posts-18-billion-net-income-as-renewable-drive-pays-off)) —
+  improved market prices, additional hydro/gas contributions, and
+  fresh output from newly completed solar plants (221MWp Olongapo,
+  47MWp Armenia, 93MWp San Manuel) more than offset lower coal-fired
+  availability. ₱62B allocated for 2026 capex, prioritizing renewables
+  and battery storage. This is the same underlying business driving
+  AEV's own H1 strength (AP contributed ₱10B of AEV's ₱13.6B) — real,
+  substantive growth, but correlated with the AEV thesis above, not
+  independent of it.
 - **CNPF** (new 2026-09-11): H1 2026 net income +6% YoY (₱4.14B vs
   ₱3.90B), revenue +15% YoY (₱45.8B), driven by double-digit growth in
   both branded and OEM-export businesses — published early August
@@ -1208,6 +1219,52 @@ regardless of how good the chart looks.
 
 ---
 
+## Aboitiz Power Corporation (AP)
+- **Risk tier: Trend pullback/continuation** — clean, no overhang on
+  either timeframe. Confirms the initial MA5/20/50/100 screen, unlike
+  its sister name AEV where the fresh chart found a real weekly
+  overhang — a useful reminder the screen isn't wrong by default
+  either, per this project's own "don't blanket-distrust a computed
+  screen" discipline.
+- **Reviewed:** 2026-09-14 (daily+weekly, full indicator set) · **Price
+  at review:** ₱45.00 · **ATR(14): 0.91 daily / 2.05 weekly**
+- **Setup:** Weekly chart shows a genuine, sustained recovery from a
+  ~2020 low (~₱24 visible on the chart) up to a 52w high of ₱48.00 —
+  price (45.00) sits above weekly MA20 (43.58), MA50 (43.36), and
+  MA200 (38.88), a fully bullish weekly stack with real room below to
+  each level, not a tight squeeze. Weekly RSI 55.29, healthy. Daily
+  chart shows the same live confluence pattern as AEV's — price sits
+  almost exactly on daily MA20 (45.30)/EMA10 (45.17)/VWAP (44.97) —
+  with daily MA50 (43.71) and MA200 (43.68) both comfortably below,
+  confirming no overhang on the shorter timeframe either. Daily RSI
+  51.94, neutral. **One honest caution**: NFB/s shows -8.24M (net
+  foreign selling recently) — worth noting rather than ignoring, even
+  though it doesn't override the clean MA structure.
+- **Entry ranges (staged — see Entry methodology above):**
+  - **Starter**: current levels **₱44.55–45.35** (today's range, the
+    daily confluence zone) — live now.
+  - **Confirmation add**: next daily candle no fresh low vs. today, or
+    a hold within this zone.
+  - **Stop:** ATR(14)=0.91 daily → 1–1.5x below the daily MA50/MA200
+    cluster (~43.7) = **~₱42.30–42.80**.
+- **Take-profit:** T1 **₱48.00** (52-week-high retest, the one real
+  structural level available) — **the honest math: risk ~₱2.45/share,
+  reward ~₱3.00/share, R:R ≈ 1.2:1, a weak ratio for a hard target this
+  close**, flagged the same way as AEV's rather than dressed up. No T2
+  defined — nothing structural visible above the 52w high yet.
+- **Invalidation:** a close below ~₱42.30–42.80 undoes the pullback
+  read.
+- **Horizon: Both — short-term entry now, genuine long-term candidate.**
+  Profitable (P/E 12.86), real dividend payer (5.07% yield), real
+  earnings growth underneath the move (H1 2026 net income +45% YoY to
+  ₱18.4B, driven by hydro/gas plus new solar capacity). Unlike AEV,
+  this one earns the "Both" tag on both the fundamentals and the
+  chart — no contingency attached. **Worth remembering**: this thesis
+  overlaps substantially with AEV's (AboitizPower is AEV's subsidiary
+  and the main driver of AEV's own H1 strength) — treat the two as
+  correlated exposure to the same underlying story, not independent
+  diversification, if holding both.
+
 ## Reviewed but NOT added (for reference — not maintained further)
 
 - **IMI** (2026-09-08, ₱8.40) — already extended (+140% in <3 months,
@@ -1284,3 +1341,23 @@ regardless of how good the chart looks.
   over 3 years, sitting at 98.6% of its 52-week range (14-63.50). The
   most extended name reviewed by the numbers alone — worse than AT's
   RSI at screening time, on a much longer runway of gains.
+- **AREIT (AREIT Inc.)** (2026-09-14, ₱37.20) — **the initial
+  MA5/20/50/100 screen misread this one, worth being explicit about**:
+  it flagged tight MA convergence (all four daily MAs within centavos
+  of price) as "worth a closer look," the same signal that correctly
+  flagged AEV and AP as live entries. The real chart shows the opposite
+  story here — daily MA200 (39.97) sits ~7.4% *above* current price,
+  and the weekly MA50 (40.27) is well above too, with weekly MA200
+  (37.44) sitting almost exactly at price. This is a stock that peaked
+  (~₱45 around Oct 2025-Jan 2026 per the visual chart), declined
+  sharply, and has been flat-consolidating for months in a ₱36-38
+  shelf — the short-term MAs converged with price *during that
+  consolidation*, not because price pulled back into an active
+  uptrend. Weekly RSI 42.22, below midline; NFB/s -2.04M (net foreign
+  selling). Real dividend yield (6.69%) and reasonable P/E (12.91) make
+  it a legitimate income holding, but not a swing/pullback setup by
+  this project's standard. **The lesson, stated plainly**: MA
+  convergence alone doesn't distinguish "healthy pullback in an
+  uptrend" from "a downtrend pausing below its own longer-term
+  average" — exactly why the "caveat every screen as provisional"
+  discipline exists, and a real example of it doing its job.
