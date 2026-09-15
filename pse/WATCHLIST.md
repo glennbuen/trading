@@ -72,6 +72,33 @@ State the number, state the confidence level, move on.
    [`TRADE_JOURNAL.md`](TRADE_JOURNAL.md): what happened, and the
    lesson, win or loss alike. This is what turns the watchlist from a
    plan into a track record.
+7. **Trigger: user pastes COL Financial's daily Technical Guide PDF**
+   (Trend Mode + Recommendation + support/resistance per name, dated
+   "As of" the morning it's issued but built on the *prior* session's
+   close — confirmed 2026-09-15: a real, structural one-day lag, not
+   an occasional glitch). Cross-check every symbol currently in
+   Current Holdings and the Summary table against it automatically,
+   no need to be asked:
+   - **Use the Trend Mode + Recommendation columns as current
+     information** — these persist across sessions (see the Rec
+     Initiated date; a call standing for several days is a real,
+     multi-day read, not noise) and a one-day lag rarely invalidates
+     them.
+   - **Use the Price/support-resistance columns as the prior session's
+     close, not today's** — cross-check them against whatever live
+     price is already on file from that day's "summary"/"positions"
+     check, same data-quality discipline as any other source in this
+     file. Never quote COL's price as current.
+   - **Flag agreement AND disagreement, every time, not just when
+     something's wrong.** Agreement is real corroboration worth
+     recording, not just a non-event. A genuine, unhedged disagreement
+     (like AP, 2026-09-15 — see the dedicated cross-check section)
+     means re-examining the existing chart/analysis for what was
+     missed, not defending the original read by default.
+   - Index/sector-level rows in the same guide (PSEi, Financials,
+     Holding Firms, Mining & Oil, etc.) are useful background for
+     whatever names sit in those sectors — check them too, not just
+     the individual tickers already on the list.
 
 ## Market context: PSEi (updated 2026-09-09)
 
