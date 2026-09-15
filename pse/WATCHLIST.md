@@ -1492,3 +1492,33 @@ regardless of how good the chart looks.
   uptrend" from "a downtrend pausing below its own longer-term
   average" — exactly why the "caveat every screen as provisional"
   discipline exists, and a real example of it doing its job.
+- **ION (Ionics, Inc.)** (2026-09-15, ₱3.22) — **the most extreme
+  extension reviewed in this project to date.** RSI9 90.12, RSI14
+  87.85 — both far past the 70 overbought line, and higher than
+  ABG's previous record (74.99). Price is 120%+ above its own MA50
+  (1.79) and 27%+ above its own 20-day MA (2.374). COL Financial's own
+  guide rated this UP/BUY as of 09/14/2026 — a real example of why a
+  rating alone is never a signal: today's -7.47% move (visible in the
+  same volume list this was screened from) looks like the beginning of
+  exactly the pullback this level of extension predicts, not a reason
+  to chase. Reject — chase risk defined, wait for it to actually give
+  back a meaningful chunk of the move before reconsidering.
+- **ACR (Alsons Consolidated Resources)** (2026-09-15, ₱1.37) —
+  extended, not as extreme as ION but real: RSI9 76.51, RSI14 74.48,
+  +191% YTD, +21% in the past week alone. Same lesson as ION on a
+  smaller scale — COL rates this UP/BUY too, and it's a genuine
+  uptrend, but there's no margin left for a fresh entry today. Watch
+  for a real pullback, not a reason to chase.
+- **MYNLD (Maynilad Water Services)** (2026-09-15, ₱17.70) — below
+  every MA (MA5/20 18.40, MA50 18.97, MA100 20.69), RSI9 38.48/RSI14
+  41.01. A real downtrend, not a pullback in an uptrend — reject.
+  Recently PSEi-listed (Nov 2025), still finding its footing.
+- **MREIT, GSMI, CBC, SMPH** (2026-09-15) — all screened via COL
+  Financial's guide rather than a fresh MarketScreener pull (already
+  covered there): MREIT DOWN/SELL INTO STRENGTH, GSMI DOWN/SELL INTO
+  STRENGTH (today -8.49%, confirms), CBC DOWN/SELL, SMPH DOWN/SELL —
+  reject all four, no further work needed given the consistent
+  professional read.
+- **RLC (Robinsons Land)** (2026-09-15) — per COL's guide,
+  SIDEWAYS/LIGHTEN — neutral-to-cautious, not a buy signal. Reject for
+  now.
