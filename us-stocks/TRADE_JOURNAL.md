@@ -25,6 +25,7 @@ is worth flagging too.
 | Metric | Value |
 |---|---|
 | Real closed-position events | 0 |
+| Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
 | Realized P&L | $0 |
 | Win rate / avg R-multiple | Not yet meaningful — no trades closed |
 
@@ -32,7 +33,37 @@ is worth flagging too.
 
 ## Log
 
-*(Empty — no trades yet.)*
+### 2026-09-14/15 — NVDA — Discipline gap (stop not executed at plan trigger)
+- **Price:** Stop zone $210–213. Monday 9/14 regular-session close:
+  $210.96 (-3.36%), inside the zone. After-hours ticked to $212.04
+  (+0.51%), still within it.
+- **Setup at the time:** A broad, macro-driven selloff (Anthropic's
+  Dario Amodei and OpenAI's Sam Altman both calling for slower AI
+  development over the weekend) pushed NVDA's pre-market price into
+  the stated stop zone. The user made an explicit, reasonable plan in
+  advance: check 30 minutes after the regular open, sell if price
+  hadn't recovered by then — a sensible middle ground between
+  reacting to thin pre-market noise and waiting a full session.
+- **What actually happened:** The plan wasn't executed. By the time
+  this was revisited the next day, the confirmed close had settled
+  inside the stop zone anyway (not just touched it intraday) — the
+  discretionary call didn't end up mattering for the *outcome* this
+  time (price hadn't sharply recovered), but the *process* gap is the
+  real finding here, independent of how this particular case
+  resolves. The user's own words: "i need more discipline."
+- **Lesson:** This is exactly the risk the "no automated stop-loss on
+  Webull SG fractional shares" warning was about — a good plan on
+  paper doesn't execute itself, and the gap between "I have a rule"
+  and "I followed the rule at the moment it mattered" is where real
+  losses compound on a small account. Worth naming plainly rather than
+  softening: the system (this file, the routine, the check-in) did its
+  job — it flagged the zone breach correctly and in advance. The
+  follow-through is the part that's genuinely hard and worth building
+  as a practiced habit, not a one-time intention. No verdict yet on
+  whether holding through this was "right" or "wrong" in hindsight —
+  that depends on where NVDA goes from here — but the discipline
+  question is independent of that outcome and shouldn't be graded on
+  it either way.
 
 ---
 
