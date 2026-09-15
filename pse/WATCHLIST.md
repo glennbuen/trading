@@ -99,6 +99,23 @@ State the number, state the confidence level, move on.
      Holding Firms, Mining & Oil, etc.) are useful background for
      whatever names sit in those sectors — check them too, not just
      the individual tickers already on the list.
+   - **Never treat a COL BUY/SELL rating itself as an actionable
+     entry/exit signal — it's confirmation/disagreement input on an
+     independently-built view, not a trigger.** Discussed at length
+     2026-09-15: the report's own disclaimer states COL and its
+     employees "may have investments in securities... and may trade
+     them in ways different from those discussed" — real, disclosed,
+     industry-standard boilerplate, not an accusation of anything
+     illegal. The more relevant structural point: research
+     dissemination and execution access aren't equal across client
+     tiers anywhere in the industry, so by the time a public
+     recommendation reaches retail, meaningful price reaction may
+     already have happened. A "BUY" signal is built entirely from
+     public price data anyway (not inside information) — so chasing it
+     fresh risks buying into a move that's already priced in. Use the
+     Trend/Rec purely to cross-check a chart-based view already formed
+     independently, same as every other confirmation source in this
+     file.
 
 ## Market context: PSEi (updated 2026-09-09)
 
