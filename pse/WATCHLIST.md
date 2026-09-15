@@ -334,6 +334,64 @@ because price never even touched the stated zones — there was no dip to
 catch, staged or not. Nothing to do differently in hindsight; both are
 now chase risk, not pullback entries, unless they give back the move.
 
+## Cross-check against COL Financial's Technical Guide (2026-09-15)
+
+The user shared COL Financial's own broker-generated technical guide
+(Trend Mode + Recommendation + support/resistance, refreshed per-name)
+— a genuinely useful independent check since it's a professional
+system derived completely separately from this file's chart-by-chart
+reads. Worth doing this cross-check periodically going forward, not
+just once, per the same "don't blanket-trust or blanket-distrust a
+screen — verify" discipline already applied elsewhere in this file.
+
+**Confirms this file's read** (COL's Trend/Rec agrees or is
+broadly consistent): ICT (UP/BUY), APX (UP/BUY), NIKL (UP/HOLD), OGP
+(UP/HOLD), Philweb (UP/HOLD), CNPF (UP/HOLD), LTG (UP/HOLD), SCC
+(DOWN/SELL INTO STRENGTH — if anything more bearish than this file's
+own framing, reinforcing the no-stop caution already on record).
+
+**More cautious than this file's read**: BLOOM (SIDEWAYS/LIGHTEN vs.
+this file's "Starter filled, watching for confirmation") and **BPI
+(SIDEWAYS/LIGHTEN) — worth flagging prominently: COL's own short-term
+support (₱104.16) and medium-term support (₱102.96) are BOTH already
+above BPI's current price (₱101.80/102.30 as last checked). By COL's
+own framework, BPI has already broken both its short- and medium-term
+support — a sharper read than this file's ATR-based stop (₱101.00–
+101.50), which hasn't been touched yet.** Treat this as corroborating,
+not contradicting, the stop-proximity flag already active on BPI.
+
+**Real disagreement, not just a difference in caution — worth sitting
+with rather than explaining away:**
+- **DMC**: this file has it as a speculative-recovery candidate,
+  daily-level reclaim done, weekly MA20 trigger "not yet fired, but
+  closest it's been." COL rates it **DOWN trend, SELL INTO STRENGTH**
+  (initiated 09/11/2026, holding since) — their system reads the
+  unconfirmed weekly signal as "still a downtrend," not "a developing
+  reversal." Defensible difference in how much benefit of the doubt an
+  unconfirmed signal gets, not obviously an error on either side — but
+  worth being more conservative about this name until the weekly
+  trigger actually fires, not just calling it close.
+- **AP**: this file ranked AP the *cleanest, most unhedged bullish
+  setup* of the two Aboitiz names — no overhang on either timeframe,
+  full "Both" short+long-term tag, no caveats attached anywhere in the
+  writeup. COL rates it **SIDEWAYS, LIGHTEN** (initiated 09/11/2026).
+  This is a genuine, unhedged gap with a professional system, not
+  explained by a difference in conservatism the way DMC's is. No
+  confident resolution yet — noting it plainly rather than
+  manufacturing a reason it doesn't matter. Worth a fresh chart before
+  treating AP as unambiguously clean going forward.
+
+**Sector/index context from the same guide, useful background**:
+PSEi itself rated DOWN/SELL (since 08/27/2026, -8.97% off its 52w
+high) — consistent with the broad red sessions already showing up
+across this file's own daily checks. Philippines Financials index
+DOWN/SELL INTO STRENGTH (since 09/08) — real sector headwind behind
+BPI specifically, not just an idiosyncratic issue. Philippines Holding
+Firms index DOWN/SELL, -35.97% off high — relevant backdrop for AEV.
+Philippines Mining & Oil index UP/BUY — the one genuinely strong
+sector, consistent with why APX/NIKL/OGP read better than most names
+on this list.
+
 ## Fundamental Catalysts (researched 2026-09-10)
 
 **Trigger: typing "catalyst"** means research fresh news/earnings for
