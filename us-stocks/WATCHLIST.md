@@ -500,3 +500,44 @@ stays the same.)*
   Applying the discipline consistently rather than making an exception
   because the story sounds good — the air-pocket risk at this
   magnitude exists independent of fundamental quality.
+- **SNDK (Sandisk), AAPL, TSLA, AVGO, SKHY** (2026-09-11, screened via
+  us_volume but never written to permanent record until now —
+  corrected 2026-09-15 after the same names resurfaced): **SNDK** —
+  +568% YTD, beta 3.87, a real negative catalyst (DeepSeek architecture
+  cutting AI hardware demand) — extreme extension, same MU/LITE
+  category, reject. **AAPL** — ~96% of its all-time high, no pullback
+  offered — chase risk. **TSLA** — ~27% below its ATH but YTD -18.74%,
+  no clean bullish technical read at screening time — mixed, not
+  rejected outright but no case either. **AVGO** — -27% off its recent
+  high, -14.8% over the trailing month — ambiguous without a real
+  chart, could be a healthy pullback or a breakdown, ATH proximity
+  alone can't tell. **SKHY** — foreign OTC ADR, thin, couldn't get a
+  reliable fetch — lower priority regardless.
+- **BDRX (Biodexa Pharmaceuticals)** (2026-09-15, $2.20, +97.8% today
+  on 17.2M volume) — an unproven single-day speculative spike, the
+  same FGEN-style caution already established in this project: no
+  chart structure or time behind the move to evaluate, not a pullback
+  candidate by definition regardless of what's driving it. Reject
+  without needing further technical work.
+- **CRCL (Circle Internet Group)** (2026-09-15, $97.42, +2.15% today)
+  — 52-week high $298.99 (Jun 2025), low $49.90 (Feb 2026) — **down
+  ~67% from its peak**, a catastrophic decline, not a healthy pullback
+  in an established trend. Q2 2026 earnings missed (revenue $701.32M
+  vs. $744.8M estimate). Retail forum commentary mentions a "cup with
+  handle" pattern and a golden cross — noted but not weighted, per
+  this project's "never trust a snippet's own summary" discipline;
+  that's sentiment, not a verified chart read. Closer to BLOOM's
+  profile on the PSE side (early-stage speculative recovery off a
+  massive decline) than a clean trend-pullback candidate. Not rejected
+  outright — genuinely worth a real daily+weekly chart if there's
+  interest — but not added off this screen alone.
+- **ASML (ASML Holding)** (2026-09-15) — **data-quality flag, not a
+  clean read**: the volume list showed +2.6% today, a direct
+  TradingView fetch showed -7.25% today, and the same fetch separately
+  referenced an ~8.5% post-Q2-earnings decline that may be an older
+  event being conflated with "today." Real fundamental strength
+  underneath (94.82% 1-year return, P/E 52.87, genuine semiconductor-
+  equipment leader, not speculative) — but the price/date confusion
+  here is bad enough that a verdict isn't safe to render without a
+  real chart and a cleaner price source. Worth revisiting with a
+  TradingView chart paste rather than more text-fetch attempts.
