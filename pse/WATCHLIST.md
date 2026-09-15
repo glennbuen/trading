@@ -299,7 +299,7 @@ it's not a fixed order.
 | 8 | **BLOOM** | Speculative bottom-fish | Bottomfishing | Short-term, smallest size | Short-term | Q2 loss narrowed sharply (₱1.41B→₱345M YoY), EBITDA +35%, GGR +15% | ₱2.17–2.32 | ₱2.05–2.10 | T1 ₱2.45 · T2 ₱2.60 | ₱2.24 (intraday, 09:57 AM, +1.82% today, range 2.18–2.24) | ✅ **Starter FILLED** (1,000 sh @ ₱2.2567 avg) — recovering, close to breakeven, stop gap back to ~6.7% | Next candle makes no fresh low, OR close back above ₱2.34 (EMA10) |
 | 9 | **DMC** | Speculative bottom-fish | Bottomfishing | Short-term entry, long-term candidate on fundamentals | Short-term (long-term on fundamentals) | Softer: Q1 NI -2% YoY, FY25 NI -21%; fair value cut ₱10.04→9.42 — tempers the thesis | ₱7.86–8.02 | ₱7.57–7.67 (ATR-confirmed) | T1 ₱9.50–9.71 · T2 ₱10.65–11.00 | ₱8.18 (intraday, 09:57 AM, +0.25% today, range 8.16–8.20) | ⚠️ Still fractionally below weekly MA20 (8.20) — trigger has NOT fired yet, closest it's been | Weekly close back above ₱8.20 (MA20) — the one thing still pending; daily EMA10 (7.87) already reclaimed |
 | 10 | **AEV** | Trend reversal (weekly MA200 overhang, ~5.5% above price — corrects the "clean uptrend" read from the initial MA-only screen) | Swing | Short-term entry now; long-term contingent on clearing weekly resistance | Short-term (contingent long-term) | H1 2026 net income **+63% YoY to ₱13.6B** (Q2 alone +40% YoY); AboitizPower expanded its renewable portfolio (797MW Caliraya-Botocan-Kalayaan hydro + new solar), UnionBank contributed ₱3.4B; active share buyback program; strong balance sheet (₱86.6B cash, net debt/equity 0.9x); P/E 8.89, div yield 4.06% | ₱36.95–37.70 (daily MA20/EMA10/VWAP cluster) | ₱35.55–36.15 (1–1.5x daily ATR14=1.11 below the cluster, confluence with daily MA50 35.58) | T1 ₱38.95–39.79 (52w high / weekly MA200 confluence — **weak R:R, ~1.1:1, flagged not hidden**); T2 undefined until a clean weekly break above 39.79 gives something to target | ₱37.65 (intraday, 09:57 AM, -0.13% today) | 🟢 Still in the entry zone, essentially flat — a reversal-off-a-real-decline setup (52w range ₱23.90–38.95), not a clean established-uptrend pullback | Next daily candle no fresh low vs. today, but the more meaningful confirmation is a weekly close above ₱39.79 (MA200) |
-| 11 | **AP** | Trend pullback/continuation — clean, no overhang on either timeframe (confirms the initial screen, unlike AEV) | Uptrend continuation | Short-term + long-term candidate | Both | AboitizPower H1 2026 net income **+45% YoY to ₱18.4B**, driven by improved market prices, additional hydro/gas contributions, and fresh solar output (221MWp Olongapo, 47MWp Armenia, 93MWp San Manuel) more than offsetting lower coal availability; ₱62B 2026 capex allocated to renewables/battery storage. **Note: this is the same underlying growth story as AEV** (AboitizPower is AEV's subsidiary and contributed ₱10B of AEV's H1 profit) — the two aren't fully independent bets if holding both. | ₱44.55–45.35 (daily MA20/EMA10/VWAP cluster) | ₱42.30–42.80 (1–1.5x daily ATR14=0.91 below daily MA50/MA200 cluster ~43.7) | T1 ₱48.00 (52w-high retest, ~1.2:1 R:R — weak, same honest caveat as AEV) | ₱45.30 (intraday, 09:57 AM, +0.67% today, range 45.00–45.30) | 🟢 **Live now** — sitting right on the daily confluence zone, weekly chart confirms no overhang (fully above weekly MA20/50/200) | Next daily candle no fresh low vs. today, or hold in the ₱44.55–45.35 zone |
+| 11 | **AP** | **Corrected 2026-09-15 — Range-bound near the top of a 5-month consolidation, not a clean uptrend continuation** (see re-review below; matches COL Financial's own SIDEWAYS/LIGHTEN rating, previously an unresolved disagreement) | Range trade | Short-term entry only, long-term case weakened | Short-term | AboitizPower H1 2026 net income **+45% YoY to ₱18.4B** — real, but not enough on its own to override the technical caution below. | ₱44.55–45.35 (daily MA20/EMA10/VWAP cluster) | ₱42.30–42.80 (1–1.5x daily ATR14=0.91 below daily MA50/MA200 cluster ~43.7) | T1 ₱48.00 (the top of the range it's failed to break for 5 months, not a fresh breakout target — R:R ~1.2:1, weaker than it looks) | ₱45.30 (intraday, 09:57 AM, +0.67% today, range 45.00–45.30) | 🟡 **Downgraded — real, live distribution signal underneath a range-bound chart**: net foreign selling (NFB/s -8.24M), weekly MACD line below its own signal, RSI parked at 51.94 daily/55.29 weekly (neutral, not trending) | A genuine breakout above ₱48 (the range top) on strong volume — the current MA-cluster touch is not, by itself, confirmation of anything in a range-bound name |
 
 **Conviction rank reasoning**: #1-3 (ICT, NIKL, OGP) — clean weekly-
 confirmed trends with strong fundamental confirmation and, for
@@ -317,7 +317,14 @@ because the fundamental backing is meaningfully stronger. #7 (BPI) —
 solid but technically and fundamentally the most "average" of the
 trend-pullback names. #8-9 (BLOOM, DMC) — speculative tier by design;
 BLOOM's fundamentals now support the bounce thesis, DMC's argue
-against it.
+against it. **#10-11 (AEV, AP)**: both added 2026-09-14, both now
+carry real technical caution rather than a clean read — AEV's weekly
+MA200 overhang was flagged at addition; AP's range-bound/distribution
+picture was corrected 2026-09-15 (see the COL Financial cross-check
+section below). Genuinely strong fundamentals on both (H1 2026 net
+income +63% and +45% YoY respectively), but neither currently earns
+an unhedged "Both" tag — ranked lowest on the list for that reason,
+not because the underlying businesses are weak.
 
 **Play type key**: *Uptrend continuation* — clean, weekly-confirmed established trend, buy the pullback, can be held longer if it keeps working. *Swing* — a defined-range trade off a specific technical level, expect days-to-weeks not months. *Bottomfishing* — early-stage, unconfirmed reversal off a real low, smallest size, highest risk. *Quick* — the move is already extended/chasing, no clean pullback offered — treat as a fast in-and-out with tight risk management, not a multi-week hold expectation, regardless of how good the underlying trend looks.
 
@@ -371,15 +378,22 @@ with rather than explaining away:**
   unconfirmed signal gets, not obviously an error on either side — but
   worth being more conservative about this name until the weekly
   trigger actually fires, not just calling it close.
-- **AP**: this file ranked AP the *cleanest, most unhedged bullish
-  setup* of the two Aboitiz names — no overhang on either timeframe,
-  full "Both" short+long-term tag, no caveats attached anywhere in the
-  writeup. COL rates it **SIDEWAYS, LIGHTEN** (initiated 09/11/2026).
-  This is a genuine, unhedged gap with a professional system, not
-  explained by a difference in conservatism the way DMC's is. No
-  confident resolution yet — noting it plainly rather than
-  manufacturing a reason it doesn't matter. Worth a fresh chart before
-  treating AP as unambiguously clean going forward.
+- **AP — ✅ RESOLVED 2026-09-15, COL was right.** Re-examined the same
+  chart already on file (no new data needed) specifically looking for
+  what a SIDEWAYS classifier would catch that an MA-stack read
+  wouldn't: price hasn't made a fresh high since ~April 2026 (5+
+  months chopping near the range top, not a live uptrend), real net
+  foreign selling (NFB/s -8.24M) underneath the stall, weekly MACD
+  line below its own signal, and RSI parked at the midline on both
+  timeframes rather than holding the 55-65+ zone a genuine trend
+  usually shows. The original "cleanest, unhedged bullish setup"
+  framing over-weighted MA order and missed all four of these. Full
+  correction in AP's detailed entry above — downgraded to a range
+  trade, "Both" horizon tag removed, T1 re-framed as an unproven range
+  top rather than a breakout target. Worth remembering as a concrete
+  example of why this cross-check is worth repeating, not a one-time
+  exercise: the miss wasn't a data error, it was a weighting error,
+  the harder kind to catch without an outside system to check against.
 
 **Sector/index context from the same guide, useful background**:
 PSEi itself rated DOWN/SELL (since 08/27/2026, -8.97% off its 52w
@@ -1278,50 +1292,65 @@ regardless of how good the chart looks.
 ---
 
 ## Aboitiz Power Corporation (AP)
-- **Risk tier: Trend pullback/continuation** — clean, no overhang on
-  either timeframe. Confirms the initial MA5/20/50/100 screen, unlike
-  its sister name AEV where the fresh chart found a real weekly
-  overhang — a useful reminder the screen isn't wrong by default
-  either, per this project's own "don't blanket-distrust a computed
-  screen" discipline.
-- **Reviewed:** 2026-09-14 (daily+weekly, full indicator set) · **Price
-  at review:** ₱45.00 · **ATR(14): 0.91 daily / 2.05 weekly**
-- **Setup:** Weekly chart shows a genuine, sustained recovery from a
-  ~2020 low (~₱24 visible on the chart) up to a 52w high of ₱48.00 —
-  price (45.00) sits above weekly MA20 (43.58), MA50 (43.36), and
-  MA200 (38.88), a fully bullish weekly stack with real room below to
-  each level, not a tight squeeze. Weekly RSI 55.29, healthy. Daily
-  chart shows the same live confluence pattern as AEV's — price sits
-  almost exactly on daily MA20 (45.30)/EMA10 (45.17)/VWAP (44.97) —
-  with daily MA50 (43.71) and MA200 (43.68) both comfortably below,
-  confirming no overhang on the shorter timeframe either. Daily RSI
-  51.94, neutral. **One honest caution**: NFB/s shows -8.24M (net
-  foreign selling recently) — worth noting rather than ignoring, even
-  though it doesn't override the clean MA structure.
-- **Entry ranges (staged — see Entry methodology above):**
+- **Risk tier: CORRECTED 2026-09-15 — Range-bound near the top of a
+  5-month consolidation, not a clean trend pullback/continuation.**
+  The original 2026-09-14 review (below, kept for the record) called
+  this the cleanest, most unhedged bullish setup on the whole list —
+  that read leaned too heavily on MA-stack order (a lagging,
+  trend-confirming signal) and under-weighted momentum/flow signals
+  sitting right next to it. Corrected after the user shared COL
+  Financial's technical guide, which independently rated AP
+  SIDEWAYS/LIGHTEN — a real, unhedged disagreement with the original
+  writeup that turned out to be the more accurate read of the same
+  chart, not a difference in conservatism.
+- **What the correction actually found, on the same daily+weekly
+  charts, same data, no new information**: (1) **Price hasn't made a
+  fresh high since ~April 2026** (~₱46-47), fell to ~₱40 by July, and
+  has only recovered to ₱45 now — five-plus months chopping in the
+  upper half of its 52-week range (₱38.85–48.00) without a decisive
+  breakout, the textbook shape of a range, not a live uptrend. (2)
+  **NFB/s -8.24M (net foreign selling)** — previously logged as "one
+  honest caution," which undersold it; real, sustained foreign selling
+  under a range-bound chart is a distribution signal, not a footnote.
+  (3) **Weekly MACD line (0.25) sits below its own signal (0.46)** —
+  a momentum-deceleration tell even while both stay barely positive.
+  (4) **RSI parked almost exactly at the midline** (51.94 daily, 55.29
+  weekly) — consistent with range-bound, not with a name actually
+  trending; a genuine live uptrend usually holds RSI persistently
+  higher than this.
+- **Reviewed:** 2026-09-14, corrected 2026-09-15 (daily+weekly, full
+  indicator set, no new chart needed) · **Price at review:** ₱45.00 ·
+  **ATR(14): 0.91 daily / 2.05 weekly**
+- **Entry ranges (staged — see Entry methodology above; treat this as
+  a range trade, not a trend-continuation entry)**:
   - **Starter**: current levels **₱44.55–45.35** (today's range, the
-    daily confluence zone) — live now.
-  - **Confirmation add**: next daily candle no fresh low vs. today, or
-    a hold within this zone.
+    daily MA cluster) — still technically live, but this is a
+    range-top touch, not a confirmed breakout continuation.
+  - **Confirmation add**: no longer "next candle no fresh low" — the
+    real confirmation here is **a genuine breakout above ₱48 (the
+    range top) on strong volume**, since a touch of the daily MA
+    cluster means nothing new inside an established range.
   - **Stop:** ATR(14)=0.91 daily → 1–1.5x below the daily MA50/MA200
-    cluster (~43.7) = **~₱42.30–42.80**.
-- **Take-profit:** T1 **₱48.00** (52-week-high retest, the one real
-  structural level available) — **the honest math: risk ~₱2.45/share,
-  reward ~₱3.00/share, R:R ≈ 1.2:1, a weak ratio for a hard target this
-  close**, flagged the same way as AEV's rather than dressed up. No T2
-  defined — nothing structural visible above the 52w high yet.
-- **Invalidation:** a close below ~₱42.30–42.80 undoes the pullback
-  read.
-- **Horizon: Both — short-term entry now, genuine long-term candidate.**
-  Profitable (P/E 12.86), real dividend payer (5.07% yield), real
-  earnings growth underneath the move (H1 2026 net income +45% YoY to
-  ₱18.4B, driven by hydro/gas plus new solar capacity). Unlike AEV,
-  this one earns the "Both" tag on both the fundamentals and the
-  chart — no contingency attached. **Worth remembering**: this thesis
-  overlaps substantially with AEV's (AboitizPower is AEV's subsidiary
-  and the main driver of AEV's own H1 strength) — treat the two as
-  correlated exposure to the same underlying story, not independent
-  diversification, if holding both.
+    cluster (~43.7) = **~₱42.30–42.80** — unchanged, still the
+    relevant level if a Starter is taken.
+- **Take-profit:** T1 **₱48.00** — **re-framed**: this is the top of
+  the range it has failed to clear for 5 months, not a fresh
+  breakout target. R:R ≈ 1.2:1 off the stated stop, already weak, and
+  weaker still given the range hasn't shown it can actually break this
+  level. No T2 defined.
+- **Invalidation:** a close below ~₱42.30–42.80 undoes even the
+  range-trade read.
+- **Horizon: CORRECTED — short-term entry only if trading the range
+  explicitly, long-term "Both" tag removed.** Real fundamentals remain
+  (P/E 12.86, 5.07% dividend yield, H1 2026 net income +45% YoY to
+  ₱18.4B) — that hasn't changed and isn't in dispute. What changed is
+  the technical picture: fundamentals alone don't override a
+  distribution signal and a stalled chart. Also unchanged from the
+  original review: this thesis overlaps substantially with AEV's
+  (AboitizPower is AEV's subsidiary and the main driver of AEV's own
+  H1 strength) — correlated exposure, not independent diversification,
+  if holding both, and now two Aboitiz names with real, unresolved
+  technical caution flags rather than one clean and one caveated.
 
 ## Reviewed but NOT added (for reference — not maintained further)
 
