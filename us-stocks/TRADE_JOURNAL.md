@@ -13,8 +13,24 @@ from `pse/TRADE_JOURNAL.md` — same discipline, new market.
 - **Setup at the time:** (tier, play type, what the read was)
 - **What actually happened:** (thesis play out as expected? stopped on
   noise or a real break? ran past target?)
+- **Plan adherence:** Yes / No — did the exit actually execute at the
+  pre-committed level? If No, what happened in the moment (the real
+  thought, not a retroactively tidied-up version) and how long the gap
+  was between "price hit the level" and "order actually placed" (or
+  "never placed"). This is a separate score from win/loss — a trade
+  can be a win with No adherence (got lucky waiting) or a loss with
+  Yes adherence (the plan was followed and still lost, which is a
+  healthy, expected outcome of a probabilistic system, not a failure).
 - **Lesson:** (repeat, adjust, or confirm/contradict the methodology)
 ```
+
+**Added 2026-09-15, prompted by a real discipline gap on NVDA** (see
+Log below): win/loss tracks whether the *market* cooperated.
+Plan-adherence tracks whether *you* did. Conflating them hides the
+real problem — a trader can look "fine" on P&L for a long stretch
+while quietly never executing an exit on time, and only find out when
+a big one goes against them. Log this field honestly every time, not
+just when it's flattering.
 
 Keep entries honest — a lesson from a loss is as valuable as one from
 a win, and a win for the wrong reason (right result, flawed process)
@@ -28,6 +44,7 @@ is worth flagging too.
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
 | Realized P&L | $0 |
 | Win rate / avg R-multiple | Not yet meaningful — no trades closed |
+| **Plan adherence rate** | **0/1 logged so far (NVDA stop check, 2026-09-14/15 — not followed).** Too small a sample to mean anything yet; the point of tracking it is to become meaningful over the next 10-20 exits, not to judge from one data point. |
 
 ---
 

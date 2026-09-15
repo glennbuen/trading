@@ -19,9 +19,27 @@ happens, or a position gets closed entirely. Use this template:
 - **Setup at the time:** (tier, play type, what the read was)
 - **What actually happened:** (did the thesis play out as expected? did
   it stop out on noise or a real break? did it run past target?)
+- **Plan adherence:** Yes / No — did the exit actually execute at the
+  pre-committed level? If No, what happened in the moment (the real
+  thought, not a retroactively tidied-up version) and how long the gap
+  was between "price hit the level" and "order actually placed" (or
+  "never placed"). This is a separate score from win/loss — a trade
+  can be a win with No adherence (got lucky waiting) or a loss with
+  Yes adherence (the plan was followed and still lost, which is a
+  healthy, expected outcome of a probabilistic system, not a failure).
 - **Lesson:** (what to repeat, what to adjust, what this confirms or
   contradicts about the methodology)
 ```
+
+**Added 2026-09-15, mirrored from `us-stocks/TRADE_JOURNAL.md`** after
+a real discipline gap surfaced there (a stated stop-check plan on NVDA
+wasn't executed, in both directions per the user's own admission —
+also happens when letting winners run past target, not just holding
+losers past stop). Win/loss tracks whether the *market* cooperated.
+Plan-adherence tracks whether *you* did. Same discipline now applies
+here — BPI's recent close calls with its stop (two sessions within
+~0.6-0.8% of breach, never actually triggered) are the first live test
+this project will have of PSE-side adherence if it happens.
 
 Keep entries honest — a lesson from a loss is as valuable as one from
 a win, and a win for the wrong reason (right result, flawed process)
@@ -44,6 +62,7 @@ numbers, not just narrative, to actually measure.
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
 | Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC) ≈ -₱15,262 net** | **Both estimated, not exact** — neither sale's real fees are captured (LTG's execution price/date wasn't recorded at the time; SCC's is gross, before selling fees). Ask the user for exact net fills if precision matters here. |
 | Win rate, R-multiple average | Not yet meaningful | Sample size (2 real closed events, 1 win/1 loss) is too small — will become meaningful as BPI/BLOOM confirmations and future entries resolve |
+| **Plan adherence rate** | **Not yet tested here** — no PSE exit has been logged with this field yet. BPI has come within ~0.6-0.8% of its stop twice without triggering, so no real test has occurred, but it's the name to watch given it already showed a US-side gap under similar pressure. | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -70,6 +89,12 @@ properly — not worth computing on this small a sample yet.
   once unrealized profit exceeds +20%) had already been applied before
   this was even discussed — a real, working discipline independent of
   this project's chart-reading framework.
+- **Plan adherence: Yes** — worth noting explicitly (backfilled
+  2026-09-15) since this is a real, positive precedent: the rule was
+  followed *proactively*, without prompting, before this project even
+  formalized it in writing. Good evidence this isn't someone
+  constitutionally unable to execute a plan — the gap that later
+  showed up on NVDA is specific, not universal.
 - **Lesson:** (1) The daily-only chart materially understated this
   setup's quality — always get the weekly before concluding "no
   conviction" on a name that's been held a while, not just on new
@@ -125,6 +150,13 @@ properly — not worth computing on this small a sample yet.
   showing roughly the same -52.6% unrealized loss — this trim reduced
   *exposure*, it didn't change the *per-share* loss, which is still
   fully live on the remaining half.
+- **Plan adherence: Yes** (backfilled 2026-09-15) — the trim was
+  discussed and decided 2026-09-10, executed 2026-09-11. This one is
+  genuinely the harder case to execute, not the easier one: a real,
+  large, realized loss on a deeply underwater position is exactly the
+  kind of decision loss-aversion fights hardest against — and it still
+  got done. Worth remembering this alongside the NVDA gap, not just
+  the miss.
 - **Lesson:** (1) This confirms the trader-not-investor / trim
   discipline can actually be executed on a real, large, deeply
   underwater position — not just a plan on paper. (2) A concentration
