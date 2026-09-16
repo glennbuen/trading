@@ -50,6 +50,33 @@ is worth flagging too.
 
 ## Log
 
+### 2026-09-16 — HOOD — Entry filled, during a steep sector-correlated drop
+- **Price:** Bought 0.1 fractional sh @ $105.96 ($10.60 total) — below
+  the stated entry zone ($108.71-112.49), filled while HOOD was down
+  sharply intraday (-4.45% by the time of the next check). Stop
+  ~$99-102 active immediately per Portfolio Risk Rule 2. Stop gap only
+  ~3.3% at the near bound — the tightest gap of any open position on
+  this account right now.
+- **Setup at the time:** Real, two-sided story on file: a genuine 32%
+  YTD decline earlier in 2026 (Q1 miss, crypto revenue -47%, softening
+  volumes) balanced against August platform assets hitting $384B
+  (+26%) and two analyst target raises this month (Deutsche Bank to
+  $138, Citizens to $165). Today's drop reads as sector-correlated —
+  COIN fell on the Senate rejecting the Digital Asset Market CLARITY
+  Act, and HOOD moved with it rather than on company-specific news.
+- **What actually happened:** Filled into the drop rather than waiting
+  for it to stabilize — same "rotate fast" pattern as this session's
+  other adds, but this is now the fifth new position opened today
+  (PLTR, NBIS, HOOD) or resolved (NVDA, AMZN) in a single session, on
+  an account this small. Not yet resolved.
+- **Plan adherence: N/A yet — nothing to adhere to until this
+  resolves.**
+- **Lesson: N/A yet — but flag now: this stop gap (~3.3%) is
+  meaningfully tighter than anything else currently open on this
+  account, meaning normal daily noise has a real chance of triggering
+  it. Worth watching closely rather than assuming the same runway as
+  NBIS/PLTR.**
+
 ### 2026-09-16 — NBIS — Entry filled, buy-the-bounce off the stop danger zone
 - **Price:** Bought 0.05 fractional sh @ $214.20 ($10.71 total) — well
   BELOW the stated entry zone ($223.70-228.90), not inside it. Filled
