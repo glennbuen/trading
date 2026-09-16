@@ -40,46 +40,69 @@ is worth flagging too.
 
 | Metric | Value |
 |---|---|
-| Real closed-position events | 1 (NVDA stop-out, 2026-09-16) |
+| Real closed-position events | 2 (NVDA stop-out, AMZN stop-out — both 2026-09-16) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | **-$0.44 gross (NVDA)** — trivial in dollar terms, real as a first data point |
-| Win rate / avg R-multiple | Not yet meaningful — 1 closed trade, a loss |
-| **Plan adherence rate** | **1/2 — mixed record, stated plainly.** The original 30-min post-open plan (2026-09-14/15) was NOT followed. The eventual close (2026-09-16) DID happen, just delayed — logged separately as "partial" adherence, not full credit. Compare to PSE's BPI stop-out the same day, which executed same-session and is the cleaner example. Too small a sample to mean anything statistically yet. |
+| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) ≈ -$0.67 net** — trivial in dollar terms, a real 0-for-2 stretch as a data point |
+| Win rate / avg R-multiple | Not yet meaningful — 2 closed trades, both losses |
+| **Plan adherence rate** | **2/3 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation — same day as PSE's two clean BPI/BLOOM executions. The pattern is trending toward same-session execution, not away from it. Still too small a sample to mean anything statistically. |
 
 ---
 
 ## Log
 
-### 2026-09-16 — AMZN — Entry filled, immediately testing its stop
+### 2026-09-16 — PLTR — Entry filled, same-session redeploy from AMZN
+- **Price:** Bought 0.07 fractional sh @ $171.13 ($11.98 total) —
+  below the stated entry zone ($172.49-175.52), a better fill than
+  planned, same pattern as NVDA/INTC/AMZN's original fills. Stop
+  ~$161-165 active immediately per Portfolio Risk Rule 2.
+- **Setup at the time:** Fresh, convergent catalyst — UBS raised its
+  target $220→$250 on Sept 15 (3rd revision this year), Phillip
+  Securities to $215, DA Davidson to $250, all within days of each
+  other. Weekly structure genuinely clean, no overhang. T1 (full
+  exit) ~$205-208, a real structural target (52w-high retest), not an
+  R-multiple substitute — the strongest R:R setup (~3.5-3.7:1) added
+  this week.
+- **What actually happened:** Filled the same session AMZN was
+  stopped out, redeploying freed-up capital into the higher-conviction
+  of the two names added together (PLTR vs. HOOD) — consistent with
+  this account's "rotate fast" philosophy. Not yet resolved.
+- **Plan adherence: N/A yet — nothing to adhere to until this
+  resolves.**
+- **Lesson: N/A yet — update once this trade closes one way or the
+  other.**
+
+### 2026-09-16 — AMZN — Stop-out (RESOLVED)
 - **Price:** Bought 0.05 fractional sh @ $252.72 ($12.64 total) — below
   the stated entry zone ($255-259), a better fill than planned, same
-  pattern as the original NVDA/INTC fills. **Current price ($248.42,
-  -1.93% same-day check) is already INSIDE the stated stop range
-  ($246-249)** — the position is being tested within days of filling,
-  during the same broad correlated selloff that just took out two PSE
-  stops (BPI, BLOOM) the same week.
+  pattern as the original NVDA/INTC fills. Sold the full 0.05 sh @
+  $248.17, inside the stated stop range ($246-249).
 - **Setup at the time:** Real Q3 2026 guidance, Strong Buy consensus,
-  daily+weekly confluence entry — the setup itself hasn't changed.
-  What's changed is timing: this filled into an already-weak, broadly
-  correlated market stretch (see the 2026-09-16 conversation on
-  whether entries needed adjusting — conclusion was no, the stops are
-  sized correctly, but new entries into this stretch carry real
-  correlated risk).
-- **What actually happened:** No resolution yet — **this entry is
-  being logged as a live flag, same convention as the BPI/BLOOM
-  breach entries before they were resolved.** No automated stop exists
-  on this fractional position; a manual decision is needed if it goes
-  further.
-- **Plan adherence: N/A yet — nothing to adhere to until the stop is
-  actually tested further or the position resolves.** Worth watching
-  given the two same-day executions on BPI/BLOOM just demonstrated the
-  discipline holding — this is the next real test if $246-249 breaks.
-- **Lesson (partial, pending resolution):** A genuinely good entry
-  (better price than planned) can still end up under immediate
-  pressure if it fills during a correlated risk-off stretch — the
-  entry price being favorable doesn't insulate against the broader
-  market conditions that are already in motion. Update this entry with
-  the actual resolution once known.
+  daily+weekly confluence entry — the setup itself never stopped being
+  sound. What changed was timing: this filled into an already-weak,
+  broadly correlated market stretch (see the 2026-09-16 conversation
+  on whether entries needed adjusting — conclusion was no, the stops
+  are sized correctly, but new entries into this stretch carry real
+  correlated risk, exactly what played out here).
+- **What actually happened:** Cost basis $252.72 × 0.05 = $12.636.
+  Gross proceeds $248.17 × 0.05 = $12.4085. **Realized loss ≈ -$0.23
+  (-1.80%), gross** — trivial in dollar terms given the tiny fractional
+  size, same as NVDA's prior stop-out. This is the fourth stop-out
+  logged this week (PSE: BPI, BLOOM; US: NVDA, now AMZN) — a genuine
+  losing stretch, already discussed at length as statistically normal
+  given the small resolved sample and the shared correlated market
+  event behind most of them.
+- **Plan adherence: ✅ YES — executed within the stop range, not held
+  through it.** A genuinely good entry (better price than planned)
+  still ended up under immediate pressure from broader market
+  conditions already in motion — the entry price being favorable
+  didn't insulate against that, and the plan was followed anyway
+  rather than "waiting to see" given the favorable entry.
+- **Lesson:** Confirms the pattern already logged on BPI/BLOOM/NVDA —
+  a real, sound setup can still lose if it fills into a correlated
+  risk-off stretch, and that's a market-timing outcome, not a flaw in
+  the entry logic itself. Capital freed up and redeployed same-session
+  into PLTR (see below) — consistent with this account's "rotate
+  fast" exit philosophy.
 
 ### 2026-09-14/15 — NVDA — Discipline gap (stop not executed at plan trigger)
 - **Price:** Stop zone $210–213. Monday 9/14 regular-session close:
