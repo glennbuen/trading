@@ -50,6 +50,31 @@ is worth flagging too.
 
 ## Log
 
+### 2026-09-16 — NBIS — Entry filled, buy-the-bounce off the stop danger zone
+- **Price:** Bought 0.05 fractional sh @ $214.20 ($10.71 total) — well
+  BELOW the stated entry zone ($223.70-228.90), not inside it. Filled
+  during a real intraday bounce, hours after the price had come within
+  ~1.2% of the stop (~$196-205). Stop ~$196-205 active immediately per
+  Portfolio Risk Rule 2. Current stop gap ~4.2%.
+- **Setup at the time:** Fresh, credible catalyst on file (Palantir
+  named Nebius its preferred sovereign AI infrastructure partner,
+  Sept 8, 2026 — a specific enterprise deal). The chart context is
+  different from a clean zone fill, though: this name had spent two
+  days trading inside/near the zone, drifted down toward the stop, and
+  today's fill is a discretionary bounce entry rather than the
+  standard "price pulled back into the stated zone and held" pattern
+  used for the other names on this list.
+- **What actually happened:** Filled same session as the "us summary"
+  refresh that had just flagged NBIS as "only ~1.2% above its stop,
+  closest on the list." Not yet resolved.
+- **Plan adherence: N/A yet — nothing to adhere to until this
+  resolves.**
+- **Lesson: N/A yet — but worth flagging now rather than at
+  resolution: this is the first fill this session that didn't occur
+  inside its originally-stated entry zone. Worth watching whether
+  buy-the-bounce entries taken this close to a stop behave differently
+  than standard zone fills once this resolves.**
+
 ### 2026-09-16 — PLTR — Entry filled, same-session redeploy from AMZN
 - **Price:** Bought 0.07 fractional sh @ $171.13 ($11.98 total) —
   below the stated entry zone ($172.49-175.52), a better fill than
