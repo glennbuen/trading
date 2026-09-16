@@ -157,6 +157,21 @@ sense for a specific setup.
 as an estimate, upgraded to ATR-based the moment a fuller chart is
 available.
 
+**Open, deliberately deferred decision (2026-09-16)**: discussed
+whether to let winners run with a trailing stop instead of the full
+T1 exit above. Real tradeoffs on both sides — see that conversation
+for the full reasoning — but the honest complication is that a
+trailing stop isn't one clean decision, it's an ongoing series of
+"hold longer or not" calls at every new high, which is structurally
+closer to the same discretion problem already identified on the
+loss-cutting side (see `TRADE_JOURNAL.md`'s plan-adherence entries)
+than to the current fixed-T1 rule's single binary trigger. **User's
+call, stated plainly: small capital right now, decide once there's an
+actual winner to learn from, not in the abstract.** Current rule
+(full exit at T1) stays the standing default until then — don't
+default to a trailing stop on a future winner without raising this
+question again first.
+
 ## Portfolio Risk Rules (carried over from PSE, applies from day one)
 
 - **Rule 1 — Max single-position concentration**: flag anything over

@@ -249,6 +249,19 @@ point): once unrealized profit exceeded +20%, sell 30%, trail the
 remainder with a structural or ATR-based stop. Not the active rule
 going forward — superseded by the above.
 
+**Open, deliberately deferred decision (2026-09-16, mirrors
+`us-stocks/WATCHLIST.md`)**: discussed whether to bring trailing stops
+back for winners instead of the full T1 exit above — real tradeoffs
+both ways, but a trailing stop is an ongoing series of "hold longer or
+not" decisions at every new high, which is structurally closer to the
+same discretion problem already surfacing on the loss-cutting side
+(see `TRADE_JOURNAL.md`'s plan-adherence entries) than the current
+fixed-T1 rule's single binary trigger. **User's call: small capital
+right now, decide once there's an actual winner to learn from.**
+Current rule (full exit at T1) stays the standing default — don't
+default to a trailing stop on a future winner without raising this
+again first.
+
 ## Portfolio Risk Rules (standing policy, added 2026-09-10)
 
 Added after SCC was found to have grown to 61.4% of current portfolio
