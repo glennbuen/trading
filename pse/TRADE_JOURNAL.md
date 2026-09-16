@@ -75,6 +75,32 @@ properly — not worth computing on this small a sample yet.
 
 ## Log
 
+### 2026-09-16 — BLOOM — Stop zone breached (manual action required, not yet resolved)
+- **Price:** ₱2.09 (day's low, also the current price) — inside the
+  stated stop range ₱2.05–2.10, same day BPI's own stop broke.
+- **Setup at the time:** Starter tranche filled 2026-09-10, 1,000 sh @
+  ₱2.2567 avg, inside the stated entry zone (₱2.17–2.32). Stop set at
+  ₱2.05–2.10 in the same update per Portfolio Risk Rule 2. Position
+  had already been drifting down for several sessions (-2.51% on
+  09-15, worse before that), with the stop gap narrowing each check —
+  same slow, visible-in-advance pattern BPI showed before its own
+  breach earlier today.
+- **What actually happened:** Broad red session across nearly the
+  entire watchlist pushed BLOOM's low for the day to ₱2.09, inside the
+  stop range. **As of this entry, no sell has been confirmed** — this
+  is the alert firing, not a resolved outcome, same convention as the
+  BPI entry used before it was resolved.
+- **Plan adherence: PENDING.** Second live test the same day as BPI's
+  — worth watching whether today's earlier successful BPI execution
+  (same-session, no hesitation) carries over to this one, or whether
+  each position gets re-litigated independently regardless of how the
+  last one went.
+- **Lesson (partial, pending resolution):** Two stops breaking the
+  same session is a real stress-test of the discipline just
+  demonstrated on BPI — a good outcome once doesn't guarantee it
+  happens again in the same sitting. Update this entry with the actual
+  action taken once known, same as the BPI entry was updated.
+
 ### 2026-09-16 — BPI — Stop-out (RESOLVED — stop executed as planned)
 - **Price:** Sold 20 sh @ ₱100.90, market order. Stated stop range was
   ₱101.00–101.50; day's low was ₱100.90 — the fill landed right at
