@@ -40,11 +40,11 @@ is worth flagging too.
 
 | Metric | Value |
 |---|---|
-| Real closed-position events | 0 |
+| Real closed-position events | 1 (NVDA stop-out, 2026-09-16) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | $0 |
-| Win rate / avg R-multiple | Not yet meaningful — no trades closed |
-| **Plan adherence rate** | **0/1 logged so far (NVDA stop check, 2026-09-14/15 — not followed).** Too small a sample to mean anything yet; the point of tracking it is to become meaningful over the next 10-20 exits, not to judge from one data point. |
+| Realized P&L | **-$0.44 gross (NVDA)** — trivial in dollar terms, real as a first data point |
+| Win rate / avg R-multiple | Not yet meaningful — 1 closed trade, a loss |
+| **Plan adherence rate** | **1/2 — mixed record, stated plainly.** The original 30-min post-open plan (2026-09-14/15) was NOT followed. The eventual close (2026-09-16) DID happen, just delayed — logged separately as "partial" adherence, not full credit. Compare to PSE's BPI stop-out the same day, which executed same-session and is the cleaner example. Too small a sample to mean anything statistically yet. |
 
 ---
 
@@ -81,6 +81,41 @@ is worth flagging too.
   that depends on where NVDA goes from here — but the discipline
   question is independent of that outcome and shouldn't be graded on
   it either way.
+
+### 2026-09-16 — NVDA — Stop-out (delayed follow-through, resolves the discipline gap above)
+- **Price:** Sold 0.07 fractional sh @ $212.08. Cost basis $218.41/sh
+  ($15.29 total). Realized loss ≈ -$0.44 gross (-2.88%) — trivial in
+  dollar terms on a position this size, not trivial as a process data
+  point.
+- **Setup at the time:** Directly follows the 2026-09-14/15 discipline
+  gap logged above — the 30-minute post-open plan wasn't executed,
+  and the user explicitly deferred with "i'll sell later." This is
+  that "later" arriving, roughly a session or two after the original
+  trigger, at essentially the same price zone the stop was originally
+  breached in ($212.08 vs. the $210.96–212.27 range already on
+  record).
+- **What actually happened:** The position got closed. Not at the
+  planned moment, but it did get closed — "i'll sell later" turned out
+  to be a real statement of intent, not just a way of ending the
+  conversation. Worth being precise about what this does and doesn't
+  redeem: it does NOT undo the process gap (the 30-minute plan still
+  wasn't followed, and the delay meant riding the position through
+  additional uncertainty it didn't need to sit through) — but it does
+  mean the deferral wasn't indefinite avoidance, which is a real and
+  different failure mode that this outcome rules out.
+- **Plan adherence: PARTIAL — delayed but real.** Distinguish this
+  from the PSE-side BPI stop-out logged the same day, which executed
+  the same session the level broke: that one is the cleaner example
+  of the discipline actually working in real time. This one is the
+  more honest, mixed case — a genuine gap followed by genuine
+  follow-through, not a clean pass.
+- **Lesson:** A missed trigger doesn't have to become a held-forever
+  position — "later" can still be a real commitment if it's actually
+  kept, even imperfectly. But the better outcome is still the BPI
+  pattern (same-session execution), not this one (delayed, but
+  eventually done) — worth naming the difference rather than treating
+  both as equivalent wins just because both closed the position
+  eventually.
 
 ---
 
