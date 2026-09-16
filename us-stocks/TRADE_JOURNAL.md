@@ -50,6 +50,37 @@ is worth flagging too.
 
 ## Log
 
+### 2026-09-16 — AMZN — Entry filled, immediately testing its stop
+- **Price:** Bought 0.05 fractional sh @ $252.72 ($12.64 total) — below
+  the stated entry zone ($255-259), a better fill than planned, same
+  pattern as the original NVDA/INTC fills. **Current price ($248.42,
+  -1.93% same-day check) is already INSIDE the stated stop range
+  ($246-249)** — the position is being tested within days of filling,
+  during the same broad correlated selloff that just took out two PSE
+  stops (BPI, BLOOM) the same week.
+- **Setup at the time:** Real Q3 2026 guidance, Strong Buy consensus,
+  daily+weekly confluence entry — the setup itself hasn't changed.
+  What's changed is timing: this filled into an already-weak, broadly
+  correlated market stretch (see the 2026-09-16 conversation on
+  whether entries needed adjusting — conclusion was no, the stops are
+  sized correctly, but new entries into this stretch carry real
+  correlated risk).
+- **What actually happened:** No resolution yet — **this entry is
+  being logged as a live flag, same convention as the BPI/BLOOM
+  breach entries before they were resolved.** No automated stop exists
+  on this fractional position; a manual decision is needed if it goes
+  further.
+- **Plan adherence: N/A yet — nothing to adhere to until the stop is
+  actually tested further or the position resolves.** Worth watching
+  given the two same-day executions on BPI/BLOOM just demonstrated the
+  discipline holding — this is the next real test if $246-249 breaks.
+- **Lesson (partial, pending resolution):** A genuinely good entry
+  (better price than planned) can still end up under immediate
+  pressure if it fills during a correlated risk-off stretch — the
+  entry price being favorable doesn't insulate against the broader
+  market conditions that are already in motion. Update this entry with
+  the actual resolution once known.
+
 ### 2026-09-14/15 — NVDA — Discipline gap (stop not executed at plan trigger)
 - **Price:** Stop zone $210–213. Monday 9/14 regular-session close:
   $210.96 (-3.36%), inside the zone. After-hours ticked to $212.04
