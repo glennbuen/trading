@@ -62,7 +62,7 @@ numbers, not just narrative, to actually measure.
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
 | Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC) ≈ -₱15,262 net** | **Both estimated, not exact** — neither sale's real fees are captured (LTG's execution price/date wasn't recorded at the time; SCC's is gross, before selling fees). Ask the user for exact net fills if precision matters here. |
 | Win rate, R-multiple average | Not yet meaningful | Sample size (2 real closed events, 1 win/1 loss) is too small — will become meaningful as BPI/BLOOM confirmations and future entries resolve |
-| **Plan adherence rate** | **Not yet tested here** — no PSE exit has been logged with this field yet. BPI has come within ~0.6-0.8% of its stop twice without triggering, so no real test has occurred, but it's the name to watch given it already showed a US-side gap under similar pressure. | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
+| **Plan adherence rate** | **🔴 LIVE TEST IN PROGRESS, 2026-09-16 — BPI's stop zone was just breached** (₱101.00, day's low ₱100.90, through the stated ₱101.00–101.50 range) after three sessions of visible, narrowing warning. No sell confirmed yet — see the Log entry above. This is the first real PSE-side test of whether the plan actually gets executed when a level breaks. | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -74,6 +74,41 @@ properly — not worth computing on this small a sample yet.
 ---
 
 ## Log
+
+### 2026-09-16 — BPI — Stop zone breached (manual action required, not yet resolved)
+- **Price:** ₱101.00 (day's low ₱100.90, both at/through the stated
+  stop range ₱101.00–101.50)
+- **Setup at the time:** Starter tranche filled 2026-09-10/11 at
+  ₱103.6050 avg (20 sh, 2 board lots), inside the stated entry zone.
+  Stop set at ₱101.00–101.50 in the same update per Portfolio Risk
+  Rule 2. Price spent three full sessions (2026-09-14 through 09-16)
+  grinding closer to this level — never a sudden gap, a slow, visible
+  approach that gave real advance warning each time "positions" was
+  checked.
+- **What actually happened:** The slow approach finally resolved
+  downward — today's low (₱100.90) went through the bottom of the
+  stated stop range, closing at ₱101.00, exactly the range's floor.
+  This is the first real stop-level test on the PSE side of this
+  project (previously only a US-side gap on NVDA had occurred). As of
+  this entry, **no sell has been confirmed** — this is being logged as
+  the alert firing, not as a resolved outcome. Update this entry with
+  the actual action taken (or the reasoned decision to hold) once
+  known.
+- **Plan adherence: PENDING — the test is happening right now, not
+  retrospective.** Unlike the NVDA case (found out about after the
+  fact), this is being flagged at the moment the level actually broke,
+  which is what the whole daily-check discipline exists to enable.
+  Whether the plan gets followed here is the open question this entry
+  exists to answer once resolved.
+- **Lesson (partial, pending resolution):** The system worked exactly
+  as designed on the alerting side — three sessions of visible,
+  narrowing warning, then a clear flag the moment the level actually
+  broke, in caps, as the first thing in that day's summary. What
+  happens next is the real test of whether the discipline conversation
+  from 2026-09-14/15 actually changed anything, or whether this
+  becomes a second logged gap. Come back and finish this entry either
+  way — a good outcome here shouldn't go unrecorded just because it's
+  less dramatic than a miss.
 
 ### 2026-09-10 — LTG — Partial take (30% at +20% rule)
 - **Price:** ₱14.98 at the time of this conversation (position was
