@@ -280,9 +280,13 @@ without one the way SCC evidently did originally.
 ## Summary table
 
 **Trigger: typing "summary"** means pull fresh live current prices for
-every symbol below (the stocks-to-buy list) and re-render this table —
-distinct from "positions," which is for the Current Holdings table
-(already-owned) above, not this one. **Added 2026-09-11: also flag,
+every symbol below (the stocks-to-buy list) and re-render this table.
+**Added 2026-09-16, per explicit user request: "summary" now
+automatically also runs "positions"** (the Current Holdings table
+above) in the same response, every time — no need to type both
+separately. Still two logically distinct tables (this one is the
+stocks-to-buy watchlist, "positions" is already-owned holdings), just
+always delivered together now. **Added 2026-09-11: also flag,
 explicitly and every time, which names would benefit from a fresh
 daily/weekly chart paste** — the MA/EMA/stop/target levels in this
 table are static snapshots from whenever each name was last

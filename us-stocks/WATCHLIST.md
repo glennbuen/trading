@@ -272,6 +272,13 @@ redeploy are both being considered.
 **Trigger: typing "us_summary"** means pull fresh live current prices
 for every symbol below and re-render this table.
 
+**Added 2026-09-16, per explicit user request (same standing behavior
+now in `pse/WATCHLIST.md`): "us_summary" now automatically also runs
+"us_positions"** (the Current Holdings table above) in the same
+response, every time — no need to type both separately. Still two
+logically distinct tables (this one is the watchlist, "us_positions"
+is already-owned real holdings), just always delivered together now.
+
 **Added 2026-09-12, per explicit user request (same standing behavior
 now in `pse/WATCHLIST.md`): every "us_summary" response must display,
 per symbol, not just a compressed status line** — the chat reply
