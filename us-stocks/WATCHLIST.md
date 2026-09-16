@@ -179,6 +179,33 @@ question again first.
   position-refresh, not just during a dedicated review.
 - **Rule 2 — Every new position gets a stop or explicit decision
   framework in the same update it's confirmed filled, no exceptions.**
+- **Rule 3 — Position sizing: target ~0.5% of total account equity
+  actually at risk per trade** (added 2026-09-16, mirrors
+  `pse/WATCHLIST.md`, after checking what was already happening in
+  practice). Risk means the $ amount actually lost if the stop is
+  hit — **position value × stop-distance% — not the position's full
+  dollar size.** Same formula `cryptobot/risk/position_sizing.py`
+  already uses for the systematic crypto side, kept consistent across
+  this whole repo:
+
+  ```
+  $ at risk = position_size × (|entry − stop| / entry)
+  position_size = (equity × 0.5%) / stop_distance%
+  ```
+
+  **Why 0.5%, not the more commonly cited 1-2%**: this system is still
+  building its resolved-trade track record — too small a sample to
+  mean anything yet (see `TRADE_JOURNAL.md`), reason enough to stay
+  conservative. Revisit toward 1% once win rate is actually established
+  (20+ resolved trades, matching this project's own crypto-side
+  standard). **Retroactive check** — already roughly happening by
+  habit: NVDA risked ~0.6% of equity, INTC ~1.7%, AMZN ~0.3%, purely
+  from the ~$15 round-number position sizes already in use. At this
+  account's tiny absolute size ($78.77), the formula's exact dollar
+  output (well under $1 per trade) isn't practical to hit precisely —
+  the real guidance is **keep position values in the $10–15 range
+  already in use**, and sanity-check against the actual stop distance
+  before sizing meaningfully larger.
 
 ## Broker & capital ($78.77 USD starting capital, converted from S$100) — status as of 2026-09-11
 

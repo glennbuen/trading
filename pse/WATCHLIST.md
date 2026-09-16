@@ -290,6 +290,33 @@ formalizes it as a standing requirement rather than something that
 happened to occur, so a future fast-moving fill doesn't slip through
 without one the way SCC evidently did originally.
 
+**Rule 3 — Position sizing: target ~0.5% of total account equity
+actually at risk per trade** (added 2026-09-16, after checking what
+was already happening in practice). Risk here means the $ amount
+actually lost if the stop is hit — **position value × stop-distance%
+— not the position's full dollar size.** Formula, same one
+`cryptobot/risk/position_sizing.py` already uses for the systematic
+crypto side, kept consistent across this whole repo:
+
+```
+$ at risk = position_size × (|entry − stop| / entry)
+position_size = (equity × 0.5%) / stop_distance%
+```
+
+**Why 0.5%, not the more commonly cited 1-2%**: this system is still
+building its resolved-trade track record (3 losses, 0 wins on the new
+T1-exit rule as of 2026-09-16 — too small a sample to mean anything,
+see `TRADE_JOURNAL.md`, but reason enough to stay conservative until
+there's a larger sample). Revisit toward 1% once win rate is actually
+established (20+ resolved trades is a reasonable bar, matching this
+project's own crypto-side standard).
+
+**Retroactive check — this was already roughly happening by habit,
+not by rule**: BPI risked ~0.1% of equity, BLOOM ~0.4%, NIKL ~1.5% —
+all in a reasonable range purely from round-number position sizing.
+This rule just makes it explicit and checkable going forward instead
+of leaving it to instinct.
+
 ## Summary table
 
 **Trigger: typing "summary"** means pull fresh live current prices for
