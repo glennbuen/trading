@@ -57,12 +57,12 @@ numbers, not just narrative, to actually measure.
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 3 (LTG partial take, SCC partial take, **BPI stop-out**) | BLOOM Starter still open/unrealized |
+| Real closed-position events | 4 (LTG partial take, SCC partial take, **BPI stop-out, BLOOM stop-out**) | All positions from the original BPI/BLOOM Starter pair now resolved |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC) + -₱54.10 gross (BPI) ≈ -₱15,315 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; SCC's and BPI's figures are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (3 real closed events, 1 win/2 losses) still small — will become meaningful as BLOOM and future entries resolve |
-| **Plan adherence rate** | **✅ 1/1 real-time test passed — BPI, 2026-09-16.** Stop broke, alert fired in caps, sold 20 sh @ ₱100.90 the same day. First live PSE-side test since the discipline conversation, and it held. (LTG/SCC backfills are also both Yes, but those were assessed after the fact, not caught live — this one counts differently.) | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC) + -₱54.10 gross (BPI) + -₱176.70 gross (BLOOM) ≈ -₱15,492 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; SCC's, BPI's, and BLOOM's figures are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (4 real closed events, 1 win/3 losses) still small — a real losing stretch on the recent stop-outs, expected given how broad the 2026-09-16 selloff was |
+| **Plan adherence rate** | **✅ 2/2 real-time tests passed, same day — BPI and BLOOM, both 2026-09-16.** Both stops broke in the same session, both got sold the same day. This is now a real, repeated pattern following the 2026-09-14/15 discipline conversation, not a single data point. (LTG/SCC backfills are also both Yes, but those were assessed after the fact, not caught live — these two count differently, as genuine real-time tests.) | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -75,31 +75,41 @@ properly — not worth computing on this small a sample yet.
 
 ## Log
 
-### 2026-09-16 — BLOOM — Stop zone breached (manual action required, not yet resolved)
-- **Price:** ₱2.09 (day's low, also the current price) — inside the
-  stated stop range ₱2.05–2.10, same day BPI's own stop broke.
+### 2026-09-16 — BLOOM — Stop-out (RESOLVED — second successful execution, same day as BPI)
+- **Price:** Sold 1,000 sh @ ₱2.08. Stated stop range was ₱2.05–2.10;
+  the fill landed just below it, consistent with a market order during
+  a fast-moving breakdown (same pattern as BPI's fill at ₱100.90,
+  just under its own stop range).
 - **Setup at the time:** Starter tranche filled 2026-09-10, 1,000 sh @
   ₱2.2567 avg, inside the stated entry zone (₱2.17–2.32). Stop set at
   ₱2.05–2.10 in the same update per Portfolio Risk Rule 2. Position
-  had already been drifting down for several sessions (-2.51% on
-  09-15, worse before that), with the stop gap narrowing each check —
-  same slow, visible-in-advance pattern BPI showed before its own
-  breach earlier today.
-- **What actually happened:** Broad red session across nearly the
-  entire watchlist pushed BLOOM's low for the day to ₱2.09, inside the
-  stop range. **As of this entry, no sell has been confirmed** — this
-  is the alert firing, not a resolved outcome, same convention as the
-  BPI entry used before it was resolved.
-- **Plan adherence: PENDING.** Second live test the same day as BPI's
-  — worth watching whether today's earlier successful BPI execution
-  (same-session, no hesitation) carries over to this one, or whether
-  each position gets re-litigated independently regardless of how the
-  last one went.
-- **Lesson (partial, pending resolution):** Two stops breaking the
-  same session is a real stress-test of the discipline just
-  demonstrated on BPI — a good outcome once doesn't guarantee it
-  happens again in the same sitting. Update this entry with the actual
-  action taken once known, same as the BPI entry was updated.
+  had been drifting down for several sessions with the stop gap
+  narrowing each check — same slow, visible-in-advance pattern BPI
+  showed before its own breach earlier the same day.
+- **What actually happened:** Cost basis ₱2.2567 × 1,000 = ₱2,256.70.
+  Gross proceeds ₱2.08 × 1,000 = ₱2,080.00. **Realized loss ≈ -₱176.70
+  (-7.83%), gross** — before selling fees, since the exact net credit
+  wasn't provided; same caveat as every other real fill logged here.
+  A real, larger percentage loss than BPI's (-2.61%), consistent with
+  BLOOM's higher-risk "speculative bottom-fish" tier from the start —
+  the stop did its job, but a wider stop on a riskier tier costs more
+  when it triggers, exactly as sized.
+- **Plan adherence: ✅ YES — second same-day execution, confirms the
+  pattern.** BPI and BLOOM both breached their stops in the same
+  session (2026-09-16) and both got sold the same day. This is no
+  longer a single data point — it's now two consecutive real tests,
+  both passed, directly following the 2026-09-14/15 discipline
+  conversation. Worth naming plainly: this is real, demonstrated
+  behavior change, not a hoped-for intention.
+- **Lesson:** (1) Two stops breaking the same session is exactly the
+  stress-test noted as pending in the earlier version of this entry —
+  it held. (2) BLOOM's larger percentage loss vs. BPI's is a direct,
+  visible consequence of its wider, riskier-tier stop (₱2.05–2.10 is
+  proportionally further from entry than BPI's ₱101.00–101.50 was) —
+  the sizing math worked as designed, not a surprise. (3) Two clean
+  executions in one day is a real pattern now, not a fluke — worth
+  checking again after the next few tests whether it holds, rather
+  than declaring the discipline problem solved off two data points.
 
 ### 2026-09-16 — BPI — Stop-out (RESOLVED — stop executed as planned)
 - **Price:** Sold 20 sh @ ₱100.90, market order. Stated stop range was
