@@ -57,12 +57,12 @@ numbers, not just narrative, to actually measure.
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 2 (LTG partial take, SCC partial take) | BPI/BLOOM Starters still open/unrealized |
+| Real closed-position events | 3 (LTG partial take, SCC partial take, **BPI stop-out**) | BLOOM Starter still open/unrealized |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC) ≈ -₱15,262 net** | **Both estimated, not exact** — neither sale's real fees are captured (LTG's execution price/date wasn't recorded at the time; SCC's is gross, before selling fees). Ask the user for exact net fills if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (2 real closed events, 1 win/1 loss) is too small — will become meaningful as BPI/BLOOM confirmations and future entries resolve |
-| **Plan adherence rate** | **🔴 LIVE TEST IN PROGRESS, 2026-09-16 — BPI's stop zone was just breached** (₱101.00, day's low ₱100.90, through the stated ₱101.00–101.50 range) after three sessions of visible, narrowing warning. No sell confirmed yet — see the Log entry above. This is the first real PSE-side test of whether the plan actually gets executed when a level breaks. | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC) + -₱54.10 gross (BPI) ≈ -₱15,315 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; SCC's and BPI's figures are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (3 real closed events, 1 win/2 losses) still small — will become meaningful as BLOOM and future entries resolve |
+| **Plan adherence rate** | **✅ 1/1 real-time test passed — BPI, 2026-09-16.** Stop broke, alert fired in caps, sold 20 sh @ ₱100.90 the same day. First live PSE-side test since the discipline conversation, and it held. (LTG/SCC backfills are also both Yes, but those were assessed after the fact, not caught live — this one counts differently.) | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -75,40 +75,45 @@ properly — not worth computing on this small a sample yet.
 
 ## Log
 
-### 2026-09-16 — BPI — Stop zone breached (manual action required, not yet resolved)
-- **Price:** ₱101.00 (day's low ₱100.90, both at/through the stated
-  stop range ₱101.00–101.50)
+### 2026-09-16 — BPI — Stop-out (RESOLVED — stop executed as planned)
+- **Price:** Sold 20 sh @ ₱100.90, market order. Stated stop range was
+  ₱101.00–101.50; day's low was ₱100.90 — the fill landed right at
+  that low, consistent with a market order during a fast-moving
+  breakdown rather than getting the top of the stop range.
 - **Setup at the time:** Starter tranche filled 2026-09-10/11 at
   ₱103.6050 avg (20 sh, 2 board lots), inside the stated entry zone.
   Stop set at ₱101.00–101.50 in the same update per Portfolio Risk
   Rule 2. Price spent three full sessions (2026-09-14 through 09-16)
   grinding closer to this level — never a sudden gap, a slow, visible
   approach that gave real advance warning each time "positions" was
-  checked.
-- **What actually happened:** The slow approach finally resolved
-  downward — today's low (₱100.90) went through the bottom of the
-  stated stop range, closing at ₱101.00, exactly the range's floor.
-  This is the first real stop-level test on the PSE side of this
-  project (previously only a US-side gap on NVDA had occurred). As of
-  this entry, **no sell has been confirmed** — this is being logged as
-  the alert firing, not as a resolved outcome. Update this entry with
-  the actual action taken (or the reasoned decision to hold) once
-  known.
-- **Plan adherence: PENDING — the test is happening right now, not
-  retrospective.** Unlike the NVDA case (found out about after the
-  fact), this is being flagged at the moment the level actually broke,
-  which is what the whole daily-check discipline exists to enable.
-  Whether the plan gets followed here is the open question this entry
-  exists to answer once resolved.
-- **Lesson (partial, pending resolution):** The system worked exactly
-  as designed on the alerting side — three sessions of visible,
-  narrowing warning, then a clear flag the moment the level actually
-  broke, in caps, as the first thing in that day's summary. What
-  happens next is the real test of whether the discipline conversation
-  from 2026-09-14/15 actually changed anything, or whether this
-  becomes a second logged gap. Come back and finish this entry either
-  way — a good outcome here shouldn't go unrecorded just because it's
-  less dramatic than a miss.
+  checked, then broke through on 09-16.
+- **What actually happened:** Cost basis ₱103.6050 × 20 = ₱2,072.10.
+  Gross proceeds ₱100.90 × 20 = ₱2,018.00. **Realized loss ≈ -₱54.10
+  (-2.61%), gross — figures before selling fees**, since the exact net
+  credit wasn't provided; ask for it if precision matters here, same
+  caveat as the LTG/SCC entries above. A small, contained loss — the
+  stop did exactly what a stop is for: capped what could have kept
+  compounding into something much larger (NIKL fell -9.92% the same
+  session; BPI's own loss stayed under 3%).
+- **Plan adherence: ✅ YES — the first real, live stop test on the PSE
+  side of this project, executed cleanly.** This directly follows the
+  2026-09-14/15 discipline conversation (loss-aversion, "i don't
+  follow trading plans consistently," the NVDA gap that prompted it)
+  and the plan-adherence tracking field added specifically to catch
+  this. Worth stating plainly: the follow-through happened. This is
+  real evidence to weigh against the NVDA miss, not just a hoped-for
+  intention — see the LTG/SCC "Plan adherence: Yes" backfills for the
+  broader pattern this fits into.
+- **Lesson:** (1) The alerting discipline this project built — three
+  sessions of visible, narrowing warning via "positions"/"summary,"
+  then a capitalized flag the moment the level actually broke — worked
+  exactly as designed and led directly to the correct action, not just
+  awareness of the problem. (2) A small, early, disciplined loss (2.61%
+  gross) is the entire point of having a stop — the alternative
+  (NIKL's -9.92% same-session move, still held) shows what an
+  unstopped position can do in a genuinely bad broad-market session.
+  (3) This name is now free of the concentration/stop-proximity
+  concern it carried for a week — one fewer thing to actively monitor.
 
 ### 2026-09-10 — LTG — Partial take (30% at +20% rule)
 - **Price:** ₱14.98 at the time of this conversation (position was
