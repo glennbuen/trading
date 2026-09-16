@@ -594,3 +594,30 @@ stays the same.)*
   here is bad enough that a verdict isn't safe to render without a
   real chart and a cleaner price source. Worth revisiting with a
   TradingView chart paste rather than more text-fetch attempts.
+- **CRWD (CrowdStrike)** (2026-09-16, $242.49, +3.02%) — sitting right
+  at its own 52-week/all-time high ($239.37, set just 2 days earlier)
+  — a breakout day, not a pullback. No entry margin. Reject for now,
+  same reasoning applied to DELL/ACR/ION elsewhere in this file.
+- **JPM (JPMorgan Chase)** (2026-09-16, $352.49, +0.67%) — only ~3.8%
+  below its all-time high ($366.50, Aug 2026). Extended, no real
+  pullback offered. Reject.
+- **COIN (Coinbase Global)** (2026-09-16) — **real, negative catalyst,
+  not just a pullback**: the Senate rejected the Digital Asset Market
+  CLARITY Act (49-50, 50-49 votes), a genuine regulatory setback that
+  drove a real intraday decline; separately, Coinbase moved eight
+  trading pairs to limit-only status Sept 15 as a liquidity
+  consolidation move. **Data-quality note**: the volume list showed
+  -10.1% today, a direct fetch showed +9.24% — likely a partial
+  intraday bounce off the regulatory-driven drop, but the exact number
+  isn't trustworthy either way. Already ~61% below its all-time high
+  ($444.65, Jul 2025) — this reads as a longer decline getting hit
+  with fresh bad news, not a healthy pullback in an uptrend. Reject on
+  both technical and fundamental grounds.
+- **PLTR (Palantir), HOOD (Robinhood)** (2026-09-16) — **flagged
+  worth a closer look, not yet a verdict**: PLTR is ~17% below its
+  52-week high ($207.52), HOOD ~28% below its own ($153.86) — real
+  distance from highs, unlike CRWD/JPM above, but no MA/RSI or chart
+  data available from a text fetch to confirm either is an actual
+  healthy pullback versus a declining trend. Paste a daily+weekly
+  chart for either if there's interest — the screen alone isn't
+  enough to add or reject per this file's own standing discipline.
