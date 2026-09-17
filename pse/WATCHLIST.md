@@ -117,7 +117,43 @@ State the number, state the confidence level, move on.
      independently, same as every other confirmation source in this
      file.
 
-## Market context: PSEi (updated 2026-09-09)
+## Market context: PSEi (updated 2026-09-17, COL Research Tech Spotlight)
+
+**Update, real source (COL Research "Tech Spotlight," Juan G. Barredo,
+Chief Technical Analyst, 2026-09-17)** — the corrective phase flagged
+below on 09-09 has now confirmed further: PSEi fell -1.51% (-90.84 pts)
+to **5,916.94** on 2026-09-16, breaking below both the 5,991 and 5,944
+supports already on file, with **COL's own next-support targets at
+5,879 then 5,766**. Their stated stance: **"remain on the defensive
+and only trade very selectively."** This is broad, not a few names —
+23 of 30 index members declined, advance-decline 54:139. RSI(14)
+32.37 — approaching oversold, not confirmed there yet. MACD histogram
+deeply negative and widening.
+
+**Real macro drivers behind it, not just technical exhaustion**: US
+Fed hiked rates 25bp to 4% (3.75-4.00% range) — the first hike since
+2023, notably a hike against the White House's stated preference for
+lower rates. Oil at $102.43, US 10-yr yield climbed to 5.02%, Dollar
+Index +0.68%, PH 10-yr yield 7.528%. **Independent confirmation from a
+second source**: EPHE (the US-listed MSCI Philippines ETF) broke its
+own 23.56 low the same session, now in a confirmed downtrend targeting
+23.33-23.08 — international money's read agrees with COL's domestic
+one. The S&P 500 also broke its own 7,600-7,580 channel support the
+same session, confirming this isn't PH-isolated — it lines up with the
+same correlated risk-off stretch already identified this week behind
+the NVDA/AMZN/BPI/BLOOM stop-outs (see Trade Journals, both accounts).
+
+**Practical implication for this list, as of 2026-09-17**: several
+names showing "inside the zone" reads today (AEV, CNPF) are doing so
+on genuinely thin volume (600 sh and 400 sh respectively — see Summary
+table) AND now against a confirmed index-level breakdown underneath
+them. Two independent reasons to distrust those specific touches as
+confirmed technical signals right now, not one. This doesn't invalidate
+the setups' fundamentals, but it raises the bar for what should count
+as real confirmation (volume + price both need to cooperate, not just
+price alone) before treating either as a genuine add trigger.
+
+## Market context: PSEi (updated 2026-09-09, superseded by the 09-17 update above)
 
 Corrects an earlier "PSE is a bear market" framing that hadn't been
 checked against the index itself. **Not a deep bear market** — PSEi

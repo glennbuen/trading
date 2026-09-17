@@ -99,6 +99,27 @@ a source on anything less liquid.
    reason, catalyst included either way.
 7. **Log every resolved trade** in `TRADE_JOURNAL.md`.
 
+## Market context: broader macro (added 2026-09-17, COL Research Tech Spotlight)
+
+**Real, cross-market confirmation of the correlated risk-off stretch
+already identified this week** (see the NVDA/AMZN stop-out lessons in
+`TRADE_JOURNAL.md`): a COL Research report dated 2026-09-17 documents
+the **US Fed hiking rates 25bp to 4% (3.75-4.00% range) — the first
+hike since 2023**, against the White House's stated preference for
+lower rates. Oil at $102.43, US 10-yr yield climbed to 5.02%, Dollar
+Index +0.68%. Same session, the **S&P 500 broke its own 7,600-7,580
+channel support**, confirmed downtrend, next support 7,467-7,209 (100-
+day/200-day EMA confluence). This isn't PH-isolated noise — it's the
+same macro event pressuring both books at once.
+
+**Practical implication for this account's open positions**: HOOD
+(~2.3% stop gap) and NBIS (~2.1% stop gap) are both sitting close to
+their stops already, in a market that just got independent
+confirmation of a real technical breakdown, not a false alarm. This
+raises the odds of a noise-driven stop test over the next session or
+two — worth naming now so a stop breach reads as "the plan working as
+designed" rather than "bad luck," if/when it happens.
+
 ## Entry methodology: staged, not all-or-nothing
 
 Same reasoning as PSE: "wait for confirmation" and "enter at the
