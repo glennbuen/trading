@@ -57,12 +57,12 @@ numbers, not just narrative, to actually measure.
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 4 (LTG partial take, SCC partial take, **BPI stop-out, BLOOM stop-out**) | All positions from the original BPI/BLOOM Starter pair now resolved |
+| Real closed-position events | 5 (LTG partial take, **SCC partial take x2**, BPI stop-out, BLOOM stop-out) | SCC now has two separate partial-take events (09-11 and 09-17); still holds 400 sh open |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC) + -₱54.10 gross (BPI) + -₱176.70 gross (BLOOM) ≈ -₱15,492 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; SCC's, BPI's, and BLOOM's figures are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (4 real closed events, 1 win/3 losses) still small — a real losing stretch on the recent stop-outs, expected given how broad the 2026-09-16 selloff was |
-| **Plan adherence rate** | **✅ 2/2 real-time tests passed, same day — BPI and BLOOM, both 2026-09-16.** Both stops broke in the same session, both got sold the same day. This is now a real, repeated pattern following the 2026-09-14/15 discipline conversation, not a single data point. (LTG/SCC backfills are also both Yes, but those were assessed after the fact, not caught live — these two count differently, as genuine real-time tests.) | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC #1) + -₱6,996.92 gross (SCC #2) + -₱54.10 gross (BPI) + -₱176.70 gross (BLOOM) ≈ -₱22,489 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (5 real closed events, 1 win/4 losses) still small — SCC's second trim was taken into a real bounce, so its loss is smaller than the first despite the same underlying position |
+| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand; SCC's 09-17 trim graded PARTIAL** — the underlying goal (manage a no-stop position during a real bounce) was honored, but the stated mechanism ("wait for close, decide on the full remainder") wasn't followed exactly — a mid-course partial exit instead. Not a clean pass or fail; logged honestly as its own category. | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -74,6 +74,46 @@ properly — not worth computing on this small a sample yet.
 ---
 
 ## Log
+
+### 2026-09-17 — SCC — Partial take (second trim, 50% of the remainder, into a real bounce)
+- **Price:** Sold 400 sh @ ₱20.25 (real fill), out of the 800 sh
+  remaining after the 2026-09-11 trim. Cost basis unchanged at
+  ₱37.7423/sh (real avg). Realized loss on this trim ≈ **-₱6,996.92
+  gross** ((20.25 - 37.7423) × 400). 400 sh still open.
+- **Setup at the time:** SCC spiked as much as +23.05% intraday
+  (₱16.74→₱20.55→a session high of ₱21.10) on genuinely large volume
+  (16.9M+ shares, ₱338M+ traded) — despite a fresh, bad headline the
+  same window (Tribune, Sept 16: DOE scrapped the 2026 coal auction
+  round specifically to force Semirara into a rebid rather than an
+  automatic re-award). Read at the time: most likely a technical
+  mean-reversion bounce off a deeply oversold weekly RSI (28.00,
+  flagged 2026-09-10), not the market pricing in good news. The
+  underlying long-term downtrend and contract-loss risk were assessed
+  as unchanged by the bounce.
+- **What actually happened:** the user's stated plan (given ~1 hour
+  earlier) was to wait for the actual 3:00 PM close and decide on the
+  full remaining 800 sh based on whether it held. Instead, a partial
+  exit was taken ahead of the close, on half the remainder, while the
+  bounce was still live (₱20.25, close to but off the ₱21.10 high) —
+  a real-time judgment call to lock in part of the recovery rather
+  than risk the full remainder into an unresolved close. This is a
+  deviation from the stated plan's mechanics (wait for close, all-or-
+  nothing), but not necessarily a bad outcome — taking a partial gain
+  on a name still down ~46% overall is a reasonable risk-management
+  move even if it didn't literally match the plan as stated.
+- **Plan adherence: PARTIAL** — the underlying goal (don't let a real
+  bounce on a no-stop position go unmanaged) was honored, but the
+  specific mechanism stated ("wait for close, then decide on all 800
+  sh") wasn't what actually happened. Worth naming honestly rather
+  than forcing a clean Yes/No: this reads more like an improvised,
+  reasonable adjustment mid-plan than either full adherence or a
+  discipline lapse.
+- **Lesson:** SCC still has no stop on the remaining 400 sh — this
+  trim reduced exposure but didn't resolve that standing gap. Also
+  worth revisiting explicitly: when a stated plan is "wait for X, then
+  decide," a mid-course partial action is a legitimate third option
+  worth naming as such going forward, rather than the two originally
+  framed as if they were the only ones (hold to close vs. exit now).
 
 ### 2026-09-16 — BLOOM — Stop-out (RESOLVED — second successful execution, same day as BPI)
 - **Price:** Sold 1,000 sh @ ₱2.08. Stated stop range was ₱2.05–2.10;
