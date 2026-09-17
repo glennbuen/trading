@@ -53,16 +53,16 @@ just accumulating as isolated notes. Added 2026-09-10 per the user's
 own framing of this journal as "a learning process," which needs
 numbers, not just narrative, to actually measure.
 
-**Current tally (2026-09-11) — honest about what's known vs. estimated:**
+**Current tally (2026-09-17) — honest about what's known vs. estimated:**
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 5 (LTG partial take, **SCC partial take x2**, BPI stop-out, BLOOM stop-out) | SCC now has two separate partial-take events (09-11 and 09-17); still holds 400 sh open |
+| Real closed-position events | 6 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out) | SCC is now fully closed across 3 sales (09-11, and twice on 09-17); no shares remain |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 est. (SCC #1) + -₱6,996.92 gross (SCC #2) + -₱54.10 gross (BPI) + -₱176.70 gross (BLOOM) ≈ -₱22,489 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (5 real closed events, 1 win/4 losses) still small — SCC's second trim was taken into a real bounce, so its loss is smaller than the first despite the same underlying position |
-| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand; SCC's 09-17 trim graded PARTIAL** — the underlying goal (manage a no-stop position during a real bounce) was honored, but the stated mechanism ("wait for close, decide on the full remainder") wasn't followed exactly — a mid-course partial exit instead. Not a clean pass or fail; logged honestly as its own category. | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3, final) + -₱54.10 (BPI) + -₱176.70 (BLOOM) ≈ -₱29,566 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. SCC's total realized loss alone is ≈ -₱29,947.68 across all three tranches. Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (6 real closed events, 1 win/5 losses) still small — SCC's overall loss (-₱29,947.68) is now the single largest event on record for this account |
+| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 separate events: partial-take #1 (backfilled Yes), partial-take #2 (PARTIAL — mid-course deviation from "wait for close"), final exit (NO — explicitly stated "revisit tomorrow" plan, sold same day instead, no flagged reason for the change).** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. SCC is the first name to generate a clean "No" on a same-day, self-contradicted plan — worth watching for the same pattern going forward. |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -74,6 +74,49 @@ properly — not worth computing on this small a sample yet.
 ---
 
 ## Log
+
+### 2026-09-17 — SCC — Final exit (position fully closed)
+- **Price:** Sold the remaining 400 sh @ ₱20.05 (real fill). Cost
+  basis ₱37.7423/sh (real avg). Realized loss on this final tranche ≈
+  **-₱7,076.92 gross** ((20.05 - 37.7423) × 400). SCC is now fully
+  closed — no shares remain.
+- **Setup at the time:** Same real bounce already logged in the
+  09-17 partial-take entry below (+14.37%→+23.05% intraday off a
+  genuinely bad fresh headline — DOE scrapping the 2026 coal auction
+  round to force a rebid, not an automatic re-award). Price had pulled
+  back slightly from the session high (₱21.10) by the time of the
+  earlier 400-sh trim (₱20.25), and continued drifting down toward the
+  close.
+- **What actually happened:** the stated plan, set earlier the same
+  day, was to revisit the last 400 sh **tomorrow** (2026-09-18) based
+  on whether the move continued. Instead, the user sold the remainder
+  today, same session, at ₱20.05 — a lower price than the earlier
+  400-sh trim (₱20.25), meaning waiting even the rest of today did not
+  pay off. This is a real, worth-naming deviation from the stated
+  plan, not a technicality: "revisit tomorrow" and "sold today" are
+  different decisions, and the second one happened without an
+  explicit check-in on why the plan changed.
+- **Plan adherence: NO** — the specific stated plan (wait until
+  tomorrow) was not followed. Worth being honest rather than
+  reframing this as a good outcome after the fact: the final fill
+  (₱20.05) was worse than the price available when the "wait until
+  tomorrow" plan was set (₱20.25 was the last logged price at that
+  point), so this wasn't a case of the deviation paying off — the
+  plan, if followed literally, could have meant selling into
+  tomorrow's session at an unknown price, so it's not possible to say
+  with certainty this was worse than the alternative either. What is
+  certain: the decision changed same-day without being flagged as a
+  revision to the stated plan at the time it changed.
+- **Lesson:** SCC is now a clean, fully-closed position — total
+  realized loss across all three tranches ≈ **-₱29,947.68 gross**
+  (-₱15,873.84 + -₱6,996.92 + -₱7,076.92), against an original 1,600
+  sh position. Worth flagging directly for the next time a multi-day
+  "revisit later" plan gets set: naming explicitly, in the moment, why
+  a plan is changing (not just executing the change silently) would
+  make Plan adherence tracking more useful — right now this reads as
+  a real gap, but the underlying instinct to lock in a real bounce on
+  a name with no stop and a large embedded loss is not unreasonable on
+  its own terms.
 
 ### 2026-09-17 — SCC — Partial take (second trim, 50% of the remainder, into a real bounce)
 - **Price:** Sold 400 sh @ ₱20.25 (real fill), out of the 800 sh
