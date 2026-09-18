@@ -77,7 +77,20 @@ a source on anything less liquid.
    not an inconsistency to fix.)
 2. **Screen new names** (not already reviewed) via MarketScreener
    MA5/20/50/100 + RSI9/14 — flag names above their MAs with RSI not
-   yet extended as "worth a closer look."
+   yet extended as "worth a closer look." **Caught 2026-09-18 (same
+   session as the identical PSE catch): this step was being skipped
+   entirely during "us_volume" runs too** — CRWV and GOOG both got
+   flagged as "standout" purely off raw % change from the
+   stockmarketwatch.com list, no MA/RSI pull at all. **Critical
+   sub-lesson from the PSE side, applies equally here: when actually
+   executing this step, use WebSearch ONLY to find the correct
+   MarketScreener SLUG-ID (matching ticker AND the right exchange) —
+   NEVER trust a WebSearch-generated summary of the RSI/MA values
+   themselves.** A WebSearch summary for a PSE name (MEG) returned
+   flatly wrong numbers (claimed RSI 67.63 "Buy" above all MAs; the
+   real chart showed RSI 33.80 below all MAs) — a direct WebFetch of
+   the actual `marketscreener.com/quote/stock/{SLUG}-{ID}/quotes/`
+   page got it right. Always WebFetch the real page for the numbers.
 3. **Caveat every screen result as provisional** until chart-confirmed
    — never add to the watchlist proper off the screen alone.
 4. **User pastes daily + weekly charts** (MACD + ATR added — this
