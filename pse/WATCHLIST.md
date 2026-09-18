@@ -61,7 +61,20 @@ State the number, state the confidence level, move on.
    pasted afterward.** User caught this directly ("you are checking
    them in another site that gives ma... are you still going through
    the MAs?") and confirmed wanting it done ("yes we dont want to miss
-   out") — do this step every time, not just when asked.
+   out") — do this step every time, not just when asked. **Second
+   catch, same day: when actually executing this step, a WebSearch
+   query asking for a name's RSI/MA data returned flatly wrong numbers
+   for MEG (claimed RSI 67.63 "Buy," price above all MAs — the real
+   chart showed RSI 33.80 and price below every MA). A direct WebFetch
+   of the actual `marketscreener.com/quote/stock/{SLUG}-{ID}/quotes/`
+   page for the same name got the right price and the right direction
+   (below all MAs, RSI 45.74 neutral) — close to, though not identical
+   to, the chart's own RSI reading (different smoothing/period between
+   sources, not a data error). The rule going forward: WebSearch is
+   only for finding the correct SLUG-ID (matching ticker AND
+   "Philippines S.E." explicitly) — NEVER trust a WebSearch-generated
+   summary of the actual RSI/MA values themselves. Always WebFetch the
+   real `/quotes/` page directly for the numbers.**
 3. **Caveat every screen result as provisional**, per this session's
    own lessons: MA/RSI numbers alone can't distinguish a healthy
    sustained uptrend (ICT, OGP) from a parabolic gap (FGEN) or an
