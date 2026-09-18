@@ -75,6 +75,37 @@ properly — not worth computing on this small a sample yet.
 
 ## Log
 
+### 2026-09-18 — ICT — Entry filled, at the old stop level not the entry zone
+- **Price:** Bought 10 sh @ ₱915 (real fill). Cost basis ₱9,150 total.
+- **Setup at the time:** ICT's stated entry zone was ₱947–962 (a
+  pullback zone), with a stop at ~₱900–915 below that. Today's price
+  action pulled back further than the zone — down to ₱913.00 intraday
+  (-2.35%) — and the fill (₱915) landed right at the TOP of what was
+  originally defined as the *stop-loss* range, not inside the entry
+  zone. Flagged this directly before logging: using the existing
+  ₱900–915 stop as-is gives a cushion of only ~0-1.6%, far thinner
+  than any other position on this account. Asked explicitly how to
+  handle the stop — **user chose to keep ₱900–915 as-is**, accepting
+  the thin cushion rather than deriving a fresh stop below ₱915.
+- **What actually happened:** A real fill, but structurally different
+  from every other entry logged this session — those all landed
+  inside or just below their stated entry zones with real room to a
+  stop well below. This one landed at the boundary of the stop
+  itself. The underlying catalyst (US government 10% stake, Nvidia
+  $5B co-investment, Apple chip partnership) is real and among the
+  strongest reviewed on this list, but the entry timing doesn't match
+  this account's usual staged-pullback discipline.
+- **Plan adherence: N/A** — this wasn't a pre-committed staged entry
+  being executed; it was a live decision made outside the account's
+  existing zone framework. Not graded as Yes/No since there was no
+  prior plan for this specific fill to adhere to or deviate from.
+- **Lesson: N/A yet — but worth tracking closely.** With ~0-1.6%
+  cushion to the stop, this position has essentially no room for
+  normal daily noise before triggering. If it survives past the next
+  session or two, that's meaningful information about whether ₱913-915
+  is turning into real support; if it doesn't, the thin-cushion choice
+  will be the direct, named cause, not a mystery.
+
 ### 2026-09-17 — SCC — Final exit (position fully closed)
 - **Price:** Sold the remaining 400 sh @ ₱20.05 (real fill). Cost
   basis ₱37.7423/sh (real avg). Realized loss on this final tranche ≈
