@@ -54,7 +54,14 @@ State the number, state the confidence level, move on.
 2. **Screen new names** (not already reviewed in this file) via
    MarketScreener MA5/20/50/100 + RSI9/14 for a quick potential read —
    flag names above their MAs with RSI not yet extended as "worth a
-   closer look," same bar used throughout this session.
+   closer look," same bar used throughout this session. **Caught
+   2026-09-18: this step was silently skipped during a "volume" run —
+   names were flagged as "standout" purely off the raw % change shown
+   in the screenshot, with no MA/RSI pull at all until a chart got
+   pasted afterward.** User caught this directly ("you are checking
+   them in another site that gives ma... are you still going through
+   the MAs?") and confirmed wanting it done ("yes we dont want to miss
+   out") — do this step every time, not just when asked.
 3. **Caveat every screen result as provisional**, per this session's
    own lessons: MA/RSI numbers alone can't distinguish a healthy
    sustained uptrend (ICT, OGP) from a parabolic gap (FGEN) or an
