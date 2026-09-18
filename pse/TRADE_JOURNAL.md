@@ -75,6 +75,25 @@ properly — not worth computing on this small a sample yet.
 
 ## Log
 
+### 2026-09-18 — OGP — Entry filled, clean zone fill
+- **Price:** Bought 100 sh @ ₱36.65 (real fill). Cost basis ₱3,665
+  total. Filled right at the top boundary of the stated ₱34.20–36.65
+  entry zone — a standard, well-fitting fill, unlike the same-day ICT
+  entry logged below (which landed at the old stop level instead).
+- **Setup at the time:** Real catalyst on file: Didipio mine life
+  extended to 2037, $1.958B long-term investment confirmed, solid
+  2026 production guidance. Stop ~₱32.60–33.15, giving real room
+  (~9.5-11.0% cushion) — a healthy, normal setup compared to today's
+  other fill.
+- **What actually happened:** Filled cleanly inside the zone. Not yet
+  resolved.
+- **Plan adherence: N/A yet — nothing to adhere to until this
+  resolves.**
+- **Lesson: N/A yet — but worth noting as a contrast: this is what a
+  standard staged-pullback entry looks like on this account, versus
+  the same-day ICT fill which deviated from that pattern. Useful
+  side-by-side reference for future entries.**
+
 ### 2026-09-18 — ICT — Entry filled, at the old stop level not the entry zone
 - **Price:** Bought 10 sh @ ₱915 (real fill). Cost basis ₱9,150 total.
 - **Setup at the time:** ICT's stated entry zone was ₱947–962 (a
