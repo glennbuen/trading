@@ -75,6 +75,23 @@ properly — not worth computing on this small a sample yet.
 
 ## Log
 
+### 2026-09-18 — DMC — Entry filled, two tranches, clean zone fill
+- **Price:** Bought 100 sh @ ₱7.95 + 600 sh @ ₱7.93 = 700 sh total,
+  real weighted avg cost ₱7.9329/sh (₱5,553 total). Both fills landed
+  inside the stated ₱7.86–8.02 entry zone.
+- **Setup at the time:** The weakest fundamental story of today's
+  three fills (Q1 NI -2% YoY, FY25 NI -21%, fair value already cut
+  ₱10.04→9.42) — a speculative bottom-fish tier, not a clean trend
+  pullback like OGP. Stop ~₱7.57–7.67, giving ~3.3-4.6% cushion —
+  tighter than OGP's but still a legitimate in-zone fill, not a
+  thin-margin entry like today's ICT fill.
+- **What actually happened:** Filled as the stock continued fading
+  from Wednesday's +6.62% intraday peak, right down into the stated
+  zone — a real pullback into the zone, not a chase.
+- **Plan adherence: N/A yet — nothing to adhere to until this
+  resolves.**
+- **Lesson: N/A yet.**
+
 ### 2026-09-18 — OGP — Entry filled, clean zone fill
 - **Price:** Bought 100 sh @ ₱36.65 (real fill). Cost basis ₱3,665
   total. Filled right at the top boundary of the stated ₱34.20–36.65
