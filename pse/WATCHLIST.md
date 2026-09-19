@@ -382,7 +382,14 @@ automatically also runs "positions"** (the Current Holdings table
 above) in the same response, every time — no need to type both
 separately. Still two logically distinct tables (this one is the
 stocks-to-buy watchlist, "positions" is already-owned holdings), just
-always delivered together now. **Added 2026-09-17, per explicit user
+always delivered together now. **Added 2026-09-19, per explicit user
+request ("whenever im triggering summary and us summary list my
+positions and the watchlist"): always render the FULL watchlist table
+here, every row, not a condensed prose summary of it.** Caught
+directly after a response gave the 4 held positions in full but only
+a short paragraph mentioning the other 7 watchlist names — the user
+wants the complete table both times, every time, not an abbreviated
+version. **Added 2026-09-17, per explicit user
 request: also pull and report each symbol's current day's traded
 volume** (shares traded so far in the session), both here and in
 "positions." This matters beyond a data point — a thin session (a

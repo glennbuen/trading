@@ -363,6 +363,15 @@ current price, and catalyst shown for each name, in addition to
 status. A trimmed table with just current price/status is not
 sufficient even if the full detail is sitting in the file — the user
 shouldn't have to ask a follow-up ("where's entry price?") to get it.
+**Re-caught 2026-09-19: this exact rule was silently not followed** —
+a "us_summary" response gave the 4 held positions in full table form
+but only a short paragraph mentioning the other 7 watchlist names,
+prompting the user to ask directly ("where are the other stocks?")
+and then explicitly restate the standing rule ("whenever im
+triggering summary and us summary list my positions and the
+watchlist"). Same pattern as the MarketScreener step being silently
+skipped earlier this session — a documented rule quietly not executed.
+Render the full table, every row, every time, no exceptions.
 
 **Broad selloff, confirmed at the 2026-09-14 regular-session close** — triggered by Anthropic's Dario Amodei and OpenAI's Sam Altman both calling for slower AI development over the weekend, plus rising bond yields and an upcoming Fed meeting. Most names closed down 3-7%; **MSFT and META notably closed UP** despite the broad drag (Azure disclosure and the JPMorgan upgrade/settlement respectively appear to have outweighed the macro headwind) — worth noting as a real divergence, not treating the whole list as uniformly weak.
 
