@@ -51,6 +51,9 @@ State the number, state the confidence level, move on.
    Pesobility screenshot, or the filgit.com homepage table — see "Note
    on live-price sourcing" below). Treat the pasted list as the input
    to step 2 below automatically, no need to ask what to do with it.
+   **Added 2026-09-19, same standing behavior as "summary": render the
+   FULL list back in chat (every ticker, price, change, volume), not
+   just a prose mention of whichever ones looked interesting.**
 2. **Screen new names** (not already reviewed in this file) via
    MarketScreener MA5/20/50/100 + RSI9/14 for a quick potential read —
    flag names above their MAs with RSI not yet extended as "worth a
@@ -74,7 +77,11 @@ State the number, state the confidence level, move on.
    only for finding the correct SLUG-ID (matching ticker AND
    "Philippines S.E." explicitly) — NEVER trust a WebSearch-generated
    summary of the actual RSI/MA values themselves. Always WebFetch the
-   real `/quotes/` page directly for the numbers.**
+   real `/quotes/` page directly for the numbers.** **Also added
+   2026-09-19: screen every new name that shows up, not just the ones
+   that look like the biggest movers by eye** — the point of this step
+   is to catch what a price-only scan would miss, so skipping names
+   because they don't look exciting defeats the purpose.
 3. **Caveat every screen result as provisional**, per this session's
    own lessons: MA/RSI numbers alone can't distinguish a healthy
    sustained uptrend (ICT, OGP) from a parabolic gap (FGEN) or an

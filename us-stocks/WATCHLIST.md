@@ -74,7 +74,10 @@ a source on anything less liquid.
    triggers in the same conversation context — PSE's "volume" still
    requires a pasted list/screenshot, since no working autonomous
    source was found for that market; this asymmetry is intentional,
-   not an inconsistency to fix.)
+   not an inconsistency to fix.) **Added 2026-09-19, same standing
+   behavior as "us_summary": render the FULL list back in chat (every
+   ticker, price, change, volume), not just a prose mention of
+   whichever ones looked interesting.**
 2. **Screen new names** (not already reviewed) via MarketScreener
    MA5/20/50/100 + RSI9/14 — flag names above their MAs with RSI not
    yet extended as "worth a closer look." **Caught 2026-09-18 (same
@@ -91,6 +94,9 @@ a source on anything less liquid.
    real chart showed RSI 33.80 below all MAs) — a direct WebFetch of
    the actual `marketscreener.com/quote/stock/{SLUG}-{ID}/quotes/`
    page got it right. Always WebFetch the real page for the numbers.
+   **Also added 2026-09-19: screen every new name that shows up, not
+   just the ones that look like the biggest movers by eye** — the
+   point of this step is to catch what a price-only scan would miss.
 3. **Caveat every screen result as provisional** until chart-confirmed
    — never add to the watchlist proper off the screen alone.
 4. **User pastes daily + weekly charts** (MACD + ATR added — this
