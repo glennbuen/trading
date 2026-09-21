@@ -53,16 +53,16 @@ just accumulating as isolated notes. Added 2026-09-10 per the user's
 own framing of this journal as "a learning process," which needs
 numbers, not just narrative, to actually measure.
 
-**Current tally (2026-09-17) — honest about what's known vs. estimated:**
+**Current tally (2026-09-21) — honest about what's known vs. estimated:**
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 6 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out) | SCC is now fully closed across 3 sales (09-11, and twice on 09-17); no shares remain |
+| Real closed-position events | 7 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**) | SCC fully closed across 3 sales; ICT closed 2026-09-21 after a deliberately-kept stop plan triggered |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3, final) + -₱54.10 (BPI) + -₱176.70 (BLOOM) ≈ -₱29,566 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. SCC's total realized loss alone is ≈ -₱29,947.68 across all three tranches. Ask the user for exact net fills if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (6 real closed events, 1 win/5 losses) still small — SCC's overall loss (-₱29,947.68) is now the single largest event on record for this account |
-| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 separate events: partial-take #1 (backfilled Yes), partial-take #2 (PARTIAL — mid-course deviation from "wait for close"), final exit (NO — explicitly stated "revisit tomorrow" plan, sold same day instead, no flagged reason for the change).** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. SCC is the first name to generate a clean "No" on a same-day, self-contradicted plan — worth watching for the same pattern going forward. |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) ≈ -₱29,716 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (7 real closed events, 1 win/6 losses) still small |
+| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. A loss with clean process, a useful contrast to SCC's final exit.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -74,6 +74,50 @@ properly — not worth computing on this small a sample yet.
 ---
 
 ## Log
+
+### 2026-09-21 — ICT — Stop-out (RESOLVED — the stop plan kept from Monday's review was honored)
+- **Price:** Sold 10 sh @ ₱900 (real fill), the bottom of the
+  ₱900-915 stop zone that was deliberately kept as-is during the
+  2026-09-21 morning review (two data-grounded alternatives — a
+  tighter ~₱895-900 stop or a structural ~₱870-875 stop — were
+  presented and declined in favor of the original plan). Realized
+  loss ≈ -₱150 gross (-1.64%) on the 10 sh position.
+- **Setup at the time:** This was the position flagged at entry
+  (2026-09-18) as having a near-zero stop cushion — bought at ₱915,
+  right at what this account's own prior analysis called the stop
+  level rather than the ₱947-962 pullback zone. Recovered briefly
+  Monday morning (₱919, +0.44% unrealized) before fading back down
+  and triggering the stop later the same session.
+- **What actually happened:** The stop plan set on 2026-09-18, kept
+  deliberately unchanged after a real re-examination on 2026-09-21,
+  executed as designed when price came back down to it. This is a
+  clean, same-day execution — no hesitation, no deviation.
+- **Plan adherence: ✅ YES** — the stop was honored at the level it
+  was set at, including after being explicitly revisited and
+  reaffirmed just hours earlier. A genuinely good example: the
+  position lost money, but the process worked exactly as intended.
+- **Lesson:** The near-zero-cushion entry flagged on day one did
+  eventually cost a stop-out, as the thin-margin risk always implied
+  it might. But the discipline around it — flag the risk clearly at
+  entry, revisit it explicitly when the risk materialized, and honor
+  the plan once made — all held. A loss with clean process is a very
+  different outcome than a loss from a broken one.
+
+### 2026-09-21 — OGP — Add, 100 sh @ ₱36.40 (within the original entry zone)
+- **Price:** Added 100 sh @ ₱36.40 to the existing 100 sh @ ₱36.65
+  (2026-09-18 fill). New weighted avg cost ₱36.525/sh, 200 sh total,
+  ₱7,305 total cost.
+- **Setup at the time:** ₱36.40 is still within the originally
+  stated ₱34.20-36.65 entry zone — this is a straightforward
+  average-down within the same zone, not a new technical signal or a
+  confirmation-add trigger firing. Stop remains ₱32.60-33.15,
+  ~9.0-10.5% cushion from the new average cost.
+- **What actually happened:** A same-session add, not yet resolved.
+- **Plan adherence: N/A** — this wasn't executing a pre-committed
+  staged-entry plan (the confirmation-add trigger for OGP was never
+  defined as a specific price), just a discretionary add within the
+  zone.
+- **Lesson: N/A yet.**
 
 ### 2026-09-21 — WEB — Entry filled, clean zone fill, exactly as planned
 - **Price:** Bought 400 sh @ ₱14.22 (real fill). Cost basis ₱5,688
