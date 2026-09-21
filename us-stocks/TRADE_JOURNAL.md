@@ -50,6 +50,26 @@ is worth flagging too.
 
 ## Log
 
+### 2026-09-21 — MSFT — Entry filled, exactly as planned
+- **Price:** Bought 0.03 fractional sh @ $493.81 ($14.81 total). Filled
+  right inside the stated $492-497 entry zone — the user explicitly
+  stated the plan a session earlier ("ok target to get in msft on
+  monday") and executed it almost exactly, same as WEB's pattern on
+  the PSE side.
+- **Setup at the time:** Real, substantive catalyst: Azure growth hit
+  43% with annualized revenue above $100B, backlog surged 84% to
+  $678B, first-time separate Azure revenue disclosure (a real
+  transparency signal). Analysts raised the target to $600 from $500.
+  Stop ~$477-482, T1 ~$540-554 (~3.6:1 R:R).
+- **What actually happened:** Filled the same session a market-wide
+  rally took hold (INTC +12.14%, AMD +9.95%, META +11.43% all closed
+  the same day) — MSFT closed at $501.61, above the entire entry zone,
+  a strong first session.
+- **Plan adherence: ✅ YES** — stated the plan a session ahead, then
+  executed at essentially the exact level described.
+- **Lesson: N/A yet — but another clean plan-then-execute precedent,
+  same pattern as WEB on the PSE side.**
+
 ### 2026-09-16 — HOOD — Entry filled, during a steep sector-correlated drop
 - **Price:** Bought 0.1 fractional sh @ $105.96 ($10.60 total) — below
   the stated entry zone ($108.71-112.49), filled while HOOD was down
