@@ -75,6 +75,26 @@ properly — not worth computing on this small a sample yet.
 
 ## Log
 
+### 2026-09-21 — WEB — Entry filled, clean zone fill, exactly as planned
+- **Price:** Bought 400 sh @ ₱14.22 (real fill). Cost basis ₱5,688
+  total. Filled near the lower part of the stated ₱14.20–14.45 entry
+  zone — the user explicitly stated the plan ("ill enter web today
+  when its near the lower range") and then executed it almost
+  exactly, a clean example of plan-then-execute working as intended.
+- **Setup at the time:** Real catalyst on file: Q2 swung to profit,
+  revenue +96%, ₱2.02B + ₱4.23B capital injections (Gokongwei, JKS
+  stake). Stop ₱13.50–13.70, ~3.9-5.3% cushion — a real, workable
+  buffer, same category as OGP/DMC's clean fills, not ICT's
+  near-zero-cushion situation.
+- **What actually happened:** Filled as WEB tested its zone for the
+  first time this cycle (it had approached but not entered the zone
+  on several earlier checks). Not yet resolved.
+- **Plan adherence: ✅ YES** — stated the plan, then executed it at
+  essentially the exact level described, same session.
+- **Lesson: N/A yet — but worth noting as a positive precedent**,
+  the same way the 2026-09-10 LTG 30%-at-+20% take was flagged as
+  real, working discipline independent of prompting.
+
 ### 2026-09-18 — DMC — Entry filled, two tranches, clean zone fill
 - **Price:** Bought 100 sh @ ₱7.95 + 600 sh @ ₱7.93 = 700 sh total,
   real weighted avg cost ₱7.9329/sh (₱5,553 total). Both fills landed
