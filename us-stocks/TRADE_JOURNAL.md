@@ -40,15 +40,49 @@ is worth flagging too.
 
 | Metric | Value |
 |---|---|
-| Real closed-position events | 2 (NVDA stop-out, AMZN stop-out — both 2026-09-16) |
+| Real closed-position events | 3 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) ≈ -$0.67 net** — trivial in dollar terms, a real 0-for-2 stretch as a data point |
-| Win rate / avg R-multiple | Not yet meaningful — 2 closed trades, both losses |
-| **Plan adherence rate** | **2/3 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation — same day as PSE's two clean BPI/BLOOM executions. The pattern is trending toward same-session execution, not away from it. Still too small a sample to mean anything statistically. |
+| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) ≈ +$2.34 net** — first real winner in the closed-position log |
+| Win rate / avg R-multiple | 1-for-3 (INTC the only win so far) — still too small a sample to mean anything statistically |
+| **Plan adherence rate** | **3/4 events, improving but not clean.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit — but placed two sessions after the T1 signal first fired, a smaller echo of the same lag pattern as NVDA's gap, just with a favorable outcome this time rather than a costly one. |
 
 ---
 
 ## Log
+
+### 2026-09-23 — INTC — Target hit (T1 full exit, RESOLVED)
+- **Price:** Sold 0.15 fractional sh @ $121.69 ($18.2535 total). Cost
+  basis was $101.6173 (0.15 sh, $15.24 total, filled 2026-09-11).
+  Realized gain ≈ +$3.01 gross, +19.76%.
+- **Setup at the time:** Strongest catalyst reviewed all session — US
+  government holds a 10% stake, Nvidia's $5B x86 co-development deal +
+  $8.9B government investment, Apple reportedly co-designing chips
+  with Intel. T1 was set at $115-120 per this account's T1-only
+  full-exit rule ("trader not investor").
+- **What actually happened:** Price first cleared the $115-120 T1
+  range on 2026-09-21 (close $121.78, +12.14% that session) and stayed
+  above it through 2026-09-22 (close $123.86). Flagged as an
+  unactioned real decision point across two full refresh cycles before
+  the exit was actually placed on 2026-09-23 at $121.69 — inside the
+  range the stock had been trading in since clearing T1, not at a
+  fresh high.
+- **Plan adherence: ✅ YES, with a real gap to name honestly** — the
+  T1-exit rule was followed and the position was fully closed, not
+  partially trimmed or held past target. But the actual execution
+  lagged the T1 signal by two sessions (T1 cleared 2026-09-21, exit
+  placed 2026-09-23) — same shape as the NVDA discipline gap from
+  2026-09-14/15, just smaller in magnitude and this time it worked out
+  favorably (price didn't reverse below T1 during the gap). Logging
+  the lag itself, not just the clean outcome, per the standing rule
+  that plan-adherence tracks the honest timeline, not a tidied-up one.
+- **Lesson:** the T1-only full-exit rule did its job — no partial
+  hold, no "let it run further" rationalization once the decision was
+  finally made. But the two-session gap between signal and execution
+  is worth naming plainly: this time the stock stayed above T1 during
+  the delay, so the lag cost nothing, but that's a matter of luck, not
+  process. The same gap on a stock that reversed back below T1 during
+  the delay would have given back real gains. Worth watching for
+  whether this becomes a pattern (see NVDA's own delayed-exit history).
 
 ### 2026-09-21 — MSFT — Entry filled, exactly as planned
 - **Price:** Bought 0.03 fractional sh @ $493.81 ($14.81 total). Filled
