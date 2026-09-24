@@ -53,16 +53,16 @@ just accumulating as isolated notes. Added 2026-09-10 per the user's
 own framing of this journal as "a learning process," which needs
 numbers, not just narrative, to actually measure.
 
-**Current tally (2026-09-21) — honest about what's known vs. estimated:**
+**Current tally (2026-09-24) — honest about what's known vs. estimated:**
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 7 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**) | SCC fully closed across 3 sales; ICT closed 2026-09-21 after a deliberately-kept stop plan triggered |
+| Real closed-position events | 8 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**, **DMC stop-out**) | SCC fully closed across 3 sales; ICT closed 2026-09-21, DMC closed 2026-09-24, both after a deliberately-set stop plan triggered |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
-| Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) ≈ -₱29,716 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (7 real closed events, 1 win/6 losses) still small |
-| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. A loss with clean process, a useful contrast to SCC's final exit.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
+| Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson, separate from DMC's later stop-out |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) + -₱198.03 (DMC) ≈ -₱29,914 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (8 real closed events, 1 win/7 losses) still small |
+| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. DMC graded ✅ YES — the zone was tested twice and held before finally triggering, and the stop was honored at the defined level once it broke, not reacted to early.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -74,6 +74,37 @@ properly — not worth computing on this small a sample yet.
 ---
 
 ## Log
+
+### 2026-09-24 — DMC — Stop-out (RESOLVED)
+- **Price:** Sold 700 sh @ ₱7.65 (real fill), inside the ₱7.57-7.67
+  stop zone set at entry. Cost basis was ₱7.9329/sh weighted avg (700
+  sh, ₱5,553.03 total, filled 2026-09-18: 100 sh @ ₱7.95 + 600 sh @
+  ₱7.93). Realized loss ≈ -₱198.03 gross (-3.57%).
+- **Setup at the time:** The weakest fundamental story of the three
+  names bought 2026-09-18 (Q1 NI -2% YoY, FY25 NI -21%, fair value cut
+  ₱10.04→9.42) — flagged as such at entry, not a story that developed
+  after the fact.
+- **What actually happened:** The stop zone was tested intraday on
+  2026-09-22 (low ₱7.63, inside the zone) but held — price recovered
+  to ₱7.75 that session and ₱7.69 the next (2026-09-23) without
+  breaking down further. Flagged across three consecutive refresh
+  cycles (🔴 on 2026-09-22, downgraded to 🟡 on 2026-09-23) as an
+  open, unresolved decision point. The stop finally triggered
+  2026-09-24, with the sale executed inside the zone at ₱7.65.
+- **Plan adherence: ✅ YES** — the stop was honored at the level it
+  was set at, the same pattern as ICT's 2026-09-21 exit: a loss, but
+  the process worked as designed. No holding past the zone hoping for
+  a further bounce after two sessions of the zone being tested but not
+  broken.
+- **Lesson:** this is the second of the three 2026-09-18 fills (ICT
+  being the first) to end in a stop-out, and DMC was flagged as the
+  weakest fundamental story of the three at the time of entry — the
+  price action ultimately confirmed that read. The zone held through
+  two tests before finally breaking, which is a reminder that a
+  flagged stop-zone test isn't automatically a signal to pre-emptively
+  exit — the plan was to let the defined level trigger the decision,
+  not to react to every approach toward it, and that discipline held
+  here even though it took multiple sessions to resolve.
 
 ### 2026-09-21 — ICT — Stop-out (RESOLVED — the stop plan kept from Monday's review was honored)
 - **Price:** Sold 10 sh @ ₱900 (real fill), the bottom of the
