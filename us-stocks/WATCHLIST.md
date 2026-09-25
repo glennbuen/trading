@@ -247,16 +247,30 @@ question again first.
   already in use**, and sanity-check against the actual stop distance
   before sizing meaningfully larger.
 
-  **Updated 2026-09-25, per explicit user instruction**: fresh capital
-  incoming (~S$100, user's own estimate ≈$70 USD — not yet confirmed
-  by a real conversion fill the way the original S$100→$78.77 was).
-  **Future positions should be sized at least $20 USD**, up from the
-  $10-15 range above. This changes the practical floor going forward,
-  not the 0.5%-of-equity formula itself — re-run the retroactive
-  check once the new capital is actually confirmed in the account and
-  total equity is known, since $20 as a fraction of a larger equity
-  base may land closer to the formula's real output than the old
-  $10-15 range did against $78.77.
+  **Updated 2026-09-25, deposit confirmed**: fresh capital landed,
+  **real cash in hand $110.98 USD** (user-confirmed exact figure).
+  Total account equity = cash + current market value of open
+  positions, not cash alone — estimated at **≈$163** using $110.98
+  cash + ~$52 combined market value of PLTR/NBIS/HOOD/MSFT at their
+  last-known prices (approximate, re-mark when a real "us_positions"
+  refresh runs). **Position sizing is dynamic, not a flat $20** —
+  size follows the formula above, using the stop distance set at the
+  time of each specific setup:
+
+  | Stop distance | Position size @ ≈$163 equity, 0.5% risk target |
+  |---|---|
+  | ~4% (MSFT-like) | ≈$20 |
+  | ~5% | ≈$16 |
+  | ~10% | ≈$8 |
+  | ~15% (PLTR/NBIS-like) | ≈$5 |
+  | ~20% | ≈$4 |
+  | ~25% (HOOD-like) | ≈$3 |
+
+  **$20 is the reference size for a tight (~4-5%) stop, not a floor
+  applied to every trade** — wider-stop names size down from there.
+  This resolves the earlier flagged issue where a flat $20 on a
+  HOOD/NBIS-width stop would have put ~6-9x the intended 0.5% risk on
+  a single trade.
 
 ## Broker & capital ($78.77 USD starting capital, converted from S$100) — status as of 2026-09-11
 
@@ -423,12 +437,12 @@ out same day (+$12.41 gross, 0.05 sh × $248.17) → PLTR bought
 $214.20) → HOOD bought (-$10.60, 0.1 sh × $105.96) → MSFT bought
 (-$14.81, 0.03 sh × $493.81) → cash ≈$14.76. **Updated 2026-09-23**:
 INTC sold, full T1 exit (+$18.25 gross, 0.15 sh × $121.69) →
-**cash ≈$33.01**. **Updated 2026-09-25**: user plans to add fresh
-capital, ~S$100 (user's own estimate ≈$70 USD, not yet confirmed by a
-real conversion the way the original S$100→$78.77 figure was) →
-**prospective cash ≈$103.01 once deposited and confirmed**. Not yet
-real until an actual deposit/conversion fill is reported — treat
-$33.01 as the current real cash until then. All figures
+cash ≈$33.01. **Confirmed 2026-09-25**: deposit completed, real cash
+in hand **$110.98 USD** (user-confirmed exact figure — supersedes the
+earlier $103.01 estimate, actual deposit came in higher than the
+~$70 conversion guess). **This is the real, confirmed total account
+cash going forward**, same standing as the original $78.77
+starting-capital confirmation. All figures
 gross/estimated, not net of fees — ask for exact confirmed
 balances if precision matters here, same caveat used throughout this
 file's capital tracking.
