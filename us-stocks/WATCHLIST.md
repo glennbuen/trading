@@ -247,6 +247,17 @@ question again first.
   already in use**, and sanity-check against the actual stop distance
   before sizing meaningfully larger.
 
+  **Updated 2026-09-25, per explicit user instruction**: fresh capital
+  incoming (~S$100, user's own estimate ≈$70 USD — not yet confirmed
+  by a real conversion fill the way the original S$100→$78.77 was).
+  **Future positions should be sized at least $20 USD**, up from the
+  $10-15 range above. This changes the practical floor going forward,
+  not the 0.5%-of-equity formula itself — re-run the retroactive
+  check once the new capital is actually confirmed in the account and
+  total equity is known, since $20 as a fraction of a larger equity
+  base may land closer to the formula's real output than the old
+  $10-15 range did against $78.77.
+
 ## Broker & capital ($78.77 USD starting capital, converted from S$100) — status as of 2026-09-11
 
 **Corrected 2026-09-11**: starting capital is **$78.77 USD**, not $100
@@ -412,7 +423,12 @@ out same day (+$12.41 gross, 0.05 sh × $248.17) → PLTR bought
 $214.20) → HOOD bought (-$10.60, 0.1 sh × $105.96) → MSFT bought
 (-$14.81, 0.03 sh × $493.81) → cash ≈$14.76. **Updated 2026-09-23**:
 INTC sold, full T1 exit (+$18.25 gross, 0.15 sh × $121.69) →
-**cash ≈$33.01**. All figures
+**cash ≈$33.01**. **Updated 2026-09-25**: user plans to add fresh
+capital, ~S$100 (user's own estimate ≈$70 USD, not yet confirmed by a
+real conversion the way the original S$100→$78.77 figure was) →
+**prospective cash ≈$103.01 once deposited and confirmed**. Not yet
+real until an actual deposit/conversion fill is reported — treat
+$33.01 as the current real cash until then. All figures
 gross/estimated, not net of fees — ask for exact confirmed
 balances if precision matters here, same caveat used throughout this
 file's capital tracking.
