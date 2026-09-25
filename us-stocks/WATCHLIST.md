@@ -272,6 +272,21 @@ question again first.
   HOOD/NBIS-width stop would have put ~6-9x the intended 0.5% risk on
   a single trade.
 
+  **Pre-computed sizing for the three names currently being watched
+  for a pullback entry** (2026-09-25, using each name's own
+  already-established zone/stop from its chart review, ≈$163 equity,
+  0.5% target — recompute if equity or the stop level changes before
+  either actually fills):
+
+  | Ticker | Zone | Stop | Stop distance | Position size |
+  |---|---|---|---|---|
+  | NVDA (shallow) | ~$220.53–221.79 | ~$211–214 | ~3.85% | ≈$21 |
+  | NVDA (MA50, deeper) | ~$215.11 | ~$206–209 | ~3.54% | ≈$23 |
+  | LITE (shallow) | ~$910–918 | ~$811–844 | ~9.46% | ≈$9 |
+  | LITE (MA50, deeper) | ~$848 | ~$749–782 | ~9.73% | ≈$8 |
+  | DELL (MA20) | ~$524.65 | ~$478–494 | ~7.37% | ≈$11 |
+  | DELL (MA50, deeper) | ~$472.29 | ~$425–441 | ~8.32% | ≈$10 |
+
 ## Broker & capital ($78.77 USD starting capital, converted from S$100) — status as of 2026-09-11
 
 **Corrected 2026-09-11**: starting capital is **$78.77 USD**, not $100
