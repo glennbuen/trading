@@ -53,16 +53,16 @@ just accumulating as isolated notes. Added 2026-09-10 per the user's
 own framing of this journal as "a learning process," which needs
 numbers, not just narrative, to actually measure.
 
-**Current tally (2026-09-24) — honest about what's known vs. estimated:**
+**Current tally (2026-09-30) — honest about what's known vs. estimated:**
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 8 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**, **DMC stop-out**) | SCC fully closed across 3 sales; ICT closed 2026-09-21, DMC closed 2026-09-24, both after a deliberately-set stop plan triggered |
+| Real closed-position events | 9 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**, **DMC stop-out**, **NIKL stop-out**) | SCC fully closed across 3 sales; ICT closed 2026-09-21, DMC closed 2026-09-24, NIKL closed 2026-09-30, all after a deliberately-set stop plan triggered |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson, separate from DMC's later stop-out |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) + -₱198.03 (DMC) ≈ -₱29,914 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (8 real closed events, 1 win/7 losses) still small |
-| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. DMC graded ✅ YES — the zone was tested twice and held before finally triggering, and the stop was honored at the defined level once it broke, not reacted to early.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) + -₱198.03 (DMC) + -₱723.80 (NIKL) ≈ -₱30,638 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (9 real closed events, 1 win/8 losses) still small |
+| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. DMC graded ✅ YES — the zone was tested twice and held before finally triggering, and the stop was honored at the defined level once it broke, not reacted to early. NIKL graded ✅ YES — same pattern, honored at the defined zone rather than reacted to early during the slow multi-session drift down to it.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -74,6 +74,36 @@ properly — not worth computing on this small a sample yet.
 ---
 
 ## Log
+
+### 2026-09-30 — NIKL — Stop-out (RESOLVED)
+- **Price:** Sold 1,000 sh @ ₱3.95 (real fill), at the top of the
+  ₱3.90-3.95 stop zone set at entry. Cost basis was ₱4.6738/sh (real
+  fill, 1,000 sh, filled 2026-09-11). Realized loss ≈ -₱723.80 gross
+  (-15.49%).
+- **Setup at the time:** Real catalyst on file: H1 2026 net income
+  +93% YoY to ₱4.06B, EBITDA +67%, tight nickel supply/demand
+  tailwind. Only the Starter tranche ever filled — price never
+  reached the ₱4.25-4.45 confirmation-add zone, so this was always a
+  single, smaller position rather than the full staged size.
+- **What actually happened:** Price drifted lower over multiple
+  sessions (from the ₱4.15-4.18 range down through ₱4.00-4.07, to
+  ₱3.93-4.00 by 2026-09-29/30) without ever giving a real bounce back
+  toward the confirmation-add zone. By 2026-09-30 the stop gap had
+  narrowed to ~0.8-1.5%, flagged directly in chat, then price traded
+  at ₱3.93 — inside the ₱3.90-3.95 zone — and the exit was placed at
+  ₱3.95, the top of that range.
+- **Plan adherence: ✅ YES** — same pattern as ICT and DMC before it:
+  the stop was honored at the defined level once price actually
+  entered the zone, not reacted to early on the approach and not held
+  past it hoping for a bounce.
+- **Lesson:** third stop-out from the original 2026-09-11/18 batch of
+  fills (ICT and DMC being the first two). Unlike DMC, which tested
+  its zone twice and held before finally breaking, NIKL gave one
+  continuous grind lower with no real bounce at any point after the
+  initial pullback — worth noting as a different failure shape (slow
+  bleed vs. a sharp test-and-break), though the process response was
+  identical: let the defined stop level make the decision, don't
+  react to the drift itself.
 
 ### 2026-09-24 — DMC — Stop-out (RESOLVED)
 - **Price:** Sold 700 sh @ ₱7.65 (real fill), inside the ₱7.57-7.67
