@@ -280,6 +280,18 @@ you have; if it dips and confirms cleanly, both tranches fill close
 together. Either way there's no scenario where waiting for proof means
 walking away with nothing.
 
+**Added 2026-10-02, per explicit user instruction, macro-risk-driven**:
+PSE entries now require price near the **lower** end of the stated
+entry range, not just anywhere inside it — explicitly because of
+political instability in the Philippine government (the user's own
+framing, not elaborated further here). This tightens the staged-entry
+rule above: the Starter tranche's "first touch into the zone" trigger
+is now specifically the lower portion of that zone, not the first
+touch anywhere in it. Applies to new PSE entries going forward; does
+not retroactively change anything already filled (LTG, OGP, WEB).
+Treat this the same as the DMC/NIKL/ICT stop-outs — a standing rule
+to check against before any new PSE entry, not a one-time comment.
+
 ## Exit methodology — SUPERSEDED 2026-09-10: full profit-take, trader not investor
 
 **The user has revised the strategy for this account too**: adopt the
