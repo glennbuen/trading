@@ -40,15 +40,44 @@ is worth flagging too.
 
 | Metric | Value |
 |---|---|
-| Real closed-position events | 3 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23) |
+| Real closed-position events | 4 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) ≈ +$2.34 net** — first real winner in the closed-position log |
-| Win rate / avg R-multiple | 1-for-3 (INTC the only win so far) — still too small a sample to mean anything statistically |
-| **Plan adherence rate** | **3/4 events, improving but not clean.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit — but placed two sessions after the T1 signal first fired, a smaller echo of the same lag pattern as NVDA's gap, just with a favorable outcome this time rather than a costly one. |
+| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) + +$2.72 gross (PLTR) ≈ +$5.06 net** — two real winners now, both T1 exits |
+| Win rate / avg R-multiple | 2-for-4 (INTC, PLTR both wins) — small sample, but the T1-only rule's two executions have both been clean |
+| **Plan adherence rate** | **4/5 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct — the decision to exit was declared the same day the signal fired, a cleaner response time than INTC's. |
 
 ---
 
 ## Log
+
+### 2026-10-13 — PLTR — Target hit (T1 full exit, RESOLVED)
+- **Price:** Sold 0.07 fractional sh @ $210.00 ($14.70 total). Cost
+  basis was $171.13 (0.07 sh, $11.98 total, filled 2026-09-16).
+  Realized gain ≈ +$2.72 gross, +22.72%.
+- **Setup at the time:** Fresh, convergent catalyst — three analyst
+  firms (UBS, Phillip Securities, DA Davidson) raised targets within
+  days of each other citing real demand momentum, $3.4B Q2 bookings,
+  and 157% net dollar retention. T1 was set at $205-208 (52w-high
+  retest) per this account's T1-only full-exit rule.
+- **What actually happened:** Price cleared T1 on 2026-10-09 (closed
+  $209.05, above the entire range). The user stated intent to close
+  the position on Monday (2026-10-12) the same day T1 cleared — ahead
+  of the actual exit, not after it. The sale itself landed 2026-10-13
+  at $210.00, inside the range the stock had been trading since
+  clearing T1.
+- **Plan adherence: ✅ YES, and a cleaner example than INTC's** — the
+  T1 signal fired and the stated intent to exit was declared the same
+  day, not two sessions later. The actual fill came slightly after
+  the stated "Monday" target, but the decision itself was made
+  immediately upon the signal firing, which is the more important
+  half of plan adherence — deciding promptly, even if the mechanical
+  execution landed a session later.
+- **Lesson:** this is the second T1-only full exit in the log (INTC
+  being the first) and the second real winner. Combined with INTC,
+  the T1-only rule now has two clean executions behind it — both
+  real gains, both full exits with no partial-hold rationalization.
+  Worth noting as the pattern solidifying, though still early (2
+  data points) to call it proven.
 
 ### 2026-09-23 — INTC — Target hit (T1 full exit, RESOLVED)
 - **Price:** Sold 0.15 fractional sh @ $121.69 ($18.2535 total). Cost
