@@ -42,7 +42,7 @@ is worth flagging too.
 |---|---|
 | Real closed-position events | 4 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) + +$2.72 gross (PLTR) ≈ +$5.06 net** — two real winners now, both T1 exits |
+| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) + +$2.74 gross (PLTR) ≈ +$5.08 net** — two real winners now, both T1 exits |
 | Win rate / avg R-multiple | 2-for-4 (INTC, PLTR both wins) — small sample, but the T1-only rule's two executions have both been clean |
 | **Plan adherence rate** | **4/5 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct — the decision to exit was declared the same day the signal fired, a cleaner response time than INTC's. |
 
@@ -51,9 +51,10 @@ is worth flagging too.
 ## Log
 
 ### 2026-10-13 — PLTR — Target hit (T1 full exit, RESOLVED)
-- **Price:** Sold 0.07 fractional sh @ $210.00 ($14.70 total). Cost
-  basis was $171.13 (0.07 sh, $11.98 total, filled 2026-09-16).
-  Realized gain ≈ +$2.72 gross, +22.72%.
+- **Price:** Sold 0.07 fractional sh @ $210.2166 ($14.72 total,
+  corrected 2026-10-14 to the exact fill — originally logged at a
+  rounded $210.00). Cost basis was $171.13 (0.07 sh, $11.98 total,
+  filled 2026-09-16). Realized gain ≈ +$2.74 gross, +22.84%.
 - **Setup at the time:** Fresh, convergent catalyst — three analyst
   firms (UBS, Phillip Securities, DA Davidson) raised targets within
   days of each other citing real demand momentum, $3.4B Q2 bookings,
@@ -63,7 +64,7 @@ is worth flagging too.
   $209.05, above the entire range). The user stated intent to close
   the position on Monday (2026-10-12) the same day T1 cleared — ahead
   of the actual exit, not after it. The sale itself landed 2026-10-13
-  at $210.00, inside the range the stock had been trading since
+  at $210.2166, inside the range the stock had been trading since
   clearing T1.
 - **Plan adherence: ✅ YES, and a cleaner example than INTC's** — the
   T1 signal fired and the stated intent to exit was declared the same
