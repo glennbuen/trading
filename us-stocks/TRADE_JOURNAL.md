@@ -40,15 +40,47 @@ is worth flagging too.
 
 | Metric | Value |
 |---|---|
-| Real closed-position events | 6 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13; MSFT T1 exit, NBIS stop-out — both 2026-10-15) |
+| Real closed-position events | 7 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13; MSFT T1 exit, NBIS stop-out, HOOD stop-out — all 2026-10-15) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) + +$2.74 gross (PLTR) + +$1.43 gross (MSFT) + -$1.36 gross (NBIS) ≈ +$5.15 net** — three real winners now, two of them T1 exits |
-| Win rate / avg R-multiple | 3-for-6 (INTC, PLTR, MSFT wins) — small sample, but both T1-only exits taken so far (INTC, PLTR) plus MSFT have all been clean |
-| **Plan adherence rate** | **5/7 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's stop-out (2026-10-15) was followed through on intent, but the fill landed below the stated $196-205 stop zone — a real execution gap, not a clean stop. |
+| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) + +$2.74 gross (PLTR) + +$1.43 gross (MSFT) + -$1.36 gross (NBIS) + -$0.96 gross (HOOD) ≈ +$4.19 net** — three real winners, two of them T1 exits |
+| Win rate / avg R-multiple | 3-for-7 (INTC, PLTR, MSFT wins) — small sample, but both T1-only exits taken so far (INTC, PLTR) plus MSFT have all been clean |
+| **Plan adherence rate** | **6/8 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's stop-out (2026-10-15) was followed through on intent, but the fill landed below the stated $196-205 stop zone — a real execution gap. HOOD's stop-out (2026-10-15) was the same shape — intent followed through, but the fill landed below the $99-102 stop zone too, the second gap-through in two days. |
 
 ---
 
 ## Log
+
+### 2026-10-15 — HOOD — Stop-out (RESOLVED)
+- **Price:** Sold 0.1 fractional sh @ $96.33 ($9.633 total). Cost basis
+  was $105.96 (0.1 sh, $10.596 total, filled 2026-09-16). Realized
+  loss ≈ -$0.96 gross, -9.09%.
+- **Setup at the time:** Real, two-sided story on file — a genuine 32%
+  YTD decline earlier in 2026 balanced against August platform assets
+  hitting $384B (+26%) and two analyst target raises. Stop was set at
+  $99-102 (1-1.5x daily ATR below the zone), the tightest stop gap of
+  any position on this account at entry (~3.3%).
+- **What actually happened:** The broad market selloff that started
+  2026-10-14 (TSM/META/AMD/MRVL all down 3-9% that session) continued
+  into 2026-10-15's open — HOOD closed 2026-10-14 at $101.08, already
+  inside the stop zone, then gapped further down at today's open to
+  $96.21 before the sell was placed at $96.33, **below the stated
+  $99-102 stop zone entirely.** Same shape as NBIS's exit the day
+  before.
+- **Plan adherence: ✅ YES on following through on the decision to
+  sell, but with the same execution gap flagged on NBIS** — the stop
+  zone was never going to be defended by a resting order (no automated
+  stops on Webull SG fractional shares), so once price gapped through
+  it overnight/pre-market, the eventual fill landed well past the
+  planned level. This is now the second such gap in two days.
+- **Lesson:** two gap-throughs in a row (NBIS, HOOD) during the same
+  broad selloff stretch is worth naming as a pattern, not two isolated
+  incidents — manual stops on this account are vulnerable to exactly
+  this failure mode during a fast, correlated market move, independent
+  of how promptly the decision to sell is made. Worth discussing
+  whether tighter-stop names (HOOD's ~3.3% original gap, same category
+  as NBIS's ~4.2%) need a different handling approach during
+  broad-selloff conditions specifically, since both gap-throughs
+  happened during the same market event.
 
 ### 2026-10-15 — MSFT — Target hit (T1 full exit, RESOLVED)
 - **Price:** Sold 0.03 fractional sh @ $541.59 ($16.2477 total). Cost
