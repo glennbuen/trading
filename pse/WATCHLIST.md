@@ -448,6 +448,13 @@ addition to status. A trimmed table with just current price/status is
 not sufficient even if the full detail is sitting in the file — the
 user shouldn't have to ask a follow-up ("where's entry price?") to get
 it.
+**Re-caught 2026-10-15 (same catch made on the US side the same day):
+the chat-rendered tables had drifted to just rank/symbol/price/
+volume/status, dropping entry zone and stop-loss entirely.** User
+caught it directly ("always include entry zone in summary"). This is
+the same standing rule as above, not a new one — entry zone,
+stop-loss, and catalyst belong in the chat table every time, not just
+in the file.
 **Specify which timeframe(s) — daily, weekly, or both — not just "a
 fresh chart."** Reason it out per name: a stale ATR/trailing-stop or a
 fast-moving daily structure calls for daily; a confirmation trigger

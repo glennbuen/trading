@@ -420,6 +420,14 @@ current price, and catalyst shown for each name, in addition to
 status. A trimmed table with just current price/status is not
 sufficient even if the full detail is sitting in the file — the user
 shouldn't have to ask a follow-up ("where's entry price?") to get it.
+**Re-caught 2026-10-15, a second time: the chat-rendered summary
+tables had drifted to just rank/symbol/price/volume/status, dropping
+entry zone (and stop-loss) entirely** — the user caught it directly
+("always include entry zone in summary"). Same underlying rule as the
+2026-09-19 catch below, just a different column silently dropped this
+time. Entry zone, stop-loss, and catalyst must all be in the
+chat-rendered table every time, not just sitting in the file.
+
 **Re-caught 2026-09-19: this exact rule was silently not followed** —
 a "us_summary" response gave the 4 held positions in full table form
 but only a short paragraph mentioning the other 7 watchlist names,
