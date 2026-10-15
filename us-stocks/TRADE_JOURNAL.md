@@ -40,15 +40,74 @@ is worth flagging too.
 
 | Metric | Value |
 |---|---|
-| Real closed-position events | 4 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13) |
+| Real closed-position events | 6 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13; MSFT T1 exit, NBIS stop-out — both 2026-10-15) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) + +$2.74 gross (PLTR) ≈ +$5.08 net** — two real winners now, both T1 exits |
-| Win rate / avg R-multiple | 2-for-4 (INTC, PLTR both wins) — small sample, but the T1-only rule's two executions have both been clean |
-| **Plan adherence rate** | **4/5 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct — the decision to exit was declared the same day the signal fired, a cleaner response time than INTC's. |
+| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) + +$2.74 gross (PLTR) + +$1.43 gross (MSFT) + -$1.36 gross (NBIS) ≈ +$5.15 net** — three real winners now, two of them T1 exits |
+| Win rate / avg R-multiple | 3-for-6 (INTC, PLTR, MSFT wins) — small sample, but both T1-only exits taken so far (INTC, PLTR) plus MSFT have all been clean |
+| **Plan adherence rate** | **5/7 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's stop-out (2026-10-15) was followed through on intent, but the fill landed below the stated $196-205 stop zone — a real execution gap, not a clean stop. |
 
 ---
 
 ## Log
+
+### 2026-10-15 — MSFT — Target hit (T1 full exit, RESOLVED)
+- **Price:** Sold 0.03 fractional sh @ $541.59 ($16.2477 total). Cost
+  basis was $493.81 (0.03 sh, $14.8143 total, filled 2026-09-21).
+  Realized gain ≈ +$1.43 gross, +9.68%.
+- **Setup at the time:** Azure growth hit 43% with annualized revenue
+  above $100B, backlog surged 84% to $678B, first-time separate Azure
+  revenue disclosure. Analysts raised the target to $600 from $500. T1
+  was set at $540-554 (52w-high retest) per this account's T1-only
+  full-exit rule.
+- **What actually happened:** Price closed inside the $540-554 T1 zone
+  for two straight confirmed-close sessions (2026-10-12 at $543.45,
+  2026-10-13 at $541.59 pre-exit) — flagged both times as a real,
+  unactioned decision point, same situation as INTC and PLTR before
+  their exits. The exit was placed 2026-10-15 at $541.59, inside the
+  stated T1 range.
+- **Plan adherence: ✅ YES** — a full T1 exit, not a partial trim, sold
+  within the stated zone. Same pattern as INTC and PLTR: the signal
+  sat flagged for more than one session before the actual sell was
+  placed, but the position was closed cleanly once acted on, not held
+  past the zone.
+- **Lesson:** the third T1-only full exit in the log, and the third
+  real winner off this specific rule. Three clean executions now (INTC,
+  PLTR, MSFT) — the pattern is holding up, still a small sample but
+  consistent: full exit, no partial-hold rationalization, every time.
+
+### 2026-10-15 — NBIS — Stop-out (RESOLVED)
+- **Price:** Sold 0.05 fractional sh @ $187.00 ($9.35 total). Cost
+  basis was $214.20 (0.05 sh, $10.71 total, filled 2026-09-16).
+  Realized loss ≈ -$1.36 gross, -12.70%.
+- **Setup at the time:** Fresh catalyst on file (Palantir named Nebius
+  its preferred sovereign AI infrastructure partner, Sept 8, 2026).
+  Stop was set at $196-205 (1-1.5x daily ATR below the zone). The
+  position had already tested the bottom of that zone once
+  (2026-10-13, intraday low $198.77) and recovered.
+- **What actually happened:** The user stated intent to sell NBIS
+  (along with MSFT) a session ahead of the actual exit. By the time the
+  sell was placed, price had moved well below the stated $196-205 stop
+  zone, filling at $187 — **a real gap-through, not a clean execution
+  at the planned level.** Worth naming plainly rather than treating
+  this as a standard in-zone stop: the realized loss (-12.70%) is
+  meaningfully worse than a fill at the top of the stop zone
+  (-4.3%) or even the bottom of it (-8.6%) would have been.
+- **Plan adherence: ✅ YES on following through on the decision to
+  exit, but with a real execution gap worth flagging** — the intent to
+  sell was declared and acted on, same as MSFT, but unlike MSFT's
+  clean in-zone fill, NBIS's actual price landed outside the planned
+  stop range entirely. This is a sourcing/timing gap (price moved
+  between when the stop was last confirmed and when the order was
+  placed), not a process failure of the same kind as NVDA's 2026-09-15
+  discipline gap — the decision was made and executed — but it's a
+  reminder that a stated stop zone is not a guarantee of the fill
+  price once the order is actually placed, especially on a thin
+  fractional position with no resting stop order on Webull SG.
+- **Lesson:** second loss on this account, following NVDA and AMZN.
+  Combined with those, reinforces that stops on this account are
+  manual, not automated — the gap between "price is near the stop" and
+  "the sell is actually placed" is where real slippage can happen, on
+  top of the normal probabilistic loss a stop is supposed to produce.
 
 ### 2026-10-13 — PLTR — Target hit (T1 full exit, RESOLVED)
 - **Price:** Sold 0.07 fractional sh @ $210.2166 ($14.72 total,
