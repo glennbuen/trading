@@ -50,6 +50,35 @@ is worth flagging too.
 
 ## Log
 
+### 2026-10-15 — TSM — Entry filled, below the zone after a gap-through
+- **Price:** Bought 0.06 fractional sh @ $411.35 ($24.68 total) —
+  below the stated entry zone ($420-425), filled after price gapped
+  through the zone on today's open rather than giving a clean zone
+  touch. Stop ~$403-409 active immediately per Portfolio Risk Rule 2.
+  Real stop gap at this fill is only ~0.6-2.0%, much tighter than the
+  ~3.8-4.0% the original zone-based position sizing assumed.
+- **Setup at the time:** Real, consistent growth story on file (Aug
+  revenue +53.3% YoY, Q2 2026 revenue +36%/net income +77.4% YoY).
+  TSMC actually reported Q3 2026 revenue above the high end of
+  guidance the same morning — a genuinely positive catalyst — but the
+  stock dropped anyway, as part of the broad selloff that also hit
+  META/AMD/MRVL/HOOD/NBIS this stretch, not on the earnings itself.
+- **What actually happened:** Filled during the same broad selloff
+  that produced the NBIS and HOOD stop gap-throughs the day before and
+  that same morning — this time on the buy side, catching a price that
+  had already moved past the intended zone rather than waiting for a
+  clean touch.
+- **Plan adherence: N/A yet — nothing to adhere to until this
+  resolves.** Worth flagging now rather than at resolution: this is
+  the second entry on this account that didn't fill inside its stated
+  zone (NBIS was the first, 2026-09-16), and this one fills with a
+  meaningfully tighter stop gap than planned as a direct result.
+- **Lesson: N/A yet — but the tight stop gap (~0.6-2.0%) means normal
+  daily noise has a real chance of triggering it quickly. Worth
+  watching whether a fill this close to the stop behaves differently
+  than a standard zone entry once this resolves, same open question
+  flagged on NBIS's original entry.**
+
 ### 2026-10-15 — HOOD — Stop-out (RESOLVED)
 - **Price:** Sold 0.1 fractional sh @ $96.33 ($9.633 total). Cost basis
   was $105.96 (0.1 sh, $10.596 total, filled 2026-09-16). Realized
