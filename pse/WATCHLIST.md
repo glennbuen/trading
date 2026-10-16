@@ -455,6 +455,15 @@ caught it directly ("always include entry zone in summary"). This is
 the same standing rule as above, not a new one — entry zone,
 stop-loss, and catalyst belong in the chat table every time, not just
 in the file.
+
+**Added 2026-10-16, per explicit user request, same standing behavior
+now in `us-stocks/WATCHLIST.md` ("in summary add position size column
+do this starting now"): every "summary" chat-rendered watchlist table
+must also include a Position Size column per name**, computed via the
+dynamic sizing formula in Portfolio Risk Rules (Rule 3) against the
+account's current estimated equity and that name's own stop distance
+(zone-to-stop). Standing from this point forward, not a one-time
+request.
 **Specify which timeframe(s) — daily, weekly, or both — not just "a
 fresh chart."** Reason it out per name: a stale ATR/trailing-stop or a
 fast-moving daily structure calls for daily; a confirmation trigger

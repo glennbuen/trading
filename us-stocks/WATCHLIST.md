@@ -428,6 +428,15 @@ entry zone (and stop-loss) entirely** — the user caught it directly
 time. Entry zone, stop-loss, and catalyst must all be in the
 chat-rendered table every time, not just sitting in the file.
 
+**Added 2026-10-16, per explicit user request ("in summary add
+position size column do this starting now"): every "us_summary"
+chat-rendered watchlist table must also include a Position Size
+column per name**, computed via the dynamic sizing formula in
+Portfolio Risk Rules (Rule 3) against the account's current estimated
+equity and that name's own stop distance (zone-to-stop). Standing
+from this point forward, same as the entry-zone/stop-loss columns
+above — not a one-time request.
+
 **Re-caught 2026-09-19: this exact rule was silently not followed** —
 a "us_summary" response gave the 4 held positions in full table form
 but only a short paragraph mentioning the other 7 watchlist names,
