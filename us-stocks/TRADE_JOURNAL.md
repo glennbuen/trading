@@ -50,6 +50,27 @@ is worth flagging too.
 
 ## Log
 
+### 2026-10-22 — MRVL — Entry filled, clean zone touch on a sharp pre-market selloff
+- **Price:** Bought 0.048 fractional sh @ $224.00 ($10.75 total) — inside
+  the stated entry zone ($223-227). Stop ~$200-208 active immediately
+  per Portfolio Risk Rule 2. Real stop gap ~7.1-10.7%, close to the
+  originally planned ~8.4-10.3% width.
+- **Setup at the time:** Real, ongoing growth story on file (revenue
+  targets raised to $12B FY2027 / $18B FY2028 on AI chip demand, real
+  Amazon chips deal). MRVL had been pulling away from its zone for
+  over a week (closed as high as $244.76 the prior session) before a
+  sharp, broad pre-market selloff (also hit TSM, META, AMD the same
+  morning) pulled it back into the stated zone.
+- **What actually happened:** Filled at $224.00, inside the $223-227
+  range — a clean zone entry, not a chase or a buy-the-bounce-below
+  the zone like NBIS/PLTR's original fills. This is the cleanest
+  textbook zone touch logged on this account in a while.
+- **Plan adherence: ✅ YES** — the zone was stated well in advance
+  (first flagged weeks ago), price finally touched it, and the entry
+  was taken inside the stated range.
+- **Lesson: N/A yet — update once this trade closes one way or the
+  other.**
+
 ### 2026-10-15 — TSM — Entry filled, below the zone after a gap-through
 - **Price:** Bought 0.06 fractional sh @ $411.35 ($24.68 total) —
   below the stated entry zone ($420-425), filled after price gapped
