@@ -53,16 +53,16 @@ just accumulating as isolated notes. Added 2026-09-10 per the user's
 own framing of this journal as "a learning process," which needs
 numbers, not just narrative, to actually measure.
 
-**Current tally (2026-09-30) — honest about what's known vs. estimated:**
+**Current tally (2026-10-26) — honest about what's known vs. estimated:**
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 9 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**, **DMC stop-out**, **NIKL stop-out**) | SCC fully closed across 3 sales; ICT closed 2026-09-21, DMC closed 2026-09-24, NIKL closed 2026-09-30, all after a deliberately-set stop plan triggered |
+| Real closed-position events | 10 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**, **DMC stop-out**, **NIKL stop-out**, **OGP partial take**) | SCC fully closed across 3 sales; ICT closed 2026-09-21, DMC closed 2026-09-24, NIKL closed 2026-09-30, OGP partial 2026-10-26, all after a deliberately-set stop plan triggered |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson, separate from DMC's later stop-out |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) + -₱198.03 (DMC) + -₱723.80 (NIKL) ≈ -₱30,638 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
-| Win rate, R-multiple average | Not yet meaningful | Sample size (9 real closed events, 1 win/8 losses) still small |
-| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. DMC graded ✅ YES — the zone was tested twice and held before finally triggering, and the stop was honored at the defined level once it broke, not reacted to early. NIKL graded ✅ YES — same pattern, honored at the defined zone rather than reacted to early during the slow multi-session drift down to it.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) + -₱198.03 (DMC) + -₱723.80 (NIKL) + -₱362.50 (OGP partial) ≈ -₱31,000 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
+| Win rate, R-multiple average | Not yet meaningful | Sample size (10 real closed events, 1 win/9 losses) still small |
+| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. DMC graded ✅ YES — the zone was tested twice and held before finally triggering, and the stop was honored at the defined level once it broke, not reacted to early. NIKL graded ✅ YES — same pattern, honored at the defined zone rather than reacted to early during the slow multi-session drift down to it. OGP graded ✅ YES — price broke the stop zone two sessions before the partial was actually executed, but the sale still landed inside the originally stated ₱32.60-33.15 zone, not a gap-through.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -74,6 +74,37 @@ properly — not worth computing on this small a sample yet.
 ---
 
 ## Log
+
+### 2026-10-26 — OGP — Partial take, stop zone sell (RESOLVED for this tranche)
+- **Price:** Sold 100 of the 200 real sh @ ₱32.90 (₱3,290 gross proceeds).
+  Weighted avg cost basis was ₱36.525/sh (100 sh @ ₱36.65 + 100 sh @
+  ₱36.40, filled 2026-09-18/21). Realized loss on this tranche ≈
+  -₱362.50 gross, -9.93%. 100 sh remain open.
+- **Setup at the time:** Stop was set at ₱32.60-33.15 (ATR-confirmed).
+  Price broke below the entire stop zone on 2026-10-24 (confirmed
+  intraday at ₱32.50, -5.80% that session) — flagged the same day as
+  a real, unactioned decision point.
+- **What actually happened:** The sale didn't execute the same session
+  the stop broke (2026-10-24) — it landed two sessions later, on
+  2026-10-26, at ₱32.90. That price is back inside the originally
+  stated ₱32.60-33.15 stop zone, not a gap-through like NBIS/HOOD on
+  the US side — price had partially recovered by the time the sale was
+  placed. By the close that same day, OGP had climbed further to
+  ₱33.40, back above the entire stop zone.
+- **Plan adherence: ✅ YES, with a real timing gap worth naming** — the
+  stop zone broke on 2026-10-24 and the sale wasn't placed until
+  2026-10-26, a two-session delay similar in shape to INTC's T1-exit
+  lag. Unlike NBIS/HOOD's gap-throughs, though, the delay here worked
+  in the user's favor — price recovered partway back into the zone
+  before the sale executed, instead of gapping further away from it.
+- **Lesson:** a delayed stop execution isn't automatically a gap-through
+  loss — this is the first case on either side of this account where a
+  delay between stop breach and actual sale resulted in a *better*
+  fill than an immediate execution would have gotten (immediate exit
+  on 2026-10-24 would have been at ₱32.50 or worse intraday, worse than
+  the ₱32.90 actually realized). Still logging the delay honestly
+  rather than treating the favorable outcome as proof the delay was
+  the right call — same standing distinction as INTC's lagged T1 exit.
 
 ### 2026-09-30 — NIKL — Stop-out (RESOLVED)
 - **Price:** Sold 1,000 sh @ ₱3.95 (real fill), at the top of the
