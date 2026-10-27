@@ -437,6 +437,14 @@ equity and that name's own stop distance (zone-to-stop). Standing
 from this point forward, same as the entry-zone/stop-loss columns
 above — not a one-time request.
 
+**Added 2026-10-28, per explicit user request ("in summary add t1 at
+holdings"): the Current Holdings table (both the file and the
+chat-rendered version) must also include a T1 (take-profit) column per
+name**, same T1 level already used to trigger the full-exit-at-T1 rule
+for that position. Standing from this point forward, same as the
+entry-zone/stop-loss/position-size columns elsewhere — not a one-time
+request.
+
 **Re-caught 2026-09-19: this exact rule was silently not followed** —
 a "us_summary" response gave the 4 held positions in full table form
 but only a short paragraph mentioning the other 7 watchlist names,
@@ -490,17 +498,17 @@ gross/estimated, not net of fees — ask for exact confirmed
 balances if precision matters here, same caveat used throughout this
 file's capital tracking.
 
-| Symbol | Cost basis (real) | Current price | Unrealized | Stop-loss (initial, per Portfolio Risk Rule 2) | Exit plan | Technical read |
-|---|---|---|---|---|---|---|
-| ~~**NVDA**~~ | ~~$218.41 (0.07 fractional sh, $15.29)~~ | **✅ CLOSED — sold 0.07 sh @ $212.08** | **-2.88%** | ~$210–213 (moot now) | Stopped out, not a T1 exit | Sold same zone the stop originally flagged, just later than the 30-min plan called for. Realized loss ≈ -$0.44 gross. Full detail in `TRADE_JOURNAL.md`. No longer a position to monitor. |
-| ~~**INTC**~~ | ~~$101.6173 (0.15 fractional sh, $15.24)~~ | **✅ CLOSED 2026-09-23 — sold 0.15 sh @ $121.69, full T1 exit** | **+19.76%** | ~$91–94 (moot now) | Full T1 exit executed as planned | Sold per this account's T1-only full-exit rule ("trader not investor") — the plan called for a full exit once price cleared $115-120, and that's what happened here, two sessions after T1 first cleared. Realized gain ≈ +$3.01 gross. Full detail in `TRADE_JOURNAL.md`. No longer a position to monitor. |
-| ~~**AMZN**~~ | ~~$252.72 (0.05 fractional sh, $12.64)~~ | **✅ CLOSED — sold 0.05 sh @ $248.17** | **-1.80%** | ~$246–249 (moot now) | Stopped out, not a T1 exit | Sold inside the stop range, same session filled AND same day as PSE's BPI/BLOOM stop-outs. Realized loss ≈ -$0.23 gross. Capital redeployed same-session into PLTR. Full detail in `TRADE_JOURNAL.md`. |
-| ~~**PLTR**~~ | ~~$171.13 (0.07 fractional sh, $11.98)~~ | **✅ CLOSED 2026-10-13 — sold 0.07 sh @ $210.2166, full T1 exit** | **+22.84%** | ~$161–165 (moot now) | Full T1 exit executed as planned | Sold per this account's T1-only full-exit rule ("trader not investor") — same as INTC and now PLTR, the plan stated days ahead was executed almost exactly. Realized gain ≈ +$2.74 gross. Full detail in `TRADE_JOURNAL.md`. No longer a position to monitor. |
-| ~~**NBIS**~~ | ~~$214.20 (0.05 fractional sh, $10.71)~~ | **✅ CLOSED 2026-10-15 — sold 0.05 sh @ $187.00** | **-12.70%** | ~$196–205 (moot now) | Stopped out, not a T1 exit | **Sold below the stated $196-205 stop zone — a real gap-through/slippage, not a clean execution at the planned level.** Realized loss ≈ -$1.36 gross. No longer a position to monitor. |
-| ~~**HOOD**~~ | ~~$105.96 (0.1 fractional sh, $10.60)~~ | **✅ CLOSED 2026-10-15 — sold 0.1 sh @ $96.33** | **-9.09%** | ~$99–102 (moot now) | Stopped out, not a T1 exit | **Sold below the stated $99-102 stop zone — a real gap-through, same pattern as NBIS yesterday.** Realized loss ≈ -$0.96 gross. No longer a position to monitor. |
-| ~~**MSFT**~~ | ~~$493.81 (0.03 fractional sh, $14.81, real fill, 2026-09-21)~~ | **✅ CLOSED 2026-10-15 — sold 0.03 sh @ $541.59, full T1 exit** | **+9.68%** | ~$477–482 (moot now) | Full T1 exit executed as planned | Sold within the stated $540-554 T1 zone, same rule as INTC and PLTR before it. Realized gain ≈ +$1.43 gross. No longer a position to monitor. |
-| **TSM** | $411.35 (0.06 fractional sh, $24.68, real fill, 2026-10-15) | $424.37, confirmed close 2026-10-26 4:00 PM EDT (+1.40%) | +3.16% | ~$403–409 (1–1.5x daily ATR 11.49 below the original zone, set at the same review this position was flagged from) | Full exit at T1 ~$460–475 per this account's T1-exit rule | 🟢 Closed inside the $420-425 entry zone, climbing. Stop gap ~5.1-6.5%. After-hours +0.62% ($426.98), not confirmed. |
-| **MRVL** | $224.00 (0.048 fractional sh, $10.75, real fill, 2026-10-22) | $233.78, confirmed close 2026-10-26 4:00 PM EDT (+2.31%) | +4.37% | ~$200–208 (1–1.5x daily ATR 15.44 below the original zone, set at the same review this position was flagged from) | Full exit at T1 ~$245–255 per this account's T1-exit rule | 🟢 Climbing further above the $223-227 zone, stop gap ~11.0-14.4%. After-hours +0.81% ($235.67), not confirmed. |
+| Symbol | Cost basis (real) | Current price | Unrealized | Stop-loss (initial, per Portfolio Risk Rule 2) | T1 (take-profit) | Exit plan | Technical read |
+|---|---|---|---|---|---|---|---|
+| ~~**NVDA**~~ | ~~$218.41 (0.07 fractional sh, $15.29)~~ | **✅ CLOSED — sold 0.07 sh @ $212.08** | **-2.88%** | ~$210–213 (moot now) | — (closed) | Stopped out, not a T1 exit | Sold same zone the stop originally flagged, just later than the 30-min plan called for. Realized loss ≈ -$0.44 gross. Full detail in `TRADE_JOURNAL.md`. No longer a position to monitor. |
+| ~~**INTC**~~ | ~~$101.6173 (0.15 fractional sh, $15.24)~~ | **✅ CLOSED 2026-09-23 — sold 0.15 sh @ $121.69, full T1 exit** | **+19.76%** | ~$91–94 (moot now) | — (closed) | Full T1 exit executed as planned | Sold per this account's T1-only full-exit rule ("trader not investor") — the plan called for a full exit once price cleared $115-120, and that's what happened here, two sessions after T1 first cleared. Realized gain ≈ +$3.01 gross. Full detail in `TRADE_JOURNAL.md`. No longer a position to monitor. |
+| ~~**AMZN**~~ | ~~$252.72 (0.05 fractional sh, $12.64)~~ | **✅ CLOSED — sold 0.05 sh @ $248.17** | **-1.80%** | ~$246–249 (moot now) | — (closed) | Stopped out, not a T1 exit | Sold inside the stop range, same session filled AND same day as PSE's BPI/BLOOM stop-outs. Realized loss ≈ -$0.23 gross. Capital redeployed same-session into PLTR. Full detail in `TRADE_JOURNAL.md`. |
+| ~~**PLTR**~~ | ~~$171.13 (0.07 fractional sh, $11.98)~~ | **✅ CLOSED 2026-10-13 — sold 0.07 sh @ $210.2166, full T1 exit** | **+22.84%** | ~$161–165 (moot now) | — (closed) | Full T1 exit executed as planned | Sold per this account's T1-only full-exit rule ("trader not investor") — same as INTC and now PLTR, the plan stated days ahead was executed almost exactly. Realized gain ≈ +$2.74 gross. Full detail in `TRADE_JOURNAL.md`. No longer a position to monitor. |
+| ~~**NBIS**~~ | ~~$214.20 (0.05 fractional sh, $10.71)~~ | **✅ CLOSED 2026-10-15 — sold 0.05 sh @ $187.00** | **-12.70%** | ~$196–205 (moot now) | — (closed) | Stopped out, not a T1 exit | **Sold below the stated $196-205 stop zone — a real gap-through/slippage, not a clean execution at the planned level.** Realized loss ≈ -$1.36 gross. No longer a position to monitor. |
+| ~~**HOOD**~~ | ~~$105.96 (0.1 fractional sh, $10.60)~~ | **✅ CLOSED 2026-10-15 — sold 0.1 sh @ $96.33** | **-9.09%** | ~$99–102 (moot now) | — (closed) | Stopped out, not a T1 exit | **Sold below the stated $99-102 stop zone — a real gap-through, same pattern as NBIS yesterday.** Realized loss ≈ -$0.96 gross. No longer a position to monitor. |
+| ~~**MSFT**~~ | ~~$493.81 (0.03 fractional sh, $14.81, real fill, 2026-09-21)~~ | **✅ CLOSED 2026-10-15 — sold 0.03 sh @ $541.59, full T1 exit** | **+9.68%** | ~$477–482 (moot now) | — (closed) | Full T1 exit executed as planned | Sold within the stated $540-554 T1 zone, same rule as INTC and PLTR before it. Realized gain ≈ +$1.43 gross. No longer a position to monitor. |
+| **TSM** | $411.35 (0.06 fractional sh, $24.68, real fill, 2026-10-15) | $424.37, confirmed close 2026-10-26 4:00 PM EDT (+1.40%) | +3.16% | ~$403–409 (1–1.5x daily ATR 11.49 below the original zone, set at the same review this position was flagged from) | ~$460–475 | Full exit at T1 ~$460–475 per this account's T1-exit rule | 🟢 Closed inside the $420-425 entry zone, climbing. Stop gap ~5.1-6.5%. After-hours +0.62% ($426.98), not confirmed. |
+| **MRVL** | $224.00 (0.048 fractional sh, $10.75, real fill, 2026-10-22) | $233.78, confirmed close 2026-10-26 4:00 PM EDT (+2.31%) | +4.37% | ~$200–208 (1–1.5x daily ATR 15.44 below the original zone, set at the same review this position was flagged from) | ~$245–255 | Full exit at T1 ~$245–255 per this account's T1-exit rule | 🟢 Climbing further above the $223-227 zone, stop gap ~11.0-14.4%. After-hours +0.81% ($235.67), not confirmed. |
 
 ## Fundamental Catalysts
 
