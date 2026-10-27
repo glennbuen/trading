@@ -720,16 +720,45 @@ stays the same.)*
   massive decline) than a clean trend-pullback candidate. Not rejected
   outright — genuinely worth a real daily+weekly chart if there's
   interest — but not added off this screen alone.
-- **ASML (ASML Holding)** (2026-09-15) — **data-quality flag, not a
-  clean read**: the volume list showed +2.6% today, a direct
-  TradingView fetch showed -7.25% today, and the same fetch separately
-  referenced an ~8.5% post-Q2-earnings decline that may be an older
-  event being conflated with "today." Real fundamental strength
-  underneath (94.82% 1-year return, P/E 52.87, genuine semiconductor-
-  equipment leader, not speculative) — but the price/date confusion
-  here is bad enough that a verdict isn't safe to render without a
-  real chart and a cleaner price source. Worth revisiting with a
-  TradingView chart paste rather than more text-fetch attempts.
+- **ASML (ASML Holding)** — **RESOLVED 2026-10-27, real daily+weekly
+  chart posted, the 2026-09-15 data-quality flag is now moot.**
+  Genuine semiconductor-equipment leader, real strength behind the
+  move: Q3 2026 earnings (Oct 14) hit record sales (€11.66B) and net
+  income (€4.96B), guidance raised for 2026 to €44-45B, and management
+  said AI-driven tool demand will outrun supply into 2027-2028 with
+  customers already asking about 2029-2030 orders
+  ([stockalarm](https://pro.stockalarm.io/news/asml-reports-q3-profit-of-496b-raises-2026-sales-outlook-amid-strong-ai-demand-eacee359),
+  [capitalbrief](https://www.capitalbrief.com/briefing/asml-lifts-2026-guidance-as-strong-ai-demand-boosts-orders-1671792f-c5a6-4559-aed9-6806a1fa3a27/)).
+  The chart itself (1D, $1590.90, +1.22%): price has pulled back hard
+  off a recent ~$2000 high — a genuine ~20% retracement, not a one-day
+  move — and is now sitting almost exactly ON daily MA200 ($1589.97,
+  a 0.06% confluence) having broken below daily MA20 ($1723.29)/MA50
+  ($1717.67)/EMA10 ($1637.83). Daily RSI14 37.99 (soft, not extreme),
+  ATR14 $54.82. This reads as valuation/extension unwind after a real
+  60-70%+ YTD run into the print, not business deterioration — a
+  narrow revenue miss plus already-rich pricing (~42-53x P/E
+  depending on source) triggered the reset, consistent with Axelrod
+  Research's own framing of a "bookings air pocket" risk at this
+  valuation
+  ([itiger](https://www.itiger.com/hans/news/2553323772)). **Weekly
+  chart confirms the longer-term trend is fully intact, not broken**:
+  weekly MA200 $956.21 (price +66% above it), weekly MA50 $1513.70
+  (price still +5.1% above it), weekly RSI14 46.88 (neutral). This is
+  a real pullback-to-support inside an established trend, same
+  category as ICT/OGP were — but **the R:R doesn't clear this file's
+  bar**: entry zone $1585-1600 (the live MA200/VWAP confluence), stop
+  ~$1500-1510 (1.5x ATR14 below the zone, confluence with weekly
+  MA50), and the nearest *realistic* target — reclaiming the daily
+  MA20/MA50 cluster (~$1718-1723) — gives only ~1.5:1 R:R. The only
+  way to reach ~2.5:1+ is targeting the old ~$2000 high as T1
+  (~4.7:1), but that's a multi-month hold incompatible with this
+  account's full-exit-at-T1 "trader not investor" rule, not a
+  realistic near-term target. **Verdict: reviewed, chart-confirmed,
+  genuinely the cleanest setup in recent batches — but not added,
+  R:R at the achievable target falls short.** Worth a second look only
+  if the achievable-target math changes (deeper pullback without the
+  near target moving, or a reconsidered exit framework) — not a
+  one-time reject.
 - **CRWD (CrowdStrike)** (2026-09-16, $242.49, +3.02%) — sitting right
   at its own 52-week/all-time high ($239.37, set just 2 days earlier)
   — a breakout day, not a pullback. No entry margin. Reject for now,
