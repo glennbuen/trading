@@ -53,16 +53,16 @@ just accumulating as isolated notes. Added 2026-09-10 per the user's
 own framing of this journal as "a learning process," which needs
 numbers, not just narrative, to actually measure.
 
-**Current tally (2026-10-26) — honest about what's known vs. estimated:**
+**Current tally (2026-10-27) — honest about what's known vs. estimated:**
 
 | Metric | Value | Note |
 |---|---|---|
-| Real closed-position events | 10 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**, **DMC stop-out**, **NIKL stop-out**, **OGP partial take**) | SCC fully closed across 3 sales; ICT closed 2026-09-21, DMC closed 2026-09-24, NIKL closed 2026-09-30, OGP partial 2026-10-26, all after a deliberately-set stop plan triggered |
+| Real closed-position events | 10 (LTG partial take, **SCC fully closed — 3 tranches**, BPI stop-out, BLOOM stop-out, **ICT stop-out**, **DMC stop-out**, **NIKL stop-out**, **OGP fully closed — 2 tranches**) | SCC fully closed across 3 sales; ICT closed 2026-09-21, DMC closed 2026-09-24, NIKL closed 2026-09-30, OGP fully closed 2026-10-26/27 (100 sh @ ₱32.90 + 100 sh @ ₱33.50), all after a deliberately-set stop plan triggered |
 | Setup-accuracy events (not real money) | 1 (APX target hit) | Tracked separately — confirms/disconfirms the *analysis*, not a real trade outcome |
 | Process-correction events | 1 (DMC data-quality) | Not a P&L event at all — a methodology lesson, separate from DMC's later stop-out |
-| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) + -₱198.03 (DMC) + -₱723.80 (NIKL) + -₱362.50 (OGP partial) ≈ -₱31,000 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
+| Realized P&L (real capital) | **~₱612 est. (LTG) + -₱15,873.84 (SCC #1) + -₱6,996.92 (SCC #2) + -₱7,076.92 (SCC #3) + -₱54.10 (BPI) + -₱176.70 (BLOOM) + -₱150 (ICT) + -₱198.03 (DMC) + -₱723.80 (NIKL) + -₱362.50 (OGP #1) + -₱302.50 (OGP #2) ≈ -₱31,303 net** | **All estimated/gross, not exact net** — LTG's execution price/date wasn't recorded at the time; the rest are gross, before selling fees. Ask the user for exact net fills if precision matters here. |
 | Win rate, R-multiple average | Not yet meaningful | Sample size (10 real closed events, 1 win/9 losses) still small |
-| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. DMC graded ✅ YES — the zone was tested twice and held before finally triggering, and the stop was honored at the defined level once it broke, not reacted to early. NIKL graded ✅ YES — same pattern, honored at the defined zone rather than reacted to early during the slow multi-session drift down to it. OGP graded ✅ YES — price broke the stop zone two sessions before the partial was actually executed, but the sale still landed inside the originally stated ₱32.60-33.15 zone, not a gap-through.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
+| **Plan adherence rate** | **2/2 real-time BPI/BLOOM tests still stand. SCC graded across 3 events: Yes, PARTIAL, NO. ICT graded ✅ YES — the stop was set, explicitly revisited and reaffirmed hours before it triggered, then honored exactly when price hit it. DMC graded ✅ YES — the zone was tested twice and held before finally triggering, and the stop was honored at the defined level once it broke, not reacted to early. NIKL graded ✅ YES — same pattern, honored at the defined zone rather than reacted to early during the slow multi-session drift down to it. OGP graded ✅ YES across both tranches — price broke the stop zone two sessions before the first sale executed, but both sales landed inside or above the originally stated ₱32.60-33.15 zone, not a gap-through.** | Tracks whether pre-committed exit levels actually get executed, separate from whether the trade wins or loses — see "How to log an entry" above. |
 
 **This section is only as good as the Log below it** — update this
 table whenever a new entry is added there, not just when asked. Once
@@ -74,6 +74,32 @@ properly — not worth computing on this small a sample yet.
 ---
 
 ## Log
+
+### 2026-10-27 — OGP — Remaining shares sold, full close (RESOLVED)
+- **Price:** Sold the remaining 100 sh @ ₱33.50 (₱3,350 gross proceeds).
+  Same ₱36.525/sh weighted avg cost basis as the first tranche.
+  Realized loss ≈ -₱302.50 gross, -8.28%. Combined with the first
+  tranche (-₱362.50 @ ₱32.90), total realized loss on the full 200 sh
+  position ≈ -₱665.00 gross, -9.10%.
+- **Setup at the time:** Same as the first tranche — stop zone was
+  ₱32.60-33.15, broken on 2026-10-24, first half sold 2026-10-26 @
+  ₱32.90 (inside the zone), price kept recovering to ₱33.40 by that
+  same close.
+- **What actually happened:** The remaining 100 sh were sold the next
+  session at ₱33.50 — slightly above the top of the original stop
+  zone, as the recovery continued. Position now fully closed.
+- **Plan adherence: ✅ YES** — the stop zone was broken, both tranches
+  were sold at or above the zone (not below it), and the full position
+  is now closed rather than left to drift on a "might recover more"
+  rationalization.
+- **Lesson:** splitting the exit into two tranches here didn't change
+  the eventual outcome much (₱32.90 then ₱33.50 vs. selling all 200 sh
+  at either price) — worth noting as a case where a staged stop-zone
+  exit didn't add clear value over a single clean exit, unlike the
+  staged entry/partial-profit-take pattern used elsewhere in this
+  account. The real lesson is still the delay itself: two sessions
+  between the stop breaking and the position being fully closed, same
+  shape as the INTC T1 lag.
 
 ### 2026-10-26 — OGP — Partial take, stop zone sell (RESOLVED for this tranche)
 - **Price:** Sold 100 of the 200 real sh @ ₱32.90 (₱3,290 gross proceeds).
