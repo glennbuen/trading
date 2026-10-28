@@ -504,6 +504,7 @@ it's not a fixed order.
 | 9 | **DMC** | Speculative bottom-fish | Bottomfishing | Short-term entry, long-term candidate on fundamentals | Short-term (long-term on fundamentals) | Softer: Q1 NI -2% YoY, FY25 NI -21%; fair value cut ₱10.04→9.42 — tempers the thesis | ₱7.86–8.02 | ₱7.57–7.67 (ATR-confirmed) | T1 ₱9.50–9.71 · T2 ₱10.65–11.00 | **✅ CLOSED 2026-09-24 — stopped out, sold 700 sh @ ₱7.65** | — (closed) | ✅ Full stop-out executed, see Current Holdings above — -3.57% realized loss. No longer a position to monitor; would need a fresh setup to be reconsidered. | Moot — position closed |
 | 10 | **AEV** | Trend reversal (weekly MA200 overhang, ~5.5% above price — corrects the "clean uptrend" read from the initial MA-only screen) | Swing | Short-term entry now; long-term contingent on clearing weekly resistance | Short-term (contingent long-term) | H1 2026 net income **+63% YoY to ₱13.6B** (Q2 alone +40% YoY); AboitizPower expanded its renewable portfolio (797MW Caliraya-Botocan-Kalayaan hydro + new solar), UnionBank contributed ₱3.4B; active share buyback program; strong balance sheet (₱86.6B cash, net debt/equity 0.9x); P/E 8.89, div yield 4.06% | ₱36.95–37.70 (daily MA20/EMA10/VWAP cluster) | ₱35.55–36.15 (1–1.5x daily ATR14=1.11 below the cluster, confluence with daily MA50 35.58) | T1 ₱38.95–39.79 (52w high / weekly MA200 confluence — **weak R:R, ~1.1:1, flagged not hidden**); T2 undefined until a clean weekly break above 39.79 gives something to target | ₱39.45, real intraday 2026-10-28 1:44 PM PH (-2.35%, market open) | 519,700 sh | 🟢 Pulling back toward the entry zone (₱36.95–37.70) — gap narrowed to ~4.6-6.8%, real strength (52w range ₱23.90–38.95), not a clean established-uptrend pullback | Next daily candle no fresh low vs. today, but the more meaningful confirmation is a weekly close above ₱39.79 (MA200) |
 | 11 | **AP** | **Corrected 2026-09-15 — Range-bound near the top of a 5-month consolidation, not a clean uptrend continuation** (see re-review below; matches COL Financial's own SIDEWAYS/LIGHTEN rating, previously an unresolved disagreement) | Range trade | Short-term entry only, long-term case weakened | Short-term | AboitizPower H1 2026 net income **+45% YoY to ₱18.4B** — real, but not enough on its own to override the technical caution below. | ₱44.55–45.35 (daily MA20/EMA10/VWAP cluster) | ₱42.30–42.80 (1–1.5x daily ATR14=0.91 below daily MA50/MA200 cluster ~43.7) | T1 ₱48.00 (the top of the range it's failed to break for 5 months, not a fresh breakout target — R:R ~1.2:1, weaker than it looks) | ₱45.90, real intraday 2026-10-28 1:44 PM PH (+2.00%, market open) | 238,400 sh | 🟡 **Yesterday's close-based zone touch has gone stale** (see standing rule on re-verifying close-based decision points) — price bounced back up and out of the ₱44.55-45.35 zone intraday today, moving away from the lower-end political-risk bar rather than toward it. Same distribution caution still applies: net foreign selling (NFB/s -8.24M), weekly MACD line below its own signal, range-bound read (COL SIDEWAYS/LIGHTEN), T1 R:R still weak (~1.2:1) | A genuine breakout above ₱48 (the range top) on strong volume — the current MA-cluster touch is not, by itself, confirmation of anything in a range-bound name |
+| 12 | **AC (Ayala Corporation)** | Trend reversal (weekly MA200 overhang, ~8.4% above price — but a genuine multi-month base, not a parabolic spike like FGEN/SPNEC/AT) | Swing | Short-term entry now; long-term contingent on clearing weekly resistance | Short-term (contingent long-term) | **Fundamentals are the caveat, not the draw**: 1H 2026 net income -2% YoY to ₱22.87B, core income -7% YoY to ₱22.1B — declining, unlike AEV/AP/CNPF's growth prints. Real forward catalyst instead: planned Mynt (GCash parent) IPO expected to unlock ₱80.3-92.3B ([Context](https://context.ph/2026/08/13/ayala-corp-1h-net-income-down-2-to-p22-86b/)) | ₱534.85–537.70 (daily MA20/EMA10/VWAP cluster) | ₱514.70–521.40 (1–1.5x daily ATR14=13.42 below the cluster, confluence with daily MA50 ₱512.05) | T1 ₱585.62 (weekly MA200 — genuine overhang/resistance, R:R ≈1.8-2.8:1 depending on exact fill/stop, the best R:R of the Aboitiz-adjacent adds) | ₱540.00, real chart snapshot 2026-10-28 ~4:54 PM PH (+1.89%) | ₱250.37M value traded (screenshot; per-share count not shown on this chart) | 🟢 Sitting right at/just above the entry cluster already — a live near-entry setup. Daily RSI 57.03 / weekly RSI 58.93, both neutral. Genuine multi-month base visible on the weekly (not a single-session spike) — the key quality distinction from this file's rejected parabolic names | Weekly close above ₱585.62 (MA200) would resolve the real overhang; a daily hold above the ₱534.85-537.70 cluster on the next session confirms the Starter |
 
 **Conviction rank reasoning**: #1-3 (ICT, NIKL, OGP) — clean weekly-
 confirmed trends with strong fundamental confirmation and, for
@@ -1560,6 +1561,71 @@ regardless of how good the chart looks.
   if holding both, and now two Aboitiz names with real, unresolved
   technical caution flags rather than one clean and one caveated.
 
+## Ayala Corporation (AC)
+- **Risk tier: Trend reversal off a genuine multi-month base** — the
+  key distinction from this file's rejected parabolic names (FGEN,
+  SPNEC, AT): those were single-session/single-week vertical gaps with
+  no time spent building the move. AC's weekly chart shows a severe
+  multi-year decline from ~₱775-800 (2021-2022 highs) grinding down to
+  a low near ~₱350-375 (2025), then a genuinely gradual, many-months
+  recovery back to ₱540 now — real basing with pullbacks along the
+  way, visible on the chart, not a vertical spike.
+- **Reviewed:** 2026-10-28 (daily + weekly, pasted by the user) ·
+  **Price at review:** ₱540.00 · **ATR(14): 13.42 daily / 33.06
+  weekly**
+- **Daily:** price (540.00) sits just above a tightly clustered
+  short-term MA group — EMA10 536.13, VWAP(session) 537.67, MA20
+  534.85, all within ~1% of each other and all just below price, a
+  genuine reclaim cluster. MA50 (512.05) and MA200 (497.51) sit well
+  below — no daily-level overhang at all. RSI14 57.03, neutral, real
+  room before overbought.
+- **Weekly:** price has reclaimed weekly EMA10 (519.80), VWAP (536.17),
+  MA20 (497.04), and MA50 (493.37) — all genuinely below price now, a
+  real weekly-level reclaim, not just a daily bounce. **The one real
+  caveat: weekly MA200 (585.62) remains ~8.4% above price** — an
+  unresolved overhang, smaller than AEV's own weekly MA200 gap at
+  review time but the same shape of caution. RSI14 58.93, also
+  neutral. Both daily and weekly MACD panels show the MACD line above
+  its signal with a building histogram — directionally bullish on both
+  timeframes, though the on-chart labeling doesn't cleanly separate
+  MACD/signal/histogram at a glance, so treat this as lower-confidence
+  color, not a precise reading.
+- **Entry ranges (staged — see Entry methodology above)**:
+  - **Starter**: on any touch/hold within **₱534.85–537.70** (the daily
+    MA20/EMA10/VWAP cluster) — essentially live now, price is sitting
+    right at/just above it.
+  - **Confirmation add**: a daily close holding above the cluster the
+    next session, or a genuine weekly close above ₱585.62 (MA200) for
+    full confirmation of the overhang being resolved.
+  - **Stop:** ATR(14)=13.42 daily → 1–1.5x below the cluster low
+    (534.85) = **₱514.70–521.40**, confluence with daily MA50
+    (₱512.05) just below.
+- **Take-profit:** T1 **₱585.62** (weekly MA200 — the genuine overhang
+  level, not an arbitrary round number). R:R ranges ~1.8:1 (conservative
+  entry/stop) to ~2.8:1 (tighter entry/stop) depending on exact fill —
+  the best R:R among the Aboitiz-family-adjacent additions (AEV ~1.1:1,
+  AP ~1.2:1). No T2 defined until a weekly close above 585.62 gives
+  something fresh to target.
+- **Invalidation:** a close back below ~₱514.70-521.40 undoes the
+  reclaim read.
+- **Horizon:** Short-term entry now; long-term candidate contingent on
+  a genuine weekly close above ₱585.62.
+- **Fundamental caveat, stated plainly — this is NOT an earnings-growth
+  story like AEV/AP/CNPF were at the time of their adds.** Ayala Corp's
+  own 1H 2026 net income is down ~2% YoY to ₱22.87B (core income -7%
+  YoY to ₱22.1B); Ayala Land's H1 net income -19%; Globe's core income
+  -2%. The one real forward catalyst is the **planned Mynt (GCash
+  parent) IPO**, expected to raise ₱80.3B-92.3B and "unlock value" per
+  the company's own framing ([Context](https://context.ph/2026/08/13/ayala-corp-1h-net-income-down-2-to-p22-86b/),
+  [GMA News](https://www.gmanetwork.com/news/money/companies/987520/ayala-corp-nets-p12b-in-q1-2026-down-5/story/)) —
+  a real, large, dated catalyst, but a different kind of thesis
+  (corporate-action/value-unlock) than the organic-earnings-growth
+  names on this list. Closer in spirit to DMC's "softer fundamental,
+  still a decent technical setup" framing than to AEV/AP/CNPF's growth
+  story — added on the strength of the technical setup (clean,
+  genuinely multi-month, decent R:R, non-extended RSI), not the
+  earnings trend, which is explicitly a headwind here, not a tailwind.
+
 ## Reviewed but NOT added (for reference — not maintained further)
 
 - **IMI** (2026-09-08, ₱8.40) — already extended (+140% in <3 months,
@@ -1686,3 +1752,16 @@ regardless of how good the chart looks.
 - **RLC (Robinsons Land)** (2026-09-15) — per COL's guide,
   SIDEWAYS/LIGHTEN — neutral-to-cautious, not a buy signal. Reject for
   now.
+- **PNB (Philippine National Bank)** (2026-10-28, ₱83.90) — the most
+  extreme extension reviewed since ION/ABG, confirmed on a real chart
+  (not just the numbers). **Weekly RSI14 80.79, daily RSI14 70.93** —
+  both at/past the overbought line, on a weekly chart showing a
+  near-vertical, sustained ramp from ~₱16 (2021) to ₱84 now, with the
+  most recent weeks accelerating even further. Price is ~125% above
+  weekly MA200 (37.25) and ~32% above daily MA200 (63.45) — not a
+  pullback-in-an-uptrend setup, a chase at the most extended point
+  reviewed, same category as AT/ION. The provisional MarketScreener
+  screen (same "volume" run) had already flagged this as a name that's
+  "run hard already" — the real chart sharpens that into a clean
+  reject, not just a caution. No margin left for a fresh entry; would
+  need a real pullback, not a reason to chase the move.
