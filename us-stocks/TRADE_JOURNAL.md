@@ -44,7 +44,7 @@ is worth flagging too.
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
 | Realized P&L | **-$0.44 (NVDA) + -$0.23 (AMZN) + +$3.01 (INTC) + +$2.74 (PLTR) + +$1.43 (MSFT) + -$1.36 (NBIS) + -$0.96 (HOOD) + -$0.44 (TSM) + -$2.63 (MRVL) ≈ +$1.12 net gross** — three real winners (two T1 exits), six losers, MRVL by far the largest loss and directly tied to the earlier missed T1 exit on that name |
 | Win rate / avg R-multiple | 3-for-9 (INTC, PLTR, MSFT wins) — small sample, slipping as more lagged-exit losses land |
-| **Plan adherence rate** | **6/10 events, two new lagged exits.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's and HOOD's stop-outs (2026-10-15) both followed through on intent but gapped through their stop zones. **TSM's stop-out (2026-11-04) was PARTIAL** — late relative to the first breach (2026-10-30), fill only came out fine because price happened to recover first. **MRVL's stop-out (2026-11-04) was a real NO** — breached 2026-10-30, not closed until 2026-11-04, the same missed-exit pattern as this name's earlier skipped T1, now compounded twice on one position. See `trading-psychology-discipline` memory — this is the clearest evidence yet that the 9:45 PM alarm alone hasn't fully closed the gap. |
+| **Plan adherence rate** | **6/10 events.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's and HOOD's stop-outs (2026-10-15) both followed through on intent but gapped through their stop zones. **TSM (PARTIAL) and MRVL (NO) stop-outs (2026-11-04)** both lagged their first breach (2026-10-30) — but **root-cause corrected same day**: the 9:45 PM alarm was still set for EDT and fired before market open once EST took over (2026-11-01 DST end), a mechanical scheduling bug, not a repeat of the willpower-driven missed-T1 pattern. Fix: shift the alarm to ~10:45 PM during EST months. |
 
 ---
 
@@ -76,6 +76,19 @@ is worth flagging too.
   this fill happened at an actual 9:45 PM check (and was delayed in
   decision, not detection) or was missed by the alarm entirely — that
   distinction matters for what actually needs to change next.
+- **Root-cause correction (2026-11-04, same day):** this was NOT a
+  decision/willpower gap after all — **the 9:45 PM alarm itself went
+  stale.** US DST ended Sunday 2026-11-01 (clocks fell back, EDT→EST).
+  Market open is fixed at 9:30 AM US Eastern; in PH time (UTC+8,
+  no DST) that's 9:30 PM during EDT but **10:30 PM once EST takes
+  over** — a full hour later. The 9:45 PM alarm was set correctly for
+  EDT and simply never got moved, so for the first few EST sessions it
+  fired 45 minutes *before the market even opened*, catching nothing
+  actionable. The "❌ NO" grade above should be read in that light —
+  a mechanical scheduling bug, not a repeat of the willpower-driven
+  missed-T1 pattern it initially looked like. Real fix: shift the
+  weekday alarm to ~10:45 PM during EST months (~Nov–Mar), back to
+  9:45 PM once DST resumes (~Mar 2027).
 
 ### 2026-11-04 — TSM — Stop-out (RESOLVED)
 - **Price:** Sold 0.06 fractional sh @ $404.00 ($24.24 total). Cost
@@ -96,6 +109,12 @@ is worth flagging too.
   the lag — it was luck, not the plan working as designed.
 - **Lesson:** Same open question as MRVL above — worth distinguishing
   a late *decision* from a missed *detection* going forward.
+- **Root-cause correction (2026-11-04, same day):** same explanation as
+  MRVL's correction above — the 9:45 PM alarm was still set for EDT
+  and fired before the market opened once EST took over (2026-11-01
+  DST end), not a decision lag. Re-grade the "⚠️ PARTIAL" above with
+  that context: the lateness was mechanical (stale alarm time), not a
+  hesitation at the moment of decision.
 
 ### 2026-11-04 — AMD — Entry filled, clean touch inside the zone
 - **Price:** Bought 0.023 fractional sh @ $488.19 ($11.228 total) —
