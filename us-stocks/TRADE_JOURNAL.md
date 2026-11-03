@@ -40,15 +40,78 @@ is worth flagging too.
 
 | Metric | Value |
 |---|---|
-| Real closed-position events | 7 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13; MSFT T1 exit, NBIS stop-out, HOOD stop-out — all 2026-10-15) |
+| Real closed-position events | 9 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13; MSFT T1 exit, NBIS stop-out, HOOD stop-out — all 2026-10-15; TSM stop-out, MRVL stop-out — both 2026-11-04) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | **-$0.44 gross (NVDA) + -$0.23 gross (AMZN) + +$3.01 gross (INTC) + +$2.74 gross (PLTR) + +$1.43 gross (MSFT) + -$1.36 gross (NBIS) + -$0.96 gross (HOOD) ≈ +$4.19 net** — three real winners, two of them T1 exits |
-| Win rate / avg R-multiple | 3-for-7 (INTC, PLTR, MSFT wins) — small sample, but both T1-only exits taken so far (INTC, PLTR) plus MSFT have all been clean |
-| **Plan adherence rate** | **6/8 events, improving.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's stop-out (2026-10-15) was followed through on intent, but the fill landed below the stated $196-205 stop zone — a real execution gap. HOOD's stop-out (2026-10-15) was the same shape — intent followed through, but the fill landed below the $99-102 stop zone too, the second gap-through in two days. |
+| Realized P&L | **-$0.44 (NVDA) + -$0.23 (AMZN) + +$3.01 (INTC) + +$2.74 (PLTR) + +$1.43 (MSFT) + -$1.36 (NBIS) + -$0.96 (HOOD) + -$0.44 (TSM) + -$2.63 (MRVL) ≈ +$1.12 net gross** — three real winners (two T1 exits), six losers, MRVL by far the largest loss and directly tied to the earlier missed T1 exit on that name |
+| Win rate / avg R-multiple | 3-for-9 (INTC, PLTR, MSFT wins) — small sample, slipping as more lagged-exit losses land |
+| **Plan adherence rate** | **6/10 events, two new lagged exits.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's and HOOD's stop-outs (2026-10-15) both followed through on intent but gapped through their stop zones. **TSM's stop-out (2026-11-04) was PARTIAL** — late relative to the first breach (2026-10-30), fill only came out fine because price happened to recover first. **MRVL's stop-out (2026-11-04) was a real NO** — breached 2026-10-30, not closed until 2026-11-04, the same missed-exit pattern as this name's earlier skipped T1, now compounded twice on one position. See `trading-psychology-discipline` memory — this is the clearest evidence yet that the 9:45 PM alarm alone hasn't fully closed the gap. |
 
 ---
 
 ## Log
+
+### 2026-11-04 — MRVL — Stop-out (RESOLVED)
+- **Price:** Sold 0.048 fractional sh @ $169.13 ($8.118 total). Cost
+  basis was $224.00 (0.048 sh, $10.752 total, filled 2026-10-22).
+  Realized loss ≈ -$2.63 gross (-24.50%).
+- **Setup at the time:** Stop zone was $200-208. Price first breached
+  it on the confirmed close of 2026-10-30 ($196.40) and deepened
+  further through the 2026-11-02 confirmed close ($171.41, -23.48%
+  unrealized, ~17.6% below the stop zone bottom).
+- **What actually happened:** The sell didn't execute until 2026-11-04
+  — several sessions after the stop zone was first breached, and a
+  direct continuation of the same name's earlier missed T1 exit
+  (2026-10-27/28, "forgot"). This is the full, now-realized cost of
+  that lag: MRVL was +8.74% unrealized at the T1 touch, and the
+  position was finally closed at -24.50%.
+- **Plan adherence: ❌ NO** — the stop was breached on a confirmed close
+  four sessions before this fill. This is the same documented pattern
+  as the earlier missed T1 exit on this same name, not an isolated
+  slip — see `trading-psychology-discipline` memory. The 9:45 PM
+  weekday alarm was already in place by this point; worth flagging
+  directly that this trade still lagged badly despite it.
+- **Lesson:** The alarm fixes "forgetting to check," but a breach can
+  still sit unacted-on across multiple sessions if the check doesn't
+  convert into an actual order each time it fires. Confirm whether
+  this fill happened at an actual 9:45 PM check (and was delayed in
+  decision, not detection) or was missed by the alarm entirely — that
+  distinction matters for what actually needs to change next.
+
+### 2026-11-04 — TSM — Stop-out (RESOLVED)
+- **Price:** Sold 0.06 fractional sh @ $404.00 ($24.24 total). Cost
+  basis was $411.35 (0.06 sh, $24.681 total, filled 2026-10-15).
+  Realized loss ≈ -$0.44 gross (-1.79%).
+- **Setup at the time:** Stop zone was $403-409. Price sat inside the
+  zone on the 2026-10-30 confirmed close ($406.13) and closed fully
+  below it on 2026-11-02 ($398.63, second straight sub-zone close).
+- **What actually happened:** Same multi-session lag as MRVL above,
+  but price happened to recover back into the $403-409 zone by the
+  time this sell executed — so the delay didn't add extra cost here,
+  unlike MRVL. Still a late execution relative to the stop discipline
+  as stated.
+- **Plan adherence: ⚠️ PARTIAL** — late relative to the first breach
+  (2026-10-30), but the fill price ended up better than the last
+  confirmed close before it, purely because price bounced back into
+  the zone in the meantime. Don't read the decent fill as validating
+  the lag — it was luck, not the plan working as designed.
+- **Lesson:** Same open question as MRVL above — worth distinguishing
+  a late *decision* from a missed *detection* going forward.
+
+### 2026-11-04 — AMD — Entry filled, clean touch inside the zone
+- **Price:** Bought 0.023 fractional sh @ $488.19 ($11.228 total) —
+  inside the stated entry zone ($479-490), near the top edge. Stop
+  ~$444-456 active immediately per Portfolio Risk Rule 2.
+- **Setup at the time:** Real, specific company catalyst on file (CFO's
+  $3T TAM claim, $70B data-center revenue target by 2027, Helios
+  rack-scale AI platform). Price blew straight through the $479-490
+  zone without touching it on 2026-11-02 (confirmed close $466.84,
+  below the zone), then bounced back inside it by today's fill.
+- **What actually happened:** A real touch-and-fill inside the stated
+  zone — not a chase, and not the same "ran without offering a clean
+  entry" pattern the 11-02 gap-through looked like it was setting up.
+- **Plan adherence: ✅ YES** — filled inside the stated range, Starter
+  entry per the staged-entry methodology.
+- **Lesson: N/A yet — update once this trade resolves.**
 
 ### 2026-10-22 — MRVL — Entry filled, clean zone touch on a sharp pre-market selloff
 - **Price:** Bought 0.048 fractional sh @ $224.00 ($10.75 total) — inside
