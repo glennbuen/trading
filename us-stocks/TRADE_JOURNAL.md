@@ -40,15 +40,38 @@ is worth flagging too.
 
 | Metric | Value |
 |---|---|
-| Real closed-position events | 9 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13; MSFT T1 exit, NBIS stop-out, HOOD stop-out — all 2026-10-15; TSM stop-out, MRVL stop-out — both 2026-11-04) |
+| Real closed-position events | 10 (NVDA stop-out, AMZN stop-out — both 2026-09-16; INTC T1 exit 2026-09-23; PLTR T1 exit 2026-10-13; MSFT T1 exit, NBIS stop-out, HOOD stop-out — all 2026-10-15; TSM stop-out, MRVL stop-out — both 2026-11-04; AMD stop-out 2026-11-06) |
 | Process-correction events | 1 (NVDA stop-discipline gap, 2026-09-14/15 — not a P&L event, a process lesson) |
-| Realized P&L | **-$0.44 (NVDA) + -$0.23 (AMZN) + +$3.01 (INTC) + +$2.74 (PLTR) + +$1.43 (MSFT) + -$1.36 (NBIS) + -$0.96 (HOOD) + -$0.44 (TSM) + -$2.63 (MRVL) ≈ +$1.12 net gross** — three real winners (two T1 exits), six losers, MRVL by far the largest loss and directly tied to the earlier missed T1 exit on that name |
-| Win rate / avg R-multiple | 3-for-9 (INTC, PLTR, MSFT wins) — small sample, slipping as more lagged-exit losses land |
-| **Plan adherence rate** | **6/10 events.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's and HOOD's stop-outs (2026-10-15) both followed through on intent but gapped through their stop zones. **TSM (PARTIAL) and MRVL (NO) stop-outs (2026-11-04)** both lagged their first breach (2026-10-30) — but **root-cause corrected same day**: the 9:45 PM alarm was still set for EDT and fired before market open once EST took over (2026-11-01 DST end), a mechanical scheduling bug, not a repeat of the willpower-driven missed-T1 pattern. Fix: shift the alarm to ~10:45 PM during EST months. |
+| Realized P&L | **-$0.44 (NVDA) + -$0.23 (AMZN) + +$3.01 (INTC) + +$2.74 (PLTR) + +$1.43 (MSFT) + -$1.36 (NBIS) + -$0.96 (HOOD) + -$0.44 (TSM) + -$2.63 (MRVL) + -$1.16 (AMD) ≈ -$0.04 net gross** — essentially break-even overall now, three winners (two T1 exits) against seven losers |
+| Win rate / avg R-multiple | 3-for-10 (INTC, PLTR, MSFT wins) — small sample, now a minority win rate as more stop-outs land |
+| **Plan adherence rate** | **7/11 events.** NVDA's original 30-min plan (2026-09-14/15) was NOT followed, only resolved late. AMZN's stop (2026-09-16) WAS executed within the stop range, no hesitation. INTC's T1 exit (2026-09-23) WAS a full, correct exit, placed two sessions after the signal fired. PLTR's T1 exit (2026-10-13) WAS also full and correct, decided the same day the signal fired. MSFT's T1 exit (2026-10-15) WAS full and correct, sold inside the stated zone. NBIS's and HOOD's stop-outs (2026-10-15) both followed through on intent but gapped through their stop zones. **TSM (PARTIAL) and MRVL (NO) stop-outs (2026-11-04)** both lagged their first breach (2026-10-30) — but **root-cause corrected same day**: the 9:45 PM alarm was still set for EDT and fired before market open once EST took over (2026-11-01 DST end), a mechanical scheduling bug, not a repeat of the willpower-driven missed-T1 pattern. Fix: shift the alarm to ~10:45 PM during EST months. **AMD's stop-out (2026-11-06) was a clean YES** — closed promptly on the breach, no lag, just a real gap-through on a fast-moving name. |
 
 ---
 
 ## Log
+
+### 2026-11-06 — AMD — Stop-out (RESOLVED)
+- **Price:** Sold 0.023 fractional sh @ $437.85 ($10.071 total). Cost
+  basis was $488.19 (0.023 sh, $11.228 total, filled 2026-11-04).
+  Realized loss ≈ -$1.16 gross (-10.31%).
+- **Setup at the time:** Stop zone was $444-456. Filled inside the
+  $479-490 entry zone on 2026-11-04, ran to ~$517-518 intraday the
+  same day (+6%), closed back near entry that day ($488.78), then
+  reversed hard — a fast round trip, entry to stop-out in two sessions.
+- **What actually happened:** Sold at $437.85, **below the entire
+  $444-456 stop zone** — a real gap-through, the same pattern as
+  NBIS/HOOD's original stop-outs and MRVL's final exit, not a clean
+  execution at the stated level.
+- **Plan adherence: ✅ YES** — the stop was breached and the position
+  was closed promptly, no multi-session lag this time (unlike
+  TSM/MRVL's delayed exits two days earlier). Good follow-through.
+- **Lesson:** Confirms this account's stops are vulnerable to
+  gap-through slippage on fast-moving names (AMD's 52-week range is
+  wide) — the ~$444-456 stop assumed a cleaner exit than the fractional
+  position actually got. Separately, this is the fastest full round
+  trip on this account yet (2 sessions, intraday high to stop-out) —
+  worth noting as a real example of how quickly a staged entry can
+  invalidate itself when a name is this volatile.
 
 ### 2026-11-04 — MRVL — Stop-out (RESOLVED)
 - **Price:** Sold 0.048 fractional sh @ $169.13 ($8.118 total). Cost
