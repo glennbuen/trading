@@ -505,8 +505,12 @@ $110.98 - $24.68 (TSM buy) - $10.75 (MRVL buy) ≈ $75.55 cash going
 into today): MRVL stopped out (+$8.12 gross, 0.048 sh × $169.13) → TSM
 stopped out (+$24.24 gross, 0.06 sh × $404.00) → AMD bought (-$11.23,
 0.023 sh × $488.19) → cash ≈$96.68. **Updated 2026-11-06**: AMD stopped
-out (+$10.07 gross, 0.023 sh × $437.85) → cash ≈**$106.75**. Estimated,
-not net of fees — re-mark on the next real "us_positions" refresh.
+out (+$10.07 gross, 0.023 sh × $437.85) → cash ≈$106.75. **Confirmed
+2026-11-06 (same day), user-stated exact figure: real cash in hand
+$156.70 USD** — supersedes the running estimate above (higher than
+the $106.75 calculated running total, likely an additional deposit not
+otherwise logged here). **This is the real, confirmed total account
+cash going forward, no open positions right now, so equity = $156.70.**
 
 | Symbol | Cost basis (real) | Current price | Unrealized | Stop-loss (initial, per Portfolio Risk Rule 2) | T1 (take-profit) | Exit plan | Technical read |
 |---|---|---|---|---|---|---|---|
